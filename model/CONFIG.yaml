@@ -1,14 +1,14 @@
-model_organization:           # Name of github individual / organization where this clone exists (e.g. linkml / mygithub)
-model_name:                   # Name of target repository (e.g. my-wonderful-model)
+model_organization: chicagopcdc          # Name of github individual / organization where this clone exists (e.g. linkml / mygithub)
+model_name: data_dictionary                  # Name of target repository (e.g. my-wonderful-model)
 root_schema: sample_model     # Name of the base schema file (w/o .yaml)
 model_root_class: Person      # Name of the base class in the schema for testing
 
-model_author:                 # Your name
-model_author_email:           # Your email
-model_synopsis: A cool model  # One liner about the model
-model_description: |-         # Longer description of the model
-  This is a really nice model that
-  does stuff
+model_author: Megan Moore                # Your name
+model_author_email: megan.moore@bsd.uchicago.edu (mm7148@uchicagomedicine.org)     # Your email
+model_synopsis: model of the pcdc data dictionary  # One liner about the model
+model_description: |-        # Longer description of the model
+  This creates a data model so that 
+  artifacts can be used elsewhere and data can be validated.
 
 # Trove Classifiers (https://pypi.org/classifiers/) -- these can be omitted if the elements below are sufficient
 classifiers:

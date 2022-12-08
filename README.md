@@ -1,3 +1,5 @@
-# Placeholder README
-This file will be replaced in the build process.  The details about how to use this template
-can be found in [ABOUT.md](./ABOUT.md).
+# LinkML model of the pcdc data dictionary
+This creates a data model so that 
+artifacts can be used elsewhere and data can be validated.
+
+## [Documentation](https://chicagopcdc.github.io/data_dictionary/)
