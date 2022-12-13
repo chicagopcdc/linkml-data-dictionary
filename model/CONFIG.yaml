@@ -1,5 +1,5 @@
 model_organization: chicagopcdc          # Name of github individual / organization where this clone exists (e.g. linkml / mygithub)
-model_name: data_dictionary                  # Name of target repository (e.g. my-wonderful-model)
+model_name: datadictionary                  # Name of target repository (e.g. my-wonderful-model)
 root_schema: sample_model     # Name of the base schema file (w/o .yaml)
 model_root_class: Person      # Name of the base class in the schema for testing
 
