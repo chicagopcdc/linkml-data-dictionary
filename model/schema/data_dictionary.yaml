@@ -1,4 +1,4 @@
-id: https://example.org/linkml/hello-world # to find
+id: https://example.org/linkml/hello-world # todo, find the id we want
 title: LinkML Data Dictionary model
 name: data-dictionary
 license: https://creativecommons.org/licenses/by-nc/4.0/  # is this ok? updated from the PCDC website
@@ -7,12 +7,13 @@ version: 0.0.1
 prefixes:
  linkml: https://w3id.org/linkml/
  schema: https://schema.org/
- ex: https://example.org/linkml/hello-world/
+ ex: https://example.org/linkml/hello-world/ 
  ncit: https://ncithesaurus.nci.nih.gov/ # found this online
 
 default_prefix: ex # do we need a default prefix
 default_curi_maps:
  - semweb_context
+default_range: string
 
 imports:
  - linkml:types
@@ -41,7 +42,7 @@ slots:
     description: Specify the "Other" RACE
   ethnicity:
     description: The social and cultural characteristics, backgrounds, or experiences shared by a group of people. These include language, religion, beliefs, values, and behaviors that are often handed down from one generation to the next. Some conditions or diseases, such as cancer, may be more common in certain ethnic groups than in others. (Source NCI Dictionary of Cancer Terms)
-    range: EthinicityEnum
+    range: EthnicityEnum
     required: True
 
 enums:
