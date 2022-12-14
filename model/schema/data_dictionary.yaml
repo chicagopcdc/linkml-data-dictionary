@@ -1,16 +1,16 @@
-id: https://example.org/linkml/hello-world # todo, find the id we want
+id: https://w3id.org/pcdc/model
 title: LinkML Data Dictionary model
 name: data-dictionary
-license: https://creativecommons.org/licenses/by-nc/4.0/  # is this ok? updated from the PCDC website
+license: https://creativecommons.org/licenses/by-nc/4.0/
 version: 0.0.1
 
 prefixes:
  linkml: https://w3id.org/linkml/
  schema: https://schema.org/
  ex: https://example.org/linkml/hello-world/ 
- ncit: https://ncithesaurus.nci.nih.gov/ # found this online
+ ncit: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
 
-default_prefix: ex # do we need a default prefix
+default_prefix: ex 
 default_curi_maps:
  - semweb_context
 default_range: string
@@ -28,7 +28,6 @@ classes:
     - race_other
     - ethnicity
 
-# I am assuming that individuals are not allowed to qualify for multiple sexes, races or ethnicity values
 slots:
   sex:
     description: The biological sex of the subject.
