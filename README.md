@@ -13,4 +13,4 @@ Optionally add the `-v` flag for verbosity
 
 ## Generating Python
 To generate the python data model call:
-`gen-python model/schema/data_dictionary.yaml > python_model/data_dictionary.py` and the file will be writtin in the 'python_model' folder.
+`gen-python model/schema/data_dictionary.yaml > python_model/data_dictionary.py` and the file will be written in the 'python_model' folder.
