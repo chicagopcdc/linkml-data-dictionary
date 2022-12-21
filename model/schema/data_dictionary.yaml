@@ -27,8 +27,35 @@ classes:
     - race
     - race_other
     - ethnicity
+  FamilyMedicalHistory:
+    description: prior cancer information of a first-degree relative
+    class_uri: schema:FamilyMedicalHistory
+    slots:
+      - prior_cancer
+      - relation
+      - prior_cancer_type
+  SubjectCharacteristics:
+    description:
+    class_uri: schema:SubjectCharacteristics
+    slots:
+      - honest_broker_subject_id
+      - consortium
+      - data_contributor_id
+      - study_id
+      - age_at_enrollment
+      - year_at_enrollment
+      - treatment_arm
+      - enrolled_status
+      - efs_censor_status
+      - age_at_censor_status
+      - data_source
+      - randomized_status
+      - study_phase
+      - study_type
+
 
 slots:
+  # Demographic Slots
   sex:
     description: The biological sex of the subject.
     range: SexEnum
@@ -37,12 +64,65 @@ slots:
     description: A group of people who share physical characteristics, such as skin color and facial features. They may also share similar social or cultural identities and ancestral backgrounds. There are many racial groups, and a person may belong to or identify with more than one group. Some diseases, such as cancer, may be more common in certain races than in others. (Source NCI Dictionary of Cancer Terms)
     range: RaceEnum
     required: True
-  race_other:
+  race_other: # string default
     description: Specify the "Other" RACE
   ethnicity:
     description: The social and cultural characteristics, backgrounds, or experiences shared by a group of people. These include language, religion, beliefs, values, and behaviors that are often handed down from one generation to the next. Some conditions or diseases, such as cancer, may be more common in certain ethnic groups than in others. (Source NCI Dictionary of Cancer Terms)
     range: EthnicityEnum
     required: True
+  # Family History Slots
+  prior_cancer: # do I need to add the Variable Code ncit (meaning in enums) somewhere for these (ex. ncit:C17726)
+    description: Does the subject have a relative who has a medical history that includes cancer?
+    range: StandardEnum
+    required: True
+  relation:
+    description: What kind of relation is this relative who has had a relevant medical condition?
+    range: RelationEnum
+  prior_cancer_type: # string default
+    description: The type of prior cancer from the medical history of the relative of the subject.
+  # Subject Characteristic Slots
+  honest_broker_subject_id:
+    description: The identifier assigned to the subject by the honest broker--an individual, organization or system acting for, or on behalf of, a covered entity to collect and provide health information to research investigators in such a manner whereby it would not be reasonably possible for the investigators or others to identify the corresponding patients-subjects directly or indirectly. The honest broker cannot be one of the investigators. The information provided to the investigators by the honest broker may incorporate linkage codes to permit information collation and/or subsequent inquiries (i.e., a "re-identification code"), however the information linking this re-identification code to the patient's identity must be retained by the honest broker and subsequent inquiries are conducted through the honest broker. (Source NCI Thersaurus)
+    identifier: True
+  consortium:
+    description: The consortium under which this data is being contributed to the Pediatric Cancer Data Commons.
+    range: ConsortiumEnum
+  data_contributor_id: # is there a combination of the ids that makes a unique entry (i.e honest_broker + data_contributor...) or is it just the honest broker 
+    description: An identifier assigned to a data contributor.
+    range: DataContributorIdEnum
+  study_id: 
+    description: A sequence of characters used to identify, name, or characterize the study.
+    range: StudyIdEnum
+  age_at_enrollment:
+    description: Age of subject (in days) when the subject enrolled in the study.
+    range: integer
+  year_at_enrollment:
+    description: The year at which a subject enrolled in a study.
+    range: integer
+  treatment_arm:
+    description: A specific treatment plan within a clinical trial that describes the activities a subject will be involved in as he or she progresses through the study.
+    range: TreatmentArmEnum
+  enrolled_status: 
+    description: This variable indicates if the subject was enrolled in the study, or if the subject was not enrolled in the study but received treatment per the study's protocol.
+    range: EnrolledStatusEnum
+  efs_censor_status:
+    description: The event free survival censor status
+    range: CensorStatusEnum
+  age_at_censor_status:
+    description: Age (in days) of the subject at the time of the CENSOR_STATUS
+    range: integer
+  data_source:
+    description: The nature of the investigation or the investigational use for which clinical study is being done.
+    range: DataSourceEnum
+  randomized_status:
+    description: The allocation of individuals to groups by chance, especially in order to control the variables in an experiment.
+    range: RandomizedStatusEnum
+  study_phase:
+    description: The phase of the clinical trial that the subject was enrolled in for the collection of this data.
+    range: StudyPhaseEnum
+  study_type:
+    description: The nature of the investigation or the investigational use for which clinical study is being done.
+    range: StudyTypeEnum
 
 enums:
   SexEnum:
@@ -105,5 +185,196 @@ enums:
       NOT_REPORTED: 
         description: Not provided or available.
         meaning: ncit:C43234
-
-
+  StandardEnum: # need a new name for this (standard enum? YesNoUnknownNotRepoortedEnum?)
+    permissible_values:
+      YES:
+        description: The affirmative response to a question.
+        meaning: ncit:C49488
+      NO:
+        description: The non-affirmative response to a question.
+        meaning: ncit:C49487
+      UNKNOWN:
+        description: Reported as unknown by the data contributor.
+        meaning: ncit:C17998
+      NOT_REPORTED:
+        description: Not provided or available.
+        meaning: ncit:C43234
+  RelationEnum:
+    permissible_values:
+      FATHER:
+        description: A male who contributes to the genetic makeup of his offspring through the fertilization of an ovum by his sperm.
+        meaning: ncit:C96572
+      MOTHER:
+        description: A female who contributes to the genetic makeup of her offspring from the fertilization of her ovum.
+        meaning: ncit:C96580
+      BROTHER:
+        description: A male who shares with his sibling the genetic makeup inherited from one or both of their shared biological parents.
+        meaning: ncit:C96570
+      SISTER:
+        description: A female who shares with her sibling the genetic makeup inherited from one or both of their shared biological parents.
+        meaning: ncit:C96586
+      SON:
+        description: A male progeny with genetic makeup inherited from the parent.
+        meaning: ncit:C150888
+      DAUGHTER:
+        description: A female progeny with genetic makeup inherited from the parent.
+        meaning: ncit:C150887
+  ConsortiumEnum:
+    permissible_values:
+      INSTRUCT:
+        description: International Soft Tissue Sarcoma Consortium (INSTRuCT)
+      MAGIC:
+        description: Malignant Germ Cell International Consortium (MaGIC)
+      INRG:
+        description: International Neuroblastoma Risk Group (INRG)
+      NODAL:
+        description: Hodgkin Lymphoma Data Collaboration (NODAL)
+      INTERACT:
+        description: International Pediatric Acute Myeloid Leukemia Consortium (INTERACT)
+      HIBISCUS:
+        description: Harmonization International Bone Sarcoma Consortium (HIBiSCus)
+      INSPIRE:
+        description: International Central Nervous System Pediatric Research Consortium (INSPiRE)
+      GLOBAL_REACH:
+        description: Global Retinoblastoma Alliance for Children (Global REACH)
+      C3P:
+        description: Consortium for Childhood Cancer Predisposition (C3P)
+  DataContributorIdEnum:
+    permissible_values:
+      AIEOP:
+        description: Italian Association of Pediatric Hematology and Oncology is a group from Bologna, Italy, comprised mainly of pediatricians, hematologists, oncologists, surgeons, biologists, nurses and psychologists who are devoted to addressing the problems of hematology, oncology and immunology in the child and adolescent.
+        meaning: ncit:C168887
+      BFM-SG:
+        description: A study group formed in 1975 by three individuals, Hansjorg Riehm in Berlin (B), Bernhard Kornhuber in Frankfurt (F) and Gunther Schellong in Munster (M), who initiated the first multicenter BFM trial. The BFM treatment concept was based on an intensive chemotherapeutic approach employing eight different drugs which led to a revolutionary increase in the survival of children and adolescents with acute lymphoblastic leukemia.
+        meaning: ncit:C168888
+      COG:
+        description: Children's Oncology Group. An NCI-supported clinical cooperative group formed by the merger of the four national pediatric cancer research organizations (the Children's Cancer Group, the Intergroup Rhabdomyosarcoma Study Group, the National Wilms Tumor Study Group, and the Pediatric Oncology Group. The primary objective of the organization is to conduct clinical trials of new therapies for childhood and adolescent cancer. COG develops and coordinates clinical trials conducted at the 238 member institutions that include cancer centers of all major universities and teaching hospitals throughout the U.S. and Canada, as well as sites in Europe and Australia. COG members include over 5000 cancer researchers.)
+        meaning: ncit:C39353
+      DCOG:
+        description: A collaborating partner in Innovative Therapies for Children with Cancer Consortium (ITCC), a European based consortium to promote the clinical evaluation of new anti-cancer compounds in children with cancer.
+        meaning: ncit:C168889
+      MRC:
+        description: Medical Research Council. A publicly funded organization that is part of United Kingdom Research and Innovation, and is dedicated to improving human health through world-class medical research.
+        meaning: ncit:C168892
+  StudyIdEnum:
+    permissible_values:
+      AAML03P1:
+        description: # no description
+        meaning: ncit:C168936
+      AAML0531:
+        description: # no description
+        meaning: ncit:C168937
+      AAML1031:
+        description: # no description
+        meaning: ncit:C168938
+      AMLBFM2004:
+        description: # no description
+        meaning: ncit:C168939
+      AMLBFM2012:
+        description: # no description
+        meaning: ncit:C173250
+  TreatmentArmEnum:
+    permissible_values:
+      MAP-GR:
+        description: A control arm for patients receiving a regimen of methotrexate, doxorubicin and cisplatin (MAP) after good response to the MAP regimen pre-operatively.
+        meaning: ncit:C186769
+      MAP-IFN-GR:
+        description: An experimental treatment arm for patients receiving a regimen of methotrexate, doxorubicin and cisplatin (MAP) plus interferon (IFN) post-operatively after good response to the MAP regimen pre-operatively.
+        meaning: ncit:C186770
+      MAP-PR:
+        description: A control arm for patients receiving a regimen of methotrexate, doxorubicin and cisplatin (MAP) after poor response to the MAP regimen pre-operatively.
+        meaning: ncit:C186771
+      MAP-IE-PR:
+        description: An experimental treatment arm for patients receiving a regimen of methotrexate, doxorubicin and cisplatin (MAP) plus a regimen of ifosfamide and etoposide (IE) post-operatively after poor response to the MAP regimen pre-operatively.
+        meaning: ncit:C186772
+      MAP-NR:
+        description: A control arm for patients receiving a regimen of methotrexate, doxorubicin and cisplatin (MAP) with no response.
+        meaning: ncit:C186773
+  EnrolledStatusEnum:
+    permissible_values:
+      ENROLLED:
+        description: The study subject is enrolled.
+        meaning: ncit:C142715
+      NOT_ENROLLED:
+        description: The study subject is not enrolled.
+        meaning: ncit:C168929
+      UNKNOWN:
+        description: Reported as unknown by the data contributor.
+        meaning: ncit:C17998
+      NOT_REPORTED:
+        description: Not provided or available.
+        meaning: ncit:C43234
+  CensorStatusEnum:
+    permissible_values:
+      CENSORED:
+        description: Subject is censored (i.e. has had no events(s))
+      NOT_CENSORED:
+        description: Subject has had one or more events
+      UNKNOWN:
+        description: Reported as unknown by the data contributor.
+        meaning: ncit:C17998
+      NOT_REPORTED:
+        description: Not provided or available.
+        meaning: ncit:C43234
+  DataSourceEnum:
+    permissible_values:
+      REGISTRY:
+        description: Cancer registries gather a wide variety of specific information on cancer patients that can be analyzed to identify health disparity trends in cancer incidence, mortality and patient survival.
+        meaning: ncit:C15753
+      THARAPEUTIC_TRIAL:
+        description: A clinical study that involves administering of exposure to the agent/agents to subjects with particular disease to elucidate the most appropriate treatment for a specific medical condition, or to prolong or improve the patient's life.
+        meaning: ncit:C39536
+      UNKNOWN:
+        description: Reported as unknown by the data contributor.
+        meaning: ncit:C17998
+      NOT_REPORTED:
+        description: Not provided or available.
+        meaning: ncit:C43234
+  RandomizedStatusEnum:
+    permissible_values:
+      RANDOMIZED:
+        description: Assignment of subjects by chance to groups that receive different treatments.
+        meaning: ncit:C15417
+      NON-RANDOMIZED: 
+        description: A clinical trial in which participants may choose or be assigned into groups by researchers. Their assignment is not random.
+        meaning: ncit:C93043
+      UNKNOWN:
+        description: Reported as unknown by the data contributor.
+        meaning: ncit:C17998
+      NOT_REPORTED:
+        description: Not provided or available.
+        meaning: ncit:C43234
+  StudyPhaseEnum:
+    permissible_values:
+      PILOT:
+        description: The initial study examining a new method or treatment.
+        meaning: ncit:C15303
+      PHASE_1:
+        description: A clinical research protocol designed to test a new biomedical intervention in a small group of people for the first time. A Phase I trial can be to establish the toxicity of a new treatment with escalating intensity of the treatment administered and/or to determine the side effects of a new treatment for a particular indication in subjects.
+        meaning: ncit:C15600
+      PHASE_2:
+        description: A clinical research protocol designed to study a biomedical or behavioral intervention in a larger group of people (several hundred), to evaluate the drug's effectiveness for a particular indication in patients with the disease or condition under study, and to determine the common short-term side effects and risks associated with the intervention.
+        meaning: ncit:C15601
+      PHASE_3:
+        description: A clinical research protocol designed to investigate the efficacy of the biomedical or behavioral intervention in large groups of human subjects (from several hundred to several thousand), to confirm efficacy, to monitor adverse reactions to the new medication or treatment regimen with respect to long-term use and by comparing the intervention to other standard or experimental interventions as well as to a placebo.
+        meaning: ncit:C15602
+      UNKNOWN:
+        description: Reported as unknown by the data contributor.
+        meaning: ncit:C17998
+      NOT_REPORTED:
+        description: Not provided or available.
+        meaning: ncit:C43234
+  StudyTypeEnum:
+    permissible_values:
+      FRONTLINE:
+        description: A clinical trial for previously untreated patients that studies the use of a first line of treatment.
+        meaning: ncit:C185306
+      RETRIEVAL:
+        description: A trial to assess the efficacy of reinduction therapy.
+        meaning: ncit:C185307
+      UNKNOWN:
+        description: Reported as unknown by the data contributor.
+        meaning: ncit:C17998
+      NOT_REPORTED:
+        description: Not provided or available.
+        meaning: ncit:C43234

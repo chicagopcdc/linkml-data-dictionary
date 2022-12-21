@@ -1,8 +1,8 @@
 # Auto generated from data_dictionary.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-12-13T15:35:21
+# Generation date: 2022-12-21T15:10:42
 # Schema: data-dictionary
 #
-# id: https://example.org/linkml/hello-world
+# id: https://w3id.org/pcdc/model
 # description:
 # license: https://creativecommons.org/licenses/by-nc/4.0/
 
@@ -22,7 +22,7 @@ from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.linkml_model.types import String
+from linkml_runtime.linkml_model.types import Integer, String
 
 metamodel_version = "1.7.0"
 version = "0.0.1"
@@ -33,15 +33,16 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 # Namespaces
 EX = CurieNamespace('ex', 'https://example.org/linkml/hello-world/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
-NCIT = CurieNamespace('ncit', 'https://ncithesaurus.nci.nih.gov/')
+NCIT = CurieNamespace('ncit', 'https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=')
 SCHEMA = CurieNamespace('schema', 'https://schema.org/')
-DEFAULT_ = EX
+DEFAULT_ = CurieNamespace('', 'https://w3id.org/pcdc/model/')
 
 
 # Types
 
 # Class references
-
+class SubjectCharacteristicsHonestBrokerSubjectId(extended_str):
+    pass
 
 
 @dataclass
@@ -54,7 +55,7 @@ class Demographic(YAMLRoot):
     class_class_uri: ClassVar[URIRef] = SCHEMA.Demographic
     class_class_curie: ClassVar[str] = "schema:Demographic"
     class_name: ClassVar[str] = "Demographic"
-    class_model_uri: ClassVar[URIRef] = EX.Demographic
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Demographic")
 
     sex: Union[str, "SexEnum"] = None
     race: Union[str, "RaceEnum"] = None
@@ -79,6 +80,109 @@ class Demographic(YAMLRoot):
 
         if self.race_other is not None and not isinstance(self.race_other, str):
             self.race_other = str(self.race_other)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class FamilyMedicalHistory(YAMLRoot):
+    """
+    prior cancer information of a first-degree relative
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SCHEMA.FamilyMedicalHistory
+    class_class_curie: ClassVar[str] = "schema:FamilyMedicalHistory"
+    class_name: ClassVar[str] = "FamilyMedicalHistory"
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/FamilyMedicalHistory")
+
+    prior_cancer: Union[str, "StandardEnum"] = None
+    relation: Optional[Union[str, "RelationEnum"]] = None
+    prior_cancer_type: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.prior_cancer):
+            self.MissingRequiredField("prior_cancer")
+        if not isinstance(self.prior_cancer, StandardEnum):
+            self.prior_cancer = StandardEnum(self.prior_cancer)
+
+        if self.relation is not None and not isinstance(self.relation, RelationEnum):
+            self.relation = RelationEnum(self.relation)
+
+        if self.prior_cancer_type is not None and not isinstance(self.prior_cancer_type, str):
+            self.prior_cancer_type = str(self.prior_cancer_type)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class SubjectCharacteristics(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SCHEMA.SubjectCharacteristics
+    class_class_curie: ClassVar[str] = "schema:SubjectCharacteristics"
+    class_name: ClassVar[str] = "SubjectCharacteristics"
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/SubjectCharacteristics")
+
+    honest_broker_subject_id: Union[str, SubjectCharacteristicsHonestBrokerSubjectId] = None
+    consortium: Optional[Union[str, "ConsortiumEnum"]] = None
+    data_contributor_id: Optional[Union[str, "DataContributorIdEnum"]] = None
+    study_id: Optional[Union[str, "StudyIdEnum"]] = None
+    age_at_enrollment: Optional[int] = None
+    year_at_enrollment: Optional[int] = None
+    treatment_arm: Optional[Union[str, "TreatmentArmEnum"]] = None
+    enrolled_status: Optional[Union[str, "EnrolledStatusEnum"]] = None
+    efs_censor_status: Optional[Union[str, "CensorStatusEnum"]] = None
+    age_at_censor_status: Optional[int] = None
+    data_source: Optional[Union[str, "DataSourceEnum"]] = None
+    randomized_status: Optional[Union[str, "RandomizedStatusEnum"]] = None
+    study_phase: Optional[Union[str, "StudyPhaseEnum"]] = None
+    study_type: Optional[Union[str, "StudyTypeEnum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.honest_broker_subject_id):
+            self.MissingRequiredField("honest_broker_subject_id")
+        if not isinstance(self.honest_broker_subject_id, SubjectCharacteristicsHonestBrokerSubjectId):
+            self.honest_broker_subject_id = SubjectCharacteristicsHonestBrokerSubjectId(self.honest_broker_subject_id)
+
+        if self.consortium is not None and not isinstance(self.consortium, ConsortiumEnum):
+            self.consortium = ConsortiumEnum(self.consortium)
+
+        if self.data_contributor_id is not None and not isinstance(self.data_contributor_id, DataContributorIdEnum):
+            self.data_contributor_id = DataContributorIdEnum(self.data_contributor_id)
+
+        if self.study_id is not None and not isinstance(self.study_id, StudyIdEnum):
+            self.study_id = StudyIdEnum(self.study_id)
+
+        if self.age_at_enrollment is not None and not isinstance(self.age_at_enrollment, int):
+            self.age_at_enrollment = int(self.age_at_enrollment)
+
+        if self.year_at_enrollment is not None and not isinstance(self.year_at_enrollment, int):
+            self.year_at_enrollment = int(self.year_at_enrollment)
+
+        if self.treatment_arm is not None and not isinstance(self.treatment_arm, TreatmentArmEnum):
+            self.treatment_arm = TreatmentArmEnum(self.treatment_arm)
+
+        if self.enrolled_status is not None and not isinstance(self.enrolled_status, EnrolledStatusEnum):
+            self.enrolled_status = EnrolledStatusEnum(self.enrolled_status)
+
+        if self.efs_censor_status is not None and not isinstance(self.efs_censor_status, CensorStatusEnum):
+            self.efs_censor_status = CensorStatusEnum(self.efs_censor_status)
+
+        if self.age_at_censor_status is not None and not isinstance(self.age_at_censor_status, int):
+            self.age_at_censor_status = int(self.age_at_censor_status)
+
+        if self.data_source is not None and not isinstance(self.data_source, DataSourceEnum):
+            self.data_source = DataSourceEnum(self.data_source)
+
+        if self.randomized_status is not None and not isinstance(self.randomized_status, RandomizedStatusEnum):
+            self.randomized_status = RandomizedStatusEnum(self.randomized_status)
+
+        if self.study_phase is not None and not isinstance(self.study_phase, StudyPhaseEnum):
+            self.study_phase = StudyPhaseEnum(self.study_phase)
+
+        if self.study_type is not None and not isinstance(self.study_type, StudyTypeEnum):
+            self.study_type = StudyTypeEnum(self.study_type)
 
         super().__post_init__(**kwargs)
 
@@ -159,18 +263,337 @@ class EthnicityEnum(EnumDefinitionImpl):
         name="EthnicityEnum",
     )
 
+class StandardEnum(EnumDefinitionImpl):
+
+    UNKNOWN = PermissibleValue(text="UNKNOWN",
+                                     description="Reported as unknown by the data contributor.",
+                                     meaning=NCIT.C17998)
+    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
+                                               description="Not provided or available.",
+                                               meaning=NCIT.C43234)
+
+    _defn = EnumDefinition(
+        name="StandardEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "True",
+                PermissibleValue(text="True",
+                                 description="The affirmative response to a question.",
+                                 meaning=NCIT.C49488) )
+        setattr(cls, "False",
+                PermissibleValue(text="False",
+                                 description="The non-affirmative response to a question.",
+                                 meaning=NCIT.C49487) )
+
+class RelationEnum(EnumDefinitionImpl):
+
+    FATHER = PermissibleValue(text="FATHER",
+                                   description="A male who contributes to the genetic makeup of his offspring through the fertilization of an ovum by his sperm.",
+                                   meaning=NCIT.C96572)
+    MOTHER = PermissibleValue(text="MOTHER",
+                                   description="A female who contributes to the genetic makeup of her offspring from the fertilization of her ovum.",
+                                   meaning=NCIT.C96580)
+    BROTHER = PermissibleValue(text="BROTHER",
+                                     description="A male who shares with his sibling the genetic makeup inherited from one or both of their shared biological parents.",
+                                     meaning=NCIT.C96570)
+    SISTER = PermissibleValue(text="SISTER",
+                                   description="A female who shares with her sibling the genetic makeup inherited from one or both of their shared biological parents.",
+                                   meaning=NCIT.C96586)
+    SON = PermissibleValue(text="SON",
+                             description="A male progeny with genetic makeup inherited from the parent.",
+                             meaning=NCIT.C150888)
+    DAUGHTER = PermissibleValue(text="DAUGHTER",
+                                       description="A female progeny with genetic makeup inherited from the parent.",
+                                       meaning=NCIT.C150887)
+
+    _defn = EnumDefinition(
+        name="RelationEnum",
+    )
+
+class ConsortiumEnum(EnumDefinitionImpl):
+
+    INSTRUCT = PermissibleValue(text="INSTRUCT",
+                                       description="International Soft Tissue Sarcoma Consortium (INSTRuCT)")
+    MAGIC = PermissibleValue(text="MAGIC",
+                                 description="Malignant Germ Cell International Consortium (MaGIC)")
+    INRG = PermissibleValue(text="INRG",
+                               description="International Neuroblastoma Risk Group (INRG)")
+    NODAL = PermissibleValue(text="NODAL",
+                                 description="Hodgkin Lymphoma Data Collaboration (NODAL)")
+    INTERACT = PermissibleValue(text="INTERACT",
+                                       description="International Pediatric Acute Myeloid Leukemia Consortium (INTERACT)")
+    HIBISCUS = PermissibleValue(text="HIBISCUS",
+                                       description="Harmonization International Bone Sarcoma Consortium (HIBiSCus)")
+    INSPIRE = PermissibleValue(text="INSPIRE",
+                                     description="International Central Nervous System Pediatric Research Consortium (INSPiRE)")
+    GLOBAL_REACH = PermissibleValue(text="GLOBAL_REACH",
+                                               description="Global Retinoblastoma Alliance for Children (Global REACH)")
+    C3P = PermissibleValue(text="C3P",
+                             description="Consortium for Childhood Cancer Predisposition (C3P)")
+
+    _defn = EnumDefinition(
+        name="ConsortiumEnum",
+    )
+
+class DataContributorIdEnum(EnumDefinitionImpl):
+
+    AIEOP = PermissibleValue(text="AIEOP",
+                                 description="Italian Association of Pediatric Hematology and Oncology is a group from Bologna, Italy, comprised mainly of pediatricians, hematologists, oncologists, surgeons, biologists, nurses and psychologists who are devoted to addressing the problems of hematology, oncology and immunology in the child and adolescent.",
+                                 meaning=NCIT.C168887)
+    COG = PermissibleValue(text="COG",
+                             description="Children's Oncology Group. An NCI-supported clinical cooperative group formed by the merger of the four national pediatric cancer research organizations (the Children's Cancer Group, the Intergroup Rhabdomyosarcoma Study Group, the National Wilms Tumor Study Group, and the Pediatric Oncology Group. The primary objective of the organization is to conduct clinical trials of new therapies for childhood and adolescent cancer. COG develops and coordinates clinical trials conducted at the 238 member institutions that include cancer centers of all major universities and teaching hospitals throughout the U.S. and Canada, as well as sites in Europe and Australia. COG members include over 5000 cancer researchers.)",
+                             meaning=NCIT.C39353)
+    DCOG = PermissibleValue(text="DCOG",
+                               description="A collaborating partner in Innovative Therapies for Children with Cancer Consortium (ITCC), a European based consortium to promote the clinical evaluation of new anti-cancer compounds in children with cancer.",
+                               meaning=NCIT.C168889)
+    MRC = PermissibleValue(text="MRC",
+                             description="Medical Research Council. A publicly funded organization that is part of United Kingdom Research and Innovation, and is dedicated to improving human health through world-class medical research.",
+                             meaning=NCIT.C168892)
+
+    _defn = EnumDefinition(
+        name="DataContributorIdEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "BFM-SG",
+                PermissibleValue(text="BFM-SG",
+                                 description="A study group formed in 1975 by three individuals, Hansjorg Riehm in Berlin (B), Bernhard Kornhuber in Frankfurt (F) and Gunther Schellong in Munster (M), who initiated the first multicenter BFM trial. The BFM treatment concept was based on an intensive chemotherapeutic approach employing eight different drugs which led to a revolutionary increase in the survival of children and adolescents with acute lymphoblastic leukemia.",
+                                 meaning=NCIT.C168888) )
+
+class StudyIdEnum(EnumDefinitionImpl):
+
+    AAML03P1 = PermissibleValue(text="AAML03P1",
+                                       meaning=NCIT.C168936)
+    AAML0531 = PermissibleValue(text="AAML0531",
+                                       meaning=NCIT.C168937)
+    AAML1031 = PermissibleValue(text="AAML1031",
+                                       meaning=NCIT.C168938)
+    AMLBFM2004 = PermissibleValue(text="AMLBFM2004",
+                                           meaning=NCIT.C168939)
+    AMLBFM2012 = PermissibleValue(text="AMLBFM2012",
+                                           meaning=NCIT.C173250)
+
+    _defn = EnumDefinition(
+        name="StudyIdEnum",
+    )
+
+class TreatmentArmEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="TreatmentArmEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "MAP-GR",
+                PermissibleValue(text="MAP-GR",
+                                 description="A control arm for patients receiving a regimen of methotrexate, doxorubicin and cisplatin (MAP) after good response to the MAP regimen pre-operatively.",
+                                 meaning=NCIT.C186769) )
+        setattr(cls, "MAP-IFN-GR",
+                PermissibleValue(text="MAP-IFN-GR",
+                                 description="An experimental treatment arm for patients receiving a regimen of methotrexate, doxorubicin and cisplatin (MAP) plus interferon (IFN) post-operatively after good response to the MAP regimen pre-operatively.",
+                                 meaning=NCIT.C186770) )
+        setattr(cls, "MAP-PR",
+                PermissibleValue(text="MAP-PR",
+                                 description="A control arm for patients receiving a regimen of methotrexate, doxorubicin and cisplatin (MAP) after poor response to the MAP regimen pre-operatively.",
+                                 meaning=NCIT.C186771) )
+        setattr(cls, "MAP-IE-PR",
+                PermissibleValue(text="MAP-IE-PR",
+                                 description="An experimental treatment arm for patients receiving a regimen of methotrexate, doxorubicin and cisplatin (MAP) plus a regimen of ifosfamide and etoposide (IE) post-operatively after poor response to the MAP regimen pre-operatively.",
+                                 meaning=NCIT.C186772) )
+        setattr(cls, "MAP-NR",
+                PermissibleValue(text="MAP-NR",
+                                 description="A control arm for patients receiving a regimen of methotrexate, doxorubicin and cisplatin (MAP) with no response.",
+                                 meaning=NCIT.C186773) )
+
+class EnrolledStatusEnum(EnumDefinitionImpl):
+
+    ENROLLED = PermissibleValue(text="ENROLLED",
+                                       description="The study subject is enrolled.",
+                                       meaning=NCIT.C142715)
+    NOT_ENROLLED = PermissibleValue(text="NOT_ENROLLED",
+                                               description="The study subject is not enrolled.",
+                                               meaning=NCIT.C168929)
+    UNKNOWN = PermissibleValue(text="UNKNOWN",
+                                     description="Reported as unknown by the data contributor.",
+                                     meaning=NCIT.C17998)
+    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
+                                               description="Not provided or available.",
+                                               meaning=NCIT.C43234)
+
+    _defn = EnumDefinition(
+        name="EnrolledStatusEnum",
+    )
+
+class CensorStatusEnum(EnumDefinitionImpl):
+
+    CENSORED = PermissibleValue(text="CENSORED",
+                                       description="Subject is censored (i.e. has had no events(s))")
+    NOT_CENSORED = PermissibleValue(text="NOT_CENSORED",
+                                               description="Subject has had one or more events")
+    UNKNOWN = PermissibleValue(text="UNKNOWN",
+                                     description="Reported as unknown by the data contributor.",
+                                     meaning=NCIT.C17998)
+    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
+                                               description="Not provided or available.",
+                                               meaning=NCIT.C43234)
+
+    _defn = EnumDefinition(
+        name="CensorStatusEnum",
+    )
+
+class DataSourceEnum(EnumDefinitionImpl):
+
+    REGISTRY = PermissibleValue(text="REGISTRY",
+                                       description="Cancer registries gather a wide variety of specific information on cancer patients that can be analyzed to identify health disparity trends in cancer incidence, mortality and patient survival.",
+                                       meaning=NCIT.C15753)
+    THARAPEUTIC_TRIAL = PermissibleValue(text="THARAPEUTIC_TRIAL",
+                                                         description="A clinical study that involves administering of exposure to the agent/agents to subjects with particular disease to elucidate the most appropriate treatment for a specific medical condition, or to prolong or improve the patient's life.",
+                                                         meaning=NCIT.C39536)
+    UNKNOWN = PermissibleValue(text="UNKNOWN",
+                                     description="Reported as unknown by the data contributor.",
+                                     meaning=NCIT.C17998)
+    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
+                                               description="Not provided or available.",
+                                               meaning=NCIT.C43234)
+
+    _defn = EnumDefinition(
+        name="DataSourceEnum",
+    )
+
+class RandomizedStatusEnum(EnumDefinitionImpl):
+
+    RANDOMIZED = PermissibleValue(text="RANDOMIZED",
+                                           description="Assignment of subjects by chance to groups that receive different treatments.",
+                                           meaning=NCIT.C15417)
+    UNKNOWN = PermissibleValue(text="UNKNOWN",
+                                     description="Reported as unknown by the data contributor.",
+                                     meaning=NCIT.C17998)
+    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
+                                               description="Not provided or available.",
+                                               meaning=NCIT.C43234)
+
+    _defn = EnumDefinition(
+        name="RandomizedStatusEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "NON-RANDOMIZED",
+                PermissibleValue(text="NON-RANDOMIZED",
+                                 description="A clinical trial in which participants may choose or be assigned into groups by researchers. Their assignment is not random.",
+                                 meaning=NCIT.C93043) )
+
+class StudyPhaseEnum(EnumDefinitionImpl):
+
+    PILOT = PermissibleValue(text="PILOT",
+                                 description="The initial study examining a new method or treatment.",
+                                 meaning=NCIT.C15303)
+    PHASE_1 = PermissibleValue(text="PHASE_1",
+                                     description="A clinical research protocol designed to test a new biomedical intervention in a small group of people for the first time. A Phase I trial can be to establish the toxicity of a new treatment with escalating intensity of the treatment administered and/or to determine the side effects of a new treatment for a particular indication in subjects.",
+                                     meaning=NCIT.C15600)
+    PHASE_2 = PermissibleValue(text="PHASE_2",
+                                     description="A clinical research protocol designed to study a biomedical or behavioral intervention in a larger group of people (several hundred), to evaluate the drug's effectiveness for a particular indication in patients with the disease or condition under study, and to determine the common short-term side effects and risks associated with the intervention.",
+                                     meaning=NCIT.C15601)
+    PHASE_3 = PermissibleValue(text="PHASE_3",
+                                     description="A clinical research protocol designed to investigate the efficacy of the biomedical or behavioral intervention in large groups of human subjects (from several hundred to several thousand), to confirm efficacy, to monitor adverse reactions to the new medication or treatment regimen with respect to long-term use and by comparing the intervention to other standard or experimental interventions as well as to a placebo.",
+                                     meaning=NCIT.C15602)
+    UNKNOWN = PermissibleValue(text="UNKNOWN",
+                                     description="Reported as unknown by the data contributor.",
+                                     meaning=NCIT.C17998)
+    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
+                                               description="Not provided or available.",
+                                               meaning=NCIT.C43234)
+
+    _defn = EnumDefinition(
+        name="StudyPhaseEnum",
+    )
+
+class StudyTypeEnum(EnumDefinitionImpl):
+
+    FRONTLINE = PermissibleValue(text="FRONTLINE",
+                                         description="A clinical trial for previously untreated patients that studies the use of a first line of treatment.",
+                                         meaning=NCIT.C185306)
+    RETRIEVAL = PermissibleValue(text="RETRIEVAL",
+                                         description="A trial to assess the efficacy of reinduction therapy.",
+                                         meaning=NCIT.C185307)
+    UNKNOWN = PermissibleValue(text="UNKNOWN",
+                                     description="Reported as unknown by the data contributor.",
+                                     meaning=NCIT.C17998)
+    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
+                                               description="Not provided or available.",
+                                               meaning=NCIT.C43234)
+
+    _defn = EnumDefinition(
+        name="StudyTypeEnum",
+    )
+
 # Slots
 class slots:
     pass
 
-slots.sex = Slot(uri=EX.sex, name="sex", curie=EX.curie('sex'),
-                   model_uri=EX.sex, domain=None, range=Union[str, "SexEnum"])
+slots.sex = Slot(uri=DEFAULT_.sex, name="sex", curie=DEFAULT_.curie('sex'),
+                   model_uri=DEFAULT_.sex, domain=None, range=Union[str, "SexEnum"])
 
-slots.race = Slot(uri=EX.race, name="race", curie=EX.curie('race'),
-                   model_uri=EX.race, domain=None, range=Union[str, "RaceEnum"])
+slots.race = Slot(uri=DEFAULT_.race, name="race", curie=DEFAULT_.curie('race'),
+                   model_uri=DEFAULT_.race, domain=None, range=Union[str, "RaceEnum"])
 
-slots.race_other = Slot(uri=EX.race_other, name="race_other", curie=EX.curie('race_other'),
-                   model_uri=EX.race_other, domain=None, range=Optional[str])
+slots.race_other = Slot(uri=DEFAULT_.race_other, name="race_other", curie=DEFAULT_.curie('race_other'),
+                   model_uri=DEFAULT_.race_other, domain=None, range=Optional[str])
 
-slots.ethnicity = Slot(uri=EX.ethnicity, name="ethnicity", curie=EX.curie('ethnicity'),
-                   model_uri=EX.ethnicity, domain=None, range=Union[str, "EthnicityEnum"])
+slots.ethnicity = Slot(uri=DEFAULT_.ethnicity, name="ethnicity", curie=DEFAULT_.curie('ethnicity'),
+                   model_uri=DEFAULT_.ethnicity, domain=None, range=Union[str, "EthnicityEnum"])
+
+slots.prior_cancer = Slot(uri=DEFAULT_.prior_cancer, name="prior_cancer", curie=DEFAULT_.curie('prior_cancer'),
+                   model_uri=DEFAULT_.prior_cancer, domain=None, range=Union[str, "StandardEnum"])
+
+slots.relation = Slot(uri=DEFAULT_.relation, name="relation", curie=DEFAULT_.curie('relation'),
+                   model_uri=DEFAULT_.relation, domain=None, range=Optional[Union[str, "RelationEnum"]])
+
+slots.prior_cancer_type = Slot(uri=DEFAULT_.prior_cancer_type, name="prior_cancer_type", curie=DEFAULT_.curie('prior_cancer_type'),
+                   model_uri=DEFAULT_.prior_cancer_type, domain=None, range=Optional[str])
+
+slots.honest_broker_subject_id = Slot(uri=DEFAULT_.honest_broker_subject_id, name="honest_broker_subject_id", curie=DEFAULT_.curie('honest_broker_subject_id'),
+                   model_uri=DEFAULT_.honest_broker_subject_id, domain=None, range=URIRef)
+
+slots.consortium = Slot(uri=DEFAULT_.consortium, name="consortium", curie=DEFAULT_.curie('consortium'),
+                   model_uri=DEFAULT_.consortium, domain=None, range=Optional[Union[str, "ConsortiumEnum"]])
+
+slots.data_contributor_id = Slot(uri=DEFAULT_.data_contributor_id, name="data_contributor_id", curie=DEFAULT_.curie('data_contributor_id'),
+                   model_uri=DEFAULT_.data_contributor_id, domain=None, range=Optional[Union[str, "DataContributorIdEnum"]])
+
+slots.study_id = Slot(uri=DEFAULT_.study_id, name="study_id", curie=DEFAULT_.curie('study_id'),
+                   model_uri=DEFAULT_.study_id, domain=None, range=Optional[Union[str, "StudyIdEnum"]])
+
+slots.age_at_enrollment = Slot(uri=DEFAULT_.age_at_enrollment, name="age_at_enrollment", curie=DEFAULT_.curie('age_at_enrollment'),
+                   model_uri=DEFAULT_.age_at_enrollment, domain=None, range=Optional[int])
+
+slots.year_at_enrollment = Slot(uri=DEFAULT_.year_at_enrollment, name="year_at_enrollment", curie=DEFAULT_.curie('year_at_enrollment'),
+                   model_uri=DEFAULT_.year_at_enrollment, domain=None, range=Optional[int])
+
+slots.treatment_arm = Slot(uri=DEFAULT_.treatment_arm, name="treatment_arm", curie=DEFAULT_.curie('treatment_arm'),
+                   model_uri=DEFAULT_.treatment_arm, domain=None, range=Optional[Union[str, "TreatmentArmEnum"]])
+
+slots.enrolled_status = Slot(uri=DEFAULT_.enrolled_status, name="enrolled_status", curie=DEFAULT_.curie('enrolled_status'),
+                   model_uri=DEFAULT_.enrolled_status, domain=None, range=Optional[Union[str, "EnrolledStatusEnum"]])
+
+slots.efs_censor_status = Slot(uri=DEFAULT_.efs_censor_status, name="efs_censor_status", curie=DEFAULT_.curie('efs_censor_status'),
+                   model_uri=DEFAULT_.efs_censor_status, domain=None, range=Optional[Union[str, "CensorStatusEnum"]])
+
+slots.age_at_censor_status = Slot(uri=DEFAULT_.age_at_censor_status, name="age_at_censor_status", curie=DEFAULT_.curie('age_at_censor_status'),
+                   model_uri=DEFAULT_.age_at_censor_status, domain=None, range=Optional[int])
+
+slots.data_source = Slot(uri=DEFAULT_.data_source, name="data_source", curie=DEFAULT_.curie('data_source'),
+                   model_uri=DEFAULT_.data_source, domain=None, range=Optional[Union[str, "DataSourceEnum"]])
+
+slots.randomized_status = Slot(uri=DEFAULT_.randomized_status, name="randomized_status", curie=DEFAULT_.curie('randomized_status'),
+                   model_uri=DEFAULT_.randomized_status, domain=None, range=Optional[Union[str, "RandomizedStatusEnum"]])
+
+slots.study_phase = Slot(uri=DEFAULT_.study_phase, name="study_phase", curie=DEFAULT_.curie('study_phase'),
+                   model_uri=DEFAULT_.study_phase, domain=None, range=Optional[Union[str, "StudyPhaseEnum"]])
+
+slots.study_type = Slot(uri=DEFAULT_.study_type, name="study_type", curie=DEFAULT_.curie('study_type'),
+                   model_uri=DEFAULT_.study_type, domain=None, range=Optional[Union[str, "StudyTypeEnum"]])
