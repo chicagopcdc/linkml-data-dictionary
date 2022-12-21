@@ -1,4 +1,4 @@
-id: https://w3id.org/pcdc/model
+id: https://w3id.org/pcdc/model 
 title: LinkML Data Dictionary model
 name: data-dictionary
 license: https://creativecommons.org/licenses/by-nc/4.0/
@@ -10,7 +10,7 @@ prefixes:
  ex: https://example.org/linkml/hello-world/ 
  ncit: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
 
-default_prefix: ex 
+# default_prefix: ex 
 default_curi_maps:
  - semweb_context
 default_range: string
@@ -21,7 +21,7 @@ imports:
 classes:
   Demographic:
    description: demographic information about an individual
-   class_uri: schema:Demographic
+   class_uri: schema:Demographic # see if we actually need this/ how this is used
    slots:
     - sex
     - race
