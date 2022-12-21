@@ -1,5 +1,5 @@
 # Auto generated from data_dictionary.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-12-14T12:45:01
+# Generation date: 2022-12-14T13:08:58
 # Schema: data-dictionary
 #
 # id: https://w3id.org/pcdc/model
@@ -35,7 +35,7 @@ EX = CurieNamespace('ex', 'https://example.org/linkml/hello-world/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 NCIT = CurieNamespace('ncit', 'https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=')
 SCHEMA = CurieNamespace('schema', 'https://schema.org/')
-DEFAULT_ = EX
+DEFAULT_ = CurieNamespace('', 'https://w3id.org/pcdc/model/')
 
 
 # Types
@@ -54,7 +54,7 @@ class Demographic(YAMLRoot):
     class_class_uri: ClassVar[URIRef] = SCHEMA.Demographic
     class_class_curie: ClassVar[str] = "schema:Demographic"
     class_name: ClassVar[str] = "Demographic"
-    class_model_uri: ClassVar[URIRef] = EX.Demographic
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Demographic")
 
     sex: Union[str, "SexEnum"] = None
     race: Union[str, "RaceEnum"] = None
@@ -163,14 +163,14 @@ class EthnicityEnum(EnumDefinitionImpl):
 class slots:
     pass
 
-slots.sex = Slot(uri=EX.sex, name="sex", curie=EX.curie('sex'),
-                   model_uri=EX.sex, domain=None, range=Union[str, "SexEnum"])
+slots.sex = Slot(uri=DEFAULT_.sex, name="sex", curie=DEFAULT_.curie('sex'),
+                   model_uri=DEFAULT_.sex, domain=None, range=Union[str, "SexEnum"])
 
-slots.race = Slot(uri=EX.race, name="race", curie=EX.curie('race'),
-                   model_uri=EX.race, domain=None, range=Union[str, "RaceEnum"])
+slots.race = Slot(uri=DEFAULT_.race, name="race", curie=DEFAULT_.curie('race'),
+                   model_uri=DEFAULT_.race, domain=None, range=Union[str, "RaceEnum"])
 
-slots.race_other = Slot(uri=EX.race_other, name="race_other", curie=EX.curie('race_other'),
-                   model_uri=EX.race_other, domain=None, range=Optional[str])
+slots.race_other = Slot(uri=DEFAULT_.race_other, name="race_other", curie=DEFAULT_.curie('race_other'),
+                   model_uri=DEFAULT_.race_other, domain=None, range=Optional[str])
 
-slots.ethnicity = Slot(uri=EX.ethnicity, name="ethnicity", curie=EX.curie('ethnicity'),
-                   model_uri=EX.ethnicity, domain=None, range=Union[str, "EthnicityEnum"])
+slots.ethnicity = Slot(uri=DEFAULT_.ethnicity, name="ethnicity", curie=DEFAULT_.curie('ethnicity'),
+                   model_uri=DEFAULT_.ethnicity, domain=None, range=Union[str, "EthnicityEnum"])
