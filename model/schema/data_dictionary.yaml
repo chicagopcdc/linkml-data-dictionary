@@ -1,0 +1,109 @@
+id: https://w3id.org/pcdc/model
+title: LinkML Data Dictionary model
+name: data-dictionary
+license: https://creativecommons.org/licenses/by-nc/4.0/
+version: 0.0.1
+
+prefixes:
+ linkml: https://w3id.org/linkml/
+ schema: https://schema.org/
+ ex: https://example.org/linkml/hello-world/ 
+ ncit: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
+
+default_prefix: ex 
+default_curi_maps:
+ - semweb_context
+default_range: string
+
+imports:
+ - linkml:types
+
+classes:
+  Demographic:
+   description: demographic information about an individual
+   class_uri: schema:Demographic
+   slots:
+    - sex
+    - race
+    - race_other
+    - ethnicity
+
+slots:
+  sex:
+    description: The biological sex of the subject.
+    range: SexEnum
+    required: True
+  race:
+    description: A group of people who share physical characteristics, such as skin color and facial features. They may also share similar social or cultural identities and ancestral backgrounds. There are many racial groups, and a person may belong to or identify with more than one group. Some diseases, such as cancer, may be more common in certain races than in others. (Source NCI Dictionary of Cancer Terms)
+    range: RaceEnum
+    required: True
+  race_other:
+    description: Specify the "Other" RACE
+  ethnicity:
+    description: The social and cultural characteristics, backgrounds, or experiences shared by a group of people. These include language, religion, beliefs, values, and behaviors that are often handed down from one generation to the next. Some conditions or diseases, such as cancer, may be more common in certain ethnic groups than in others. (Source NCI Dictionary of Cancer Terms)
+    range: EthnicityEnum
+    required: True
+
+enums:
+  SexEnum:
+    permissible_values:
+      MALE:
+        description: A person who belongs to the sex that normally produces sperm. The term is used to indicate biological sex distinctions, cultural gender role distinctions, or both.
+        meaning: ncit:C20197
+      FEMALE:
+        description: A person who belongs to the sex that normally produces ova. The term is used to indicate biological sex distinctions, or cultural gender role distinctions, or both.
+        meaning: ncit:C16576
+      UNDIFFERENTIATED:
+        description: Sex could not be determined; not uniquely defined; undifferentiated.
+        meaning: ncit:C41438 
+      UNKNOWN:
+        description: Reported as unknown by the data contributor.
+        meaning: ncit:C17998
+      NOT_REPORTED:
+        description: Not provided or available.
+        meaning: ncit:C43234
+  RaceEnum:
+    permissible_values:
+      AMERICAN_INDIAN_OR_ALASKA_NATIVE:
+        description: A person having origins in any of the original peoples of North and South America (including Central America) and who maintains tribal affiliation or community attachment. (OMB)
+        meaning: ncit:C41259
+      ASIAN:
+        description: A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent, including for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam. (OMB)
+        meaning: ncit:C41260
+      BLACK_OR_AFRICAN_AMERICAN:
+        description: A person having origins in any of the Black racial groups of Africa. Terms such as "Haitian" or "Negro" can be used in addition to "Black or African American". (OMB)
+        meaning: ncit:C16352
+      MULTIRACIAL:
+        description: Having ancestors of several or various races.
+        meaning: ncit:C67109
+      NATIVE_HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER:
+        description: A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands. (OMB)
+        meaning: ncit:C41219
+      WHITE:
+        description: A person having origins in any of the original peoples of Europe, the Middle East, or North Africa. (OMB)
+        meaning: ncit:C41261
+      OTHER:
+        description: Different than the one(s) previously specified or mentioned.
+        meaning: ncit:C17649
+      UNKNOWN:
+        description: Reported as unknown by the data contributor.
+        meaning: ncit:C17998
+      NOT_REPORTED:
+        description: Not provided or available.
+        meaning: ncit:C43234
+  EthnicityEnum:
+    permissible_values:
+      HISPANIC_OR_LATINO:
+        description: A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race. The term, "Spanish origin," can be used in addition to "Hispanic or Latino." (OMB)
+        meaning: ncit:C17459
+      NOT_HISPANIC_OR_LATINO:
+        description: A person not of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race.
+        meaning: ncit:C41222
+      UNKNOWN:
+        description: Reported as unknown by the data contributor.
+        meaning: ncit:C17998
+      NOT_REPORTED: 
+        description: Not provided or available.
+        meaning: ncit:C43234
+
+
