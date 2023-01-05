@@ -1,5 +1,5 @@
 # Auto generated from data_dictionary.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-12-21T15:10:42
+# Generation date: 2023-01-05T10:52:11
 # Schema: data-dictionary
 #
 # id: https://w3id.org/pcdc/model
@@ -41,7 +41,7 @@ DEFAULT_ = CurieNamespace('', 'https://w3id.org/pcdc/model/')
 # Types
 
 # Class references
-class SubjectCharacteristicsHonestBrokerSubjectId(extended_str):
+class SubjectsHonestBrokerSubjectId(extended_str):
     pass
 
 
@@ -96,15 +96,15 @@ class FamilyMedicalHistory(YAMLRoot):
     class_name: ClassVar[str] = "FamilyMedicalHistory"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/FamilyMedicalHistory")
 
-    prior_cancer: Union[str, "StandardEnum"] = None
+    prior_cancer: Union[str, "YesNoUnknownNotReportedEnum"] = None
     relation: Optional[Union[str, "RelationEnum"]] = None
     prior_cancer_type: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.prior_cancer):
             self.MissingRequiredField("prior_cancer")
-        if not isinstance(self.prior_cancer, StandardEnum):
-            self.prior_cancer = StandardEnum(self.prior_cancer)
+        if not isinstance(self.prior_cancer, YesNoUnknownNotReportedEnum):
+            self.prior_cancer = YesNoUnknownNotReportedEnum(self.prior_cancer)
 
         if self.relation is not None and not isinstance(self.relation, RelationEnum):
             self.relation = RelationEnum(self.relation)
@@ -116,15 +116,15 @@ class FamilyMedicalHistory(YAMLRoot):
 
 
 @dataclass
-class SubjectCharacteristics(YAMLRoot):
+class Subjects(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = SCHEMA.SubjectCharacteristics
-    class_class_curie: ClassVar[str] = "schema:SubjectCharacteristics"
-    class_name: ClassVar[str] = "SubjectCharacteristics"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/SubjectCharacteristics")
+    class_class_uri: ClassVar[URIRef] = SCHEMA.Subjects
+    class_class_curie: ClassVar[str] = "schema:Subjects"
+    class_name: ClassVar[str] = "Subjects"
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Subjects")
 
-    honest_broker_subject_id: Union[str, SubjectCharacteristicsHonestBrokerSubjectId] = None
+    honest_broker_subject_id: Union[str, SubjectsHonestBrokerSubjectId] = None
     consortium: Optional[Union[str, "ConsortiumEnum"]] = None
     data_contributor_id: Optional[Union[str, "DataContributorIdEnum"]] = None
     study_id: Optional[Union[str, "StudyIdEnum"]] = None
@@ -142,8 +142,8 @@ class SubjectCharacteristics(YAMLRoot):
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.honest_broker_subject_id):
             self.MissingRequiredField("honest_broker_subject_id")
-        if not isinstance(self.honest_broker_subject_id, SubjectCharacteristicsHonestBrokerSubjectId):
-            self.honest_broker_subject_id = SubjectCharacteristicsHonestBrokerSubjectId(self.honest_broker_subject_id)
+        if not isinstance(self.honest_broker_subject_id, SubjectsHonestBrokerSubjectId):
+            self.honest_broker_subject_id = SubjectsHonestBrokerSubjectId(self.honest_broker_subject_id)
 
         if self.consortium is not None and not isinstance(self.consortium, ConsortiumEnum):
             self.consortium = ConsortiumEnum(self.consortium)
@@ -190,121 +190,137 @@ class SubjectCharacteristics(YAMLRoot):
 # Enumerations
 class SexEnum(EnumDefinitionImpl):
 
-    MALE = PermissibleValue(text="MALE",
+    Male = PermissibleValue(text="Male",
                                description="A person who belongs to the sex that normally produces sperm. The term is used to indicate biological sex distinctions, cultural gender role distinctions, or both.",
                                meaning=NCIT.C20197)
-    FEMALE = PermissibleValue(text="FEMALE",
+    Female = PermissibleValue(text="Female",
                                    description="A person who belongs to the sex that normally produces ova. The term is used to indicate biological sex distinctions, or cultural gender role distinctions, or both.",
                                    meaning=NCIT.C16576)
-    UNDIFFERENTIATED = PermissibleValue(text="UNDIFFERENTIATED",
+    Undifferentiated = PermissibleValue(text="Undifferentiated",
                                                        description="Sex could not be determined; not uniquely defined; undifferentiated.",
                                                        meaning=NCIT.C41438)
-    UNKNOWN = PermissibleValue(text="UNKNOWN",
+    Unknown = PermissibleValue(text="Unknown",
                                      description="Reported as unknown by the data contributor.",
                                      meaning=NCIT.C17998)
-    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
-                                               description="Not provided or available.",
-                                               meaning=NCIT.C43234)
 
     _defn = EnumDefinition(
         name="SexEnum",
     )
 
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Not Reported",
+                PermissibleValue(text="Not Reported",
+                                 description="Not provided or available.",
+                                 meaning=NCIT.C43234) )
+
 class RaceEnum(EnumDefinitionImpl):
 
-    AMERICAN_INDIAN_OR_ALASKA_NATIVE = PermissibleValue(text="AMERICAN_INDIAN_OR_ALASKA_NATIVE",
-                                                                                       description="A person having origins in any of the original peoples of North and South America (including Central America) and who maintains tribal affiliation or community attachment. (OMB)",
-                                                                                       meaning=NCIT.C41259)
-    ASIAN = PermissibleValue(text="ASIAN",
+    Asian = PermissibleValue(text="Asian",
                                  description="A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent, including for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam. (OMB)",
                                  meaning=NCIT.C41260)
-    BLACK_OR_AFRICAN_AMERICAN = PermissibleValue(text="BLACK_OR_AFRICAN_AMERICAN",
-                                                                         description="A person having origins in any of the Black racial groups of Africa. Terms such as "Haitian" or "Negro" can be used in addition to "Black or African American". (OMB)",
-                                                                         meaning=NCIT.C16352)
-    MULTIRACIAL = PermissibleValue(text="MULTIRACIAL",
+    Multiracial = PermissibleValue(text="Multiracial",
                                              description="Having ancestors of several or various races.",
                                              meaning=NCIT.C67109)
-    NATIVE_HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER = PermissibleValue(text="NATIVE_HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER",
-                                                                                                         description="A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands. (OMB)",
-                                                                                                         meaning=NCIT.C41219)
-    WHITE = PermissibleValue(text="WHITE",
+    White = PermissibleValue(text="White",
                                  description="A person having origins in any of the original peoples of Europe, the Middle East, or North Africa. (OMB)",
                                  meaning=NCIT.C41261)
-    OTHER = PermissibleValue(text="OTHER",
+    Other = PermissibleValue(text="Other",
                                  description="Different than the one(s) previously specified or mentioned.",
                                  meaning=NCIT.C17649)
-    UNKNOWN = PermissibleValue(text="UNKNOWN",
+    Unknown = PermissibleValue(text="Unknown",
                                      description="Reported as unknown by the data contributor.",
                                      meaning=NCIT.C17998)
-    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
-                                               description="Not provided or available.",
-                                               meaning=NCIT.C43234)
 
     _defn = EnumDefinition(
         name="RaceEnum",
     )
 
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "American Indian or Alaska Native",
+                PermissibleValue(text="American Indian or Alaska Native",
+                                 description="A person having origins in any of the original peoples of North and South America (including Central America) and who maintains tribal affiliation or community attachment. (OMB)",
+                                 meaning=NCIT.C41259) )
+        setattr(cls, "Black or African American",
+                PermissibleValue(text="Black or African American",
+                                 description="A person having origins in any of the Black racial groups of Africa. Terms such as "Haitian" or "Negro" can be used in addition to "Black or African American". (OMB)",
+                                 meaning=NCIT.C16352) )
+        setattr(cls, "Native Hawaiian or Other Pacific Islander",
+                PermissibleValue(text="Native Hawaiian or Other Pacific Islander",
+                                 description="A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands. (OMB)",
+                                 meaning=NCIT.C41219) )
+        setattr(cls, "Not Reported",
+                PermissibleValue(text="Not Reported",
+                                 description="Not provided or available.",
+                                 meaning=NCIT.C43234) )
+
 class EthnicityEnum(EnumDefinitionImpl):
 
-    HISPANIC_OR_LATINO = PermissibleValue(text="HISPANIC_OR_LATINO",
-                                                           description="A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race. The term, "Spanish origin," can be used in addition to "Hispanic or Latino." (OMB)",
-                                                           meaning=NCIT.C17459)
-    NOT_HISPANIC_OR_LATINO = PermissibleValue(text="NOT_HISPANIC_OR_LATINO",
-                                                                   description="A person not of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race.",
-                                                                   meaning=NCIT.C41222)
-    UNKNOWN = PermissibleValue(text="UNKNOWN",
+    Unknown = PermissibleValue(text="Unknown",
                                      description="Reported as unknown by the data contributor.",
                                      meaning=NCIT.C17998)
-    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
-                                               description="Not provided or available.",
-                                               meaning=NCIT.C43234)
 
     _defn = EnumDefinition(
         name="EthnicityEnum",
     )
 
-class StandardEnum(EnumDefinitionImpl):
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Hispanic or Latino",
+                PermissibleValue(text="Hispanic or Latino",
+                                 description="A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race. The term, "Spanish origin," can be used in addition to "Hispanic or Latino." (OMB)",
+                                 meaning=NCIT.C17459) )
+        setattr(cls, "Not Hispanic or Latino",
+                PermissibleValue(text="Not Hispanic or Latino",
+                                 description="A person not of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race.",
+                                 meaning=NCIT.C41222) )
+        setattr(cls, "Not Reported",
+                PermissibleValue(text="Not Reported",
+                                 description="Not provided or available.",
+                                 meaning=NCIT.C43234) )
 
-    UNKNOWN = PermissibleValue(text="UNKNOWN",
+class YesNoUnknownNotReportedEnum(EnumDefinitionImpl):
+
+    Yes = PermissibleValue(text="Yes",
+                             description="The affirmative response to a question.",
+                             meaning=NCIT.C49488)
+    No = PermissibleValue(text="No",
+                           description="The non-affirmative response to a question.",
+                           meaning=NCIT.C49487)
+    Unknown = PermissibleValue(text="Unknown",
                                      description="Reported as unknown by the data contributor.",
                                      meaning=NCIT.C17998)
-    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
-                                               description="Not provided or available.",
-                                               meaning=NCIT.C43234)
 
     _defn = EnumDefinition(
-        name="StandardEnum",
+        name="YesNoUnknownNotReportedEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "True",
-                PermissibleValue(text="True",
-                                 description="The affirmative response to a question.",
-                                 meaning=NCIT.C49488) )
-        setattr(cls, "False",
-                PermissibleValue(text="False",
-                                 description="The non-affirmative response to a question.",
-                                 meaning=NCIT.C49487) )
+        setattr(cls, "Not Reported",
+                PermissibleValue(text="Not Reported",
+                                 description="Not provided or available.",
+                                 meaning=NCIT.C43234) )
 
 class RelationEnum(EnumDefinitionImpl):
 
-    FATHER = PermissibleValue(text="FATHER",
+    Father = PermissibleValue(text="Father",
                                    description="A male who contributes to the genetic makeup of his offspring through the fertilization of an ovum by his sperm.",
                                    meaning=NCIT.C96572)
-    MOTHER = PermissibleValue(text="MOTHER",
+    Mother = PermissibleValue(text="Mother",
                                    description="A female who contributes to the genetic makeup of her offspring from the fertilization of her ovum.",
                                    meaning=NCIT.C96580)
-    BROTHER = PermissibleValue(text="BROTHER",
+    Brother = PermissibleValue(text="Brother",
                                      description="A male who shares with his sibling the genetic makeup inherited from one or both of their shared biological parents.",
                                      meaning=NCIT.C96570)
-    SISTER = PermissibleValue(text="SISTER",
+    Sister = PermissibleValue(text="Sister",
                                    description="A female who shares with her sibling the genetic makeup inherited from one or both of their shared biological parents.",
                                    meaning=NCIT.C96586)
-    SON = PermissibleValue(text="SON",
+    Son = PermissibleValue(text="Son",
                              description="A male progeny with genetic makeup inherited from the parent.",
                              meaning=NCIT.C150888)
-    DAUGHTER = PermissibleValue(text="DAUGHTER",
+    Daughter = PermissibleValue(text="Daughter",
                                        description="A female progeny with genetic makeup inherited from the parent.",
                                        meaning=NCIT.C150887)
 
@@ -314,9 +330,9 @@ class RelationEnum(EnumDefinitionImpl):
 
 class ConsortiumEnum(EnumDefinitionImpl):
 
-    INSTRUCT = PermissibleValue(text="INSTRUCT",
+    INSTRuCT = PermissibleValue(text="INSTRuCT",
                                        description="International Soft Tissue Sarcoma Consortium (INSTRuCT)")
-    MAGIC = PermissibleValue(text="MAGIC",
+    MaGIC = PermissibleValue(text="MaGIC",
                                  description="Malignant Germ Cell International Consortium (MaGIC)")
     INRG = PermissibleValue(text="INRG",
                                description="International Neuroblastoma Risk Group (INRG)")
@@ -324,18 +340,22 @@ class ConsortiumEnum(EnumDefinitionImpl):
                                  description="Hodgkin Lymphoma Data Collaboration (NODAL)")
     INTERACT = PermissibleValue(text="INTERACT",
                                        description="International Pediatric Acute Myeloid Leukemia Consortium (INTERACT)")
-    HIBISCUS = PermissibleValue(text="HIBISCUS",
+    HIBiSCus = PermissibleValue(text="HIBiSCus",
                                        description="Harmonization International Bone Sarcoma Consortium (HIBiSCus)")
-    INSPIRE = PermissibleValue(text="INSPIRE",
+    INSPiRE = PermissibleValue(text="INSPiRE",
                                      description="International Central Nervous System Pediatric Research Consortium (INSPiRE)")
-    GLOBAL_REACH = PermissibleValue(text="GLOBAL_REACH",
-                                               description="Global Retinoblastoma Alliance for Children (Global REACH)")
     C3P = PermissibleValue(text="C3P",
                              description="Consortium for Childhood Cancer Predisposition (C3P)")
 
     _defn = EnumDefinition(
         name="ConsortiumEnum",
     )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Global REACH",
+                PermissibleValue(text="Global REACH",
+                                 description="Global Retinoblastoma Alliance for Children (Global REACH)") )
 
 class DataContributorIdEnum(EnumDefinitionImpl):
 
@@ -411,70 +431,82 @@ class TreatmentArmEnum(EnumDefinitionImpl):
 
 class EnrolledStatusEnum(EnumDefinitionImpl):
 
-    ENROLLED = PermissibleValue(text="ENROLLED",
+    Enrolled = PermissibleValue(text="Enrolled",
                                        description="The study subject is enrolled.",
                                        meaning=NCIT.C142715)
-    NOT_ENROLLED = PermissibleValue(text="NOT_ENROLLED",
-                                               description="The study subject is not enrolled.",
-                                               meaning=NCIT.C168929)
-    UNKNOWN = PermissibleValue(text="UNKNOWN",
+    Unknown = PermissibleValue(text="Unknown",
                                      description="Reported as unknown by the data contributor.",
                                      meaning=NCIT.C17998)
-    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
-                                               description="Not provided or available.",
-                                               meaning=NCIT.C43234)
 
     _defn = EnumDefinition(
         name="EnrolledStatusEnum",
     )
 
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Not Enrolled",
+                PermissibleValue(text="Not Enrolled",
+                                 description="The study subject is not enrolled.",
+                                 meaning=NCIT.C168929) )
+        setattr(cls, "Not Reported",
+                PermissibleValue(text="Not Reported",
+                                 description="Not provided or available.",
+                                 meaning=NCIT.C43234) )
+
 class CensorStatusEnum(EnumDefinitionImpl):
 
-    CENSORED = PermissibleValue(text="CENSORED",
+    Censored = PermissibleValue(text="Censored",
                                        description="Subject is censored (i.e. has had no events(s))")
-    NOT_CENSORED = PermissibleValue(text="NOT_CENSORED",
-                                               description="Subject has had one or more events")
-    UNKNOWN = PermissibleValue(text="UNKNOWN",
+    Unknown = PermissibleValue(text="Unknown",
                                      description="Reported as unknown by the data contributor.",
                                      meaning=NCIT.C17998)
-    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
-                                               description="Not provided or available.",
-                                               meaning=NCIT.C43234)
 
     _defn = EnumDefinition(
         name="CensorStatusEnum",
     )
 
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Not Censored",
+                PermissibleValue(text="Not Censored",
+                                 description="Subject has had one or more events") )
+        setattr(cls, "Not Reported",
+                PermissibleValue(text="Not Reported",
+                                 description="Not provided or available.",
+                                 meaning=NCIT.C43234) )
+
 class DataSourceEnum(EnumDefinitionImpl):
 
-    REGISTRY = PermissibleValue(text="REGISTRY",
+    Registry = PermissibleValue(text="Registry",
                                        description="Cancer registries gather a wide variety of specific information on cancer patients that can be analyzed to identify health disparity trends in cancer incidence, mortality and patient survival.",
                                        meaning=NCIT.C15753)
-    THARAPEUTIC_TRIAL = PermissibleValue(text="THARAPEUTIC_TRIAL",
-                                                         description="A clinical study that involves administering of exposure to the agent/agents to subjects with particular disease to elucidate the most appropriate treatment for a specific medical condition, or to prolong or improve the patient's life.",
-                                                         meaning=NCIT.C39536)
-    UNKNOWN = PermissibleValue(text="UNKNOWN",
+    Unknown = PermissibleValue(text="Unknown",
                                      description="Reported as unknown by the data contributor.",
                                      meaning=NCIT.C17998)
-    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
-                                               description="Not provided or available.",
-                                               meaning=NCIT.C43234)
 
     _defn = EnumDefinition(
         name="DataSourceEnum",
     )
 
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Therapeutic Trial",
+                PermissibleValue(text="Therapeutic Trial",
+                                 description="A clinical study that involves administering of exposure to the agent/agents to subjects with particular disease to elucidate the most appropriate treatment for a specific medical condition, or to prolong or improve the patient's life.",
+                                 meaning=NCIT.C39536) )
+        setattr(cls, "Not Reported",
+                PermissibleValue(text="Not Reported",
+                                 description="Not provided or available.",
+                                 meaning=NCIT.C43234) )
+
 class RandomizedStatusEnum(EnumDefinitionImpl):
 
-    RANDOMIZED = PermissibleValue(text="RANDOMIZED",
+    Randomized = PermissibleValue(text="Randomized",
                                            description="Assignment of subjects by chance to groups that receive different treatments.",
                                            meaning=NCIT.C15417)
-    UNKNOWN = PermissibleValue(text="UNKNOWN",
+    Unknown = PermissibleValue(text="Unknown",
                                      description="Reported as unknown by the data contributor.",
                                      meaning=NCIT.C17998)
-    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
-                                               description="Not provided or available.",
-                                               meaning=NCIT.C43234)
 
     _defn = EnumDefinition(
         name="RandomizedStatusEnum",
@@ -482,54 +514,69 @@ class RandomizedStatusEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "NON-RANDOMIZED",
-                PermissibleValue(text="NON-RANDOMIZED",
+        setattr(cls, "Non-Randomized",
+                PermissibleValue(text="Non-Randomized",
                                  description="A clinical trial in which participants may choose or be assigned into groups by researchers. Their assignment is not random.",
                                  meaning=NCIT.C93043) )
+        setattr(cls, "Not Reported",
+                PermissibleValue(text="Not Reported",
+                                 description="Not provided or available.",
+                                 meaning=NCIT.C43234) )
 
 class StudyPhaseEnum(EnumDefinitionImpl):
 
-    PILOT = PermissibleValue(text="PILOT",
+    Pilot = PermissibleValue(text="Pilot",
                                  description="The initial study examining a new method or treatment.",
                                  meaning=NCIT.C15303)
-    PHASE_1 = PermissibleValue(text="PHASE_1",
-                                     description="A clinical research protocol designed to test a new biomedical intervention in a small group of people for the first time. A Phase I trial can be to establish the toxicity of a new treatment with escalating intensity of the treatment administered and/or to determine the side effects of a new treatment for a particular indication in subjects.",
-                                     meaning=NCIT.C15600)
-    PHASE_2 = PermissibleValue(text="PHASE_2",
-                                     description="A clinical research protocol designed to study a biomedical or behavioral intervention in a larger group of people (several hundred), to evaluate the drug's effectiveness for a particular indication in patients with the disease or condition under study, and to determine the common short-term side effects and risks associated with the intervention.",
-                                     meaning=NCIT.C15601)
-    PHASE_3 = PermissibleValue(text="PHASE_3",
-                                     description="A clinical research protocol designed to investigate the efficacy of the biomedical or behavioral intervention in large groups of human subjects (from several hundred to several thousand), to confirm efficacy, to monitor adverse reactions to the new medication or treatment regimen with respect to long-term use and by comparing the intervention to other standard or experimental interventions as well as to a placebo.",
-                                     meaning=NCIT.C15602)
-    UNKNOWN = PermissibleValue(text="UNKNOWN",
+    Unknown = PermissibleValue(text="Unknown",
                                      description="Reported as unknown by the data contributor.",
                                      meaning=NCIT.C17998)
-    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
-                                               description="Not provided or available.",
-                                               meaning=NCIT.C43234)
 
     _defn = EnumDefinition(
         name="StudyPhaseEnum",
     )
 
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Phase 1",
+                PermissibleValue(text="Phase 1",
+                                 description="A clinical research protocol designed to test a new biomedical intervention in a small group of people for the first time. A Phase I trial can be to establish the toxicity of a new treatment with escalating intensity of the treatment administered and/or to determine the side effects of a new treatment for a particular indication in subjects.",
+                                 meaning=NCIT.C15600) )
+        setattr(cls, "Phase 2",
+                PermissibleValue(text="Phase 2",
+                                 description="A clinical research protocol designed to study a biomedical or behavioral intervention in a larger group of people (several hundred), to evaluate the drug's effectiveness for a particular indication in patients with the disease or condition under study, and to determine the common short-term side effects and risks associated with the intervention.",
+                                 meaning=NCIT.C15601) )
+        setattr(cls, "Phase 3",
+                PermissibleValue(text="Phase 3",
+                                 description="A clinical research protocol designed to investigate the efficacy of the biomedical or behavioral intervention in large groups of human subjects (from several hundred to several thousand), to confirm efficacy, to monitor adverse reactions to the new medication or treatment regimen with respect to long-term use and by comparing the intervention to other standard or experimental interventions as well as to a placebo.",
+                                 meaning=NCIT.C15602) )
+        setattr(cls, "Not Reported",
+                PermissibleValue(text="Not Reported",
+                                 description="Not provided or available.",
+                                 meaning=NCIT.C43234) )
+
 class StudyTypeEnum(EnumDefinitionImpl):
 
-    FRONTLINE = PermissibleValue(text="FRONTLINE",
+    Frontline = PermissibleValue(text="Frontline",
                                          description="A clinical trial for previously untreated patients that studies the use of a first line of treatment.",
                                          meaning=NCIT.C185306)
-    RETRIEVAL = PermissibleValue(text="RETRIEVAL",
+    Retrieval = PermissibleValue(text="Retrieval",
                                          description="A trial to assess the efficacy of reinduction therapy.",
                                          meaning=NCIT.C185307)
-    UNKNOWN = PermissibleValue(text="UNKNOWN",
+    Unknown = PermissibleValue(text="Unknown",
                                      description="Reported as unknown by the data contributor.",
                                      meaning=NCIT.C17998)
-    NOT_REPORTED = PermissibleValue(text="NOT_REPORTED",
-                                               description="Not provided or available.",
-                                               meaning=NCIT.C43234)
 
     _defn = EnumDefinition(
         name="StudyTypeEnum",
     )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Not Reported",
+                PermissibleValue(text="Not Reported",
+                                 description="Not provided or available.",
+                                 meaning=NCIT.C43234) )
 
 # Slots
 class slots:
@@ -548,7 +595,7 @@ slots.ethnicity = Slot(uri=DEFAULT_.ethnicity, name="ethnicity", curie=DEFAULT_.
                    model_uri=DEFAULT_.ethnicity, domain=None, range=Union[str, "EthnicityEnum"])
 
 slots.prior_cancer = Slot(uri=DEFAULT_.prior_cancer, name="prior_cancer", curie=DEFAULT_.curie('prior_cancer'),
-                   model_uri=DEFAULT_.prior_cancer, domain=None, range=Union[str, "StandardEnum"])
+                   model_uri=DEFAULT_.prior_cancer, domain=None, range=Union[str, "YesNoUnknownNotReportedEnum"])
 
 slots.relation = Slot(uri=DEFAULT_.relation, name="relation", curie=DEFAULT_.curie('relation'),
                    model_uri=DEFAULT_.relation, domain=None, range=Optional[Union[str, "RelationEnum"]])
