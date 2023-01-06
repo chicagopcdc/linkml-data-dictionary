@@ -1,5 +1,5 @@
 # Auto generated from data_dictionary.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-01-05T10:52:11
+# Generation date: 2023-01-06T12:53:19
 # Schema: data-dictionary
 #
 # id: https://w3id.org/pcdc/model
@@ -41,21 +41,21 @@ DEFAULT_ = CurieNamespace('', 'https://w3id.org/pcdc/model/')
 # Types
 
 # Class references
-class SubjectsHonestBrokerSubjectId(extended_str):
+class SubjectHonestBrokerSubjectId(extended_str):
     pass
 
 
 @dataclass
-class Demographic(YAMLRoot):
+class Person(YAMLRoot):
     """
     demographic information about an individual
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = SCHEMA.Demographic
-    class_class_curie: ClassVar[str] = "schema:Demographic"
-    class_name: ClassVar[str] = "Demographic"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Demographic")
+    class_class_uri: ClassVar[URIRef] = SCHEMA.Person
+    class_class_curie: ClassVar[str] = "schema:Person"
+    class_name: ClassVar[str] = "Person"
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Person")
 
     sex: Union[str, "SexEnum"] = None
     race: Union[str, "RaceEnum"] = None
@@ -116,15 +116,15 @@ class FamilyMedicalHistory(YAMLRoot):
 
 
 @dataclass
-class Subjects(YAMLRoot):
+class Subject(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = SCHEMA.Subjects
-    class_class_curie: ClassVar[str] = "schema:Subjects"
-    class_name: ClassVar[str] = "Subjects"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Subjects")
+    class_class_uri: ClassVar[URIRef] = SCHEMA.Subject
+    class_class_curie: ClassVar[str] = "schema:Subject"
+    class_name: ClassVar[str] = "Subject"
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Subject")
 
-    honest_broker_subject_id: Union[str, SubjectsHonestBrokerSubjectId] = None
+    honest_broker_subject_id: Union[str, SubjectHonestBrokerSubjectId] = None
     consortium: Optional[Union[str, "ConsortiumEnum"]] = None
     data_contributor_id: Optional[Union[str, "DataContributorIdEnum"]] = None
     study_id: Optional[Union[str, "StudyIdEnum"]] = None
@@ -142,8 +142,8 @@ class Subjects(YAMLRoot):
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.honest_broker_subject_id):
             self.MissingRequiredField("honest_broker_subject_id")
-        if not isinstance(self.honest_broker_subject_id, SubjectsHonestBrokerSubjectId):
-            self.honest_broker_subject_id = SubjectsHonestBrokerSubjectId(self.honest_broker_subject_id)
+        if not isinstance(self.honest_broker_subject_id, SubjectHonestBrokerSubjectId):
+            self.honest_broker_subject_id = SubjectHonestBrokerSubjectId(self.honest_broker_subject_id)
 
         if self.consortium is not None and not isinstance(self.consortium, ConsortiumEnum):
             self.consortium = ConsortiumEnum(self.consortium)

@@ -19,14 +19,16 @@ imports:
  - linkml:types
 
 classes:
-  Demographic:
+ # Create abstract base class Named Thing with submitter_id 
+  Person:
    description: demographic information about an individual
-   class_uri: schema:Demographic # see if we actually need this/ how this is used
+   class_uri: schema:Person # see if we actually need this/ how this is used
    slots:
     - sex
     - race
     - race_other
     - ethnicity
+   
   FamilyMedicalHistory:
     description: prior cancer information of a first-degree relative
     class_uri: schema:FamilyMedicalHistory
@@ -34,9 +36,10 @@ classes:
       - prior_cancer
       - relation
       - prior_cancer_type
-  Subjects:
+       # subjects slot (which does get used by other classes) range subject
+  Subject:
     description:
-    class_uri: schema:Subjects
+    class_uri: schema:Subject
     slots:
       - honest_broker_subject_id
       - consortium
@@ -52,6 +55,7 @@ classes:
       - randomized_status
       - study_phase
       - study_type
+      # persons slot (or inline attribute) with a range of person
 
 
 slots:
