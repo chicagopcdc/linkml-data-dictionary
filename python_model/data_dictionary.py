@@ -1,5 +1,5 @@
 # Auto generated from data_dictionary.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-01-06T12:53:19
+# Generation date: 2023-01-09T12:59:07
 # Schema: data-dictionary
 #
 # id: https://w3id.org/pcdc/model
@@ -46,7 +46,29 @@ class SubjectHonestBrokerSubjectId(extended_str):
 
 
 @dataclass
-class Person(YAMLRoot):
+class NamedThing(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/NamedThing")
+    class_class_curie: ClassVar[str] = None
+    class_name: ClassVar[str] = "NamedThing"
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/NamedThing")
+
+    submitter_id: Optional[str] = None
+    type: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.submitter_id is not None and not isinstance(self.submitter_id, str):
+            self.submitter_id = str(self.submitter_id)
+
+        if self.type is not None and not isinstance(self.type, str):
+            self.type = str(self.type)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Person(NamedThing):
     """
     demographic information about an individual
     """
@@ -85,7 +107,7 @@ class Person(YAMLRoot):
 
 
 @dataclass
-class FamilyMedicalHistory(YAMLRoot):
+class FamilyMedicalHistory(NamedThing):
     """
     prior cancer information of a first-degree relative
     """
@@ -99,6 +121,7 @@ class FamilyMedicalHistory(YAMLRoot):
     prior_cancer: Union[str, "YesNoUnknownNotReportedEnum"] = None
     relation: Optional[Union[str, "RelationEnum"]] = None
     prior_cancer_type: Optional[str] = None
+    subjects: Optional[Union[Union[str, SubjectHonestBrokerSubjectId], List[Union[str, SubjectHonestBrokerSubjectId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.prior_cancer):
@@ -112,11 +135,15 @@ class FamilyMedicalHistory(YAMLRoot):
         if self.prior_cancer_type is not None and not isinstance(self.prior_cancer_type, str):
             self.prior_cancer_type = str(self.prior_cancer_type)
 
+        if not isinstance(self.subjects, list):
+            self.subjects = [self.subjects] if self.subjects is not None else []
+        self.subjects = [v if isinstance(v, SubjectHonestBrokerSubjectId) else SubjectHonestBrokerSubjectId(v) for v in self.subjects]
+
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class Subject(YAMLRoot):
+class Subject(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = SCHEMA.Subject
@@ -138,6 +165,7 @@ class Subject(YAMLRoot):
     randomized_status: Optional[Union[str, "RandomizedStatusEnum"]] = None
     study_phase: Optional[Union[str, "StudyPhaseEnum"]] = None
     study_type: Optional[Union[str, "StudyTypeEnum"]] = None
+    persons: Optional[Union[dict, Person]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.honest_broker_subject_id):
@@ -183,6 +211,88 @@ class Subject(YAMLRoot):
 
         if self.study_type is not None and not isinstance(self.study_type, StudyTypeEnum):
             self.study_type = StudyTypeEnum(self.study_type)
+
+        if self.persons is not None and not isinstance(self.persons, Person):
+            self.persons = Person(**as_dict(self.persons))
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Timing(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SCHEMA.Timing
+    class_class_curie: ClassVar[str] = "schema:Timing"
+    class_name: ClassVar[str] = "Timing"
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Timing")
+
+    age_at_course_anc_500: Optional[int] = None
+    age_at_course_end: Optional[int] = None
+    age_at_course_start: Optional[int] = None
+    age_at_cyle_end: Optional[int] = None
+    age_at_cycle_start: Optional[int] = None
+    age_at_disease_phase: Optional[int] = None
+    age_at_txassign: Optional[int] = None
+    course: Optional[Union[str, "CourseEnum"]] = None
+    course_number: Optional[int] = None
+    cycle_number: Optional[int] = None
+    disease_phase: Optional[Union[str, "DiseasePhaseEnum"]] = None
+    disease_phase_number: Optional[int] = None
+    timing_type: Optional[str] = None
+    timings: Optional[Union[dict, "Timing"]] = None
+    year_at_disease_phase: Optional[int] = None
+    subjects: Optional[Union[Union[str, SubjectHonestBrokerSubjectId], List[Union[str, SubjectHonestBrokerSubjectId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.age_at_course_anc_500 is not None and not isinstance(self.age_at_course_anc_500, int):
+            self.age_at_course_anc_500 = int(self.age_at_course_anc_500)
+
+        if self.age_at_course_end is not None and not isinstance(self.age_at_course_end, int):
+            self.age_at_course_end = int(self.age_at_course_end)
+
+        if self.age_at_course_start is not None and not isinstance(self.age_at_course_start, int):
+            self.age_at_course_start = int(self.age_at_course_start)
+
+        if self.age_at_cyle_end is not None and not isinstance(self.age_at_cyle_end, int):
+            self.age_at_cyle_end = int(self.age_at_cyle_end)
+
+        if self.age_at_cycle_start is not None and not isinstance(self.age_at_cycle_start, int):
+            self.age_at_cycle_start = int(self.age_at_cycle_start)
+
+        if self.age_at_disease_phase is not None and not isinstance(self.age_at_disease_phase, int):
+            self.age_at_disease_phase = int(self.age_at_disease_phase)
+
+        if self.age_at_txassign is not None and not isinstance(self.age_at_txassign, int):
+            self.age_at_txassign = int(self.age_at_txassign)
+
+        if self.course is not None and not isinstance(self.course, CourseEnum):
+            self.course = CourseEnum(self.course)
+
+        if self.course_number is not None and not isinstance(self.course_number, int):
+            self.course_number = int(self.course_number)
+
+        if self.cycle_number is not None and not isinstance(self.cycle_number, int):
+            self.cycle_number = int(self.cycle_number)
+
+        if self.disease_phase is not None and not isinstance(self.disease_phase, DiseasePhaseEnum):
+            self.disease_phase = DiseasePhaseEnum(self.disease_phase)
+
+        if self.disease_phase_number is not None and not isinstance(self.disease_phase_number, int):
+            self.disease_phase_number = int(self.disease_phase_number)
+
+        if self.timing_type is not None and not isinstance(self.timing_type, str):
+            self.timing_type = str(self.timing_type)
+
+        if self.timings is not None and not isinstance(self.timings, Timing):
+            self.timings = Timing(**as_dict(self.timings))
+
+        if self.year_at_disease_phase is not None and not isinstance(self.year_at_disease_phase, int):
+            self.year_at_disease_phase = int(self.year_at_disease_phase)
+
+        if not isinstance(self.subjects, list):
+            self.subjects = [self.subjects] if self.subjects is not None else []
+        self.subjects = [v if isinstance(v, SubjectHonestBrokerSubjectId) else SubjectHonestBrokerSubjectId(v) for v in self.subjects]
 
         super().__post_init__(**kwargs)
 
@@ -578,9 +688,120 @@ class StudyTypeEnum(EnumDefinitionImpl):
                                  description="Not provided or available.",
                                  meaning=NCIT.C43234) )
 
+class CourseEnum(EnumDefinitionImpl):
+
+    Prephase = PermissibleValue(text="Prephase",
+                                       description="A chemotherapy treatment administered prior to the definitive chemotherapy treatment.",
+                                       meaning=NCIT.C168826)
+    Induction = PermissibleValue(text="Induction",
+                                         description="The first choice of treatment for a particular type of cancer.",
+                                         meaning=NCIT.C158876)
+    Maintenance = PermissibleValue(text="Maintenance",
+                                             description="Continuation of treatment for an extended period of time to prevent relapse.",
+                                             meaning=NCIT.C15688)
+    Consolidation = PermissibleValue(text="Consolidation",
+                                                 description="Treatment that is given after initial therapy to kill any remaining cancer cells.",
+                                                 meaning=NCIT.C15679)
+    Intensification = PermissibleValue(text="Intensification",
+                                                     description="A second round of intense chemotherapy as part of consolidation therapy.",
+                                                     meaning=NCIT.C173105)
+    Adjuvant = PermissibleValue(text="Adjuvant",
+                                       description="Chemotherapy that is administered subsequent to the main treatment plan to minimize or prevent disease recurrence.",
+                                       meaning=NCIT.C15360)
+    Continuation = PermissibleValue(text="Continuation",
+                                               description="A period in a clinical study during which subjects receive continuation therapy. This therapy is usually different from the therapy given during the induction phase and administered over a longer period of time.",
+                                               meaning=NCIT.C123452)
+    Chemotherapy = PermissibleValue(text="Chemotherapy",
+                                               description="The use of synthetic or naturally-occurring chemicals for the treatment of diseases.",
+                                               meaning=NCIT.C15632)
+    Chemoimmunotherapy = PermissibleValue(text="Chemoimmunotherapy",
+                                                           description="Chemotherapy combined with immunotherapy. Chemotherapy uses different drugs to kill or slow the growth of cancer cells; immunotherapy uses treatments to stimulate or restore the ability of the immune system to fight cancer.",
+                                                           meaning=NCIT.C94251)
+    Immunotherapy = PermissibleValue(text="Immunotherapy",
+                                                 description="Therapy designed to induce changes in a patient's immune status in order to treat disease.",
+                                                 meaning=NCIT.C15262)
+
+    _defn = EnumDefinition(
+        name="CourseEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Neo-Adjuvant",
+                PermissibleValue(text="Neo-Adjuvant",
+                                 description="Therapy administered prior to the initial therapy.",
+                                 meaning=NCIT.C158708) )
+        setattr(cls, "Bridge/Preconsolidation",
+                PermissibleValue(text="Bridge/Preconsolidation") )
+        setattr(cls, "Delayed Intensification",
+                PermissibleValue(text="Delayed Intensification",
+                                 description="A repeat of the first two months of induction and consolidation chemotherapy in high-risk and very-high-risk ALL protocols with the goal of eliminating residual drug-resistant cells",
+                                 meaning=NCIT.C178270) )
+        setattr(cls, "Interim Maintenance",
+                PermissibleValue(text="Interim Maintenance",
+                                 description="A less intense phase of chemotherapy in between each course of delayed intensification.",
+                                 meaning=NCIT.C178069) )
+        setattr(cls, "Post-Consolidation",
+                PermissibleValue(text="Post-Consolidation") )
+        setattr(cls, "Palliative Treatment",
+                PermissibleValue(text="Palliative Treatment",
+                                 description="The patient- and family-centered active holistic care of patients with advanced, progressive disease. Essential components of Palliative Care are:pain and symptom control, communication regarding treatment and alternatives, prognosis, and available services, rehabilitation services, care that addresses treatment and palliative concerns, intellectual, emotional, social, and spiritual needs, terminal care, support in bereavement. The goal of Palliative Care is an achievement of the best quality of life for patients and their families.",
+                                 meaning=NCIT.C15292) )
+        setattr(cls, "Chemotherapy Window",
+                PermissibleValue(text="Chemotherapy Window") )
+        setattr(cls, "Stem Cell Transplant Conditioning",
+                PermissibleValue(text="Stem Cell Transplant Conditioning",
+                                 description="A regimen that can be used as a conditioning regimen for hematopoietic stem cell transplantation (HSCT).",
+                                 meaning=NCIT.C168794) )
+        setattr(cls, "Chemotherapy Alone",
+                PermissibleValue(text="Chemotherapy Alone",
+                                 description="The use of synthetic or naturally-occurring chemicals for the treatment of diseases.",
+                                 meaning=NCIT.C15632) )
+        setattr(cls, "Investigational Agent",
+                PermissibleValue(text="Investigational Agent",
+                                 description="A new drug or biological drug that is used in a clinical investigation. The term also includes a biological product that is used in vitro for diagnostic purposes.",
+                                 meaning=NCIT.C49135) )
+        setattr(cls, "Radiation Therapy",
+                PermissibleValue(text="Radiation Therapy",
+                                 description="Treatment of a disease by means of exposure of the target or the whole body to radiation. Radiation therapy is often used as part of curative therapy and occasionally as a component of palliative treatment for cancer. Other uses include total body irradiation prior to transplantation.",
+                                 meaning=NCIT.C15313) )
+
+class DiseasePhaseEnum(EnumDefinitionImpl):
+
+    Relapse = PermissibleValue(text="Relapse",
+                                     description="The return of a disease after a period of remission.",
+                                     meaning=NCIT.C38155)
+    Progression = PermissibleValue(text="Progression",
+                                             description="The worsening of a disease over time.",
+                                             meaning=NCIT.C17747)
+    Refractory = PermissibleValue(text="Refractory",
+                                           description="Not responding to treatment.",
+                                           meaning=NCIT.C38014)
+
+    _defn = EnumDefinition(
+        name="DiseasePhaseEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Initial Diagnosis",
+                PermissibleValue(text="Initial Diagnosis",
+                                 description="The first diagnosis of the individual's condition.",
+                                 meaning=NCIT.C156813) )
+        setattr(cls, "Relapse/Progression",
+                PermissibleValue(text="Relapse/Progression",
+                                 description="Either the return of the disease or the progression of the disease.",
+                                 meaning=NCIT.C174991) )
+
 # Slots
 class slots:
     pass
+
+slots.submitter_id = Slot(uri=DEFAULT_.submitter_id, name="submitter_id", curie=DEFAULT_.curie('submitter_id'),
+                   model_uri=DEFAULT_.submitter_id, domain=None, range=Optional[str])
+
+slots.type = Slot(uri=DEFAULT_.type, name="type", curie=DEFAULT_.curie('type'),
+                   model_uri=DEFAULT_.type, domain=None, range=Optional[str])
 
 slots.sex = Slot(uri=DEFAULT_.sex, name="sex", curie=DEFAULT_.curie('sex'),
                    model_uri=DEFAULT_.sex, domain=None, range=Union[str, "SexEnum"])
@@ -602,6 +823,9 @@ slots.relation = Slot(uri=DEFAULT_.relation, name="relation", curie=DEFAULT_.cur
 
 slots.prior_cancer_type = Slot(uri=DEFAULT_.prior_cancer_type, name="prior_cancer_type", curie=DEFAULT_.curie('prior_cancer_type'),
                    model_uri=DEFAULT_.prior_cancer_type, domain=None, range=Optional[str])
+
+slots.subjects = Slot(uri=DEFAULT_.subjects, name="subjects", curie=DEFAULT_.curie('subjects'),
+                   model_uri=DEFAULT_.subjects, domain=None, range=Optional[Union[Union[str, SubjectHonestBrokerSubjectId], List[Union[str, SubjectHonestBrokerSubjectId]]]])
 
 slots.honest_broker_subject_id = Slot(uri=DEFAULT_.honest_broker_subject_id, name="honest_broker_subject_id", curie=DEFAULT_.curie('honest_broker_subject_id'),
                    model_uri=DEFAULT_.honest_broker_subject_id, domain=None, range=URIRef)
@@ -644,3 +868,51 @@ slots.study_phase = Slot(uri=DEFAULT_.study_phase, name="study_phase", curie=DEF
 
 slots.study_type = Slot(uri=DEFAULT_.study_type, name="study_type", curie=DEFAULT_.curie('study_type'),
                    model_uri=DEFAULT_.study_type, domain=None, range=Optional[Union[str, "StudyTypeEnum"]])
+
+slots.age_at_course_anc_500 = Slot(uri=DEFAULT_.age_at_course_anc_500, name="age_at_course_anc_500", curie=DEFAULT_.curie('age_at_course_anc_500'),
+                   model_uri=DEFAULT_.age_at_course_anc_500, domain=None, range=Optional[int])
+
+slots.age_at_course_end = Slot(uri=DEFAULT_.age_at_course_end, name="age_at_course_end", curie=DEFAULT_.curie('age_at_course_end'),
+                   model_uri=DEFAULT_.age_at_course_end, domain=None, range=Optional[int])
+
+slots.age_at_course_start = Slot(uri=DEFAULT_.age_at_course_start, name="age_at_course_start", curie=DEFAULT_.curie('age_at_course_start'),
+                   model_uri=DEFAULT_.age_at_course_start, domain=None, range=Optional[int])
+
+slots.age_at_cyle_end = Slot(uri=DEFAULT_.age_at_cyle_end, name="age_at_cyle_end", curie=DEFAULT_.curie('age_at_cyle_end'),
+                   model_uri=DEFAULT_.age_at_cyle_end, domain=None, range=Optional[int])
+
+slots.age_at_cycle_start = Slot(uri=DEFAULT_.age_at_cycle_start, name="age_at_cycle_start", curie=DEFAULT_.curie('age_at_cycle_start'),
+                   model_uri=DEFAULT_.age_at_cycle_start, domain=None, range=Optional[int])
+
+slots.age_at_disease_phase = Slot(uri=DEFAULT_.age_at_disease_phase, name="age_at_disease_phase", curie=DEFAULT_.curie('age_at_disease_phase'),
+                   model_uri=DEFAULT_.age_at_disease_phase, domain=None, range=Optional[int])
+
+slots.age_at_txassign = Slot(uri=DEFAULT_.age_at_txassign, name="age_at_txassign", curie=DEFAULT_.curie('age_at_txassign'),
+                   model_uri=DEFAULT_.age_at_txassign, domain=None, range=Optional[int])
+
+slots.course = Slot(uri=DEFAULT_.course, name="course", curie=DEFAULT_.curie('course'),
+                   model_uri=DEFAULT_.course, domain=None, range=Optional[Union[str, "CourseEnum"]])
+
+slots.course_number = Slot(uri=DEFAULT_.course_number, name="course_number", curie=DEFAULT_.curie('course_number'),
+                   model_uri=DEFAULT_.course_number, domain=None, range=Optional[int])
+
+slots.cycle_number = Slot(uri=DEFAULT_.cycle_number, name="cycle_number", curie=DEFAULT_.curie('cycle_number'),
+                   model_uri=DEFAULT_.cycle_number, domain=None, range=Optional[int])
+
+slots.disease_phase = Slot(uri=DEFAULT_.disease_phase, name="disease_phase", curie=DEFAULT_.curie('disease_phase'),
+                   model_uri=DEFAULT_.disease_phase, domain=None, range=Optional[Union[str, "DiseasePhaseEnum"]])
+
+slots.disease_phase_number = Slot(uri=DEFAULT_.disease_phase_number, name="disease_phase_number", curie=DEFAULT_.curie('disease_phase_number'),
+                   model_uri=DEFAULT_.disease_phase_number, domain=None, range=Optional[int])
+
+slots.timing_type = Slot(uri=DEFAULT_.timing_type, name="timing_type", curie=DEFAULT_.curie('timing_type'),
+                   model_uri=DEFAULT_.timing_type, domain=None, range=Optional[str])
+
+slots.timings = Slot(uri=DEFAULT_.timings, name="timings", curie=DEFAULT_.curie('timings'),
+                   model_uri=DEFAULT_.timings, domain=None, range=Optional[Union[dict, Timing]])
+
+slots.year_at_disease_phase = Slot(uri=DEFAULT_.year_at_disease_phase, name="year_at_disease_phase", curie=DEFAULT_.curie('year_at_disease_phase'),
+                   model_uri=DEFAULT_.year_at_disease_phase, domain=None, range=Optional[int])
+
+slots.subject__persons = Slot(uri=DEFAULT_.persons, name="subject__persons", curie=DEFAULT_.curie('persons'),
+                   model_uri=DEFAULT_.subject__persons, domain=None, range=Optional[Union[dict, Person]])
