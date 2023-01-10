@@ -42,7 +42,13 @@ classes:
       - prior_cancer
       - relation
       - prior_cancer_type
-      - subjects 
+#      - subjects 
+    slot_usage:
+      subjects:
+        range: Subject
+        multivalued: False
+        required: True
+
   Subject:
     is_a: NamedThing
     description:
@@ -65,16 +71,17 @@ classes:
     attributes:
       persons: # not setting multivalued = true because subject cannot have multiple persons but person can be multiple subjects
         range: Person
+        required: True
   Timing: # NOTE: at some point we want to create a parent class that Disease Phase Timing and Course Timing classes inherit from so that we don't have to lump this all together
     is_a: NamedThing
     description: 
     class_uri: schema:Timing
     slots:
       - age_at_course_anc_500
-      - age_at_course_end
       - age_at_course_start
-      - age_at_cyle_end
+      - age_at_course_end
       - age_at_cycle_start
+      - age_at_cyle_end
       - age_at_disease_phase
       - age_at_txassign
       - course
@@ -85,7 +92,12 @@ classes:
       - timing_type
       - timings
       - year_at_disease_phase
-      - subjects
+      # - subjects
+    slot_usage:
+      subjects:
+        range: Subject
+        multivalued: False
+        required: True
 
 slots:
   # NamedThing
@@ -119,8 +131,9 @@ slots:
   prior_cancer_type: # string default
     description: The type of prior cancer from the medical history of the relative of the subject.
   subjects: # list of subject objects
-    multivalued: True
+    multivalued: False
     range: Subject
+    required: False
   # Subject Slots
   honest_broker_subject_id:
     description: The identifier assigned to the subject by the honest broker--an individual, organization or system acting for, or on behalf of, a covered entity to collect and provide health information to research investigators in such a manner whereby it would not be reasonably possible for the investigators or others to identify the corresponding patients-subjects directly or indirectly. The honest broker cannot be one of the investigators. The information provided to the investigators by the honest broker may incorporate linkage codes to permit information collation and/or subsequent inquiries (i.e., a "re-identification code"), however the information linking this re-identification code to the patient's identity must be retained by the honest broker and subsequent inquiries are conducted through the honest broker. (Source NCI Thersaurus)

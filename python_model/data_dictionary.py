@@ -1,5 +1,5 @@
 # Auto generated from data_dictionary.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-01-09T13:02:41
+# Generation date: 2023-01-10T14:50:18
 # Schema: data-dictionary
 #
 # id: https://w3id.org/pcdc/model
@@ -25,7 +25,6 @@ from linkml_runtime.utils.curienamespace import CurieNamespace
 from linkml_runtime.linkml_model.types import Integer, String
 
 metamodel_version = "1.7.0"
-version = "0.0.1"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -79,12 +78,17 @@ class Person(NamedThing):
     class_name: ClassVar[str] = "Person"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Person")
 
+    ethnicity: Union[str, "EthnicityEnum"] = None
     sex: Union[str, "SexEnum"] = None
     race: Union[str, "RaceEnum"] = None
-    ethnicity: Union[str, "EthnicityEnum"] = None
     race_other: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.ethnicity):
+            self.MissingRequiredField("ethnicity")
+        if not isinstance(self.ethnicity, EthnicityEnum):
+            self.ethnicity = EthnicityEnum(self.ethnicity)
+
         if self._is_empty(self.sex):
             self.MissingRequiredField("sex")
         if not isinstance(self.sex, SexEnum):
@@ -94,11 +98,6 @@ class Person(NamedThing):
             self.MissingRequiredField("race")
         if not isinstance(self.race, RaceEnum):
             self.race = RaceEnum(self.race)
-
-        if self._is_empty(self.ethnicity):
-            self.MissingRequiredField("ethnicity")
-        if not isinstance(self.ethnicity, EthnicityEnum):
-            self.ethnicity = EthnicityEnum(self.ethnicity)
 
         if self.race_other is not None and not isinstance(self.race_other, str):
             self.race_other = str(self.race_other)
@@ -119,9 +118,9 @@ class FamilyMedicalHistory(NamedThing):
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/FamilyMedicalHistory")
 
     prior_cancer: Union[str, "YesNoUnknownNotReportedEnum"] = None
+    subjects: Union[str, SubjectHonestBrokerSubjectId] = None
     relation: Optional[Union[str, "RelationEnum"]] = None
     prior_cancer_type: Optional[str] = None
-    subjects: Optional[Union[Union[str, SubjectHonestBrokerSubjectId], List[Union[str, SubjectHonestBrokerSubjectId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.prior_cancer):
@@ -129,15 +128,16 @@ class FamilyMedicalHistory(NamedThing):
         if not isinstance(self.prior_cancer, YesNoUnknownNotReportedEnum):
             self.prior_cancer = YesNoUnknownNotReportedEnum(self.prior_cancer)
 
+        if self._is_empty(self.subjects):
+            self.MissingRequiredField("subjects")
+        if not isinstance(self.subjects, SubjectHonestBrokerSubjectId):
+            self.subjects = SubjectHonestBrokerSubjectId(self.subjects)
+
         if self.relation is not None and not isinstance(self.relation, RelationEnum):
             self.relation = RelationEnum(self.relation)
 
         if self.prior_cancer_type is not None and not isinstance(self.prior_cancer_type, str):
             self.prior_cancer_type = str(self.prior_cancer_type)
-
-        if not isinstance(self.subjects, list):
-            self.subjects = [self.subjects] if self.subjects is not None else []
-        self.subjects = [v if isinstance(v, SubjectHonestBrokerSubjectId) else SubjectHonestBrokerSubjectId(v) for v in self.subjects]
 
         super().__post_init__(**kwargs)
 
@@ -152,6 +152,7 @@ class Subject(NamedThing):
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Subject")
 
     honest_broker_subject_id: Union[str, SubjectHonestBrokerSubjectId] = None
+    persons: Union[dict, Person] = None
     consortium: Optional[Union[str, "ConsortiumEnum"]] = None
     data_contributor_id: Optional[Union[str, "DataContributorIdEnum"]] = None
     study_id: Optional[Union[str, "StudyIdEnum"]] = None
@@ -165,13 +166,17 @@ class Subject(NamedThing):
     randomized_status: Optional[Union[str, "RandomizedStatusEnum"]] = None
     study_phase: Optional[Union[str, "StudyPhaseEnum"]] = None
     study_type: Optional[Union[str, "StudyTypeEnum"]] = None
-    persons: Optional[Union[dict, Person]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.honest_broker_subject_id):
             self.MissingRequiredField("honest_broker_subject_id")
         if not isinstance(self.honest_broker_subject_id, SubjectHonestBrokerSubjectId):
             self.honest_broker_subject_id = SubjectHonestBrokerSubjectId(self.honest_broker_subject_id)
+
+        if self._is_empty(self.persons):
+            self.MissingRequiredField("persons")
+        if not isinstance(self.persons, Person):
+            self.persons = Person(**as_dict(self.persons))
 
         if self.consortium is not None and not isinstance(self.consortium, ConsortiumEnum):
             self.consortium = ConsortiumEnum(self.consortium)
@@ -212,9 +217,6 @@ class Subject(NamedThing):
         if self.study_type is not None and not isinstance(self.study_type, StudyTypeEnum):
             self.study_type = StudyTypeEnum(self.study_type)
 
-        if self.persons is not None and not isinstance(self.persons, Person):
-            self.persons = Person(**as_dict(self.persons))
-
         super().__post_init__(**kwargs)
 
 
@@ -227,6 +229,7 @@ class Timing(NamedThing):
     class_name: ClassVar[str] = "Timing"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Timing")
 
+    subjects: Union[str, SubjectHonestBrokerSubjectId] = None
     age_at_course_anc_500: Optional[int] = None
     age_at_course_end: Optional[int] = None
     age_at_course_start: Optional[int] = None
@@ -242,9 +245,13 @@ class Timing(NamedThing):
     timing_type: Optional[str] = None
     timings: Optional[Union[dict, "Timing"]] = None
     year_at_disease_phase: Optional[int] = None
-    subjects: Optional[Union[Union[str, SubjectHonestBrokerSubjectId], List[Union[str, SubjectHonestBrokerSubjectId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.subjects):
+            self.MissingRequiredField("subjects")
+        if not isinstance(self.subjects, SubjectHonestBrokerSubjectId):
+            self.subjects = SubjectHonestBrokerSubjectId(self.subjects)
+
         if self.age_at_course_anc_500 is not None and not isinstance(self.age_at_course_anc_500, int):
             self.age_at_course_anc_500 = int(self.age_at_course_anc_500)
 
@@ -289,10 +296,6 @@ class Timing(NamedThing):
 
         if self.year_at_disease_phase is not None and not isinstance(self.year_at_disease_phase, int):
             self.year_at_disease_phase = int(self.year_at_disease_phase)
-
-        if not isinstance(self.subjects, list):
-            self.subjects = [self.subjects] if self.subjects is not None else []
-        self.subjects = [v if isinstance(v, SubjectHonestBrokerSubjectId) else SubjectHonestBrokerSubjectId(v) for v in self.subjects]
 
         super().__post_init__(**kwargs)
 
@@ -825,7 +828,7 @@ slots.prior_cancer_type = Slot(uri=DEFAULT_.prior_cancer_type, name="prior_cance
                    model_uri=DEFAULT_.prior_cancer_type, domain=None, range=Optional[str])
 
 slots.subjects = Slot(uri=DEFAULT_.subjects, name="subjects", curie=DEFAULT_.curie('subjects'),
-                   model_uri=DEFAULT_.subjects, domain=None, range=Optional[Union[Union[str, SubjectHonestBrokerSubjectId], List[Union[str, SubjectHonestBrokerSubjectId]]]])
+                   model_uri=DEFAULT_.subjects, domain=None, range=Optional[Union[str, SubjectHonestBrokerSubjectId]])
 
 slots.honest_broker_subject_id = Slot(uri=DEFAULT_.honest_broker_subject_id, name="honest_broker_subject_id", curie=DEFAULT_.curie('honest_broker_subject_id'),
                    model_uri=DEFAULT_.honest_broker_subject_id, domain=None, range=URIRef)
@@ -915,4 +918,10 @@ slots.year_at_disease_phase = Slot(uri=DEFAULT_.year_at_disease_phase, name="yea
                    model_uri=DEFAULT_.year_at_disease_phase, domain=None, range=Optional[int])
 
 slots.subject__persons = Slot(uri=DEFAULT_.persons, name="subject__persons", curie=DEFAULT_.curie('persons'),
-                   model_uri=DEFAULT_.subject__persons, domain=None, range=Optional[Union[dict, Person]])
+                   model_uri=DEFAULT_.subject__persons, domain=None, range=Union[dict, Person])
+
+slots.FamilyMedicalHistory_subjects = Slot(uri=DEFAULT_.subjects, name="FamilyMedicalHistory_subjects", curie=DEFAULT_.curie('subjects'),
+                   model_uri=DEFAULT_.FamilyMedicalHistory_subjects, domain=FamilyMedicalHistory, range=Union[str, SubjectHonestBrokerSubjectId])
+
+slots.Timing_subjects = Slot(uri=DEFAULT_.subjects, name="Timing_subjects", curie=DEFAULT_.curie('subjects'),
+                   model_uri=DEFAULT_.Timing_subjects, domain=Timing, range=Union[str, SubjectHonestBrokerSubjectId])

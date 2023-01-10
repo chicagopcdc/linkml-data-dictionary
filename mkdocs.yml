@@ -1,6 +1,6 @@
 site_name: "model of the pcdc data dictionary"
 theme: readthedocs
-docs_dir: target/docs
+docs_dir: docs
 site_dir: docs
 nav:
   - Home: home.md
