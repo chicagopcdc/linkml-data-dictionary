@@ -19,25 +19,32 @@ imports:
  - linkml:types
 
 classes:
- # Create abstract base class Named Thing with submitter_id 
+  NamedThing:
+    abstract: true
+    slots:
+      - submitter_id
+      - type
   Person:
-   description: demographic information about an individual
-   class_uri: schema:Person # see if we actually need this/ how this is used
-   slots:
-    - sex
-    - race
-    - race_other
-    - ethnicity
-   
+    is_a: NamedThing
+    description: demographic information about an individual
+    class_uri: schema:Person # see if we actually need this/ how this is used
+    slots:
+      - sex
+      - race
+      - race_other
+      - ethnicity
+      # https://portal.pedscommons.org/DD?view=table shows we also have a projects attribute 
   FamilyMedicalHistory:
+    is_a: NamedThing
     description: prior cancer information of a first-degree relative
     class_uri: schema:FamilyMedicalHistory
     slots:
       - prior_cancer
       - relation
       - prior_cancer_type
-       # subjects slot (which does get used by other classes) range subject
+      - subjects 
   Subject:
+    is_a: NamedThing
     description:
     class_uri: schema:Subject
     slots:
@@ -55,10 +62,37 @@ classes:
       - randomized_status
       - study_phase
       - study_type
-      # persons slot (or inline attribute) with a range of person
-
+    attributes:
+      persons: # not setting multivalued = true because subject cannot have multiple persons but person can be multiple subjects
+        range: Person
+  Timing: # NOTE: at some point we want to create a parent class that Disease Phase Timing and Course Timing classes inherit from so that we don't have to lump this all together
+    is_a: NamedThing
+    description: 
+    class_uri: schema:Timing
+    slots:
+      - age_at_course_anc_500
+      - age_at_course_end
+      - age_at_course_start
+      - age_at_cyle_end
+      - age_at_cycle_start
+      - age_at_disease_phase
+      - age_at_txassign
+      - course
+      - course_number
+      - cycle_number
+      - disease_phase
+      - disease_phase_number
+      - timing_type
+      - timings
+      - year_at_disease_phase
+      - subjects
 
 slots:
+  # NamedThing
+  submitter_id:
+    description: PCDC internal event ID
+  type:
+    description: Default system-assigned property for each node
   # Demographic Slots
   sex:
     description: The biological sex of the subject.
@@ -84,6 +118,9 @@ slots:
     range: RelationEnum
   prior_cancer_type: # string default
     description: The type of prior cancer from the medical history of the relative of the subject.
+  subjects: # list of subject objects
+    multivalued: True
+    range: Subject
   # Subject Slots
   honest_broker_subject_id:
     description: The identifier assigned to the subject by the honest broker--an individual, organization or system acting for, or on behalf of, a covered entity to collect and provide health information to research investigators in such a manner whereby it would not be reasonably possible for the investigators or others to identify the corresponding patients-subjects directly or indirectly. The honest broker cannot be one of the investigators. The information provided to the investigators by the honest broker may incorporate linkage codes to permit information collation and/or subsequent inquiries (i.e., a "re-identification code"), however the information linking this re-identification code to the patient's identity must be retained by the honest broker and subsequent inquiries are conducted through the honest broker. (Source NCI Thersaurus)
@@ -127,6 +164,54 @@ slots:
   study_type:
     description: The nature of the investigation or the investigational use for which clinical study is being done.
     range: StudyTypeEnum
+  # Timing Slots
+  age_at_course_anc_500:
+    description: Age in Days When Neutrophil Count Exceeded 500 (ANC/mm3)
+    range: integer
+  age_at_course_end:
+    description: Age of subject (in days) at the end of the course.
+    range: integer
+  age_at_course_start:
+    description: Age of subject (in days) at the start of the course.
+    range: integer
+  age_at_cyle_end:
+    description: Age in Days at Cycle End
+    range: integer
+  age_at_cycle_start:
+    description: Age in Days at Cycle Start
+    range: integer
+  age_at_disease_phase:
+    description: Age of subject (in days) at the disease phase.
+    range: integer
+  age_at_txassign:
+    description: Age in Days at Treatment Assignment.
+    range: integer
+  course: 
+    description: The type of protocol treatment course administered.
+    range: CourseEnum
+  course_number:
+    description: The number assigned to a course of therapeutic agent administration, indicating where a particular course of treatment falls within a sequence of treatments.
+    range: integer
+  cycle_number:
+    description: Cycle Number
+    range: integer
+  disease_phase: 
+    description: The phase of the cancer treatment process during which relevant observations were recorded. This variable is used across domains to frame the timing of these longitudinal observations and reduce the number of redundant variables needed to report similar concepts (see "Disease Phase Timing and Course Table" in the documentation for additional guidance).
+    range: DiseasePhaseEnum
+  disease_phase_number:
+    description: The number of the disease phase.
+    range: integer # shouldn't there be a permissible set of numbers corresponding to the number of disease phases?
+  timing_type:
+    description: The time frame or phase the patient got a treatment or data have been collected
+    any_of: # can either be a course or a disease phase
+      - range: CourseEnum
+      - range: DiseasePhaseEnum
+  timings:
+    description: 
+    range: Timing # can reference a parent of the same type
+  year_at_disease_phase: 
+    description: Year of disease phase
+    range: integer
 
 enums:
   SexEnum:
@@ -382,3 +467,89 @@ enums:
       "Not Reported":
         description: Not provided or available.
         meaning: ncit:C43234
+  CourseEnum:
+    permissible_values:
+      "Neo-Adjuvant":
+        description: Therapy administered prior to the initial therapy.
+        meaning: ncit:C158708
+      "Prephase":
+        description: A chemotherapy treatment administered prior to the definitive chemotherapy treatment.
+        meaning: ncit:C168826
+      "Induction":
+        description: The first choice of treatment for a particular type of cancer.
+        meaning: ncit:C158876
+      "Bridge/Preconsolidation":
+        description: # no data
+        meaning: # no data
+      "Maintenance":
+        description: Continuation of treatment for an extended period of time to prevent relapse.
+        meaning: ncit:C15688
+      "Consolidation":
+        description: Treatment that is given after initial therapy to kill any remaining cancer cells.
+        meaning: ncit:C15679
+      "Intensification":
+        description: A second round of intense chemotherapy as part of consolidation therapy.
+        meaning: ncit:C173105
+      "Delayed Intensification":
+        description: A repeat of the first two months of induction and consolidation chemotherapy in high-risk and very-high-risk ALL protocols with the goal of eliminating residual drug-resistant cells
+        meaning: ncit:C178270
+      "Interim Maintenance":
+        description: A less intense phase of chemotherapy in between each course of delayed intensification.
+        meaning: ncit:C178069
+      "Adjuvant":
+        description: Chemotherapy that is administered subsequent to the main treatment plan to minimize or prevent disease recurrence.
+        meaning: ncit:C15360
+      "Post-Consolidation":
+        description: # no data 
+        meaning: # no data
+      "Continuation":
+        description: A period in a clinical study during which subjects receive continuation therapy. This therapy is usually different from the therapy given during the induction phase and administered over a longer period of time.
+        meaning: ncit:C123452
+      "Palliative Treatment":
+        description: The patient- and family-centered active holistic care of patients with advanced, progressive disease. Essential components of Palliative Care are:pain and symptom control, communication regarding treatment and alternatives, prognosis, and available services, rehabilitation services, care that addresses treatment and palliative concerns, intellectual, emotional, social, and spiritual needs, terminal care, support in bereavement. The goal of Palliative Care is an achievement of the best quality of life for patients and their families.
+        meaning: ncit:C15292
+      "Chemotherapy Window":
+        description: # no data
+        meaning: # no data
+      "Stem Cell Transplant Conditioning":
+        description: A regimen that can be used as a conditioning regimen for hematopoietic stem cell transplantation (HSCT).
+        meaning: ncit:C168794
+      # from here down were in red in the spreadsheet so I am not sure if  that means that they should not be included
+      "Chemotherapy": 
+        description: The use of synthetic or naturally-occurring chemicals for the treatment of diseases.
+        meaning: ncit:C15632
+      "Chemotherapy Alone":
+        description: The use of synthetic or naturally-occurring chemicals for the treatment of diseases.
+        meaning: ncit:C15632
+      "Investigational Agent": 
+        description: A new drug or biological drug that is used in a clinical investigation. The term also includes a biological product that is used in vitro for diagnostic purposes.
+        meaning: ncit:C49135
+      "Radiation Therapy":
+        description: Treatment of a disease by means of exposure of the target or the whole body to radiation. Radiation therapy is often used as part of curative therapy and occasionally as a component of palliative treatment for cancer. Other uses include total body irradiation prior to transplantation.
+        meaning: ncit:C15313
+      "Chemoimmunotherapy":
+        description: Chemotherapy combined with immunotherapy. Chemotherapy uses different drugs to kill or slow the growth of cancer cells; immunotherapy uses treatments to stimulate or restore the ability of the immune system to fight cancer.
+        meaning: ncit:C94251
+      "Immunotherapy":
+        description: Therapy designed to induce changes in a patient's immune status in order to treat disease.
+        meaning: ncit:C15262
+      # also these don't exactly match https://portal.pedscommons.org/DD?view=table, should there be an OTHER option?
+  DiseasePhaseEnum:
+    permissible_values:
+      "Initial Diagnosis":
+        description: The first diagnosis of the individual's condition.
+        meaning: ncit:C156813
+      "Relapse":
+        description: The return of a disease after a period of remission.
+        meaning: ncit:C38155
+      "Progression":
+        description: The worsening of a disease over time.
+        meaning: ncit:C17747
+      "Relapse/Progression":
+        description: Either the return of the disease or the progression of the disease.
+        meaning: ncit:C174991
+      "Refractory":
+        description: Not responding to treatment.
+        meaning: ncit:C38014
+
+    
