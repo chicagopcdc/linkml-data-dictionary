@@ -1,8 +1,9 @@
-site_name: "model of the pcdc data dictionary"
-theme: readthedocs
+site_name: "PCDC Aggregated Data Dictionary"
+theme:
+  name: material
+markdown_extensions:
+  - attr_list
 docs_dir: docs
 site_dir: docs
 nav:
-  - Home: home.md
   - Index: index.md
-  - Credits: credits.md

@@ -1,5 +1,5 @@
 # Auto generated from data_dictionary.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-01-10T14:50:18
+# Generation date: 2023-01-10T15:46:24
 # Schema: data-dictionary
 #
 # id: https://w3id.org/pcdc/model
@@ -78,17 +78,12 @@ class Person(NamedThing):
     class_name: ClassVar[str] = "Person"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Person")
 
-    ethnicity: Union[str, "EthnicityEnum"] = None
     sex: Union[str, "SexEnum"] = None
     race: Union[str, "RaceEnum"] = None
+    ethnicity: Union[str, "EthnicityEnum"] = None
     race_other: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.ethnicity):
-            self.MissingRequiredField("ethnicity")
-        if not isinstance(self.ethnicity, EthnicityEnum):
-            self.ethnicity = EthnicityEnum(self.ethnicity)
-
         if self._is_empty(self.sex):
             self.MissingRequiredField("sex")
         if not isinstance(self.sex, SexEnum):
@@ -98,6 +93,11 @@ class Person(NamedThing):
             self.MissingRequiredField("race")
         if not isinstance(self.race, RaceEnum):
             self.race = RaceEnum(self.race)
+
+        if self._is_empty(self.ethnicity):
+            self.MissingRequiredField("ethnicity")
+        if not isinstance(self.ethnicity, EthnicityEnum):
+            self.ethnicity = EthnicityEnum(self.ethnicity)
 
         if self.race_other is not None and not isinstance(self.race_other, str):
             self.race_other = str(self.race_other)
@@ -231,10 +231,10 @@ class Timing(NamedThing):
 
     subjects: Union[str, SubjectHonestBrokerSubjectId] = None
     age_at_course_anc_500: Optional[int] = None
-    age_at_course_end: Optional[int] = None
     age_at_course_start: Optional[int] = None
-    age_at_cyle_end: Optional[int] = None
+    age_at_course_end: Optional[int] = None
     age_at_cycle_start: Optional[int] = None
+    age_at_cyle_end: Optional[int] = None
     age_at_disease_phase: Optional[int] = None
     age_at_txassign: Optional[int] = None
     course: Optional[Union[str, "CourseEnum"]] = None
@@ -255,17 +255,17 @@ class Timing(NamedThing):
         if self.age_at_course_anc_500 is not None and not isinstance(self.age_at_course_anc_500, int):
             self.age_at_course_anc_500 = int(self.age_at_course_anc_500)
 
-        if self.age_at_course_end is not None and not isinstance(self.age_at_course_end, int):
-            self.age_at_course_end = int(self.age_at_course_end)
-
         if self.age_at_course_start is not None and not isinstance(self.age_at_course_start, int):
             self.age_at_course_start = int(self.age_at_course_start)
 
-        if self.age_at_cyle_end is not None and not isinstance(self.age_at_cyle_end, int):
-            self.age_at_cyle_end = int(self.age_at_cyle_end)
+        if self.age_at_course_end is not None and not isinstance(self.age_at_course_end, int):
+            self.age_at_course_end = int(self.age_at_course_end)
 
         if self.age_at_cycle_start is not None and not isinstance(self.age_at_cycle_start, int):
             self.age_at_cycle_start = int(self.age_at_cycle_start)
+
+        if self.age_at_cyle_end is not None and not isinstance(self.age_at_cyle_end, int):
+            self.age_at_cyle_end = int(self.age_at_cyle_end)
 
         if self.age_at_disease_phase is not None and not isinstance(self.age_at_disease_phase, int):
             self.age_at_disease_phase = int(self.age_at_disease_phase)
