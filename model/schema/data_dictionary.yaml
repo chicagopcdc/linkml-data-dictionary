@@ -54,13 +54,11 @@ classes:
       - prior_cancer
       - relation
       - prior_cancer_type
-#      - subjects 
     slot_usage:
       subjects:
         range: Subject
         multivalued: False
         required: True
-
   Subject:
     is_a: NamedThing
     description:
@@ -104,7 +102,6 @@ classes:
       - timing_type
       - timings
       - year_at_disease_phase
-      # - subjects
     slot_usage:
       subjects:
         range: Subject
@@ -115,6 +112,7 @@ slots:
   # NamedThing
   submitter_id:
     description: PCDC internal event ID
+    required: True # will always be required
   type:
     description: Default system-assigned property for each node
   # Demographic Slots
@@ -161,6 +159,7 @@ slots:
       - OS
       - RB
       - RMS
+    required: True
   consortium:
     description: The consortium under which this data is being contributed to the Pediatric Cancer Data Commons.
     range: ConsortiumEnum
@@ -189,6 +188,7 @@ slots:
       - OS
       - RB
       - RMS
+    required: True
   study_id: 
     description: A sequence of characters used to identify, name, or characterize the study.
     range: StudyIdEnum

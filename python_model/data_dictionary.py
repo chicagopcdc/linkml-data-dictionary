@@ -1,5 +1,5 @@
 # Auto generated from data_dictionary.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-01-10T15:46:24
+# Generation date: 2023-01-17T13:39:11
 # Schema: data-dictionary
 #
 # id: https://w3id.org/pcdc/model
@@ -25,6 +25,7 @@ from linkml_runtime.utils.curienamespace import CurieNamespace
 from linkml_runtime.linkml_model.types import Integer, String
 
 metamodel_version = "1.7.0"
+version = "0.0.1"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -53,11 +54,13 @@ class NamedThing(YAMLRoot):
     class_name: ClassVar[str] = "NamedThing"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/NamedThing")
 
-    submitter_id: Optional[str] = None
+    submitter_id: str = None
     type: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.submitter_id is not None and not isinstance(self.submitter_id, str):
+        if self._is_empty(self.submitter_id):
+            self.MissingRequiredField("submitter_id")
+        if not isinstance(self.submitter_id, str):
             self.submitter_id = str(self.submitter_id)
 
         if self.type is not None and not isinstance(self.type, str):
@@ -78,6 +81,7 @@ class Person(NamedThing):
     class_name: ClassVar[str] = "Person"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Person")
 
+    submitter_id: str = None
     sex: Union[str, "SexEnum"] = None
     race: Union[str, "RaceEnum"] = None
     ethnicity: Union[str, "EthnicityEnum"] = None
@@ -117,6 +121,7 @@ class FamilyMedicalHistory(NamedThing):
     class_name: ClassVar[str] = "FamilyMedicalHistory"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/FamilyMedicalHistory")
 
+    submitter_id: str = None
     prior_cancer: Union[str, "YesNoUnknownNotReportedEnum"] = None
     subjects: Union[str, SubjectHonestBrokerSubjectId] = None
     relation: Optional[Union[str, "RelationEnum"]] = None
@@ -152,9 +157,10 @@ class Subject(NamedThing):
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Subject")
 
     honest_broker_subject_id: Union[str, SubjectHonestBrokerSubjectId] = None
+    submitter_id: str = None
+    data_contributor_id: Union[str, "DataContributorIdEnum"] = None
     persons: Union[dict, Person] = None
     consortium: Optional[Union[str, "ConsortiumEnum"]] = None
-    data_contributor_id: Optional[Union[str, "DataContributorIdEnum"]] = None
     study_id: Optional[Union[str, "StudyIdEnum"]] = None
     age_at_enrollment: Optional[int] = None
     year_at_enrollment: Optional[int] = None
@@ -173,6 +179,11 @@ class Subject(NamedThing):
         if not isinstance(self.honest_broker_subject_id, SubjectHonestBrokerSubjectId):
             self.honest_broker_subject_id = SubjectHonestBrokerSubjectId(self.honest_broker_subject_id)
 
+        if self._is_empty(self.data_contributor_id):
+            self.MissingRequiredField("data_contributor_id")
+        if not isinstance(self.data_contributor_id, DataContributorIdEnum):
+            self.data_contributor_id = DataContributorIdEnum(self.data_contributor_id)
+
         if self._is_empty(self.persons):
             self.MissingRequiredField("persons")
         if not isinstance(self.persons, Person):
@@ -180,9 +191,6 @@ class Subject(NamedThing):
 
         if self.consortium is not None and not isinstance(self.consortium, ConsortiumEnum):
             self.consortium = ConsortiumEnum(self.consortium)
-
-        if self.data_contributor_id is not None and not isinstance(self.data_contributor_id, DataContributorIdEnum):
-            self.data_contributor_id = DataContributorIdEnum(self.data_contributor_id)
 
         if self.study_id is not None and not isinstance(self.study_id, StudyIdEnum):
             self.study_id = StudyIdEnum(self.study_id)
@@ -229,6 +237,7 @@ class Timing(NamedThing):
     class_name: ClassVar[str] = "Timing"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Timing")
 
+    submitter_id: str = None
     subjects: Union[str, SubjectHonestBrokerSubjectId] = None
     age_at_course_anc_500: Optional[int] = None
     age_at_course_start: Optional[int] = None
@@ -801,7 +810,7 @@ class slots:
     pass
 
 slots.submitter_id = Slot(uri=DEFAULT_.submitter_id, name="submitter_id", curie=DEFAULT_.curie('submitter_id'),
-                   model_uri=DEFAULT_.submitter_id, domain=None, range=Optional[str])
+                   model_uri=DEFAULT_.submitter_id, domain=None, range=str)
 
 slots.type = Slot(uri=DEFAULT_.type, name="type", curie=DEFAULT_.curie('type'),
                    model_uri=DEFAULT_.type, domain=None, range=Optional[str])
@@ -837,7 +846,7 @@ slots.consortium = Slot(uri=DEFAULT_.consortium, name="consortium", curie=DEFAUL
                    model_uri=DEFAULT_.consortium, domain=None, range=Optional[Union[str, "ConsortiumEnum"]])
 
 slots.data_contributor_id = Slot(uri=DEFAULT_.data_contributor_id, name="data_contributor_id", curie=DEFAULT_.curie('data_contributor_id'),
-                   model_uri=DEFAULT_.data_contributor_id, domain=None, range=Optional[Union[str, "DataContributorIdEnum"]])
+                   model_uri=DEFAULT_.data_contributor_id, domain=None, range=Union[str, "DataContributorIdEnum"])
 
 slots.study_id = Slot(uri=DEFAULT_.study_id, name="study_id", curie=DEFAULT_.curie('study_id'),
                    model_uri=DEFAULT_.study_id, domain=None, range=Optional[Union[str, "StudyIdEnum"]])
