@@ -1,5 +1,5 @@
 # Auto generated from data_dictionary.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-01-10T15:46:24
+# Generation date: 2023-01-24T15:18:21
 # Schema: data-dictionary
 #
 # id: https://w3id.org/pcdc/model
@@ -25,6 +25,7 @@ from linkml_runtime.utils.curienamespace import CurieNamespace
 from linkml_runtime.linkml_model.types import Integer, String
 
 metamodel_version = "1.7.0"
+version = "0.0.1"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -33,6 +34,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 EX = CurieNamespace('ex', 'https://example.org/linkml/hello-world/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 NCIT = CurieNamespace('ncit', 'https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=')
+PCDC = CurieNamespace('pcdc', 'https://w3id.org/pcdc/model')
 SCHEMA = CurieNamespace('schema', 'https://schema.org/')
 DEFAULT_ = CurieNamespace('', 'https://w3id.org/pcdc/model/')
 
@@ -48,16 +50,18 @@ class SubjectHonestBrokerSubjectId(extended_str):
 class NamedThing(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/NamedThing")
-    class_class_curie: ClassVar[str] = None
+    class_class_uri: ClassVar[URIRef] = PCDC["/NamedThing"]
+    class_class_curie: ClassVar[str] = "pcdc:/NamedThing"
     class_name: ClassVar[str] = "NamedThing"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/NamedThing")
 
-    submitter_id: Optional[str] = None
+    submitter_id: str = None
     type: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.submitter_id is not None and not isinstance(self.submitter_id, str):
+        if self._is_empty(self.submitter_id):
+            self.MissingRequiredField("submitter_id")
+        if not isinstance(self.submitter_id, str):
             self.submitter_id = str(self.submitter_id)
 
         if self.type is not None and not isinstance(self.type, str):
@@ -73,11 +77,12 @@ class Person(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = SCHEMA.Person
-    class_class_curie: ClassVar[str] = "schema:Person"
+    class_class_uri: ClassVar[URIRef] = PCDC.Person
+    class_class_curie: ClassVar[str] = "pcdc:Person"
     class_name: ClassVar[str] = "Person"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Person")
 
+    submitter_id: str = None
     sex: Union[str, "SexEnum"] = None
     race: Union[str, "RaceEnum"] = None
     ethnicity: Union[str, "EthnicityEnum"] = None
@@ -112,11 +117,12 @@ class FamilyMedicalHistory(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = SCHEMA.FamilyMedicalHistory
-    class_class_curie: ClassVar[str] = "schema:FamilyMedicalHistory"
+    class_class_uri: ClassVar[URIRef] = PCDC.FamilyMedicalHistory
+    class_class_curie: ClassVar[str] = "pcdc:FamilyMedicalHistory"
     class_name: ClassVar[str] = "FamilyMedicalHistory"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/FamilyMedicalHistory")
 
+    submitter_id: str = None
     prior_cancer: Union[str, "YesNoUnknownNotReportedEnum"] = None
     subjects: Union[str, SubjectHonestBrokerSubjectId] = None
     relation: Optional[Union[str, "RelationEnum"]] = None
@@ -146,15 +152,16 @@ class FamilyMedicalHistory(NamedThing):
 class Subject(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = SCHEMA.Subject
-    class_class_curie: ClassVar[str] = "schema:Subject"
+    class_class_uri: ClassVar[URIRef] = PCDC.Subject
+    class_class_curie: ClassVar[str] = "pcdc:Subject"
     class_name: ClassVar[str] = "Subject"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Subject")
 
     honest_broker_subject_id: Union[str, SubjectHonestBrokerSubjectId] = None
+    submitter_id: str = None
+    data_contributor_id: Union[str, "DataContributorIdEnum"] = None
     persons: Union[dict, Person] = None
     consortium: Optional[Union[str, "ConsortiumEnum"]] = None
-    data_contributor_id: Optional[Union[str, "DataContributorIdEnum"]] = None
     study_id: Optional[Union[str, "StudyIdEnum"]] = None
     age_at_enrollment: Optional[int] = None
     year_at_enrollment: Optional[int] = None
@@ -173,6 +180,11 @@ class Subject(NamedThing):
         if not isinstance(self.honest_broker_subject_id, SubjectHonestBrokerSubjectId):
             self.honest_broker_subject_id = SubjectHonestBrokerSubjectId(self.honest_broker_subject_id)
 
+        if self._is_empty(self.data_contributor_id):
+            self.MissingRequiredField("data_contributor_id")
+        if not isinstance(self.data_contributor_id, DataContributorIdEnum):
+            self.data_contributor_id = DataContributorIdEnum(self.data_contributor_id)
+
         if self._is_empty(self.persons):
             self.MissingRequiredField("persons")
         if not isinstance(self.persons, Person):
@@ -180,9 +192,6 @@ class Subject(NamedThing):
 
         if self.consortium is not None and not isinstance(self.consortium, ConsortiumEnum):
             self.consortium = ConsortiumEnum(self.consortium)
-
-        if self.data_contributor_id is not None and not isinstance(self.data_contributor_id, DataContributorIdEnum):
-            self.data_contributor_id = DataContributorIdEnum(self.data_contributor_id)
 
         if self.study_id is not None and not isinstance(self.study_id, StudyIdEnum):
             self.study_id = StudyIdEnum(self.study_id)
@@ -224,27 +233,28 @@ class Subject(NamedThing):
 class Timing(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = SCHEMA.Timing
-    class_class_curie: ClassVar[str] = "schema:Timing"
+    class_class_uri: ClassVar[URIRef] = PCDC.Timing
+    class_class_curie: ClassVar[str] = "pcdc:Timing"
     class_name: ClassVar[str] = "Timing"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Timing")
 
+    submitter_id: str = None
     subjects: Union[str, SubjectHonestBrokerSubjectId] = None
-    age_at_course_anc_500: Optional[int] = None
-    age_at_course_start: Optional[int] = None
-    age_at_course_end: Optional[int] = None
-    age_at_cycle_start: Optional[int] = None
-    age_at_cyle_end: Optional[int] = None
-    age_at_disease_phase: Optional[int] = None
-    age_at_txassign: Optional[int] = None
-    course: Optional[Union[str, "CourseEnum"]] = None
-    course_number: Optional[int] = None
-    cycle_number: Optional[int] = None
     disease_phase: Optional[Union[str, "DiseasePhaseEnum"]] = None
     disease_phase_number: Optional[int] = None
+    age_at_disease_phase: Optional[int] = None
+    year_at_disease_phase: Optional[int] = None
+    course: Optional[Union[str, "CourseEnum"]] = None
+    course_number: Optional[int] = None
+    age_at_course_start: Optional[int] = None
+    age_at_course_end: Optional[int] = None
+    age_at_txassign: Optional[int] = None
+    age_at_course_anc_500: Optional[int] = None
+    cycle_number: Optional[int] = None
+    age_at_cycle_start: Optional[int] = None
+    age_at_cyle_end: Optional[int] = None
     timing_type: Optional[str] = None
     timings: Optional[Union[dict, "Timing"]] = None
-    year_at_disease_phase: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.subjects):
@@ -252,26 +262,17 @@ class Timing(NamedThing):
         if not isinstance(self.subjects, SubjectHonestBrokerSubjectId):
             self.subjects = SubjectHonestBrokerSubjectId(self.subjects)
 
-        if self.age_at_course_anc_500 is not None and not isinstance(self.age_at_course_anc_500, int):
-            self.age_at_course_anc_500 = int(self.age_at_course_anc_500)
+        if self.disease_phase is not None and not isinstance(self.disease_phase, DiseasePhaseEnum):
+            self.disease_phase = DiseasePhaseEnum(self.disease_phase)
 
-        if self.age_at_course_start is not None and not isinstance(self.age_at_course_start, int):
-            self.age_at_course_start = int(self.age_at_course_start)
-
-        if self.age_at_course_end is not None and not isinstance(self.age_at_course_end, int):
-            self.age_at_course_end = int(self.age_at_course_end)
-
-        if self.age_at_cycle_start is not None and not isinstance(self.age_at_cycle_start, int):
-            self.age_at_cycle_start = int(self.age_at_cycle_start)
-
-        if self.age_at_cyle_end is not None and not isinstance(self.age_at_cyle_end, int):
-            self.age_at_cyle_end = int(self.age_at_cyle_end)
+        if self.disease_phase_number is not None and not isinstance(self.disease_phase_number, int):
+            self.disease_phase_number = int(self.disease_phase_number)
 
         if self.age_at_disease_phase is not None and not isinstance(self.age_at_disease_phase, int):
             self.age_at_disease_phase = int(self.age_at_disease_phase)
 
-        if self.age_at_txassign is not None and not isinstance(self.age_at_txassign, int):
-            self.age_at_txassign = int(self.age_at_txassign)
+        if self.year_at_disease_phase is not None and not isinstance(self.year_at_disease_phase, int):
+            self.year_at_disease_phase = int(self.year_at_disease_phase)
 
         if self.course is not None and not isinstance(self.course, CourseEnum):
             self.course = CourseEnum(self.course)
@@ -279,23 +280,32 @@ class Timing(NamedThing):
         if self.course_number is not None and not isinstance(self.course_number, int):
             self.course_number = int(self.course_number)
 
+        if self.age_at_course_start is not None and not isinstance(self.age_at_course_start, int):
+            self.age_at_course_start = int(self.age_at_course_start)
+
+        if self.age_at_course_end is not None and not isinstance(self.age_at_course_end, int):
+            self.age_at_course_end = int(self.age_at_course_end)
+
+        if self.age_at_txassign is not None and not isinstance(self.age_at_txassign, int):
+            self.age_at_txassign = int(self.age_at_txassign)
+
+        if self.age_at_course_anc_500 is not None and not isinstance(self.age_at_course_anc_500, int):
+            self.age_at_course_anc_500 = int(self.age_at_course_anc_500)
+
         if self.cycle_number is not None and not isinstance(self.cycle_number, int):
             self.cycle_number = int(self.cycle_number)
 
-        if self.disease_phase is not None and not isinstance(self.disease_phase, DiseasePhaseEnum):
-            self.disease_phase = DiseasePhaseEnum(self.disease_phase)
+        if self.age_at_cycle_start is not None and not isinstance(self.age_at_cycle_start, int):
+            self.age_at_cycle_start = int(self.age_at_cycle_start)
 
-        if self.disease_phase_number is not None and not isinstance(self.disease_phase_number, int):
-            self.disease_phase_number = int(self.disease_phase_number)
+        if self.age_at_cyle_end is not None and not isinstance(self.age_at_cyle_end, int):
+            self.age_at_cyle_end = int(self.age_at_cyle_end)
 
         if self.timing_type is not None and not isinstance(self.timing_type, str):
             self.timing_type = str(self.timing_type)
 
         if self.timings is not None and not isinstance(self.timings, Timing):
             self.timings = Timing(**as_dict(self.timings))
-
-        if self.year_at_disease_phase is not None and not isinstance(self.year_at_disease_phase, int):
-            self.year_at_disease_phase = int(self.year_at_disease_phase)
 
         super().__post_init__(**kwargs)
 
@@ -801,7 +811,7 @@ class slots:
     pass
 
 slots.submitter_id = Slot(uri=DEFAULT_.submitter_id, name="submitter_id", curie=DEFAULT_.curie('submitter_id'),
-                   model_uri=DEFAULT_.submitter_id, domain=None, range=Optional[str])
+                   model_uri=DEFAULT_.submitter_id, domain=None, range=str)
 
 slots.type = Slot(uri=DEFAULT_.type, name="type", curie=DEFAULT_.curie('type'),
                    model_uri=DEFAULT_.type, domain=None, range=Optional[str])
@@ -837,7 +847,7 @@ slots.consortium = Slot(uri=DEFAULT_.consortium, name="consortium", curie=DEFAUL
                    model_uri=DEFAULT_.consortium, domain=None, range=Optional[Union[str, "ConsortiumEnum"]])
 
 slots.data_contributor_id = Slot(uri=DEFAULT_.data_contributor_id, name="data_contributor_id", curie=DEFAULT_.curie('data_contributor_id'),
-                   model_uri=DEFAULT_.data_contributor_id, domain=None, range=Optional[Union[str, "DataContributorIdEnum"]])
+                   model_uri=DEFAULT_.data_contributor_id, domain=None, range=Union[str, "DataContributorIdEnum"])
 
 slots.study_id = Slot(uri=DEFAULT_.study_id, name="study_id", curie=DEFAULT_.curie('study_id'),
                    model_uri=DEFAULT_.study_id, domain=None, range=Optional[Union[str, "StudyIdEnum"]])

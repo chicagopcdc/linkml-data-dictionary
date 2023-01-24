@@ -14,3 +14,7 @@ Optionally add the `-v` flag for verbosity
 ## Generating Python
 To generate the python data model call:
 `gen-python model/schema/data_dictionary.yaml > python_model/data_dictionary.py` and the file will be written in the 'python_model' folder.
+
+## Generating Markdown
+To generate the markdown documents call:
+`gen-markdown --dir markdown_model  model/schema/data_dictionary.yaml` and the markdown files will be written in the 'markdown_model' folder.

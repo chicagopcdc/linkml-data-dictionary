@@ -9,6 +9,7 @@ prefixes:
  schema: https://schema.org/
  ex: https://example.org/linkml/hello-world/ 
  ncit: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
+ pcdc: https://w3id.org/pcdc/model
 
 # default_prefix: ex 
 default_curi_maps:
@@ -39,32 +40,29 @@ classes:
   Person:
     is_a: NamedThing
     description: demographic information about an individual
-    class_uri: schema:Person # see if we actually need this/ how this is used
+    class_uri: pcdc:Person # see if we actually need this/ how this is used
     slots:
       - sex
       - race
       - race_other
       - ethnicity
-      # https://portal.pedscommons.org/DD?view=table shows we also have a projects attribute 
   FamilyMedicalHistory:
     is_a: NamedThing
     description: prior cancer information of a first-degree relative
-    class_uri: schema:FamilyMedicalHistory
+    class_uri: pcdc:FamilyMedicalHistory
     slots:
       - prior_cancer
       - relation
       - prior_cancer_type
-#      - subjects 
     slot_usage:
       subjects:
         range: Subject
         multivalued: False
         required: True
-
   Subject:
     is_a: NamedThing
     description:
-    class_uri: schema:Subject
+    class_uri: pcdc:Subject
     slots:
       - honest_broker_subject_id
       - consortium
@@ -87,24 +85,23 @@ classes:
   Timing: # NOTE: at some point we want to create a parent class that Disease Phase Timing and Course Timing classes inherit from so that we don't have to lump this all together
     is_a: NamedThing
     description: 
-    class_uri: schema:Timing
+    class_uri: pcdc:Timing
     slots:
-      - age_at_course_anc_500
-      - age_at_course_start
-      - age_at_course_end
-      - age_at_cycle_start
-      - age_at_cyle_end
-      - age_at_disease_phase
-      - age_at_txassign
-      - course
-      - course_number
-      - cycle_number
       - disease_phase
       - disease_phase_number
+      - age_at_disease_phase
+      - year_at_disease_phase
+      - course
+      - course_number
+      - age_at_course_start
+      - age_at_course_end
+      - age_at_txassign
+      - age_at_course_anc_500
+      - cycle_number
+      - age_at_cycle_start
+      - age_at_cyle_end
       - timing_type
       - timings
-      - year_at_disease_phase
-      # - subjects
     slot_usage:
       subjects:
         range: Subject
@@ -115,6 +112,7 @@ slots:
   # NamedThing
   submitter_id:
     description: PCDC internal event ID
+    required: True # will always be required
   type:
     description: Default system-assigned property for each node
   # Demographic Slots
@@ -161,6 +159,7 @@ slots:
       - OS
       - RB
       - RMS
+    required: True
   consortium:
     description: The consortium under which this data is being contributed to the Pediatric Cancer Data Commons.
     range: ConsortiumEnum
@@ -189,6 +188,7 @@ slots:
       - OS
       - RB
       - RMS
+    required: True
   study_id: 
     description: A sequence of characters used to identify, name, or characterize the study.
     range: StudyIdEnum
