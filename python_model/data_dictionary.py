@@ -1,5 +1,5 @@
 # Auto generated from data_dictionary.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-01-24T15:14:13
+# Generation date: 2023-01-24T15:18:21
 # Schema: data-dictionary
 #
 # id: https://w3id.org/pcdc/model
@@ -240,21 +240,21 @@ class Timing(NamedThing):
 
     submitter_id: str = None
     subjects: Union[str, SubjectHonestBrokerSubjectId] = None
-    age_at_course_anc_500: Optional[int] = None
-    age_at_course_start: Optional[int] = None
-    age_at_course_end: Optional[int] = None
-    age_at_cycle_start: Optional[int] = None
-    age_at_cyle_end: Optional[int] = None
-    age_at_disease_phase: Optional[int] = None
-    age_at_txassign: Optional[int] = None
-    course: Optional[Union[str, "CourseEnum"]] = None
-    course_number: Optional[int] = None
-    cycle_number: Optional[int] = None
     disease_phase: Optional[Union[str, "DiseasePhaseEnum"]] = None
     disease_phase_number: Optional[int] = None
+    age_at_disease_phase: Optional[int] = None
+    year_at_disease_phase: Optional[int] = None
+    course: Optional[Union[str, "CourseEnum"]] = None
+    course_number: Optional[int] = None
+    age_at_course_start: Optional[int] = None
+    age_at_course_end: Optional[int] = None
+    age_at_txassign: Optional[int] = None
+    age_at_course_anc_500: Optional[int] = None
+    cycle_number: Optional[int] = None
+    age_at_cycle_start: Optional[int] = None
+    age_at_cyle_end: Optional[int] = None
     timing_type: Optional[str] = None
     timings: Optional[Union[dict, "Timing"]] = None
-    year_at_disease_phase: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.subjects):
@@ -262,26 +262,17 @@ class Timing(NamedThing):
         if not isinstance(self.subjects, SubjectHonestBrokerSubjectId):
             self.subjects = SubjectHonestBrokerSubjectId(self.subjects)
 
-        if self.age_at_course_anc_500 is not None and not isinstance(self.age_at_course_anc_500, int):
-            self.age_at_course_anc_500 = int(self.age_at_course_anc_500)
+        if self.disease_phase is not None and not isinstance(self.disease_phase, DiseasePhaseEnum):
+            self.disease_phase = DiseasePhaseEnum(self.disease_phase)
 
-        if self.age_at_course_start is not None and not isinstance(self.age_at_course_start, int):
-            self.age_at_course_start = int(self.age_at_course_start)
-
-        if self.age_at_course_end is not None and not isinstance(self.age_at_course_end, int):
-            self.age_at_course_end = int(self.age_at_course_end)
-
-        if self.age_at_cycle_start is not None and not isinstance(self.age_at_cycle_start, int):
-            self.age_at_cycle_start = int(self.age_at_cycle_start)
-
-        if self.age_at_cyle_end is not None and not isinstance(self.age_at_cyle_end, int):
-            self.age_at_cyle_end = int(self.age_at_cyle_end)
+        if self.disease_phase_number is not None and not isinstance(self.disease_phase_number, int):
+            self.disease_phase_number = int(self.disease_phase_number)
 
         if self.age_at_disease_phase is not None and not isinstance(self.age_at_disease_phase, int):
             self.age_at_disease_phase = int(self.age_at_disease_phase)
 
-        if self.age_at_txassign is not None and not isinstance(self.age_at_txassign, int):
-            self.age_at_txassign = int(self.age_at_txassign)
+        if self.year_at_disease_phase is not None and not isinstance(self.year_at_disease_phase, int):
+            self.year_at_disease_phase = int(self.year_at_disease_phase)
 
         if self.course is not None and not isinstance(self.course, CourseEnum):
             self.course = CourseEnum(self.course)
@@ -289,23 +280,32 @@ class Timing(NamedThing):
         if self.course_number is not None and not isinstance(self.course_number, int):
             self.course_number = int(self.course_number)
 
+        if self.age_at_course_start is not None and not isinstance(self.age_at_course_start, int):
+            self.age_at_course_start = int(self.age_at_course_start)
+
+        if self.age_at_course_end is not None and not isinstance(self.age_at_course_end, int):
+            self.age_at_course_end = int(self.age_at_course_end)
+
+        if self.age_at_txassign is not None and not isinstance(self.age_at_txassign, int):
+            self.age_at_txassign = int(self.age_at_txassign)
+
+        if self.age_at_course_anc_500 is not None and not isinstance(self.age_at_course_anc_500, int):
+            self.age_at_course_anc_500 = int(self.age_at_course_anc_500)
+
         if self.cycle_number is not None and not isinstance(self.cycle_number, int):
             self.cycle_number = int(self.cycle_number)
 
-        if self.disease_phase is not None and not isinstance(self.disease_phase, DiseasePhaseEnum):
-            self.disease_phase = DiseasePhaseEnum(self.disease_phase)
+        if self.age_at_cycle_start is not None and not isinstance(self.age_at_cycle_start, int):
+            self.age_at_cycle_start = int(self.age_at_cycle_start)
 
-        if self.disease_phase_number is not None and not isinstance(self.disease_phase_number, int):
-            self.disease_phase_number = int(self.disease_phase_number)
+        if self.age_at_cyle_end is not None and not isinstance(self.age_at_cyle_end, int):
+            self.age_at_cyle_end = int(self.age_at_cyle_end)
 
         if self.timing_type is not None and not isinstance(self.timing_type, str):
             self.timing_type = str(self.timing_type)
 
         if self.timings is not None and not isinstance(self.timings, Timing):
             self.timings = Timing(**as_dict(self.timings))
-
-        if self.year_at_disease_phase is not None and not isinstance(self.year_at_disease_phase, int):
-            self.year_at_disease_phase = int(self.year_at_disease_phase)
 
         super().__post_init__(**kwargs)
 

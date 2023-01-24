@@ -87,21 +87,21 @@ classes:
     description: 
     class_uri: pcdc:Timing
     slots:
-      - age_at_course_anc_500
-      - age_at_course_start
-      - age_at_course_end
-      - age_at_cycle_start
-      - age_at_cyle_end
-      - age_at_disease_phase
-      - age_at_txassign
-      - course
-      - course_number
-      - cycle_number
       - disease_phase
       - disease_phase_number
+      - age_at_disease_phase
+      - year_at_disease_phase
+      - course
+      - course_number
+      - age_at_course_start
+      - age_at_course_end
+      - age_at_txassign
+      - age_at_course_anc_500
+      - cycle_number
+      - age_at_cycle_start
+      - age_at_cyle_end
       - timing_type
       - timings
-      - year_at_disease_phase
     slot_usage:
       subjects:
         range: Subject
