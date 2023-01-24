@@ -9,6 +9,7 @@ prefixes:
  schema: https://schema.org/
  ex: https://example.org/linkml/hello-world/ 
  ncit: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
+ pcdc: https://w3id.org/pcdc/model
 
 # default_prefix: ex 
 default_curi_maps:
@@ -39,17 +40,16 @@ classes:
   Person:
     is_a: NamedThing
     description: demographic information about an individual
-    class_uri: schema:Person # see if we actually need this/ how this is used
+    class_uri: pcdc:Person # see if we actually need this/ how this is used
     slots:
       - sex
       - race
       - race_other
       - ethnicity
-      # https://portal.pedscommons.org/DD?view=table shows we also have a projects attribute 
   FamilyMedicalHistory:
     is_a: NamedThing
     description: prior cancer information of a first-degree relative
-    class_uri: schema:FamilyMedicalHistory
+    class_uri: pcdc:FamilyMedicalHistory
     slots:
       - prior_cancer
       - relation
@@ -62,7 +62,7 @@ classes:
   Subject:
     is_a: NamedThing
     description:
-    class_uri: schema:Subject
+    class_uri: pcdc:Subject
     slots:
       - honest_broker_subject_id
       - consortium
@@ -85,7 +85,7 @@ classes:
   Timing: # NOTE: at some point we want to create a parent class that Disease Phase Timing and Course Timing classes inherit from so that we don't have to lump this all together
     is_a: NamedThing
     description: 
-    class_uri: schema:Timing
+    class_uri: pcdc:Timing
     slots:
       - age_at_course_anc_500
       - age_at_course_start

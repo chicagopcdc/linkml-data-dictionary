@@ -1,5 +1,5 @@
 # Auto generated from data_dictionary.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-01-17T13:39:11
+# Generation date: 2023-01-24T15:10:39
 # Schema: data-dictionary
 #
 # id: https://w3id.org/pcdc/model
@@ -34,6 +34,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 EX = CurieNamespace('ex', 'https://example.org/linkml/hello-world/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 NCIT = CurieNamespace('ncit', 'https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=')
+PCDC = CurieNamespace('pcdc', 'https://w3id.org/pcdc/model')
 SCHEMA = CurieNamespace('schema', 'https://schema.org/')
 DEFAULT_ = CurieNamespace('', 'https://w3id.org/pcdc/model/')
 
@@ -49,8 +50,8 @@ class SubjectHonestBrokerSubjectId(extended_str):
 class NamedThing(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/NamedThing")
-    class_class_curie: ClassVar[str] = None
+    class_class_uri: ClassVar[URIRef] = PCDC["/NamedThing"]
+    class_class_curie: ClassVar[str] = "pcdc:/NamedThing"
     class_name: ClassVar[str] = "NamedThing"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/NamedThing")
 
@@ -76,8 +77,8 @@ class Person(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = SCHEMA.Person
-    class_class_curie: ClassVar[str] = "schema:Person"
+    class_class_uri: ClassVar[URIRef] = PCDC.Person
+    class_class_curie: ClassVar[str] = "pcdc:Person"
     class_name: ClassVar[str] = "Person"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Person")
 
@@ -116,8 +117,8 @@ class FamilyMedicalHistory(NamedThing):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = SCHEMA.FamilyMedicalHistory
-    class_class_curie: ClassVar[str] = "schema:FamilyMedicalHistory"
+    class_class_uri: ClassVar[URIRef] = PCDC.FamilyMedicalHistory
+    class_class_curie: ClassVar[str] = "pcdc:FamilyMedicalHistory"
     class_name: ClassVar[str] = "FamilyMedicalHistory"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/FamilyMedicalHistory")
 
@@ -151,8 +152,8 @@ class FamilyMedicalHistory(NamedThing):
 class Subject(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = SCHEMA.Subject
-    class_class_curie: ClassVar[str] = "schema:Subject"
+    class_class_uri: ClassVar[URIRef] = PCDC.Subject
+    class_class_curie: ClassVar[str] = "pcdc:Subject"
     class_name: ClassVar[str] = "Subject"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Subject")
 
@@ -232,8 +233,8 @@ class Subject(NamedThing):
 class Timing(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = SCHEMA.Timing
-    class_class_curie: ClassVar[str] = "schema:Timing"
+    class_class_uri: ClassVar[URIRef] = PCDC.Timing
+    class_class_curie: ClassVar[str] = "pcdc:Timing"
     class_name: ClassVar[str] = "Timing"
     class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/Timing")
 
