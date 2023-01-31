@@ -1,0 +1,56 @@
+id: https://w3id.org/pcdc/model
+title: LinkML Data Dictionary Model
+name: data-dictionary
+license: https://creativecommons.org/licenses/by-nc/4.0/
+version: 0.0.1
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ncit: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
+  pcdc: https://w3id.org/pcdc/model
+default_curi_maps:
+- semweb_context
+default_range: string
+imports: linkml:types
+subsets: {}
+classes:
+  Thing:
+    abstract: true
+    slots:
+    - submitter_id
+    - type
+  Person:
+    is_a: Thing
+    description: ''
+    class_uri: ''
+    slots: []
+    slot_usage: {}
+    attributes: {}
+  FamilyMedicalHistory:
+    is_a: Thing
+    description: ''
+    class_uri: ''
+    slots: []
+    slot_usage: {}
+    attributes: {}
+  Subject:
+    is_a: Thing
+    description: ''
+    class_uri: ''
+    slots: []
+    slot_usage: {}
+    attributes: {}
+  Timing:
+    is_a: Thing
+    description: ''
+    class_uri: ''
+    slots: []
+    slot_usage: {}
+    attributes: {}
+slots:
+  submitter_id:
+    description: PCDC internal event ID
+    required: true
+  type:
+    description: Default system-assigned property for each node
+    required: true
+enums: {}
