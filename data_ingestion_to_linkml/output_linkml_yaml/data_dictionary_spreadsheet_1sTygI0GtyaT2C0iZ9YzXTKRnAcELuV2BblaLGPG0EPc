@@ -1,1 +1,17 @@
-test: blah
+id: https://w3id.org/pcdc/model
+title: LinkML Data Dictionary Model
+name: data-dictionary
+license: https://creativecommons.org/licenses/by-nc/4.0/
+version: 0.0.1
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ncit: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
+  pcdc: https://w3id.org/pcdc/model
+default_curi_maps:
+- semweb_context
+default_range: string
+imports: linkml:types
+subsets: {}
+classes: {}
+slots: {}
+enums: {}
