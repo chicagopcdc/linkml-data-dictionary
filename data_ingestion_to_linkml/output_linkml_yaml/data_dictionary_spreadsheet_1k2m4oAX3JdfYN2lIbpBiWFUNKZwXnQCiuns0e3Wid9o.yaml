@@ -25,6 +25,7 @@ classes:
     slots:
     - sex
     - race
+    - race_other
     - ethnicity
     slot_usage: {}
     attributes: {}
@@ -32,7 +33,10 @@ classes:
     is_a: Thing
     description: ''
     class_uri: ''
-    slots: []
+    slots:
+    - prior_cancer
+    - relation
+    - prior_cancer_type
     slot_usage: {}
     attributes: {}
   Subject:
@@ -45,8 +49,16 @@ classes:
     - data_contributor_id
     - study_id
     - age_at_enrollment
+    - year_at_enrollment
     - treatment_arm
     - enrolled_status
+    - efs_censor_status
+    - age_at_censor_status
+    - data_source
+    - randomized_status
+    - study_phase
+    - study_type
+    - protocol
     slot_usage: {}
     attributes: {}
   Timing:
@@ -62,6 +74,11 @@ classes:
     - course_number
     - age_at_course_start
     - age_at_course_end
+    - age_at_txassign
+    - age_at_course_anc_500
+    - cycle_number
+    - age_at_cycle_start
+    - age_at_cycle_end
     slot_usage: {}
     attributes: {}
 slots:
@@ -82,6 +99,8 @@ slots:
       to or identify with more than one group. Some diseases, such as cancer, may
       be more common in certain races than in others. (Source: NCI Dictionary of Cancer
       Terms)'
+  race_other:
+    description: Specify the "Other" RACE
   ethnicity:
     range: EthnicityEnum
     description: 'The social and cultural characteristics, backgrounds, or experiences
@@ -89,6 +108,17 @@ slots:
       and behaviors that are often handed down from one generation to the next. Some
       conditions or diseases, such as cancer, may be more common in certain ethnic
       groups than in others. (Source: NCI Dictionary of Cancer Terms)'
+  prior_cancer:
+    range: PriorCancerEnum
+    description: Does the subject have a relative who has a medical history that includes
+      cancer?
+  relation:
+    range: RelationEnum
+    description: What kind of relation is this relative who has had a relevant medical
+      condition?
+  prior_cancer_type:
+    description: The type of prior cancer from the medical history of the relative
+      of the subject.
   honest_broker_subject_id:
     description: 'The identifier assigned to the subject by the honest broker--an
       individual, organization or system acting for, or on behalf of, a covered entity
@@ -103,7 +133,7 @@ slots:
       conducted through the honest broker. (Source: NCI Thersaurus)'
   consortium:
     range: ConsortiumEnum
-    description: ''
+    description: The disease consortium to which the data contributor belongs.
   data_contributor_id:
     range: DataContributorIdEnum
     description: An identifier assigned to a data contributor.
@@ -114,6 +144,9 @@ slots:
   age_at_enrollment:
     range: integer
     description: Age of subject (in days) when the subject enrolled in the study.
+  year_at_enrollment:
+    range: integer
+    description: The year at which a subject enrolled in a study.
   treatment_arm:
     range: TreatmentArmEnum
     description: A specific treatment plan within a clinical trial that describes
@@ -124,6 +157,30 @@ slots:
     description: This variable indicates if the subject was enrolled in the study,
       or if the subject was not enrolled in the study but received treatment per the
       study's protocol.
+  efs_censor_status:
+    range: EfsCensorStatusEnum
+    description: The event free survival censor status
+  age_at_censor_status:
+    range: integer
+    description: Age (in days) of the subject at the time of the CENSOR_STATUS
+  data_source:
+    range: DataSourceEnum
+    description: Is this data coming from a cancer registry or via a clinical study?
+  randomized_status:
+    range: RandomizedStatusEnum
+    description: The allocation of individuals to groups by chance, especially in
+      order to control the variables in an experiment.
+  study_phase:
+    range: StudyPhaseEnum
+    description: The phase of the clinical trial that the subject was enrolled in
+      for the collection of this data.
+  study_type:
+    range: StudyTypeEnum
+    description: The nature of the investigation or the investigational use for which
+      clinical study is being done.
+  protocol:
+    range: ''
+    description: ''
   disease_phase:
     range: DiseasePhaseEnum
     description: The phase of the cancer treatment process during which relevant observations
@@ -165,4 +222,23 @@ slots:
     range: integer
     description: The age (in days) of the subject at the time that this ordinally
       numbered course was completed.
+  age_at_txassign:
+    range: integer
+    description: The age (in days) of the subject at the time that this treartment
+      was assigned.
+  age_at_course_anc_500:
+    range: integer
+    description: The age (in days) of the subject when the subject's neutrophil count
+      exceeded 500 (ANC/mm3)
+  cycle_number:
+    range: integer
+    description: This variable indicates the ordinal numbering of cycles of treatment
+      therapy administered to the subject.
+  age_at_cycle_start:
+    range: integer
+    description: The age (in days) of the subject at the beginning of the treatment
+      cycle.
+  age_at_cycle_end:
+    range: integer
+    description: The age (in days) of the subject at the end of the treatment cycle.
 enums: {}

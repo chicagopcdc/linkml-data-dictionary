@@ -1,25 +1,44 @@
 import copy
 import json
 import yaml
+from typing import Dict
 
 
 def load_from_json():
     # todo get automated connection to github setup to pull json automatically
-    f = open("data_ingestion_to_linkml/test_json_data/ALL.json")
+    f = open("data_ingestion_to_linkml/test_json_data/master.json")
     data = json.load(f)
     f.close()
 
     python_linkml_struct = get_base_linkml_struct()
-    write_filename = f"data_ingestion_to_linkml/output_linkml_yaml/data_dictionary_spreadsheet_{data['meta']['spreadsheet_id']}.yaml"
 
     """
     Pull subject characteristics and timings out of data['domains']['protocol']
+    Pull person out of data['demographics']['demographics']
+    TBD on where to get Family Medical History from 
     """
-    subject = data["domains"]["protocol"]
+    subject = data["domains"]["protocol"]["subject_characteristics"]
+    timing = {
+        **data["domains"]["protocol"]["disease_phase_timing"],
+        **data["domains"]["protocol"]["course_timing"],
+    }
+    person = data["domains"]["demographics"]["demographics"]
+    family_medical_history = data["domains"]["demographics"]["family_medical_history"]
 
-    # is it ok to version thee data_dictionaries by spreadsheet id,
+    data_class_mapping = {
+        "Person": person,
+        "FamilyMedicalHistory": family_medical_history,
+        "Subject": subject,
+        "Timing": timing,
+    }  # need to add family medical history
+
+    for key in data_class_mapping.keys():
+        python_linkml_struct = create_class(
+            python_linkml_struct, key, data_class_mapping[key]
+        )
+
     # will need to check that same version doesn't already exist before writing
-
+    write_filename = f"data_ingestion_to_linkml/output_linkml_yaml/data_dictionary_spreadsheet_{data['meta']['spreadsheet_id']}.yaml"
     with open(write_filename, "w") as f:
         data = yaml.dump(python_linkml_struct, f, sort_keys=False)
 
@@ -68,11 +87,41 @@ def get_base_linkml_struct():
             },
         },
         "enums": {},
-        # check if permissible values match and change enum name if they don't match
-        # use common name if they do match (parse together permissible values and rename,
-        # update references that enum)
     }
     return base_struct
+
+
+def create_class(base_struct: Dict, classname: str, data):
+    for key in data.keys():
+        slot_name = key.lower()
+        # if the slot has already been added, just assign it to the class
+        if slot_name not in base_struct["slots"].keys():
+            new_slot = create_slot(slot_name, data[key])
+            base_struct["slots"][slot_name] = new_slot
+        base_struct["classes"][classname]["slots"].append(slot_name)
+    return base_struct
+
+
+def create_slot(slot_name: str, slot_data: Dict) -> Dict:
+    new_slot_dict = {}
+    if "permissible_values" in slot_data.keys():
+        enum_start = "".join(el.title() for el in slot_name.split("_"))
+        enum_name = f"{enum_start}Enum"
+        enum = create_enum(enum_name, slot_data["permissible_values"])
+        # TODO check if permissible values match and change enum name if they don't
+        # match use common name if they do match (parse together permissible
+        # values and rename, and update any references that type of enum)
+        new_slot_dict["range"] = enum_name
+    else:
+        if slot_data["data_type"].lower() != "string":
+            new_slot_dict["range"] = slot_data["data_type"].lower()
+    new_slot_dict["description"] = slot_data["variable_description"]
+    return new_slot_dict
+
+
+def create_enum(enum_name: str, enum_data: Dict) -> Dict:
+    # TODO
+    return {}
 
 
 if __name__ == "__main__":
