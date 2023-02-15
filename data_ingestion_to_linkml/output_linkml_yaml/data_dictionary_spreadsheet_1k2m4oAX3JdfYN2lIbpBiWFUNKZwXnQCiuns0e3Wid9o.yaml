@@ -7,6 +7,8 @@ prefixes:
   linkml: https://w3id.org/linkml/
   ncit: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
   pcdc: https://w3id.org/pcdc/model
+default_curi_maps:
+- semweb_context
 default_range: string
 imports: linkml:types
 subsets: {}
@@ -56,7 +58,6 @@ classes:
     - randomized_status
     - study_phase
     - study_type
-    - protocol
     slot_usage: {}
     attributes: {}
   Timing:
@@ -176,9 +177,6 @@ slots:
     range: StudyTypeEnum
     description: The nature of the investigation or the investigational use for which
       clinical study is being done.
-  protocol:
-    range: ''
-    description: ''
   disease_phase:
     range: DiseasePhaseEnum
     description: The phase of the cancer treatment process during which relevant observations

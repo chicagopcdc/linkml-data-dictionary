@@ -97,10 +97,13 @@ def create_class(base_struct: Dict, classname: str, data):
     for key in data.keys():
         slot_name = key.lower()
         # TODO: check that ranges and other slot attributes match if a slot with the same name has already been added
-        if slot_name not in base_struct["slots"].keys():
+        if slot_name not in base_struct["slots"].keys() and slot_name != "protocol":
             new_slot = create_slot(base_struct, slot_name, data[key])
             base_struct["slots"][slot_name] = new_slot
-        base_struct["classes"][classname]["slots"].append(slot_name)
+        if (
+            slot_name != "protocol"
+        ):  # TODO create a list of slotnames we don't want to include if there are others
+            base_struct["classes"][classname]["slots"].append(slot_name)
     return base_struct
 
 
