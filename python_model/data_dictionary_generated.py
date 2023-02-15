@@ -1,5 +1,5 @@
 # Auto generated from data_dictionary_spreadsheet_1k2m4oAX3JdfYN2lIbpBiWFUNKZwXnQCiuns0e3Wid9o.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-02-15T12:30:11
+# Generation date: 2023-02-15T12:50:55
 # Schema: data-dictionary
 #
 # id: https://w3id.org/pcdc/model
@@ -25,6 +25,7 @@ from linkml_runtime.utils.curienamespace import CurieNamespace
 from linkml_runtime.linkml_model.types import Integer, String
 
 metamodel_version = "1.7.0"
+version = "0.0.1"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
@@ -513,19 +514,6 @@ class DataContributorIdEnum(EnumDefinitionImpl):
                              description="Cooperative Weichteilsarkom Studiengruppe")
     STSC = PermissibleValue(text="STSC",
                                description="AIEOP Soft Tissue Sarcoma Committee")
-    ARST0331 = PermissibleValue(text="ARST0331")
-    ARST0431 = PermissibleValue(text="ARST0431")
-    ARST0531 = PermissibleValue(text="ARST0531")
-    ARST08P1 = PermissibleValue(text="ARST08P1")
-    D9602 = PermissibleValue(text="D9602")
-    D9802 = PermissibleValue(text="D9802")
-    D9803 = PermissibleValue(text="D9803")
-    RMS2005 = PermissibleValue(text="RMS2005")
-    MTS2008 = PermissibleValue(text="MTS2008")
-    CWS2002P = PermissibleValue(text="CWS2002P")
-    CWS91 = PermissibleValue(text="CWS91")
-    CWS96 = PermissibleValue(text="CWS96")
-    MMT95 = PermissibleValue(text="MMT95")
     BOCG = PermissibleValue(text="BOCG",
                                description="Brazilian Group and Scandinavian Group. A cooperative group of individuals working with pediatric osteosarcoma.",
                                meaning=NCIT.C180373)
@@ -561,12 +549,6 @@ class DataContributorIdEnum(EnumDefinitionImpl):
         setattr(cls, "SIOP MMT",
                 PermissibleValue(text="SIOP MMT",
                                  description="Society of Paediatric Oncology Malignant Mesenchymal Tumour Committee ") )
-        setattr(cls, "ICG RMS96",
-                PermissibleValue(text="ICG RMS96") )
-        setattr(cls, "RMS 4.99",
-                PermissibleValue(text="RMS 4.99") )
-        setattr(cls, "CWS-IV-2002",
-                PermissibleValue(text="CWS-IV-2002") )
         setattr(cls, "COSS-GPOH",
                 PermissibleValue(text="COSS-GPOH",
                                  description="Cooperative German-Austrian-Swiss Osteosarcoma Study Group (COSS) of the German Pediatric Oncology-Hematology Society (GPOH). The section of the German Society of Pediatric Oncology and Hematology dedicated to the study of osteosarcoma.",
@@ -697,10 +679,6 @@ class StudyIdEnum(EnumDefinitionImpl):
                              meaning=NCIT.C90069)
     TCGM2004 = PermissibleValue(text="TCGM2004",
                                        meaning=NCIT.C187201)
-    MMT89 = PermissibleValue(text="MMT89")
-    MMT95 = PermissibleValue(text="MMT95")
-    EpSSG05 = PermissibleValue(text="EpSSG05")
-    Bernie = PermissibleValue(text="Bernie")
     OS2006 = PermissibleValue(text="OS2006",
                                    meaning=NCIT.C180367)
     REGOBONE = PermissibleValue(text="REGOBONE",
@@ -731,8 +709,6 @@ class StudyIdEnum(EnumDefinitionImpl):
         setattr(cls, "AMLBFM-Registry2012",
                 PermissibleValue(text="AMLBFM-Registry2012",
                                  meaning=NCIT.C173251) )
-        setattr(cls, "St. Jude's Trials",
-                PermissibleValue(text="St. Jude's Trials") )
         setattr(cls, "AOST0331/EURAMOS1",
                 PermissibleValue(text="AOST0331/EURAMOS1",
                                  meaning=NCIT.C180361) )
@@ -812,276 +788,6 @@ class TreatmentArmEnum(EnumDefinitionImpl):
                 PermissibleValue(text="DOX-IFOS",
                                  description="A regimen consisting of doxorubicin and ifosfamide used for the treatment of unresectable soft tissue sarcoma.",
                                  meaning=NCIT.C63686) )
-        setattr(cls, "AAML1031:Arm A HR",
-                PermissibleValue(text="AAML1031:Arm A HR") )
-        setattr(cls, "AAML1031:Arm A LR",
-                PermissibleValue(text="AAML1031:Arm A LR") )
-        setattr(cls, "AAML1031:Arm B HR",
-                PermissibleValue(text="AAML1031:Arm B HR") )
-        setattr(cls, "AAML1031:Arm B LR",
-                PermissibleValue(text="AAML1031:Arm B LR") )
-        setattr(cls, "AAML1031:Arm C",
-                PermissibleValue(text="AAML1031:Arm C") )
-        setattr(cls, "AEIOP LAM 2002:ICE-ICE-AVE-HAM- HD-AraC/SR",
-                PermissibleValue(text="AEIOP LAM 2002:ICE-ICE-AVE-HAM- HD-AraC/SR") )
-        setattr(cls, "AEIOP LAM 2002:ICE-ICE-AVE-HAM-SCT/HR",
-                PermissibleValue(text="AEIOP LAM 2002:ICE-ICE-AVE-HAM-SCT/HR") )
-        setattr(cls, "AAML0531:HR",
-                PermissibleValue(text="AAML0531:HR") )
-        setattr(cls, "AAML0531:LR",
-                PermissibleValue(text="AAML0531:LR") )
-        setattr(cls, "AAML0531:Arm A HR",
-                PermissibleValue(text="AAML0531:Arm A HR") )
-        setattr(cls, "AAML0531:Arm A LR",
-                PermissibleValue(text="AAML0531:Arm A LR") )
-        setattr(cls, "AAML0531:Arm B HR",
-                PermissibleValue(text="AAML0531:Arm B HR") )
-        setattr(cls, "AAML0531:Arm B LR",
-                PermissibleValue(text="AAML0531:Arm B LR") )
-        setattr(cls, "MRC AML12:ADE-ADE-MACE-CLASP-MidAC",
-                PermissibleValue(text="MRC AML12:ADE-ADE-MACE-CLASP-MidAC") )
-        setattr(cls, "MRC AML12:ADE-ADE-MACE-CLASP-SCT",
-                PermissibleValue(text="MRC AML12:ADE-ADE-MACE-CLASP-SCT") )
-        setattr(cls, "MRC AML12:ADE-ADE-MACE-MidAC",
-                PermissibleValue(text="MRC AML12:ADE-ADE-MACE-MidAC") )
-        setattr(cls, "MRC AML12:ADE-ADE-MACE-SCT",
-                PermissibleValue(text="MRC AML12:ADE-ADE-MACE-SCT") )
-        setattr(cls, "MRC AML12:ADE-ADE-off trial",
-                PermissibleValue(text="MRC AML12:ADE-ADE-off trial") )
-        setattr(cls, "MRC AML12:MAE-MAE-MACE-CLASP-MidAC",
-                PermissibleValue(text="MRC AML12:MAE-MAE-MACE-CLASP-MidAC") )
-        setattr(cls, "MRC AML12:MAE-MAE-MACE-CLASP-SCT",
-                PermissibleValue(text="MRC AML12:MAE-MAE-MACE-CLASP-SCT") )
-        setattr(cls, "MRC AML12:MAE-MAE-MACE-MidAC",
-                PermissibleValue(text="MRC AML12:MAE-MAE-MACE-MidAC") )
-        setattr(cls, "MRC AML12:MAE-MAE-MACE-SCT",
-                PermissibleValue(text="MRC AML12:MAE-MAE-MACE-SCT") )
-        setattr(cls, "MRC AML12:MAE-MAE-off trial",
-                PermissibleValue(text="MRC AML12:MAE-MAE-off trial") )
-        setattr(cls, "MRC AML15:ADE-ADE-MACE-MidAC-AraC",
-                PermissibleValue(text="MRC AML15:ADE-ADE-MACE-MidAC-AraC") )
-        setattr(cls, "MRC AML15:ADE-ADE-MACE-MidAC-No further",
-                PermissibleValue(text="MRC AML15:ADE-ADE-MACE-MidAC-No further") )
-        setattr(cls, "MRC AML15:ADE-ADE-MACE/Mytolarg-MidAC-AraC",
-                PermissibleValue(text="MRC AML15:ADE-ADE-MACE/Mytolarg-MidAC-AraC") )
-        setattr(cls, "MRC AML15:ADE-ADE-MACE/Mytolarg-MidAC-No further",
-                PermissibleValue(text="MRC AML15:ADE-ADE-MACE/Mytolarg-MidAC-No further") )
-        setattr(cls, "MRC AML15:ADE/Mytolarg-ADE-MACE-MidAC-AraC",
-                PermissibleValue(text="MRC AML15:ADE/Mytolarg-ADE-MACE-MidAC-AraC") )
-        setattr(cls, "MRC AML15:ADE/Mytolarg-ADE-MACE-MidAC-No further",
-                PermissibleValue(text="MRC AML15:ADE/Mytolarg-ADE-MACE-MidAC-No further") )
-        setattr(cls, "MRC AML15:ADE/Mytolarg-ADE-MACE/Mytolarg-MidAC-AraC",
-                PermissibleValue(text="MRC AML15:ADE/Mytolarg-ADE-MACE/Mytolarg-MidAC-AraC") )
-        setattr(cls, "MRC AML15:ADE/Mytolarg-ADE-MACE/Mytolarg-MidAC-No further",
-                PermissibleValue(text="MRC AML15:ADE/Mytolarg-ADE-MACE/Mytolarg-MidAC-No further") )
-        setattr(cls, "MRC AML15:ADE-ADE-AraC3g-AraC3g-AraC",
-                PermissibleValue(text="MRC AML15:ADE-ADE-AraC3g-AraC3g-AraC") )
-        setattr(cls, "MRC AML15:ADE-ADE-AraC3g-AraC3g-No further",
-                PermissibleValue(text="MRC AML15:ADE-ADE-AraC3g-AraC3g-No further") )
-        setattr(cls, "MRC AML15:ADE-ADE-AraC3g/Mytolarg-AraC3g-AraC",
-                PermissibleValue(text="MRC AML15:ADE-ADE-AraC3g/Mytolarg-AraC3g-AraC") )
-        setattr(cls, "MRC AML15:ADE-ADE-AraC3g/Mytolarg-AraC3g-No further",
-                PermissibleValue(text="MRC AML15:ADE-ADE-AraC3g/Mytolarg-AraC3g-No further") )
-        setattr(cls, "MRC AML15:ADE/Mytolarg-ADE-AraC3g-AraC3g-AraC",
-                PermissibleValue(text="MRC AML15:ADE/Mytolarg-ADE-AraC3g-AraC3g-AraC") )
-        setattr(cls, "MRC AML15:ADE/Mytolarg-ADE-AraC3g-AraC3g-No further",
-                PermissibleValue(text="MRC AML15:ADE/Mytolarg-ADE-AraC3g-AraC3g-No further") )
-        setattr(cls, "MRC AML15:ADE/Mytolarg-ADE-AraC3g/Mytolarg-AraC3g-AraC",
-                PermissibleValue(text="MRC AML15:ADE/Mytolarg-ADE-AraC3g/Mytolarg-AraC3g-AraC") )
-        setattr(cls, "MRC AML15:ADE/Mytolarg-ADE-AraC3g/Mytolarg-AraC3g-No further",
-                PermissibleValue(text="MRC AML15:ADE/Mytolarg-ADE-AraC3g/Mytolarg-AraC3g-No further") )
-        setattr(cls, "MRC AML15:FLAGIda-FLAGIda-MACE-MidAC-AraC",
-                PermissibleValue(text="MRC AML15:FLAGIda-FLAGIda-MACE-MidAC-AraC") )
-        setattr(cls, "MRC AML15:FLAGIda-FLAGIda-MACE-MidAC-No further",
-                PermissibleValue(text="MRC AML15:FLAGIda-FLAGIda-MACE-MidAC-No further") )
-        setattr(cls, "MRC AML15:FLAGIda-FLAGIda-MACE/Mytolarg-MidAC-AraC",
-                PermissibleValue(text="MRC AML15:FLAGIda-FLAGIda-MACE/Mytolarg-MidAC-AraC") )
-        setattr(cls, "MRC AML15:FLAGIda-FLAGIda-MACE/Mytolarg-MidAC-No further",
-                PermissibleValue(text="MRC AML15:FLAGIda-FLAGIda-MACE/Mytolarg-MidAC-No further") )
-        setattr(cls, "MRC AML15:FLAGIda/Mytolarg-FLAGIda-MACE-MidAC-AraC",
-                PermissibleValue(text="MRC AML15:FLAGIda/Mytolarg-FLAGIda-MACE-MidAC-AraC") )
-        setattr(cls, "MRC AML15:FLAGIda/Mytolarg-FLAGIda-MACE-MidAC-No further",
-                PermissibleValue(text="MRC AML15:FLAGIda/Mytolarg-FLAGIda-MACE-MidAC-No further") )
-        setattr(cls, "MRC AML15:FLAGIda/Mytolarg-FLAGIda-MACE/Mytolarg-MidAC-AraC",
-                PermissibleValue(text="MRC AML15:FLAGIda/Mytolarg-FLAGIda-MACE/Mytolarg-MidAC-AraC") )
-        setattr(cls, "MRC AML15:FLAGIda/Mytolarg-FLAGIda-MACE/Mytolarg-MidAC-No further",
-                PermissibleValue(text="MRC AML15:FLAGIda/Mytolarg-FLAGIda-MACE/Mytolarg-MidAC-No further") )
-        setattr(cls, "MRC AML15:FLAGIda-FLAGIda-AraC3g-AraC3g-AraC",
-                PermissibleValue(text="MRC AML15:FLAGIda-FLAGIda-AraC3g-AraC3g-AraC") )
-        setattr(cls, "MRC AML15:FLAGIda-FLAGIda-AraC3g-AraC3g-No further",
-                PermissibleValue(text="MRC AML15:FLAGIda-FLAGIda-AraC3g-AraC3g-No further") )
-        setattr(cls, "MRC AML15:FLAGIda-FLAGIda-AraC3g/Mytolarg-AraC3g-AraC",
-                PermissibleValue(text="MRC AML15:FLAGIda-FLAGIda-AraC3g/Mytolarg-AraC3g-AraC") )
-        setattr(cls, "MRC AML15:FLAGIda-FLAGIda-AraC3g/Mytolarg-AraC3g-No further",
-                PermissibleValue(text="MRC AML15:FLAGIda-FLAGIda-AraC3g/Mytolarg-AraC3g-No further") )
-        setattr(cls, "MRC AML15:FLAGIda/Mytolarg-FLAGIda-AraC3g-AraC3g-AraC",
-                PermissibleValue(text="MRC AML15:FLAGIda/Mytolarg-FLAGIda-AraC3g-AraC3g-AraC") )
-        setattr(cls, "MRC AML15:FLAGIda/Mytolarg-FLAGIda-AraC3g-AraC3g-No further",
-                PermissibleValue(text="MRC AML15:FLAGIda/Mytolarg-FLAGIda-AraC3g-AraC3g-No further") )
-        setattr(cls, "MRC AML15:FLAGIda/Mytolarg-FLAGIda-AraC3g/Mytolarg-AraC3g-AraC",
-                PermissibleValue(text="MRC AML15:FLAGIda/Mytolarg-FLAGIda-AraC3g/Mytolarg-AraC3g-AraC") )
-        setattr(cls, "MRC AML15:FLAGIda/Mytolarg-FLAGIda-AraC3g/Mytolarg-AraC3g-No further",
-                PermissibleValue(text="MRC AML15:FLAGIda/Mytolarg-FLAGIda-AraC3g/Mytolarg-AraC3g-No further") )
-        setattr(cls, "NOPHO AML 2004:AIET-AM-HA1M-HA2E-HA3-HA2E + gemtuzumab ozagamicin",
-                PermissibleValue(text="NOPHO AML 2004:AIET-AM-HA1M-HA2E-HA3-HA2E + gemtuzumab ozagamicin") )
-        setattr(cls, "NOPHO AML 2004:AIET-AM-HA1M-HA2E-HA3-HA2E  + no further therapy",
-                PermissibleValue(text="NOPHO AML 2004:AIET-AM-HA1M-HA2E-HA3-HA2E  + no further therapy") )
-        setattr(cls, "NOPHO AML 2012:MEC-ADE-HAM-HA3E-FLA",
-                PermissibleValue(text="NOPHO AML 2012:MEC-ADE-HAM-HA3E-FLA") )
-        setattr(cls, "NOPHO AML 2012:DEC-ADE-HAM-HA3E-FLA",
-                PermissibleValue(text="NOPHO AML 2012:DEC-ADE-HAM-HA3E-FLA") )
-        setattr(cls, "NOPHO AML 2012:MEC-FLAD-HAM-HA3E-FLA",
-                PermissibleValue(text="NOPHO AML 2012:MEC-FLAD-HAM-HA3E-FLA") )
-        setattr(cls, "NOPHO AML 2012:DEC -FLAD-HAM-HA3E-FLA",
-                PermissibleValue(text="NOPHO AML 2012:DEC -FLAD-HAM-HA3E-FLA") )
-        setattr(cls, "NOPHO AML 2012:MEC-ADE-HA3E-FLA (low risk)",
-                PermissibleValue(text="NOPHO AML 2012:MEC-ADE-HA3E-FLA (low risk)") )
-        setattr(cls, "NOPHO AML 2012:DEC -ADE-HA3E-FLA (low risk)",
-                PermissibleValue(text="NOPHO AML 2012:DEC -ADE-HA3E-FLA (low risk)") )
-        setattr(cls, "NOPHO AML 2012:MEC-FLAD-HA3E-FLA (low risk)",
-                PermissibleValue(text="NOPHO AML 2012:MEC-FLAD-HA3E-FLA (low risk)") )
-        setattr(cls, "NOPHO AML 2012:DEC -FLAD-HA3E-FLA (low risk)",
-                PermissibleValue(text="NOPHO AML 2012:DEC -FLAD-HA3E-FLA (low risk)") )
-        setattr(cls, "NOPHO AML 2012:MEC-ADE-HAM + SCT (high risk 1)",
-                PermissibleValue(text="NOPHO AML 2012:MEC-ADE-HAM + SCT (high risk 1)") )
-        setattr(cls, "NOPHO AML 2012:DEC -ADE-HAM + SCT (high risk 1)",
-                PermissibleValue(text="NOPHO AML 2012:DEC -ADE-HAM + SCT (high risk 1)") )
-        setattr(cls, "NOPHO AML 2012:MEC-FLAD-HAM + SCT (high risk 1)",
-                PermissibleValue(text="NOPHO AML 2012:MEC-FLAD-HAM + SCT (high risk 1)") )
-        setattr(cls, "NOPHO AML 2012:DEC -FLAD-HAM + SCT (high risk 1)",
-                PermissibleValue(text="NOPHO AML 2012:DEC -FLAD-HAM + SCT (high risk 1)") )
-        setattr(cls, "NOPHO AML 2012:MEC-ADE-HAM-HA3E + SCT (high risk 2)",
-                PermissibleValue(text="NOPHO AML 2012:MEC-ADE-HAM-HA3E + SCT (high risk 2)") )
-        setattr(cls, "NOPHO AML 2012:DEC -ADE-HAM-HA3E+ SCT (high risk 2)",
-                PermissibleValue(text="NOPHO AML 2012:DEC -ADE-HAM-HA3E+ SCT (high risk 2)") )
-        setattr(cls, "NOPHO AML 2012:MEC-FLAD-HAM-HA3E+ SCT (high risk 2)",
-                PermissibleValue(text="NOPHO AML 2012:MEC-FLAD-HAM-HA3E+ SCT (high risk 2)") )
-        setattr(cls, "NOPHO AML 2012:DEC -FLAD-HAM-HA3E+ SCT (high risk 2)",
-                PermissibleValue(text="NOPHO AML 2012:DEC -FLAD-HAM-HA3E+ SCT (high risk 2)") )
-        setattr(cls, "NOPHO AML 2012:MEC-ADE-HAM-HA3E-FLA + SCT (high risk 3)",
-                PermissibleValue(text="NOPHO AML 2012:MEC-ADE-HAM-HA3E-FLA + SCT (high risk 3)") )
-        setattr(cls, "NOPHO AML 2012:DEC -ADE-HAM-HA3E-FLA + SCT (high risk 3)",
-                PermissibleValue(text="NOPHO AML 2012:DEC -ADE-HAM-HA3E-FLA + SCT (high risk 3)") )
-        setattr(cls, "NOPHO AML 2012:MEC-FLAD-HAM-HA3E-FLA + SCT (high risk 3)",
-                PermissibleValue(text="NOPHO AML 2012:MEC-FLAD-HAM-HA3E-FLA + SCT (high risk 3)") )
-        setattr(cls, "NOPHO AML 2012:DEC -FLAD-HAM-HA3E-FLA + SCT (high risk 3)",
-                PermissibleValue(text="NOPHO AML 2012:DEC -FLAD-HAM-HA3E-FLA + SCT (high risk 3)") )
-        setattr(cls, "NOPHO AML 2012:MEC-ADE-Off protocol",
-                PermissibleValue(text="NOPHO AML 2012:MEC-ADE-Off protocol") )
-        setattr(cls, "NOPHO AML 2012:DEC -ADE-Off protocol",
-                PermissibleValue(text="NOPHO AML 2012:DEC -ADE-Off protocol") )
-        setattr(cls, "NOPHO AML 2012:MEC-FLAD- Off protocol",
-                PermissibleValue(text="NOPHO AML 2012:MEC-FLAD- Off protocol") )
-        setattr(cls, "NOPHO AML 2012:DEC -FLAD-Off protocol",
-                PermissibleValue(text="NOPHO AML 2012:DEC -FLAD-Off protocol") )
-        setattr(cls, "DB - AML01:AIET-Post recovery AM-HA2E+HA3+HA2E",
-                PermissibleValue(text="DB - AML01:AIET-Post recovery AM-HA2E+HA3+HA2E") )
-        setattr(cls, "DB - AML01:AIET-Post recovery FLA/Dnx-HA2E+HA3+HA2E",
-                PermissibleValue(text="DB - AML01:AIET-Post recovery FLA/Dnx-HA2E+HA3+HA2E") )
-        setattr(cls, "DB - AML01:AIET-Post recovery AM-Off protocl",
-                PermissibleValue(text="DB - AML01:AIET-Post recovery AM-Off protocl") )
-        setattr(cls, "DB - AML01:AIET-Post recovery FLA/Dnx-Off protocol",
-                PermissibleValue(text="DB - AML01:AIET-Post recovery FLA/Dnx-Off protocol") )
-        setattr(cls, "DB - AML01:AIET-Immediate AM-HA2E+HA3+HA2E",
-                PermissibleValue(text="DB - AML01:AIET-Immediate AM-HA2E+HA3+HA2E") )
-        setattr(cls, "DB - AML01:AIET-Immediate  FLA/Dnx-HA2E+HA3+HA2E",
-                PermissibleValue(text="DB - AML01:AIET-Immediate  FLA/Dnx-HA2E+HA3+HA2E") )
-        setattr(cls, "DB - AML01:AIET-Immediate  AM-Off protocol",
-                PermissibleValue(text="DB - AML01:AIET-Immediate  AM-Off protocol") )
-        setattr(cls, "DB - AML01:AIET-Immediate  FLA/Dnx-Off protocol",
-                PermissibleValue(text="DB - AML01:AIET-Immediate  FLA/Dnx-Off protocol") )
-        setattr(cls, "AIEOP LAM 92:ICE(3+5+10) + ICE(3+5+10) + Consolidation",
-                PermissibleValue(text="AIEOP LAM 92:ICE(3+5+10) + ICE(3+5+10) + Consolidation") )
-        setattr(cls, "AIEOP LAM 92:ICE(3+5+10) + ICE(2+3+7) + Consolidation",
-                PermissibleValue(text="AIEOP LAM 92:ICE(3+5+10) + ICE(2+3+7) + Consolidation") )
-        setattr(cls, "AIEOP LAM 92:ICE(3+5+10) + ICE(3+5+10) + Consolidation + AUTO/ALLO SCT",
-                PermissibleValue(text="AIEOP LAM 92:ICE(3+5+10) + ICE(3+5+10) + Consolidation + AUTO/ALLO SCT") )
-        setattr(cls, "AIEOP LAM 92:ICE(3+5+10) + ICE(2+3+7) + Consolidation + AUTO/ALLO SCT",
-                PermissibleValue(text="AIEOP LAM 92:ICE(3+5+10) + ICE(2+3+7) + Consolidation + AUTO/ALLO SCT") )
-        setattr(cls, "AIEOP LAM 92:ICE(3+5+10) + ICE(3+5+10) + AUTO/ALLO SCT",
-                PermissibleValue(text="AIEOP LAM 92:ICE(3+5+10) + ICE(3+5+10) + AUTO/ALLO SCT") )
-        setattr(cls, "AIEOP LAM 92:ICE(3+5+10) + ICE(2+3+7) + AUTO/ALLO SCT",
-                PermissibleValue(text="AIEOP LAM 92:ICE(3+5+10) + ICE(2+3+7) + AUTO/ALLO SCT") )
-        setattr(cls, "SCFE ELAM02:Induction + consolidation 1 + consolidation 2 + consolidation 3",
-                PermissibleValue(text="SCFE ELAM02:Induction + consolidation 1 + consolidation 2 + consolidation 3") )
-        setattr(cls, "SCFE ELAM02:Induction + consolidation 1 + consolidation 2 + consolidation 3 + IL2 maintenance",
-                PermissibleValue(text="SCFE ELAM02:Induction + consolidation 1 + consolidation 2 + consolidation 3 + IL2 maintenance") )
-        setattr(cls, "SCFE ELAM02:Induction + consolidation 1 + allo HSCT",
-                PermissibleValue(text="SCFE ELAM02:Induction + consolidation 1 + allo HSCT") )
-        setattr(cls, "AML-BFM 2004:ADxE- AI-haM-HAE- Standard maintenance, 12 Gy (Standard Risk arm)",
-                PermissibleValue(text="AML-BFM 2004:ADxE- AI-haM-HAE- Standard maintenance, 12 Gy (Standard Risk arm)") )
-        setattr(cls, "AML-BFM 2004:ADxE- AI-haM-HAE- Standard maintenance, 18 Gy(Standard Risk arm)",
-                PermissibleValue(text="AML-BFM 2004:ADxE- AI-haM-HAE- Standard maintenance, 18 Gy(Standard Risk arm)") )
-        setattr(cls, "AML-BFM 2004:ADxE-HAM- AI/2CDA-haM, HAE- Standard maintenance, 12 Gy (High Risk arm)",
-                PermissibleValue(text="AML-BFM 2004:ADxE-HAM- AI/2CDA-haM, HAE- Standard maintenance, 12 Gy (High Risk arm)") )
-        setattr(cls, "AML-BFM 2004:ADxE-HAM- AI/2CDA-haM, HAE- Standard maintenance, 18 Gy (High Risk arm)",
-                PermissibleValue(text="AML-BFM 2004:ADxE-HAM- AI/2CDA-haM, HAE- Standard maintenance, 18 Gy (High Risk arm)") )
-        setattr(cls, "AML-BFM 2004:ADxE-HAM- AI-haM, HAE- Standard maintenance, 12 Gy (High Risk arm)",
-                PermissibleValue(text="AML-BFM 2004:ADxE-HAM- AI-haM, HAE- Standard maintenance, 12 Gy (High Risk arm)") )
-        setattr(cls, "AML-BFM 2004:ADxE-HAM- AI-haM, HAE- Standard maintenance, 18 Gy (High Risk arm)",
-                PermissibleValue(text="AML-BFM 2004:ADxE-HAM- AI-haM, HAE- Standard maintenance, 18 Gy (High Risk arm)") )
-        setattr(cls, "AML-BFM 2004:AIE- AI-haM-HAE- Standard maintenance, 12 Gy (Standard Risk arm)",
-                PermissibleValue(text="AML-BFM 2004:AIE- AI-haM-HAE- Standard maintenance, 12 Gy (Standard Risk arm)") )
-        setattr(cls, "AML-BFM 2004:AIE- AI-haM-HAE- Standard maintenance, 18 Gy(Standard Risk arm)",
-                PermissibleValue(text="AML-BFM 2004:AIE- AI-haM-HAE- Standard maintenance, 18 Gy(Standard Risk arm)") )
-        setattr(cls, "AML-BFM 2004:AIE-HAM- AI/2CDA-haM, HAE- Standard maintenance, 12 Gy (High Risk arm)",
-                PermissibleValue(text="AML-BFM 2004:AIE-HAM- AI/2CDA-haM, HAE- Standard maintenance, 12 Gy (High Risk arm)") )
-        setattr(cls, "AML-BFM 2004:AIE-HAM- AI/2CDA-haM, HAE- Standard maintenance, 18 Gy (High Risk arm)",
-                PermissibleValue(text="AML-BFM 2004:AIE-HAM- AI/2CDA-haM, HAE- Standard maintenance, 18 Gy (High Risk arm)") )
-        setattr(cls, "AML-BFM 2004:AIE-HAM- AI-haM, HAE- Standard maintenance, 12 Gy (High Risk arm)",
-                PermissibleValue(text="AML-BFM 2004:AIE-HAM- AI-haM, HAE- Standard maintenance, 12 Gy (High Risk arm)") )
-        setattr(cls, "AML-BFM 2004:AIE-HAM- AI-haM, HAE- Standard maintenance, 18 Gy (High Risk arm)",
-                PermissibleValue(text="AML-BFM 2004:AIE-HAM- AI-haM, HAE- Standard maintenance, 18 Gy (High Risk arm)") )
-        setattr(cls, "AML-BFM 2004:AIE-HAM- AI-haM, SCT",
-                PermissibleValue(text="AML-BFM 2004:AIE-HAM- AI-haM, SCT") )
-        setattr(cls, "AML-BFM 2004:AIE-HAM- AI/2CDA-haM, SCT",
-                PermissibleValue(text="AML-BFM 2004:AIE-HAM- AI/2CDA-haM, SCT") )
-        setattr(cls, "AML-BFM 2004:ADxE-HAM- AI-haM, SCT",
-                PermissibleValue(text="AML-BFM 2004:ADxE-HAM- AI-haM, SCT") )
-        setattr(cls, "AML-BFM 2004:ADxE-HAM- AI/2CDA-haM, SCT",
-                PermissibleValue(text="AML-BFM 2004:ADxE-HAM- AI/2CDA-haM, SCT") )
-        setattr(cls, "AML BFM Registry 2012:ADxE- AI-haM-HAE- Standard maintenance (Standard Risk arm)",
-                PermissibleValue(text="AML BFM Registry 2012:ADxE- AI-haM-HAE- Standard maintenance (Standard Risk arm)") )
-        setattr(cls, "AML BFM Registry 2012:ADxE-HAM- AI-haM, HAE- Standard maintenance (Intermediate Risk arm)",
-                PermissibleValue(text="AML BFM Registry 2012:ADxE-HAM- AI-haM, HAE- Standard maintenance (Intermediate Risk arm)") )
-        setattr(cls, "AML BFM Registry 2012:ADxE-HAM- AI-haM, SCT (High risk arm)",
-                PermissibleValue(text="AML BFM Registry 2012:ADxE-HAM- AI-haM, SCT (High risk arm)") )
-        setattr(cls, "AML BFM 2012:CDxA- AI-haM, AI- HAE -short maintenance (Standard Risk arm)",
-                PermissibleValue(text="AML BFM 2012:CDxA- AI-haM, AI- HAE -short maintenance (Standard Risk arm)") )
-        setattr(cls, "AML BFM 2012:CDxA- AI-haM, AI- HAE - standard maintenance(Standard Risk arm)",
-                PermissibleValue(text="AML BFM 2012:CDxA- AI-haM, AI- HAE - standard maintenance(Standard Risk arm)") )
-        setattr(cls, "AML BFM 2012:CDxA- HAM- AI- haM-HAE -short maintenance (Standard Risk arm)",
-                PermissibleValue(text="AML BFM 2012:CDxA- HAM- AI- haM-HAE -short maintenance (Standard Risk arm)") )
-        setattr(cls, "AML BFM 2012:CDxA- HAM- AI- haM-HAE -standard maintenance(Standard Risk arm)",
-                PermissibleValue(text="AML BFM 2012:CDxA- HAM- AI- haM-HAE -standard maintenance(Standard Risk arm)") )
-        setattr(cls, "AML BFM 2012:ADxE - AI-haM, AI- HAE -short maintenance (Standard Risk arm)",
-                PermissibleValue(text="AML BFM 2012:ADxE - AI-haM, AI- HAE -short maintenance (Standard Risk arm)") )
-        setattr(cls, "AML BFM 2012:ADxE - AI-haM, AI- HAE - standard maintenance(Standard Risk arm)",
-                PermissibleValue(text="AML BFM 2012:ADxE - AI-haM, AI- HAE - standard maintenance(Standard Risk arm)") )
-        setattr(cls, "AML BFM 2012:ADxE - HAM- AI- haM-HAE -short maintenance (Standard Risk arm)",
-                PermissibleValue(text="AML BFM 2012:ADxE - HAM- AI- haM-HAE -short maintenance (Standard Risk arm)") )
-        setattr(cls, "AML BFM 2012:ADxE - HAM- AI- haM-HAE -standard maintenance(Standard Risk arm)",
-                PermissibleValue(text="AML BFM 2012:ADxE - HAM- AI- haM-HAE -standard maintenance(Standard Risk arm)") )
-        setattr(cls, "AML BFM 2012:CDxA-HAM- AI-haM- HAE-short maintenance (Intermediate Risk arm)",
-                PermissibleValue(text="AML BFM 2012:CDxA-HAM- AI-haM- HAE-short maintenance (Intermediate Risk arm)") )
-        setattr(cls, "AML BFM 2012:CDxA-HAM- AI-haM- HAE -standard maintenance (Intermediate Risk arm)",
-                PermissibleValue(text="AML BFM 2012:CDxA-HAM- AI-haM- HAE -standard maintenance (Intermediate Risk arm)") )
-        setattr(cls, "AML BFM 2012:ADxE- HAM- AI-haM- HAE-short maintenance (Intermediate Risk arm)",
-                PermissibleValue(text="AML BFM 2012:ADxE- HAM- AI-haM- HAE-short maintenance (Intermediate Risk arm)") )
-        setattr(cls, "AML BFM 2012:ADxE- HAM- AI-haM- HAE-standard maintenance (Intermediate Risk arm)",
-                PermissibleValue(text="AML BFM 2012:ADxE- HAM- AI-haM- HAE-standard maintenance (Intermediate Risk arm)") )
-        setattr(cls, "AML BFM 2012:CDxA- HAM Sorafenib, AI Sorafenib, haM Sorafenib, short maintenance (Intermediate Risk arm)",
-                PermissibleValue(text="AML BFM 2012:CDxA- HAM Sorafenib, AI Sorafenib, haM Sorafenib, short maintenance (Intermediate Risk arm)") )
-        setattr(cls, "AML BFM 2012:CDxA- HAM Sorafenib, AI Sorafenib, haM Sorafenib, standard maintenance (Intermediate Risk arm)",
-                PermissibleValue(text="AML BFM 2012:CDxA- HAM Sorafenib, AI Sorafenib, haM Sorafenib, standard maintenance (Intermediate Risk arm)") )
-        setattr(cls, "AML BFM 2012:CDxA- HAM Sorafenib, AI Sorafenib, haM Sorafenib, Stem Cell Transplantation (High Risk arm)",
-                PermissibleValue(text="AML BFM 2012:CDxA- HAM Sorafenib, AI Sorafenib, haM Sorafenib, Stem Cell Transplantation (High Risk arm)") )
-        setattr(cls, "AML BFM 2012:CDxA-HAM, AI, haM, Stem Cell Transplantation(High Risk arm)",
-                PermissibleValue(text="AML BFM 2012:CDxA-HAM, AI, haM, Stem Cell Transplantation(High Risk arm)") )
-        setattr(cls, "AML BFM 2012:ADxE- HAM Sorafenib, AI Sorafenib, haM Sorafenib, Stem Cell Transplantation (High Risk arm)",
-                PermissibleValue(text="AML BFM 2012:ADxE- HAM Sorafenib, AI Sorafenib, haM Sorafenib, Stem Cell Transplantation (High Risk arm)") )
-        setattr(cls, "AML BFM 2012:ADxE- HAM, AI, haM, Stem Cell Transplantation(High Risk arm)",
-                PermissibleValue(text="AML BFM 2012:ADxE- HAM, AI, haM, Stem Cell Transplantation(High Risk arm)") )
         setattr(cls, "SJCRH AML02:HDAC-ADE+GO-C1-C2-C3",
                 PermissibleValue(text="SJCRH AML02:HDAC-ADE+GO-C1-C2-C3",
                                  description="Rubnitz et al, 2010") )
@@ -1421,8 +1127,6 @@ class CourseEnum(EnumDefinitionImpl):
                 PermissibleValue(text="Palliative Treatment",
                                  description="The patient- and family-centered active holistic care of patients with advanced, progressive disease. Essential components of Palliative Care are: pain and symptom control, communication regarding treatment and alternatives, prognosis, and available services, rehabilitation services, care that addresses treatment and palliative concerns, intellectual, emotional, social, and spiritual needs, terminal care, support in bereavement. The goal of Palliative Care is an achievement of the best quality of life for patients and their families.",
                                  meaning=NCIT.C15292) )
-        setattr(cls, "Chemotherapy Window",
-                PermissibleValue(text="Chemotherapy Window") )
         setattr(cls, "Stem Cell Transplant Conditioning",
                 PermissibleValue(text="Stem Cell Transplant Conditioning",
                                  description="A regimen that can be used as a conditioning regimen for hematopoietic stem cell transplantation (HSCT).",

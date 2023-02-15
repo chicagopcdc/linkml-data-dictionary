@@ -129,12 +129,23 @@ def create_enum(base_struct: Dict, enum_name: str, permissible_values: Dict):
     if enum_name in base_struct["enums"].keys():
         # TODO handle cross-checking permissible values and
         return
-    else:
+    else:  # TODO double check the meanings that there is somethign in the quotation marks
         for key in permissible_values.keys():
-            enum_dict["permissible_values"][str(key)] = {
-                "description": permissible_values[key]["value_description"],
-                "meaning": permissible_values[key]["value_code"][0],
-            }
+            desc = permissible_values[key]["value_description"]
+            meaning = permissible_values[key]["value_code"][0]
+            if desc == "" and meaning == "":
+                continue
+            elif meaning == "":
+                enum_dict["permissible_values"][str(key)] = {"description": desc}
+            elif desc == "":
+                enum_dict["permissible_values"][str(key)] = {
+                    "meaning": meaning,
+                }
+            else:
+                enum_dict["permissible_values"][str(key)] = {
+                    "description": desc,
+                    "meaning": meaning,
+                }
         base_struct["enums"][enum_name] = enum_dict
 
 

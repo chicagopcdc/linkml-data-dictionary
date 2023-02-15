@@ -352,32 +352,23 @@ enums:
     permissible_values:
       INSTRuCT:
         description: International Soft Tissue Sarcoma Consortium (INSTRuCT)
-        meaning: ''
       MaGIC:
         description: Malignant Germ Cell International Consortium (MaGIC)
-        meaning: ''
       INRG:
         description: International Neuroblastoma Risk Group (INRG)
-        meaning: ''
       NODAL:
         description: Hodgkin Lymphoma Data Collaboration (NODAL)
-        meaning: ''
       INTERACT:
         description: International Pediatric Acute Myeloid Leukemia Consortium (INTERACT)
-        meaning: ''
       HIBiSCus:
         description: Harmonization International Bone Sarcoma Consortium (HIBiSCus)
-        meaning: ''
       INSPiRE:
         description: International Central Nervous System Pediatric Research Consortium
           (INSPiRE)
-        meaning: ''
       Global REACH:
         description: Global Retinoblastoma Alliance for Children
-        meaning: ''
       C3P:
         description: Consortium for Childhood Cancer Predisposition
-        meaning: ''
   DataContributorIdEnum:
     permissible_values:
       AIEOP:
@@ -503,80 +494,23 @@ enums:
         meaning: ncit:C177330
       JCCG:
         description: "Neuroblastoma Committee of Japan Children\u2019s Cancer Group"
-        meaning: ''
       JINCS:
         description: Japanese Infantile Neuroblastoma Co-operative Study Group
-        meaning: ''
       SIOPEN:
         description: Society of Paediatric Oncology Europe Neuroblastoma Group
-        meaning: ''
       JNBSG:
         description: Japan Neuroblatoma Study Group
-        meaning: ''
       EpSSG:
         description: European Paediatric Soft Tissue Sarcoma Study Group
-        meaning: ''
       SIOP MMT:
         description: 'Society of Paediatric Oncology Malignant Mesenchymal Tumour
           Committee '
-        meaning: ''
       ICG:
         description: Italian Cooperative Group
-        meaning: ''
       CWS:
         description: Cooperative Weichteilsarkom Studiengruppe
-        meaning: ''
       STSC:
         description: AIEOP Soft Tissue Sarcoma Committee
-        meaning: ''
-      ARST0331:
-        description: ''
-        meaning: ''
-      ARST0431:
-        description: ''
-        meaning: ''
-      ARST0531:
-        description: ''
-        meaning: ''
-      ARST08P1:
-        description: ''
-        meaning: ''
-      D9602:
-        description: ''
-        meaning: ''
-      D9802:
-        description: ''
-        meaning: ''
-      D9803:
-        description: ''
-        meaning: ''
-      RMS2005:
-        description: ''
-        meaning: ''
-      MTS2008:
-        description: ''
-        meaning: ''
-      ICG RMS96:
-        description: ''
-        meaning: ''
-      RMS 4.99:
-        description: ''
-        meaning: ''
-      CWS-IV-2002:
-        description: ''
-        meaning: ''
-      CWS2002P:
-        description: ''
-        meaning: ''
-      CWS91:
-        description: ''
-        meaning: ''
-      CWS96:
-        description: ''
-        meaning: ''
-      MMT95:
-        description: ''
-        meaning: ''
       COSS-GPOH:
         description: Cooperative German-Austrian-Swiss Osteosarcoma Study Group (COSS)
           of the German Pediatric Oncology-Hematology Society (GPOH). The section
@@ -600,106 +534,70 @@ enums:
   StudyIdEnum:
     permissible_values:
       AAML03P1:
-        description: ''
         meaning: ncit:C168936
       AAML0531:
-        description: ''
         meaning: ncit:C168937
       AAML1031:
-        description: ''
         meaning: ncit:C168938
       AMLBFM2004:
-        description: ''
         meaning: ncit:C168939
       AMLBFM2012:
-        description: ''
         meaning: ncit:C173250
       AMLBFM-Registry2012:
-        description: ''
         meaning: ncit:C173251
       AMLBFMRegistry2017:
-        description: ''
         meaning: ncit:C182031
       AMLBFM1998:
-        description: ''
         meaning: ncit:C182032
       SJCRHAML02:
-        description: ''
         meaning: ncit:C168940
       JPLSGAML05:
-        description: ''
         meaning: ncit:C168941
       AEIOPAML2002:
-        description: ''
         meaning: ncit:C168942
       JACLSAML99:
-        description: ''
         meaning: ncit:C168943
       DBAML01:
-        description: ''
         meaning: ncit:C168944
       MRCAML12:
-        description: ''
         meaning: ncit:C168945
       MRCAML15:
-        description: ''
         meaning: ncit:C173252
       NOPHOAML2004:
-        description: ''
         meaning: ncit:C168946
       NOPHOAML2012:
-        description: ''
         meaning: ncit:C173253
       PPLLSGAML98:
-        description: ''
         meaning: ncit:C173254
       AIEOPLAM92:
-        description: ''
         meaning: ncit:C173255
       SCFEELAM02:
-        description: ''
         meaning: ncit:C168947
       AHOD0831:
-        description: ''
         meaning: ncit:C185308
       AHOD0431:
-        description: ''
         meaning: ncit:C185310
       AHOD0031:
-        description: ''
         meaning: ncit:C185311
       AHOD1331:
-        description: ''
         meaning: ncit:C185312
       AHOD1221:
-        description: ''
         meaning: ncit:C185313
       AHOD03P1:
-        description: ''
         meaning: ncit:C185314
-      St. Jude's Trials:
-        description: ''
-        meaning: ''
       AEWS1221:
-        description: ''
         meaning: ncit:C174968
       AEWS0331:
-        description: ''
         meaning: ncit:C174969
       AEWS0031:
-        description: ''
         meaning: ncit:C174970
       AEWS1031:
-        description: ''
         meaning: ncit:C174971
       EE99:
-        description: ''
         meaning: ncit:C174972
       EICESS92:
-        description: ''
         meaning: ncit:C174973
       AEWS07P1:
-        description: ''
         meaning: ncit:C174974
       AALL0331:
         description: Standard Risk B-precursor Acute Lymphoblastic Leukemia (ALL)
@@ -724,85 +622,50 @@ enums:
           from 2003-2011
         meaning: ncit:C178068
       TGM85:
-        description: ''
         meaning: ncit:C177332
       TGM90:
-        description: ''
         meaning: ncit:C177333
       TGM95:
-        description: ''
         meaning: ncit:C177334
       GC1:
-        description: ''
         meaning: ncit:C113593
       GC2:
-        description: ''
         meaning: ncit:C177336
       GOG0078:
-        description: ''
         meaning: ncit:C177337
       GOG0090:
-        description: ''
         meaning: ncit:C177338
       GOG0116:
-        description: ''
         meaning: ncit:C177339
       P9749:
-        description: ''
         meaning: ncit:C177340
       POG9049:
-        description: ''
         meaning: ncit:C177341
       AGCT01P1:
-        description: ''
         meaning: ncit:C177342
       AGCT0132:
-        description: ''
         meaning: ncit:C177343
       AGCT0521:
-        description: ''
         meaning: ncit:C177344
       TE04:
-        description: ''
         meaning: ncit:C20299
       TE05:
-        description: ''
         meaning: ncit:C177346
       TE08:
-        description: ''
         meaning: ncit:C177347
       TE22:
-        description: ''
         meaning: ncit:C177348
       TE09:
-        description: ''
         meaning: ncit:C177349
       TE13:
-        description: ''
         meaning: ncit:C177350
       TE20:
-        description: ''
         meaning: ncit:C177351
       TIP:
-        description: ''
         meaning: ncit:C90069
       TCGM2004:
-        description: ''
         meaning: ncit:C187201
-      MMT89:
-        description: ''
-        meaning: ''
-      MMT95:
-        description: ''
-        meaning: ''
-      EpSSG05:
-        description: ''
-        meaning: ''
-      Bernie:
-        description: ''
-        meaning: ''
       AOST0331/EURAMOS1:
-        description: ''
         meaning: ncit:C180361
       Sarcome13/OS2016:
         description: A Multicentre, Randomised, Open-label, Phase II trial of MEPACT
@@ -811,7 +674,6 @@ enums:
           disease with poor histological response)
         meaning: ncit:C180370
       OS2006:
-        description: ''
         meaning: ncit:C180367
       REGOBONE:
         description: A Randomized Phase II, placebo-controlled , multicenterstudy
@@ -819,7 +681,6 @@ enums:
           bone sarcomas
         meaning: ncit:C180369
       P9754:
-        description: ''
         meaning: ncit:C180368
       INT133:
         description: Trial of Adriamycin, Cisplatin and Methotrexate With and Without
@@ -827,25 +688,18 @@ enums:
           (MTP-PE) for Treatment of Osteogenic Sarcoma
         meaning: ncit:C180366
       AOST0221:
-        description: ''
         meaning: ncit:C180360
       AOST0121:
-        description: ''
         meaning: ncit:C180358
       AOST01P1:
-        description: ''
         meaning: ncit:C180359
       AOST1321:
-        description: ''
         meaning: ncit:C180362
       AOST1421:
-        description: ''
         meaning: ncit:C180363
       CCG-7942:
-        description: ''
         meaning: ncit:C180365
       CCG-782:
-        description: ''
         meaning: ncit:C180364
   TreatmentArmEnum:
     permissible_values:
@@ -917,447 +771,30 @@ enums:
         description: A regimen consisting of doxorubicin and ifosfamide used for the
           treatment of unresectable soft tissue sarcoma.
         meaning: ncit:C63686
-      AAML1031:Arm A HR:
-        description: ''
-        meaning: ''
-      AAML1031:Arm A LR:
-        description: ''
-        meaning: ''
-      AAML1031:Arm B HR:
-        description: ''
-        meaning: ''
-      AAML1031:Arm B LR:
-        description: ''
-        meaning: ''
-      AAML1031:Arm C:
-        description: ''
-        meaning: ''
-      AEIOP LAM 2002:ICE-ICE-AVE-HAM- HD-AraC/SR:
-        description: ''
-        meaning: ''
-      AEIOP LAM 2002:ICE-ICE-AVE-HAM-SCT/HR:
-        description: ''
-        meaning: ''
-      AAML0531:HR:
-        description: ''
-        meaning: ''
-      AAML0531:LR:
-        description: ''
-        meaning: ''
-      AAML0531:Arm A HR:
-        description: ''
-        meaning: ''
-      AAML0531:Arm A LR:
-        description: ''
-        meaning: ''
-      AAML0531:Arm B HR:
-        description: ''
-        meaning: ''
-      AAML0531:Arm B LR:
-        description: ''
-        meaning: ''
-      MRC AML12:ADE-ADE-MACE-CLASP-MidAC:
-        description: ''
-        meaning: ''
-      MRC AML12:ADE-ADE-MACE-CLASP-SCT:
-        description: ''
-        meaning: ''
-      MRC AML12:ADE-ADE-MACE-MidAC:
-        description: ''
-        meaning: ''
-      MRC AML12:ADE-ADE-MACE-SCT:
-        description: ''
-        meaning: ''
-      MRC AML12:ADE-ADE-off trial:
-        description: ''
-        meaning: ''
-      MRC AML12:MAE-MAE-MACE-CLASP-MidAC:
-        description: ''
-        meaning: ''
-      MRC AML12:MAE-MAE-MACE-CLASP-SCT:
-        description: ''
-        meaning: ''
-      MRC AML12:MAE-MAE-MACE-MidAC:
-        description: ''
-        meaning: ''
-      MRC AML12:MAE-MAE-MACE-SCT:
-        description: ''
-        meaning: ''
-      MRC AML12:MAE-MAE-off trial:
-        description: ''
-        meaning: ''
-      MRC AML15:ADE-ADE-MACE-MidAC-AraC:
-        description: ''
-        meaning: ''
-      MRC AML15:ADE-ADE-MACE-MidAC-No further:
-        description: ''
-        meaning: ''
-      MRC AML15:ADE-ADE-MACE/Mytolarg-MidAC-AraC:
-        description: ''
-        meaning: ''
-      MRC AML15:ADE-ADE-MACE/Mytolarg-MidAC-No further:
-        description: ''
-        meaning: ''
-      MRC AML15:ADE/Mytolarg-ADE-MACE-MidAC-AraC:
-        description: ''
-        meaning: ''
-      MRC AML15:ADE/Mytolarg-ADE-MACE-MidAC-No further:
-        description: ''
-        meaning: ''
-      MRC AML15:ADE/Mytolarg-ADE-MACE/Mytolarg-MidAC-AraC:
-        description: ''
-        meaning: ''
-      MRC AML15:ADE/Mytolarg-ADE-MACE/Mytolarg-MidAC-No further:
-        description: ''
-        meaning: ''
-      MRC AML15:ADE-ADE-AraC3g-AraC3g-AraC:
-        description: ''
-        meaning: ''
-      MRC AML15:ADE-ADE-AraC3g-AraC3g-No further:
-        description: ''
-        meaning: ''
-      MRC AML15:ADE-ADE-AraC3g/Mytolarg-AraC3g-AraC:
-        description: ''
-        meaning: ''
-      MRC AML15:ADE-ADE-AraC3g/Mytolarg-AraC3g-No further:
-        description: ''
-        meaning: ''
-      MRC AML15:ADE/Mytolarg-ADE-AraC3g-AraC3g-AraC:
-        description: ''
-        meaning: ''
-      MRC AML15:ADE/Mytolarg-ADE-AraC3g-AraC3g-No further:
-        description: ''
-        meaning: ''
-      MRC AML15:ADE/Mytolarg-ADE-AraC3g/Mytolarg-AraC3g-AraC:
-        description: ''
-        meaning: ''
-      MRC AML15:ADE/Mytolarg-ADE-AraC3g/Mytolarg-AraC3g-No further:
-        description: ''
-        meaning: ''
-      MRC AML15:FLAGIda-FLAGIda-MACE-MidAC-AraC:
-        description: ''
-        meaning: ''
-      MRC AML15:FLAGIda-FLAGIda-MACE-MidAC-No further:
-        description: ''
-        meaning: ''
-      MRC AML15:FLAGIda-FLAGIda-MACE/Mytolarg-MidAC-AraC:
-        description: ''
-        meaning: ''
-      MRC AML15:FLAGIda-FLAGIda-MACE/Mytolarg-MidAC-No further:
-        description: ''
-        meaning: ''
-      MRC AML15:FLAGIda/Mytolarg-FLAGIda-MACE-MidAC-AraC:
-        description: ''
-        meaning: ''
-      MRC AML15:FLAGIda/Mytolarg-FLAGIda-MACE-MidAC-No further:
-        description: ''
-        meaning: ''
-      MRC AML15:FLAGIda/Mytolarg-FLAGIda-MACE/Mytolarg-MidAC-AraC:
-        description: ''
-        meaning: ''
-      MRC AML15:FLAGIda/Mytolarg-FLAGIda-MACE/Mytolarg-MidAC-No further:
-        description: ''
-        meaning: ''
-      MRC AML15:FLAGIda-FLAGIda-AraC3g-AraC3g-AraC:
-        description: ''
-        meaning: ''
-      MRC AML15:FLAGIda-FLAGIda-AraC3g-AraC3g-No further:
-        description: ''
-        meaning: ''
-      MRC AML15:FLAGIda-FLAGIda-AraC3g/Mytolarg-AraC3g-AraC:
-        description: ''
-        meaning: ''
-      MRC AML15:FLAGIda-FLAGIda-AraC3g/Mytolarg-AraC3g-No further:
-        description: ''
-        meaning: ''
-      MRC AML15:FLAGIda/Mytolarg-FLAGIda-AraC3g-AraC3g-AraC:
-        description: ''
-        meaning: ''
-      MRC AML15:FLAGIda/Mytolarg-FLAGIda-AraC3g-AraC3g-No further:
-        description: ''
-        meaning: ''
-      MRC AML15:FLAGIda/Mytolarg-FLAGIda-AraC3g/Mytolarg-AraC3g-AraC:
-        description: ''
-        meaning: ''
-      MRC AML15:FLAGIda/Mytolarg-FLAGIda-AraC3g/Mytolarg-AraC3g-No further:
-        description: ''
-        meaning: ''
-      NOPHO AML 2004:AIET-AM-HA1M-HA2E-HA3-HA2E + gemtuzumab ozagamicin:
-        description: ''
-        meaning: ''
-      NOPHO AML 2004:AIET-AM-HA1M-HA2E-HA3-HA2E  + no further therapy:
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:MEC-ADE-HAM-HA3E-FLA:
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:DEC-ADE-HAM-HA3E-FLA:
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:MEC-FLAD-HAM-HA3E-FLA:
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:DEC -FLAD-HAM-HA3E-FLA:
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:MEC-ADE-HA3E-FLA (low risk):
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:DEC -ADE-HA3E-FLA (low risk):
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:MEC-FLAD-HA3E-FLA (low risk):
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:DEC -FLAD-HA3E-FLA (low risk):
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:MEC-ADE-HAM + SCT (high risk 1):
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:DEC -ADE-HAM + SCT (high risk 1):
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:MEC-FLAD-HAM + SCT (high risk 1):
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:DEC -FLAD-HAM + SCT (high risk 1):
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:MEC-ADE-HAM-HA3E + SCT (high risk 2):
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:DEC -ADE-HAM-HA3E+ SCT (high risk 2):
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:MEC-FLAD-HAM-HA3E+ SCT (high risk 2):
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:DEC -FLAD-HAM-HA3E+ SCT (high risk 2):
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:MEC-ADE-HAM-HA3E-FLA + SCT (high risk 3):
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:DEC -ADE-HAM-HA3E-FLA + SCT (high risk 3):
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:MEC-FLAD-HAM-HA3E-FLA + SCT (high risk 3):
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:DEC -FLAD-HAM-HA3E-FLA + SCT (high risk 3):
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:MEC-ADE-Off protocol:
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:DEC -ADE-Off protocol:
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:MEC-FLAD- Off protocol:
-        description: ''
-        meaning: ''
-      NOPHO AML 2012:DEC -FLAD-Off protocol:
-        description: ''
-        meaning: ''
-      DB - AML01:AIET-Post recovery AM-HA2E+HA3+HA2E:
-        description: ''
-        meaning: ''
-      DB - AML01:AIET-Post recovery FLA/Dnx-HA2E+HA3+HA2E:
-        description: ''
-        meaning: ''
-      DB - AML01:AIET-Post recovery AM-Off protocl:
-        description: ''
-        meaning: ''
-      DB - AML01:AIET-Post recovery FLA/Dnx-Off protocol:
-        description: ''
-        meaning: ''
-      DB - AML01:AIET-Immediate AM-HA2E+HA3+HA2E:
-        description: ''
-        meaning: ''
-      DB - AML01:AIET-Immediate  FLA/Dnx-HA2E+HA3+HA2E:
-        description: ''
-        meaning: ''
-      DB - AML01:AIET-Immediate  AM-Off protocol:
-        description: ''
-        meaning: ''
-      DB - AML01:AIET-Immediate  FLA/Dnx-Off protocol:
-        description: ''
-        meaning: ''
-      AIEOP LAM 92:ICE(3+5+10) + ICE(3+5+10) + Consolidation:
-        description: ''
-        meaning: ''
-      AIEOP LAM 92:ICE(3+5+10) + ICE(2+3+7) + Consolidation:
-        description: ''
-        meaning: ''
-      AIEOP LAM 92:ICE(3+5+10) + ICE(3+5+10) + Consolidation + AUTO/ALLO SCT:
-        description: ''
-        meaning: ''
-      AIEOP LAM 92:ICE(3+5+10) + ICE(2+3+7) + Consolidation + AUTO/ALLO SCT:
-        description: ''
-        meaning: ''
-      AIEOP LAM 92:ICE(3+5+10) + ICE(3+5+10) + AUTO/ALLO SCT:
-        description: ''
-        meaning: ''
-      AIEOP LAM 92:ICE(3+5+10) + ICE(2+3+7) + AUTO/ALLO SCT:
-        description: ''
-        meaning: ''
-      SCFE ELAM02:Induction + consolidation 1 + consolidation 2 + consolidation 3:
-        description: ''
-        meaning: ''
-      SCFE ELAM02:Induction + consolidation 1 + consolidation 2 + consolidation 3 + IL2 maintenance:
-        description: ''
-        meaning: ''
-      SCFE ELAM02:Induction + consolidation 1 + allo HSCT:
-        description: ''
-        meaning: ''
-      AML-BFM 2004:ADxE- AI-haM-HAE- Standard maintenance, 12 Gy (Standard Risk arm):
-        description: ''
-        meaning: ''
-      AML-BFM 2004:ADxE- AI-haM-HAE- Standard maintenance, 18 Gy(Standard Risk arm):
-        description: ''
-        meaning: ''
-      AML-BFM 2004:ADxE-HAM- AI/2CDA-haM, HAE- Standard maintenance, 12 Gy (High Risk arm):
-        description: ''
-        meaning: ''
-      AML-BFM 2004:ADxE-HAM- AI/2CDA-haM, HAE- Standard maintenance, 18 Gy (High Risk arm):
-        description: ''
-        meaning: ''
-      AML-BFM 2004:ADxE-HAM- AI-haM, HAE- Standard maintenance, 12 Gy (High Risk arm):
-        description: ''
-        meaning: ''
-      AML-BFM 2004:ADxE-HAM- AI-haM, HAE- Standard maintenance, 18 Gy (High Risk arm):
-        description: ''
-        meaning: ''
-      AML-BFM 2004:AIE- AI-haM-HAE- Standard maintenance, 12 Gy (Standard Risk arm):
-        description: ''
-        meaning: ''
-      AML-BFM 2004:AIE- AI-haM-HAE- Standard maintenance, 18 Gy(Standard Risk arm):
-        description: ''
-        meaning: ''
-      AML-BFM 2004:AIE-HAM- AI/2CDA-haM, HAE- Standard maintenance, 12 Gy (High Risk arm):
-        description: ''
-        meaning: ''
-      AML-BFM 2004:AIE-HAM- AI/2CDA-haM, HAE- Standard maintenance, 18 Gy (High Risk arm):
-        description: ''
-        meaning: ''
-      AML-BFM 2004:AIE-HAM- AI-haM, HAE- Standard maintenance, 12 Gy (High Risk arm):
-        description: ''
-        meaning: ''
-      AML-BFM 2004:AIE-HAM- AI-haM, HAE- Standard maintenance, 18 Gy (High Risk arm):
-        description: ''
-        meaning: ''
-      AML-BFM 2004:AIE-HAM- AI-haM, SCT:
-        description: ''
-        meaning: ''
-      AML-BFM 2004:AIE-HAM- AI/2CDA-haM, SCT:
-        description: ''
-        meaning: ''
-      AML-BFM 2004:ADxE-HAM- AI-haM, SCT:
-        description: ''
-        meaning: ''
-      AML-BFM 2004:ADxE-HAM- AI/2CDA-haM, SCT:
-        description: ''
-        meaning: ''
-      AML BFM Registry 2012:ADxE- AI-haM-HAE- Standard maintenance (Standard Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM Registry 2012:ADxE-HAM- AI-haM, HAE- Standard maintenance (Intermediate Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM Registry 2012:ADxE-HAM- AI-haM, SCT (High risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:CDxA- AI-haM, AI- HAE -short maintenance (Standard Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:CDxA- AI-haM, AI- HAE - standard maintenance(Standard Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:CDxA- HAM- AI- haM-HAE -short maintenance (Standard Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:CDxA- HAM- AI- haM-HAE -standard maintenance(Standard Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:ADxE - AI-haM, AI- HAE -short maintenance (Standard Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:ADxE - AI-haM, AI- HAE - standard maintenance(Standard Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:ADxE - HAM- AI- haM-HAE -short maintenance (Standard Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:ADxE - HAM- AI- haM-HAE -standard maintenance(Standard Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:CDxA-HAM- AI-haM- HAE-short maintenance (Intermediate Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:CDxA-HAM- AI-haM- HAE -standard maintenance (Intermediate Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:ADxE- HAM- AI-haM- HAE-short maintenance (Intermediate Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:ADxE- HAM- AI-haM- HAE-standard maintenance (Intermediate Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:CDxA- HAM Sorafenib, AI Sorafenib, haM Sorafenib, short maintenance (Intermediate Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:CDxA- HAM Sorafenib, AI Sorafenib, haM Sorafenib, standard maintenance (Intermediate Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:CDxA- HAM Sorafenib, AI Sorafenib, haM Sorafenib, Stem Cell Transplantation (High Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:CDxA-HAM, AI, haM, Stem Cell Transplantation(High Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:ADxE- HAM Sorafenib, AI Sorafenib, haM Sorafenib, Stem Cell Transplantation (High Risk arm):
-        description: ''
-        meaning: ''
-      AML BFM 2012:ADxE- HAM, AI, haM, Stem Cell Transplantation(High Risk arm):
-        description: ''
-        meaning: ''
       SJCRH AML02:HDAC-ADE+GO-C1-C2-C3:
         description: Rubnitz et al, 2010
-        meaning: ''
       SJCRH AML02:HDAC-ADE-C1-C2-C3:
         description: Rubnitz et al, 2010
-        meaning: ''
       SJCRH AML02:HDAC-ADE+GO-SCT:
         description: Rubnitz et al, 2010
-        meaning: ''
       SJCRH AML02:HDAC-ADE-SCT:
         description: Rubnitz et al, 2010
-        meaning: ''
       SJCRH AML02:LDAC-ADE+GO-C1-C2-C3:
         description: Rubnitz et al, 2010
-        meaning: ''
       SJCRH AML02:LDAC-ADE-C1-C2-C3:
         description: Rubnitz et al, 2010
-        meaning: ''
       SJCRH AML02:LDAC-ADE+GO-SCT:
         description: Rubnitz et al, 2010
-        meaning: ''
       SJCRH AML02:LDAC-ADE-SCT:
         description: Rubnitz et al, 2010
-        meaning: ''
       PPLLSG AML-98:SR:
         description: Dluzniewska et al, 2005
-        meaning: ''
       PPLLSG AML-98:HR:
         description: Dluzniewska et al, 2005
-        meaning: ''
       JPLSG AML99:JACLS:
         description: Tsukimoto et al, 2009
-        meaning: ''
       JPLSG AML05:JACLS:
         description: Tomizawa et al, 2013
-        meaning: ''
       AEWS0031:3W-VDC-MESNA+IFO-GCSF:
         description: Regimen A
         meaning: ncit:C174975
@@ -1430,10 +867,8 @@ enums:
     permissible_values:
       Censored:
         description: Subject is censored (i.e. has had no events(s))
-        meaning: ''
       Not Censored:
         description: Subject has had one or more events
-        meaning: ''
       Unknown:
         description: Reported as unknown by the data contributor.
         meaning: ncit:C17998
@@ -1579,7 +1014,6 @@ enums:
         meaning: ncit:C15360
       Post-Consolidation:
         description: '  '
-        meaning: ''
       Continuation:
         description: A period in a clinical study during which subjects receive continuation
           therapy. This therapy is usually different from the therapy given during
@@ -1595,9 +1029,6 @@ enums:
           Care is an achievement of the best quality of life for patients and their
           families.'
         meaning: ncit:C15292
-      Chemotherapy Window:
-        description: ''
-        meaning: ''
       Stem Cell Transplant Conditioning:
         description: A regimen that can be used as a conditioning regimen for hematopoietic
           stem cell transplantation (HSCT).
