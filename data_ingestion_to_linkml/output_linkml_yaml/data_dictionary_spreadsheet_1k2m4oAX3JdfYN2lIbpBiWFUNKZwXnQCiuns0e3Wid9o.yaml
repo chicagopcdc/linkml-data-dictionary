@@ -21,7 +21,6 @@ classes:
   Person:
     is_a: Thing
     description: ''
-    class_uri: ''
     slots:
     - sex
     - race
@@ -32,7 +31,6 @@ classes:
   FamilyMedicalHistory:
     is_a: Thing
     description: ''
-    class_uri: ''
     slots:
     - prior_cancer
     - relation
@@ -42,7 +40,6 @@ classes:
   Subject:
     is_a: Thing
     description: ''
-    class_uri: ''
     slots:
     - honest_broker_subject_id
     - consortium
@@ -63,7 +60,6 @@ classes:
   Timing:
     is_a: Thing
     description: ''
-    class_uri: ''
     slots:
     - disease_phase
     - disease_phase_number

@@ -52,7 +52,6 @@ def get_base_linkml_struct():
     base_class = {
         "is_a": "Thing",
         "description": "",
-        "class_uri": "",
         "slots": [],
         "slot_usage": {},
         "attributes": {},
