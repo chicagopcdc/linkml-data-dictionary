@@ -30,7 +30,7 @@ def load_from_json():
         "FamilyMedicalHistory": family_medical_history,
         "Subject": subject,
         "Timing": timing,
-    }  # need to add family medical history
+    }
 
     for key in data_class_mapping.keys():
         python_linkml_struct = create_class(
@@ -68,7 +68,9 @@ def get_base_linkml_struct():
             "ncit": "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=",
             "pcdc": "https://w3id.org/pcdc/model",
         },
-        "default_curi_maps": ["semweb_context"],
+        "default_curi_maps": [
+            "semweb_context",
+        ],
         "default_range": "string",
         "imports": "linkml:types",
         "subsets": {},  # subsets onward are filled in from parsing the json
@@ -94,20 +96,21 @@ def get_base_linkml_struct():
 def create_class(base_struct: Dict, classname: str, data):
     for key in data.keys():
         slot_name = key.lower()
-        # if the slot has already been added, just assign it to the class
+        # TODO: check that ranges and other slot attributes match if a slot with the same name has already been added
         if slot_name not in base_struct["slots"].keys():
-            new_slot = create_slot(slot_name, data[key])
+            new_slot = create_slot(base_struct, slot_name, data[key])
             base_struct["slots"][slot_name] = new_slot
         base_struct["classes"][classname]["slots"].append(slot_name)
     return base_struct
 
 
-def create_slot(slot_name: str, slot_data: Dict) -> Dict:
+def create_slot(base_struct: Dict, slot_name: str, slot_data: Dict) -> Dict:
     new_slot_dict = {}
     if "permissible_values" in slot_data.keys():
         enum_start = "".join(el.title() for el in slot_name.split("_"))
         enum_name = f"{enum_start}Enum"
-        enum = create_enum(enum_name, slot_data["permissible_values"])
+        create_enum(base_struct, enum_name, slot_data["permissible_values"])
+
         # TODO check if permissible values match and change enum name if they don't
         # match use common name if they do match (parse together permissible
         # values and rename, and update any references that type of enum)
@@ -119,9 +122,18 @@ def create_slot(slot_name: str, slot_data: Dict) -> Dict:
     return new_slot_dict
 
 
-def create_enum(enum_name: str, enum_data: Dict) -> Dict:
-    # TODO
-    return {}
+def create_enum(base_struct: Dict, enum_name: str, permissible_values: Dict):
+    enum_dict = {"permissible_values": {}}
+    if enum_name in base_struct["enums"].keys():
+        # TODO handle cross-checking permissible values and
+        return
+    else:
+        for key in permissible_values.keys():
+            enum_dict["permissible_values"][str(key)] = {
+                "description": permissible_values[key]["value_description"],
+                "meaning": permissible_values[key]["value_code"][0],
+            }
+        base_struct["enums"][enum_name] = enum_dict
 
 
 if __name__ == "__main__":
