@@ -127,26 +127,64 @@ def create_slot(base_struct: Dict, slot_name: str, slot_data: Dict) -> Dict:
 def create_enum(base_struct: Dict, enum_name: str, permissible_values: Dict):
     enum_dict = {"permissible_values": {}}
     if enum_name in base_struct["enums"].keys():
-        # TODO handle cross-checking permissible values and
-        return
-    else:  # TODO double check the meanings that there is somethign in the quotation marks
-        for key in permissible_values.keys():
-            desc = permissible_values[key]["value_description"]
-            meaning = permissible_values[key]["value_code"][0]
-            if desc == "" and meaning == "":
-                continue
-            elif meaning == "":
-                enum_dict["permissible_values"][str(key)] = {"description": desc}
-            elif desc == "":
-                enum_dict["permissible_values"][str(key)] = {
-                    "meaning": meaning,
-                }
-            else:
-                enum_dict["permissible_values"][str(key)] = {
-                    "description": desc,
-                    "meaning": meaning,
-                }
-        base_struct["enums"][enum_name] = enum_dict
+        # an enum already exists with the same name, make sure that they contain the same values
+        existing_enum = base_struct["enums"][enum_name]["permissible_values"].keys()
+        diff = list(
+            set(existing_enum).symmetric_difference(set(permissible_values.keys()))
+        )
+        if len(diff) > 0:
+            raise (
+                ValueError,
+                f"you have two value ranges with different values but the same variable name: {enum_name}",
+            )
+        else:
+            return
+
+    else:
+        # check if enum already exists with same permissible_values:
+        match_exists = compare_enum_vals(base_struct, permissible_values)
+        if not match_exists:
+            for key in permissible_values.keys():
+                desc = permissible_values[key]["value_description"]
+                meaning = permissible_values[key]["value_code"][0]
+                if desc == "" and meaning == "":
+                    continue
+                elif meaning == "":
+                    enum_dict["permissible_values"][str(key)] = {"description": desc}
+                elif desc == "":
+                    enum_dict["permissible_values"][str(key)] = {
+                        "meaning": meaning,
+                    }
+                else:
+                    enum_dict["permissible_values"][str(key)] = {
+                        "description": desc,
+                        "meaning": meaning,
+                    }
+            base_struct["enums"][enum_name] = enum_dict
+
+
+def compare_enum_vals(base_struct: Dict, permissible_values: Dict) -> bool:
+    comparison_values = set(permissible_values.keys())
+    for enum in base_struct["enums"].keys():
+        existing_enum = set(base_struct["enums"][enum]["permissible_values"].keys())
+        if len(existing_enum) == len(comparison_values):
+            diff = list(existing_enum.symmetric_difference(comparison_values))
+            if (
+                len(diff) == 0
+            ):  # there are no differences between an existing enum and the new one, rename and re-refrence
+                new_enum_name = (
+                    "".join(
+                        "".join(el.split()).title() for el in sorted(comparison_values)
+                    )
+                    + "Enum"
+                )
+                reassign = base_struct["enums"].pop(enum)
+                base_struct[new_enum_name] = reassign
+                for slot in base_struct["slots"].keys():
+                    if base_struct["slots"][slot]["range"] == enum:
+                        base_struct["slots"][slot]["range"] == new_enum_name
+                return True
+    return False
 
 
 if __name__ == "__main__":

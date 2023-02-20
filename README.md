@@ -18,3 +18,10 @@ To generate the python data model call:
 ## Generating Markdown
 To generate the markdown documents call:
 `gen-markdown --dir markdown_model  model/schema/data_dictionary.yaml` and the markdown files will be written in the 'markdown_model' folder.
+
+## Using the json data model to define the linkml model
+From the root directory call:
+`python data_ingestion_to_linkml/json_to_linkml.py` 
+This will create a new data_dictionary yaml file name including the key that matches the sheet version that the yaml was generated from. This data dictionary will be in the data_ingestion_to_linkml/output_linkml_yaml folder.
+
+## Using the generated yaml file to generate python
