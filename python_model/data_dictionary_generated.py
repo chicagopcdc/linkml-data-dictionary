@@ -1,5 +1,5 @@
 # Auto generated from data_dictionary_spreadsheet_1k2m4oAX3JdfYN2lIbpBiWFUNKZwXnQCiuns0e3Wid9o.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-02-20T12:44:52
+# Generation date: 2023-02-21T11:39:25
 # Schema: data-dictionary
 #
 # id: https://w3id.org/pcdc/model
@@ -112,11 +112,16 @@ class FamilyMedicalHistory(Thing):
 
     submitter_id: str = None
     type: str = None
+    subjects: Union[Union[dict, "Subject"], List[Union[dict, "Subject"]]] = None
     prior_cancer: Optional[Union[str, "PriorCancerEnum"]] = None
     relation: Optional[Union[str, "RelationEnum"]] = None
     prior_cancer_type: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.subjects):
+            self.MissingRequiredField("subjects")
+        self._normalize_inlined_as_dict(slot_name="subjects", slot_type=Subject, key_name="submitter_id", keyed=False)
+
         if self.prior_cancer is not None and not isinstance(self.prior_cancer, PriorCancerEnum):
             self.prior_cancer = PriorCancerEnum(self.prior_cancer)
 
@@ -140,6 +145,7 @@ class Subject(Thing):
 
     submitter_id: str = None
     type: str = None
+    persons: Union[dict, Person] = None
     honest_broker_subject_id: Optional[str] = None
     consortium: Optional[Union[str, "ConsortiumEnum"]] = None
     data_contributor_id: Optional[Union[str, "DataContributorIdEnum"]] = None
@@ -156,6 +162,11 @@ class Subject(Thing):
     study_type: Optional[Union[str, "StudyTypeEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.persons):
+            self.MissingRequiredField("persons")
+        if not isinstance(self.persons, Person):
+            self.persons = Person(**as_dict(self.persons))
+
         if self.honest_broker_subject_id is not None and not isinstance(self.honest_broker_subject_id, str):
             self.honest_broker_subject_id = str(self.honest_broker_subject_id)
 
@@ -212,6 +223,7 @@ class Timing(Thing):
 
     submitter_id: str = None
     type: str = None
+    subjects: Union[Union[dict, Subject], List[Union[dict, Subject]]] = None
     disease_phase: Optional[Union[str, "DiseasePhaseEnum"]] = None
     disease_phase_number: Optional[int] = None
     age_at_disease_phase: Optional[int] = None
@@ -227,6 +239,10 @@ class Timing(Thing):
     age_at_cycle_end: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.subjects):
+            self.MissingRequiredField("subjects")
+        self._normalize_inlined_as_dict(slot_name="subjects", slot_type=Subject, key_name="submitter_id", keyed=False)
+
         if self.disease_phase is not None and not isinstance(self.disease_phase, DiseasePhaseEnum):
             self.disease_phase = DiseasePhaseEnum(self.disease_phase)
 
@@ -1154,6 +1170,9 @@ slots.submitter_id = Slot(uri=DEFAULT_.submitter_id, name="submitter_id", curie=
 slots.type = Slot(uri=DEFAULT_.type, name="type", curie=DEFAULT_.curie('type'),
                    model_uri=DEFAULT_.type, domain=None, range=str)
 
+slots.subjects = Slot(uri=DEFAULT_.subjects, name="subjects", curie=DEFAULT_.curie('subjects'),
+                   model_uri=DEFAULT_.subjects, domain=None, range=Union[Union[dict, Subject], List[Union[dict, Subject]]])
+
 slots.sex = Slot(uri=DEFAULT_.sex, name="sex", curie=DEFAULT_.curie('sex'),
                    model_uri=DEFAULT_.sex, domain=None, range=Optional[Union[str, "SexEnum"]])
 
@@ -1255,3 +1274,6 @@ slots.age_at_cycle_start = Slot(uri=DEFAULT_.age_at_cycle_start, name="age_at_cy
 
 slots.age_at_cycle_end = Slot(uri=DEFAULT_.age_at_cycle_end, name="age_at_cycle_end", curie=DEFAULT_.curie('age_at_cycle_end'),
                    model_uri=DEFAULT_.age_at_cycle_end, domain=None, range=Optional[int])
+
+slots.subject__persons = Slot(uri=DEFAULT_.persons, name="subject__persons", curie=DEFAULT_.curie('persons'),
+                   model_uri=DEFAULT_.subject__persons, domain=None, range=Union[dict, Person])

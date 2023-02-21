@@ -35,6 +35,7 @@ classes:
     - prior_cancer
     - relation
     - prior_cancer_type
+    - subjects
     slot_usage: {}
     attributes: {}
   Subject:
@@ -56,7 +57,10 @@ classes:
     - study_phase
     - study_type
     slot_usage: {}
-    attributes: {}
+    attributes:
+      persons:
+        range: Person
+        required: true
   Timing:
     is_a: Thing
     description: ''
@@ -74,6 +78,7 @@ classes:
     - cycle_number
     - age_at_cycle_start
     - age_at_cycle_end
+    - subjects
     slot_usage: {}
     attributes: {}
 slots:
@@ -82,6 +87,10 @@ slots:
     required: true
   type:
     description: Default system-assigned property for each node
+    required: true
+  subjects:
+    multivalued: true
+    range: Subject
     required: true
   sex:
     range: SexEnum

@@ -36,6 +36,11 @@ def load_from_json():
         python_linkml_struct = create_class(
             python_linkml_struct, key, data_class_mapping[key]
         )
+        if key == "Subject":
+            python_linkml_struct["classes"]["Subject"]["attributes"]["persons"] = {
+                "range": "Person",
+                "required": True,
+            }
 
     # will need to check that same version doesn't already exist before writing
     write_filename = f"data_ingestion_to_linkml/output_linkml_yaml/data_dictionary_spreadsheet_{data['meta']['spreadsheet_id']}.yaml"
@@ -86,6 +91,11 @@ def get_base_linkml_struct():
                 "description": "Default system-assigned property for each node",
                 "required": True,
             },
+            "subjects": {
+                "multivalued": True,
+                "range": "Subject",
+                "required": True,
+            },
         },
         "enums": {},
     }
@@ -95,7 +105,6 @@ def get_base_linkml_struct():
 def create_class(base_struct: Dict, classname: str, data):
     for key in data.keys():
         slot_name = key.lower()
-        # TODO: check that ranges and other slot attributes match if a slot with the same name has already been added
         if slot_name not in base_struct["slots"].keys() and slot_name != "protocol":
             new_slot = create_slot(base_struct, slot_name, data[key])
             base_struct["slots"][slot_name] = new_slot
@@ -103,6 +112,9 @@ def create_class(base_struct: Dict, classname: str, data):
             slot_name != "protocol"
         ):  # TODO create a list of slotnames we don't want to include if there are others
             base_struct["classes"][classname]["slots"].append(slot_name)
+    # Need to manually add subjects slot for fmh and timing
+    if classname == "FamilyMedicalHistory" or classname == "Timing":
+        base_struct["classes"][classname]["slots"].append("subjects")
     return base_struct
 
 

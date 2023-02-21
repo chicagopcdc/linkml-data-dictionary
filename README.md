@@ -25,3 +25,13 @@ From the root directory call:
 This will create a new data_dictionary yaml file name including the key that matches the sheet version that the yaml was generated from. This data dictionary will be in the data_ingestion_to_linkml/output_linkml_yaml folder.
 
 ## Using the generated yaml file to generate python
+Using the generated yaml filename call:
+`gen-python data_ingestion_to_linkml/output_linkml_yaml/data_dictionary_spreadsheet_<SPREADSHEET_KEY>.yaml > python_model/data_dictionary_generated.py`
+
+This will take the yaml created from spreadsheet data with the given SPREADSHEET_KEY (ex. 1k23ue9403), and create a python file with the name data_dictionary_generated.py in the same python_model folder
+
+## Using the generated yaml file to generate markdown
+Using the generated yaml filename call:
+`gen-markdown --dir markdown_model_generated  data_ingestion_to_linkml/output_linkml_yaml/data_dictionary_spreadsheet_<SPREADSHEET_KEY>.yaml`
+
+This will take the yaml created from spreadsheet data with the given SPREADSHEET_KEY (ex. 1k23ue9403), and create markdown files in the markdown_model_generated folder.
