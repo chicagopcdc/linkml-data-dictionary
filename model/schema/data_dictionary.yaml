@@ -6,8 +6,6 @@ version: 0.0.1
 
 prefixes:
  linkml: https://w3id.org/linkml/
- schema: https://schema.org/
- ex: https://example.org/linkml/hello-world/ 
  ncit: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
  pcdc: https://w3id.org/pcdc/model
 
@@ -54,11 +52,7 @@ classes:
       - prior_cancer
       - relation
       - prior_cancer_type
-    slot_usage:
-      subjects:
-        range: Subject
-        multivalued: False
-        required: True
+      - subjects
   Subject:
     is_a: NamedThing
     description:
@@ -102,12 +96,8 @@ classes:
       - age_at_cyle_end
       - timing_type
       - timings
-    slot_usage:
-      subjects:
-        range: Subject
-        multivalued: False
-        required: True
-
+      - subjects
+   
 slots:
   # NamedThing
   submitter_id:
@@ -143,7 +133,7 @@ slots:
   subjects: # list of subject objects
     multivalued: False
     range: Subject
-    required: False
+    required: True
   # Subject Slots
   honest_broker_subject_id:
     description: The identifier assigned to the subject by the honest broker--an individual, organization or system acting for, or on behalf of, a covered entity to collect and provide health information to research investigators in such a manner whereby it would not be reasonably possible for the investigators or others to identify the corresponding patients-subjects directly or indirectly. The honest broker cannot be one of the investigators. The information provided to the investigators by the honest broker may incorporate linkage codes to permit information collation and/or subsequent inquiries (i.e., a "re-identification code"), however the information linking this re-identification code to the patient's identity must be retained by the honest broker and subsequent inquiries are conducted through the honest broker. (Source NCI Thersaurus)
