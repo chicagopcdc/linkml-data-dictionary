@@ -24,6 +24,7 @@ def load_from_json():
     }
     person = data["domains"]["demographics"]["demographics"]
     family_medical_history = data["domains"]["demographics"]["family_medical_history"]
+    # all other keys (ex. under protocol, demographics, testing, disease_attributes ...)
 
     data_class_mapping = {
         "Person": person,
@@ -31,6 +32,20 @@ def load_from_json():
         "Subject": subject,
         "Timing": timing,
     }
+
+    # todo probably can automate FMH
+    manually_named = [
+        "subject_charcteristics",
+        "disease_phase_timing",
+        "course_timing",
+        "demographics",
+        "family_medical_history",
+    ]
+    for key in data["domains"]:
+        for child_key in data["domains"][key]:
+            if child_key not in manually_named:
+                classname = "".join(el.title() for el in child_key.split("_"))
+                data_class_mapping[classname] = data["domains"][key][child_key]
 
     for key in data_class_mapping.keys():
         python_linkml_struct = create_class(
@@ -54,13 +69,6 @@ def get_base_linkml_struct():
     attributes that will not change from version to version of data dictionaries.
     """
     # TODO: figure out a versioning scheme so everything isn't 0.0.1
-    base_class = {
-        "is_a": "Thing",
-        "description": "",
-        "slots": [],
-        "slot_usage": {},
-        "attributes": {},
-    }
     base_struct = {
         "id": "https://w3id.org/pcdc/model",
         "title": "LinkML Data Dictionary Model",
@@ -80,10 +88,6 @@ def get_base_linkml_struct():
         "subsets": {},  # subsets onward are filled in from parsing the json
         "classes": {
             "Thing": {"abstract": True, "slots": ["submitter_id", "type"]},
-            "Person": copy.deepcopy(base_class),
-            "FamilyMedicalHistory": copy.deepcopy(base_class),
-            "Subject": copy.deepcopy(base_class),
-            "Timing": copy.deepcopy(base_class),
         },
         "slots": {
             "submitter_id": {"description": "PCDC internal event ID", "required": True},
@@ -96,6 +100,7 @@ def get_base_linkml_struct():
                 "range": "Subject",
                 "required": True,
             },
+            "timings": {"multivalued": True, "range": "Timing", "required": True},
         },
         "enums": {},
     }
@@ -103,18 +108,48 @@ def get_base_linkml_struct():
 
 
 def create_class(base_struct: Dict, classname: str, data):
+    base_struct["classes"][classname] = {
+        "is_a": "Thing",
+        "description": "",
+        "slots": [],
+        "slot_usage": {},
+        "attributes": {},
+    }
+    timing_slot_mapping = [
+        "disease_phase",
+        "disease_phase_number",
+        "course",
+        "course_number",
+        "age_at_disease_phase",
+        "year_at_disease_phase",
+        "age_at_course_start",
+        "age_at_course_end",
+        "age_at_tx_assign",
+        "age_at_course_anc_500",
+        "cycle_number",
+        "age_at_cycle_start",
+        "age_at_cycle_end",
+    ]
     for key in data.keys():
         slot_name = key.lower()
-        if slot_name not in base_struct["slots"].keys() and slot_name != "protocol":
+        if (
+            slot_name not in base_struct["slots"].keys()
+            and slot_name != "protocol"
+            and (slot_name not in timing_slot_mapping or classname == "Timing")
+        ):
             new_slot = create_slot(base_struct, slot_name, data[key])
             base_struct["slots"][slot_name] = new_slot
-        if (
-            slot_name != "protocol"
-        ):  # TODO create a list of slotnames we don't want to include if there are others
+        elif slot_name in timing_slot_mapping and classname != "Timing":
+            if "timings" not in base_struct["classes"][classname]["slots"]:
+                base_struct["classes"][classname]["slots"].append("timings")
+        if slot_name != "protocol":
             base_struct["classes"][classname]["slots"].append(slot_name)
     # Need to manually add subjects slot for fmh and timing
     if classname == "FamilyMedicalHistory" or classname == "Timing":
         base_struct["classes"][classname]["slots"].append("subjects")
+        if classname == "Timing":
+            base_struct["classes"][classname]["slots"].append("timings")
+
     return base_struct
 
 
@@ -176,8 +211,10 @@ def create_enum(base_struct: Dict, enum_name: str, permissible_values: Dict):
 
 
 def compare_enum_vals(base_struct: Dict, permissible_values: Dict) -> bool:
+    found = False
     comparison_values = set(permissible_values.keys())
-    for enum in base_struct["enums"].keys():
+    iterkeys = list(base_struct["enums"].keys())
+    for enum in iterkeys:
         existing_enum = set(base_struct["enums"][enum]["permissible_values"].keys())
         if len(existing_enum) == len(comparison_values):
             diff = list(existing_enum.symmetric_difference(comparison_values))
@@ -192,11 +229,13 @@ def compare_enum_vals(base_struct: Dict, permissible_values: Dict) -> bool:
                 )
                 reassign = base_struct["enums"].pop(enum)
                 base_struct[new_enum_name] = reassign
-                for slot in base_struct["slots"].keys():
-                    if base_struct["slots"][slot]["range"] == enum:
-                        base_struct["slots"][slot]["range"] == new_enum_name
-                return True
-    return False
+                slot_keys = list(base_struct["slots"].keys())
+                for slot in slot_keys:
+                    if "range" in base_struct["slots"][slot]:
+                        if base_struct["slots"][slot]["range"] == enum:
+                            base_struct["slots"][slot]["range"] = new_enum_name
+                            found = True
+    return found
 
 
 if __name__ == "__main__":
