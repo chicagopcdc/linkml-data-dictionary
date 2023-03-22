@@ -3,6 +3,8 @@ import json
 import yaml
 from typing import Dict
 
+disallowed_vals_in_name = ["%", "?"]
+
 
 def load_from_json():
     # todo get automated connection to github setup to pull json automatically
@@ -79,7 +81,9 @@ def get_base_linkml_struct():
             "linkml": "https://w3id.org/linkml/",
             "ncit": "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=",
             "pcdc": "https://w3id.org/pcdc/model",
-        },
+            "hgnc": "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=",
+            "so": "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=",
+        },  # need to figure out correct links for hgnc and so
         "default_curi_maps": [
             "semweb_context",
         ],
@@ -100,7 +104,7 @@ def get_base_linkml_struct():
                 "range": "Subject",
                 "required": True,
             },
-            "timings": {"multivalued": True, "range": "Timing", "required": True},
+            "timings": {"range": "Timing", "required": False},
         },
         "enums": {},
     }
@@ -132,17 +136,24 @@ def create_class(base_struct: Dict, classname: str, data):
     ]
     for key in data.keys():
         slot_name = key.lower()
+        valid_slot_name = True
+
+        # Check that the name is valid and does not contain strange characters (like ? or %)
+        for char in disallowed_vals_in_name:
+            if char in slot_name:
+                valid_slot_name = False
         if (
             slot_name not in base_struct["slots"].keys()
             and slot_name != "protocol"
             and (slot_name not in timing_slot_mapping or classname == "Timing")
+            and valid_slot_name
         ):
             new_slot = create_slot(base_struct, slot_name, data[key])
             base_struct["slots"][slot_name] = new_slot
         elif slot_name in timing_slot_mapping and classname != "Timing":
             if "timings" not in base_struct["classes"][classname]["slots"]:
                 base_struct["classes"][classname]["slots"].append("timings")
-        if slot_name != "protocol":
+        if slot_name != "protocol" and valid_slot_name:
             base_struct["classes"][classname]["slots"].append(slot_name)
     # Need to manually add subjects slot for fmh and timing
     if classname == "FamilyMedicalHistory" or classname == "Timing":
@@ -158,12 +169,14 @@ def create_slot(base_struct: Dict, slot_name: str, slot_data: Dict) -> Dict:
     if "permissible_values" in slot_data.keys():
         enum_start = "".join(el.title() for el in slot_name.split("_"))
         enum_name = f"{enum_start}Enum"
-        create_enum(base_struct, enum_name, slot_data["permissible_values"])
+        new_enum_name = create_enum(
+            base_struct, enum_name, slot_data["permissible_values"]
+        )
 
         # TODO check if permissible values match and change enum name if they don't
         # match use common name if they do match (parse together permissible
         # values and rename, and update any references that type of enum)
-        new_slot_dict["range"] = enum_name
+        new_slot_dict["range"] = new_enum_name
     else:
         if slot_data["data_type"].lower() != "string":
             new_slot_dict["range"] = slot_data["data_type"].lower()
@@ -185,11 +198,13 @@ def create_enum(base_struct: Dict, enum_name: str, permissible_values: Dict):
                 f"you have two value ranges with different values but the same variable name: {enum_name}",
             )
         else:
-            return
+            return enum_name
 
     else:
         # check if enum already exists with same permissible_values:
-        match_exists = compare_enum_vals(base_struct, permissible_values)
+        match_exists, new_name = compare_enum_vals(
+            base_struct, permissible_values, enum_name
+        )
         if not match_exists:
             for key in permissible_values.keys():
                 desc = permissible_values[key]["value_description"]
@@ -208,9 +223,13 @@ def create_enum(base_struct: Dict, enum_name: str, permissible_values: Dict):
                         "meaning": meaning,
                     }
             base_struct["enums"][enum_name] = enum_dict
+            return enum_name
+        else:
+            return new_name
 
 
-def compare_enum_vals(base_struct: Dict, permissible_values: Dict) -> bool:
+def compare_enum_vals(base_struct: Dict, permissible_values: Dict, enum_name) -> bool:
+
     found = False
     comparison_values = set(permissible_values.keys())
     iterkeys = list(base_struct["enums"].keys())
@@ -221,21 +240,25 @@ def compare_enum_vals(base_struct: Dict, permissible_values: Dict) -> bool:
             if (
                 len(diff) == 0
             ):  # there are no differences between an existing enum and the new one, rename and re-refrence
+                sorted_vals = sorted(comparison_values)
+                for dis in disallowed_vals_in_name:
+                    if dis in sorted_vals:
+                        sorted_vals.pop(sorted_vals.index(dis))
                 new_enum_name = (
-                    "".join(
-                        "".join(el.split()).title() for el in sorted(comparison_values)
-                    )
+                    "".join("".join(el.split()).title() for el in sorted_vals)[:100]
                     + "Enum"
-                )
+                )  # crop to 100 characters so the name doesn't get too long
                 reassign = base_struct["enums"].pop(enum)
-                base_struct[new_enum_name] = reassign
+                base_struct["enums"][new_enum_name] = reassign
+
                 slot_keys = list(base_struct["slots"].keys())
                 for slot in slot_keys:
                     if "range" in base_struct["slots"][slot]:
                         if base_struct["slots"][slot]["range"] == enum:
                             base_struct["slots"][slot]["range"] = new_enum_name
                             found = True
-    return found
+                enum_name = new_enum_name
+    return found, enum_name
 
 
 if __name__ == "__main__":

@@ -1454,7 +1454,7 @@ slots:
     range: integer
     description: ''
   histology_result_unit:
-    range: NotreportedUnknownEnum
+    range: '%NotreportedUnknownEnum'
     description: Numeric Histology Result Unit
   histology_grade:
     range: HistologyGradeEnum
@@ -1671,10 +1671,10 @@ slots:
     range: NoNotreportedUnknownYesEnum
     description: Infusion Related Toxicity
   original_agent:
-    range: BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabEnum
+    range: BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabineDacarbazineDexamethasoneDoxorubicinEtoposideEtoposidephosphateFludarabineGemcitabineIfosfamideMelphalanMethotrexateNitrogenmustardNivolumabOtherPembrolizumabPrednisoneProcarbazineThiotepaVinblastineVincristineVinorelbineEnum
     description: Original Agent
   sub_agent:
-    range: BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabEnum
+    range: BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabineDacarbazineDexamethasoneDoxorubicinEtoposideEtoposidephosphateFludarabineGemcitabineIfosfamideMelphalanMethotrexateNitrogenmustardNivolumabOtherPembrolizumabPrednisoneProcarbazineThiotepaVinblastineVincristineVinorelbineEnum
     description: Substitution Agent
   age_at_rt_start:
     range: integer
@@ -1968,7 +1968,7 @@ slots:
     range: integer
     description: Numeric Minimal Residual Disease Result
   mrd_result_unit:
-    range: NotreportedUnknownEnum
+    range: '%NotreportedUnknownEnum'
     description: Numeric Minimal Residual Disease Result Unit
   mrd_sensitivty:
     range: integer
@@ -7895,8 +7895,8 @@ enums:
       Other:
         description: Different than the one(s) previously specified or mentioned.
         meaning: ncit:C17649
-  BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabEnum:
-    permissible_values:
+  ? BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabineDacarbazineDexamethasoneDoxorubicinEtoposideEtoposidephosphateFludarabineGemcitabineIfosfamideMelphalanMethotrexateNitrogenmustardNivolumabOtherPembrolizumabPrednisoneProcarbazineThiotepaVinblastineVincristineVinorelbineEnum
+  : permissible_values:
       Bendamustine:
         description: A bifunctional mechlorethamine derivative with alkylating and
           antimetabolite activities. Although the exact mechanism of action of bendamustine
@@ -10033,7 +10033,7 @@ enums:
       Not Reported:
         description: Not provided or available.
         meaning: ncit:C43234
-  NotreportedUnknownEnum:
+  '%NotreportedUnknownEnum':
     permissible_values:
       '%':
         description: A unit for expressing a number as a fraction of hundred (on the
