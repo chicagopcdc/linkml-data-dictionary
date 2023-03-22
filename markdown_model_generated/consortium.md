@@ -20,3 +20,4 @@ None &#8594;  <sub>0..1</sub> [ConsortiumEnum](ConsortiumEnum.md)
 ## Used by
 
  * [Subject](Subject.md)
+ * [SubjectCharacteristics](SubjectCharacteristics.md)

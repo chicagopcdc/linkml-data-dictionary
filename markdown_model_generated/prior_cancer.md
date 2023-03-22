@@ -9,7 +9,7 @@ URI: [https://w3id.org/pcdc/model/prior_cancer](https://w3id.org/pcdc/model/prio
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [PriorCancerEnum](PriorCancerEnum.md)
+None &#8594;  <sub>0..1</sub> [NoNotreportedUnknownYesEnum](NoNotreportedUnknownYesEnum.md)
 
 ## Parents
 

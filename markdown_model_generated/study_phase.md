@@ -20,3 +20,4 @@ None &#8594;  <sub>0..1</sub> [StudyPhaseEnum](StudyPhaseEnum.md)
 ## Used by
 
  * [Subject](Subject.md)
+ * [SubjectCharacteristics](SubjectCharacteristics.md)
