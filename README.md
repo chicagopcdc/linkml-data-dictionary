@@ -35,3 +35,9 @@ Using the generated yaml filename call:
 `gen-markdown --dir markdown_model_generated  data_ingestion_to_linkml/output_linkml_yaml/data_dictionary_spreadsheet_<SPREADSHEET_KEY>.yaml`
 
 This will take the yaml created from spreadsheet data with the given SPREADSHEET_KEY (ex. 1k23ue9403), and create markdown files in the markdown_model_generated folder.
+
+## Viewing the markdown
+To view the markdown, make sure you have mkdocs installed (if not `pip install mkdocs`) and then run:
+`mkdocs serve` 
+
+Then you can navigate to localhost:8000 to view the generated documentation. 

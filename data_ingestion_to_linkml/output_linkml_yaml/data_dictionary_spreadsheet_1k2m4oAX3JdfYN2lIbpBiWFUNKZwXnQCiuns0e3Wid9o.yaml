@@ -30,16 +30,6 @@ classes:
     - ethnicity
     slot_usage: {}
     attributes: {}
-  FamilyMedicalHistory:
-    is_a: Thing
-    description: ''
-    slots:
-    - prior_cancer
-    - relation
-    - prior_cancer_type
-    - subjects
-    slot_usage: {}
-    attributes: {}
   Subject:
     is_a: Thing
     description: ''
@@ -118,6 +108,16 @@ classes:
     - reason_off
     - reason_off_other
     - another_study
+    slot_usage: {}
+    attributes: {}
+  FamilyMedicalHistory:
+    is_a: Thing
+    description: ''
+    slots:
+    - prior_cancer
+    - relation
+    - prior_cancer_type
+    - subjects
     slot_usage: {}
     attributes: {}
   MedicalHistory:
@@ -794,17 +794,6 @@ slots:
       and behaviors that are often handed down from one generation to the next. Some
       conditions or diseases, such as cancer, may be more common in certain ethnic
       groups than in others. (Source: NCI Dictionary of Cancer Terms)'
-  prior_cancer:
-    range: NoNotreportedUnknownYesEnum
-    description: Does the subject have a relative who has a medical history that includes
-      cancer?
-  relation:
-    range: RelationEnum
-    description: What kind of relation is this relative who has had a relevant medical
-      condition?
-  prior_cancer_type:
-    description: The type of prior cancer from the medical history of the relative
-      of the subject.
   honest_broker_subject_id:
     description: 'The identifier assigned to the subject by the honest broker--an
       individual, organization or system acting for, or on behalf of, a covered entity
@@ -941,6 +930,17 @@ slots:
     range: NoNotreportedUnknownYesEnum
     description: Did the subject enroll in another study after they went off of the
       study indicated by OFF_TYPE?
+  prior_cancer:
+    range: NoNotreportedUnknownYesEnum
+    description: Does the subject have a relative who has a medical history that includes
+      cancer?
+  relation:
+    range: RelationEnum
+    description: What kind of relation is this relative who has had a relevant medical
+      condition?
+  prior_cancer_type:
+    description: The type of prior cancer from the medical history of the relative
+      of the subject.
   condition:
     range: ConditionEnum
     description: 'Relevant condition that may or may not (see CONDITION_STATUS) be
@@ -2207,30 +2207,6 @@ enums:
       Not Reported:
         description: Not provided or available.
         meaning: ncit:C43234
-  RelationEnum:
-    permissible_values:
-      Father:
-        description: A male who contributes to the genetic makeup of his offspring
-          through the fertilization of an ovum by his sperm.
-        meaning: ncit:C96572
-      Mother:
-        description: A female who contributes to the genetic makeup of her offspring
-          from the fertilization of her ovum.
-        meaning: ncit:C96580
-      Brother:
-        description: A male who shares with his sibling the genetic makeup inherited
-          from one or both of their shared biological parents.
-        meaning: ncit:C96570
-      Sister:
-        description: A female who shares with her sibling the genetic makeup inherited
-          from one or both of their shared biological parents.
-        meaning: ncit:C96586
-      Son:
-        description: A male progeny with genetic makeup inherited from the parent.
-        meaning: ncit:C150888
-      Daughter:
-        description: A female progeny with genetic makeup inherited from the parent.
-        meaning: ncit:C150887
   ConsortiumEnum:
     permissible_values:
       INSTRuCT:
@@ -3033,6 +3009,30 @@ enums:
       Not Reported:
         description: Not provided or available.
         meaning: ncit:C43234
+  RelationEnum:
+    permissible_values:
+      Father:
+        description: A male who contributes to the genetic makeup of his offspring
+          through the fertilization of an ovum by his sperm.
+        meaning: ncit:C96572
+      Mother:
+        description: A female who contributes to the genetic makeup of her offspring
+          from the fertilization of her ovum.
+        meaning: ncit:C96580
+      Brother:
+        description: A male who shares with his sibling the genetic makeup inherited
+          from one or both of their shared biological parents.
+        meaning: ncit:C96570
+      Sister:
+        description: A female who shares with her sibling the genetic makeup inherited
+          from one or both of their shared biological parents.
+        meaning: ncit:C96586
+      Son:
+        description: A male progeny with genetic makeup inherited from the parent.
+        meaning: ncit:C150888
+      Daughter:
+        description: A female progeny with genetic makeup inherited from the parent.
+        meaning: ncit:C150887
   ConditionEnum:
     permissible_values:
       Adenomatous Polyposis Coli:

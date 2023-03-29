@@ -1,5 +1,5 @@
 # Auto generated from data_dictionary_spreadsheet_1k2m4oAX3JdfYN2lIbpBiWFUNKZwXnQCiuns0e3Wid9o.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-03-22T12:25:35
+# Generation date: 2023-03-29T11:34:00
 # Schema: data-dictionary
 #
 # id: https://w3id.org/pcdc/model
@@ -100,39 +100,6 @@ class Person(Thing):
 
         if self.ethnicity is not None and not isinstance(self.ethnicity, EthnicityEnum):
             self.ethnicity = EthnicityEnum(self.ethnicity)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class FamilyMedicalHistory(Thing):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = PCDC["/FamilyMedicalHistory"]
-    class_class_curie: ClassVar[str] = "pcdc:/FamilyMedicalHistory"
-    class_name: ClassVar[str] = "FamilyMedicalHistory"
-    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/FamilyMedicalHistory")
-
-    submitter_id: str = None
-    type: str = None
-    subjects: Union[Union[dict, "Subject"], List[Union[dict, "Subject"]]] = None
-    prior_cancer: Optional[Union[str, "NoNotreportedUnknownYesEnum"]] = None
-    relation: Optional[Union[str, "RelationEnum"]] = None
-    prior_cancer_type: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.subjects):
-            self.MissingRequiredField("subjects")
-        self._normalize_inlined_as_dict(slot_name="subjects", slot_type=Subject, key_name="submitter_id", keyed=False)
-
-        if self.prior_cancer is not None and not isinstance(self.prior_cancer, NoNotreportedUnknownYesEnum):
-            self.prior_cancer = NoNotreportedUnknownYesEnum(self.prior_cancer)
-
-        if self.relation is not None and not isinstance(self.relation, RelationEnum):
-            self.relation = RelationEnum(self.relation)
-
-        if self.prior_cancer_type is not None and not isinstance(self.prior_cancer_type, str):
-            self.prior_cancer_type = str(self.prior_cancer_type)
 
         super().__post_init__(**kwargs)
 
@@ -416,6 +383,39 @@ class OffProtocolTherapyOrStudy(Thing):
 
         if self.another_study is not None and not isinstance(self.another_study, NoNotreportedUnknownYesEnum):
             self.another_study = NoNotreportedUnknownYesEnum(self.another_study)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class FamilyMedicalHistory(Thing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PCDC["/FamilyMedicalHistory"]
+    class_class_curie: ClassVar[str] = "pcdc:/FamilyMedicalHistory"
+    class_name: ClassVar[str] = "FamilyMedicalHistory"
+    class_model_uri: ClassVar[URIRef] = URIRef("https://w3id.org/pcdc/model/FamilyMedicalHistory")
+
+    submitter_id: str = None
+    type: str = None
+    subjects: Union[Union[dict, Subject], List[Union[dict, Subject]]] = None
+    prior_cancer: Optional[Union[str, "NoNotreportedUnknownYesEnum"]] = None
+    relation: Optional[Union[str, "RelationEnum"]] = None
+    prior_cancer_type: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.subjects):
+            self.MissingRequiredField("subjects")
+        self._normalize_inlined_as_dict(slot_name="subjects", slot_type=Subject, key_name="submitter_id", keyed=False)
+
+        if self.prior_cancer is not None and not isinstance(self.prior_cancer, NoNotreportedUnknownYesEnum):
+            self.prior_cancer = NoNotreportedUnknownYesEnum(self.prior_cancer)
+
+        if self.relation is not None and not isinstance(self.relation, RelationEnum):
+            self.relation = RelationEnum(self.relation)
+
+        if self.prior_cancer_type is not None and not isinstance(self.prior_cancer_type, str):
+            self.prior_cancer_type = str(self.prior_cancer_type)
 
         super().__post_init__(**kwargs)
 
@@ -2865,31 +2865,6 @@ class EthnicityEnum(EnumDefinitionImpl):
                                  description="Not provided or available.",
                                  meaning=NCIT.C43234) )
 
-class RelationEnum(EnumDefinitionImpl):
-
-    Father = PermissibleValue(text="Father",
-                                   description="A male who contributes to the genetic makeup of his offspring through the fertilization of an ovum by his sperm.",
-                                   meaning=NCIT.C96572)
-    Mother = PermissibleValue(text="Mother",
-                                   description="A female who contributes to the genetic makeup of her offspring from the fertilization of her ovum.",
-                                   meaning=NCIT.C96580)
-    Brother = PermissibleValue(text="Brother",
-                                     description="A male who shares with his sibling the genetic makeup inherited from one or both of their shared biological parents.",
-                                     meaning=NCIT.C96570)
-    Sister = PermissibleValue(text="Sister",
-                                   description="A female who shares with her sibling the genetic makeup inherited from one or both of their shared biological parents.",
-                                   meaning=NCIT.C96586)
-    Son = PermissibleValue(text="Son",
-                             description="A male progeny with genetic makeup inherited from the parent.",
-                             meaning=NCIT.C150888)
-    Daughter = PermissibleValue(text="Daughter",
-                                       description="A female progeny with genetic makeup inherited from the parent.",
-                                       meaning=NCIT.C150887)
-
-    _defn = EnumDefinition(
-        name="RelationEnum",
-    )
-
 class ConsortiumEnum(EnumDefinitionImpl):
 
     INSTRuCT = PermissibleValue(text="INSTRuCT",
@@ -3724,6 +3699,31 @@ class ReasonOffEnum(EnumDefinitionImpl):
                 PermissibleValue(text="Not Reported",
                                  description="Not provided or available.",
                                  meaning=NCIT.C43234) )
+
+class RelationEnum(EnumDefinitionImpl):
+
+    Father = PermissibleValue(text="Father",
+                                   description="A male who contributes to the genetic makeup of his offspring through the fertilization of an ovum by his sperm.",
+                                   meaning=NCIT.C96572)
+    Mother = PermissibleValue(text="Mother",
+                                   description="A female who contributes to the genetic makeup of her offspring from the fertilization of her ovum.",
+                                   meaning=NCIT.C96580)
+    Brother = PermissibleValue(text="Brother",
+                                     description="A male who shares with his sibling the genetic makeup inherited from one or both of their shared biological parents.",
+                                     meaning=NCIT.C96570)
+    Sister = PermissibleValue(text="Sister",
+                                   description="A female who shares with her sibling the genetic makeup inherited from one or both of their shared biological parents.",
+                                   meaning=NCIT.C96586)
+    Son = PermissibleValue(text="Son",
+                             description="A male progeny with genetic makeup inherited from the parent.",
+                             meaning=NCIT.C150888)
+    Daughter = PermissibleValue(text="Daughter",
+                                       description="A female progeny with genetic makeup inherited from the parent.",
+                                       meaning=NCIT.C150887)
+
+    _defn = EnumDefinition(
+        name="RelationEnum",
+    )
 
 class ConditionEnum(EnumDefinitionImpl):
 
@@ -11530,15 +11530,6 @@ slots.race_other = Slot(uri=DEFAULT_.race_other, name="race_other", curie=DEFAUL
 slots.ethnicity = Slot(uri=DEFAULT_.ethnicity, name="ethnicity", curie=DEFAULT_.curie('ethnicity'),
                    model_uri=DEFAULT_.ethnicity, domain=None, range=Optional[Union[str, "EthnicityEnum"]])
 
-slots.prior_cancer = Slot(uri=DEFAULT_.prior_cancer, name="prior_cancer", curie=DEFAULT_.curie('prior_cancer'),
-                   model_uri=DEFAULT_.prior_cancer, domain=None, range=Optional[Union[str, "NoNotreportedUnknownYesEnum"]])
-
-slots.relation = Slot(uri=DEFAULT_.relation, name="relation", curie=DEFAULT_.curie('relation'),
-                   model_uri=DEFAULT_.relation, domain=None, range=Optional[Union[str, "RelationEnum"]])
-
-slots.prior_cancer_type = Slot(uri=DEFAULT_.prior_cancer_type, name="prior_cancer_type", curie=DEFAULT_.curie('prior_cancer_type'),
-                   model_uri=DEFAULT_.prior_cancer_type, domain=None, range=Optional[str])
-
 slots.honest_broker_subject_id = Slot(uri=DEFAULT_.honest_broker_subject_id, name="honest_broker_subject_id", curie=DEFAULT_.curie('honest_broker_subject_id'),
                    model_uri=DEFAULT_.honest_broker_subject_id, domain=None, range=Optional[str])
 
@@ -11634,6 +11625,15 @@ slots.reason_off_other = Slot(uri=DEFAULT_.reason_off_other, name="reason_off_ot
 
 slots.another_study = Slot(uri=DEFAULT_.another_study, name="another_study", curie=DEFAULT_.curie('another_study'),
                    model_uri=DEFAULT_.another_study, domain=None, range=Optional[Union[str, "NoNotreportedUnknownYesEnum"]])
+
+slots.prior_cancer = Slot(uri=DEFAULT_.prior_cancer, name="prior_cancer", curie=DEFAULT_.curie('prior_cancer'),
+                   model_uri=DEFAULT_.prior_cancer, domain=None, range=Optional[Union[str, "NoNotreportedUnknownYesEnum"]])
+
+slots.relation = Slot(uri=DEFAULT_.relation, name="relation", curie=DEFAULT_.curie('relation'),
+                   model_uri=DEFAULT_.relation, domain=None, range=Optional[Union[str, "RelationEnum"]])
+
+slots.prior_cancer_type = Slot(uri=DEFAULT_.prior_cancer_type, name="prior_cancer_type", curie=DEFAULT_.curie('prior_cancer_type'),
+                   model_uri=DEFAULT_.prior_cancer_type, domain=None, range=Optional[str])
 
 slots.condition = Slot(uri=DEFAULT_.condition, name="condition", curie=DEFAULT_.curie('condition'),
                    model_uri=DEFAULT_.condition, domain=None, range=Optional[Union[str, "ConditionEnum"]])
