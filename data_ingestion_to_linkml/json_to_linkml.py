@@ -62,7 +62,9 @@ def load_from_json(
             python_linkml_struct, key, data_class_mapping[key]
         )
         if key == "Subject":
-            python_linkml_struct["classes"]["Subject"]["attributes"]["persons"] = {
+            python_linkml_struct["classes"]["Subject"]["attributes"][
+                "persons"
+            ] = {
                 "range": "Person",
                 "required": True,
             }
@@ -81,6 +83,7 @@ def get_base_linkml_struct() -> Dict:
         base_struct (dict): templated dictionary with all of the unchanging information
     """
     # TODO: figure out a versioning scheme so everything isn't 0.0.1
+    # TODO: figure out proper prefixing behavior (HGNC and SO show up diff from ncit in Python)
     base_struct = {
         "id": "https://w3id.org/pcdc/model",
         "title": "LinkML Data Dictionary Model",
@@ -91,9 +94,9 @@ def get_base_linkml_struct() -> Dict:
             "linkml": "https://w3id.org/linkml/",
             "ncit": "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=",
             "pcdc": "https://w3id.org/pcdc/model",
-            "hgnc": "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=",
-            "so": "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=",
-        },  # TODO need to figure out correct links for hgnc and so
+            "HGNC": "https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:",
+            "SO": "http://http://www.sequenceontology.org/browser/current_release/term/SO:",
+        },
         "default_curi_maps": [
             "semweb_context",
         ],
@@ -218,7 +221,9 @@ def create_slot(base_struct: Dict, slot_name: str, slot_data: Dict) -> Dict:
     return new_slot_dict
 
 
-def create_enum(base_struct: Dict, enum_name: str, permissible_values: Dict) -> str:
+def create_enum(
+    base_struct: Dict, enum_name: str, permissible_values: Dict
+) -> str:
     """
     Creates an enum that uses the permissible values and associates the code and description.
     Makes sure that there are not other existing enums with the same permissible values.
@@ -237,9 +242,13 @@ def create_enum(base_struct: Dict, enum_name: str, permissible_values: Dict) -> 
     enum_dict = {"permissible_values": {}}
     if enum_name in base_struct["enums"].keys():
         # an enum already exists with the same name, make sure that it has the same values
-        existing_enum = base_struct["enums"][enum_name]["permissible_values"].keys()
+        existing_enum = base_struct["enums"][enum_name][
+            "permissible_values"
+        ].keys()
         diff = list(
-            set(existing_enum).symmetric_difference(set(permissible_values.keys()))
+            set(existing_enum).symmetric_difference(
+                set(permissible_values.keys())
+            )
         )
         if len(diff) > 0:
             raise (
@@ -261,7 +270,9 @@ def create_enum(base_struct: Dict, enum_name: str, permissible_values: Dict) -> 
                 if desc == "" and meaning == "":
                     continue
                 elif meaning == "":
-                    enum_dict["permissible_values"][str(key)] = {"description": desc}
+                    enum_dict["permissible_values"][str(key)] = {
+                        "description": desc
+                    }
                 elif desc == "":
                     enum_dict["permissible_values"][str(key)] = {
                         "meaning": meaning,
@@ -301,7 +312,9 @@ def compare_enum_vals(
     comparison_values = set(permissible_values.keys())
     iterkeys = list(base_struct["enums"].keys())
     for enum in iterkeys:
-        existing_enum = set(base_struct["enums"][enum]["permissible_values"].keys())
+        existing_enum = set(
+            base_struct["enums"][enum]["permissible_values"].keys()
+        )
         if len(existing_enum) == len(comparison_values):
             diff = list(existing_enum.symmetric_difference(comparison_values))
             if (
@@ -313,7 +326,9 @@ def compare_enum_vals(
                         sorted_vals.pop(sorted_vals.index(dis))
                 # crop to 100 characters so the name doesn't get too long
                 new_enum_name = (
-                    "".join("".join(el.split()).title() for el in sorted_vals)[:100]
+                    "".join("".join(el.split()).title() for el in sorted_vals)[
+                        :100
+                    ]
                     + "Enum"
                 )
                 reassign = base_struct["enums"].pop(enum)

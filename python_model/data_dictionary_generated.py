@@ -1,5 +1,5 @@
 # Auto generated from data_dictionary_spreadsheet_1k2m4oAX3JdfYN2lIbpBiWFUNKZwXnQCiuns0e3Wid9o.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-03-29T11:34:00
+# Generation date: 2023-03-29T16:21:14
 # Schema: data-dictionary
 #
 # id: https://w3id.org/pcdc/model
@@ -32,11 +32,11 @@ version = "0.0.1"
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
-HGNC = CurieNamespace('hgnc', 'https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=')
+HGNC = CurieNamespace('HGNC', 'https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:')
+SO = CurieNamespace('SO', 'http://http://www.sequenceontology.org/browser/current_release/term/SO:')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 NCIT = CurieNamespace('ncit', 'https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=')
 PCDC = CurieNamespace('pcdc', 'https://w3id.org/pcdc/model')
-SO = CurieNamespace('so', 'https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=')
 DEFAULT_ = CurieNamespace('', 'https://w3id.org/pcdc/model/')
 
 
@@ -3787,7 +3787,7 @@ class ConditionEnum(EnumDefinitionImpl):
         setattr(cls, "RB Transcriptional Corepressor 1",
                 PermissibleValue(text="RB Transcriptional Corepressor 1",
                                  description="The protein encoded by this gene is a negative regulator of the cell cycle and was the first tumor suppressor gene found. The encoded protein also stabilizes constitutive heterochromatin to maintain the overall chromatin structure. The active, hypophosphorylated form of the protein binds transcription factor E2F1. Defects in this gene are a cause of childhood cancer retinoblastoma (RB), bladder cancer, and osteogenic sarcoma.",
-                                 meaning=NCIT["9884"]) )
+                                 meaning=HGNC["9884"]) )
         setattr(cls, "Secondary Malignancy",
                 PermissibleValue(text="Secondary Malignancy",
                                  description="A malignant neoplasm that arises from a pre-existing lower grade lesion, or as a result of a primary lesion that has spread to secondary sites, or due to a complication of a cancer treatment.",
@@ -5148,10 +5148,10 @@ class MutationTypeEnum(EnumDefinitionImpl):
 
     Indel = PermissibleValue(text="Indel",
                                  description="A sequence alteration which included an insertion and a deletion, affecting 2 or more bases. (Source: The Sequence Ontology) ",
-                                 meaning=NCIT["1000032"])
+                                 meaning=SO["1000032"])
     Substitution = PermissibleValue(text="Substitution",
                                                description="A sequence alteration where the length of the change in the variant is the same as that of the reference. (Source: The Sequence Ontology) ",
-                                               meaning=NCIT["1000002"])
+                                               meaning=SO["1000002"])
     Other = PermissibleValue(text="Other",
                                  description="Different than the one(s) previously specified or mentioned. ",
                                  meaning=NCIT.C17649)
@@ -5168,51 +5168,51 @@ class MutationTypeEnum(EnumDefinitionImpl):
         setattr(cls, "Deletion, chromosomal",
                 PermissibleValue(text="Deletion, chromosomal",
                                  description="An incomplete chromosome. (Source: The Sequence Ontology) ",
-                                 meaning=NCIT["1000029"]) )
+                                 meaning=SO["1000029"]) )
         setattr(cls, "Deletion, NOS",
                 PermissibleValue(text="Deletion, NOS",
                                  description="The point at which one or more contiguous nucleotides were excised. (Source: The Sequence Ontology) Should be used when the type of deletion is not specified. ",
-                                 meaning=NCIT["0000159"]) )
+                                 meaning=SO["0000159"]) )
         setattr(cls, "Duplication, internal tandem",
                 PermissibleValue(text="Duplication, internal tandem",
                                  description="A duplication consisting of 2 identical adjacent regions. (Source: The Sequence Ontology) ",
-                                 meaning=NCIT["1000173"]) )
+                                 meaning=SO["1000173"]) )
         setattr(cls, "Duplication, chromosomal",
                 PermissibleValue(text="Duplication, chromosomal",
                                  description="An extra chromosome. (Source: The Sequence Ontology) ",
-                                 meaning=NCIT["1000037"]) )
+                                 meaning=SO["1000037"]) )
         setattr(cls, "Duplication, NOS",
                 PermissibleValue(text="Duplication, NOS",
                                  description="An insertion which derives from, or is identical in sequence to, nucleotides present at a known location in the genome. (Source: The Sequence Ontology) ",
-                                 meaning=NCIT["1000035"]) )
+                                 meaning=SO["1000035"]) )
         setattr(cls, "Insertion, NOS",
                 PermissibleValue(text="Insertion, NOS",
                                  description="The sequence of one or more nucleotides added between two adjacent nucleotides in the sequence. (Source: The Sequence Ontology) ",
-                                 meaning=NCIT["0000667"]) )
+                                 meaning=SO["0000667"]) )
         setattr(cls, "Translocation, chromosomal",
                 PermissibleValue(text="Translocation, chromosomal",
                                  description="A chromosomal mutation. Rearrangements that alter the pairing of telomeres are classified as translocations. (Source: The Sequence Ontology) ",
-                                 meaning=NCIT["1000044"]) )
+                                 meaning=SO["1000044"]) )
         setattr(cls, "Translocation, NOS",
                 PermissibleValue(text="Translocation, NOS",
                                  description="A region of nucleotide sequence that has translocated to a new position. The observed adjacency of two previously separated regions. (Source: The Sequence Ontology) ",
-                                 meaning=NCIT["0000199"]) )
+                                 meaning=SO["0000199"]) )
         setattr(cls, "Inversion, chromosomal",
                 PermissibleValue(text="Inversion, chromosomal",
                                  description="An interchromosomal mutation where a region of the chromosome is inverted with respect to wild type. (Source: The Sequence Ontology) ",
-                                 meaning=NCIT["1000030"]) )
+                                 meaning=SO["1000030"]) )
         setattr(cls, "Inversion, NOS",
                 PermissibleValue(text="Inversion, NOS",
                                  description="A continuous nucleotide sequence is inverted in the same position. (Source: The Sequence Ontology) ",
-                                 meaning=NCIT["1000036"]) )
+                                 meaning=SO["1000036"]) )
         setattr(cls, "Rearrangement, fusion",
                 PermissibleValue(text="Rearrangement, fusion",
                                  description="A sequence variant whereby a two genes have become joined. (Source: The Sequence Ontology) ",
-                                 meaning=NCIT["0001565"]) )
+                                 meaning=SO["0001565"]) )
         setattr(cls, "SNV, NOS",
                 PermissibleValue(text="SNV, NOS",
                                  description="SNVs are single nucleotide positions in genomic DNA at which different sequence alternatives exist. (Source: The Sequence Ontology) ",
-                                 meaning=NCIT["0001483"]) )
+                                 meaning=SO["0001483"]) )
         setattr(cls, "Not Reported",
                 PermissibleValue(text="Not Reported",
                                  description="Not provided or available.",

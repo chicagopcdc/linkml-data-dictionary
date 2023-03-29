@@ -7,8 +7,8 @@ prefixes:
   linkml: https://w3id.org/linkml/
   ncit: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
   pcdc: https://w3id.org/pcdc/model
-  hgnc: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
-  so: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
+  HGNC: 'https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:'
+  SO: 'http://http://www.sequenceontology.org/browser/current_release/term/SO:'
 default_curi_maps:
 - semweb_context
 default_range: string
