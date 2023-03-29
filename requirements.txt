@@ -52,6 +52,7 @@ MarkupSafe==2.1.1
 mccabe==0.7.0
 mdit-py-plugins==0.3.3
 mdurl==0.1.2
+mkdocs==1.4.2
 myst-parser==0.18.1
 numpy==1.24.2
 openpyxl==3.0.10
