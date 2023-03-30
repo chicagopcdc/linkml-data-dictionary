@@ -5,3 +5,14 @@ docs_dir: markdown_model_generated
 site_dir: docs
 nav:
   - Index: index.md
+theme:
+  name: material
+  favicon: img/favicon.ico
+  font:
+    text: Raleway
+  features:
+    - navigation.instant
+    - toc.integrate
+    - navigation.top
+extra_css:
+  - stylesheets/extra.css
