@@ -7,11 +7,15 @@
 URI: [https://w3id.org/pcdc/model/Timing](https://w3id.org/pcdc/model/Timing)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Subject]<subjects%201..*-++[Timing&#124;disease_phase:DiseasePhaseEnum%20%3F;disease_phase_number:integer%20%3F;age_at_disease_phase:integer%20%3F;year_at_disease_phase:integer%20%3F;course:CourseEnum%20%3F;course_number:integer%20%3F;age_at_course_start:integer%20%3F;age_at_course_end:integer%20%3F;age_at_txassign:integer%20%3F;age_at_course_anc_500:integer%20%3F;cycle_number:integer%20%3F;age_at_cycle_start:integer%20%3F;age_at_cycle_end:integer%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[Timing],[Thing],[Subject])](https://yuml.me/diagram/nofunky;dir:TB/class/[Subject]<subjects%201..*-++[Timing&#124;disease_phase:DiseasePhaseEnum%20%3F;disease_phase_number:integer%20%3F;age_at_disease_phase:integer%20%3F;year_at_disease_phase:integer%20%3F;course:CourseEnum%20%3F;course_number:integer%20%3F;age_at_course_start:integer%20%3F;age_at_course_end:integer%20%3F;age_at_txassign:integer%20%3F;age_at_course_anc_500:integer%20%3F;cycle_number:integer%20%3F;age_at_cycle_start:integer%20%3F;age_at_cycle_end:integer%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[Timing],[Thing],[Subject])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Timing]<timings%200..1-++[Timing&#124;disease_phase:DiseasePhaseEnum%20%3F;disease_phase_number:integer%20%3F;age_at_disease_phase:integer%20%3F;year_at_disease_phase:integer%20%3F;course:CourseEnum%20%3F;course_number:integer%20%3F;age_at_course_start:integer%20%3F;age_at_course_end:integer%20%3F;age_at_txassign:integer%20%3F;age_at_course_anc_500:integer%20%3F;cycle_number:integer%20%3F;age_at_cycle_start:integer%20%3F;age_at_cycle_end:integer%20%3F;submitter_id(i):string;type(i):string],[Subject]<subjects%201..*-++[Timing],[Thing]^-[Timing],[Thing],[Subject])](https://yuml.me/diagram/nofunky;dir:TB/class/[Timing]<timings%200..1-++[Timing&#124;disease_phase:DiseasePhaseEnum%20%3F;disease_phase_number:integer%20%3F;age_at_disease_phase:integer%20%3F;year_at_disease_phase:integer%20%3F;course:CourseEnum%20%3F;course_number:integer%20%3F;age_at_course_start:integer%20%3F;age_at_course_end:integer%20%3F;age_at_txassign:integer%20%3F;age_at_course_anc_500:integer%20%3F;cycle_number:integer%20%3F;age_at_cycle_start:integer%20%3F;age_at_cycle_end:integer%20%3F;submitter_id(i):string;type(i):string],[Subject]<subjects%201..*-++[Timing],[Thing]^-[Timing],[Thing],[Subject])
 
 ## Parents
 
  *  is_a: [Thing](Thing.md)
+
+## Referenced by Class
+
+ *  **None** *[timings](timings.md)*  <sub>0..1</sub>  **[Timing](Timing.md)**
 
 ## Attributes
 
@@ -59,6 +63,8 @@ URI: [https://w3id.org/pcdc/model/Timing](https://w3id.org/pcdc/model/Timing)
      * Range: [Integer](types/Integer.md)
  * [subjects](subjects.md)  <sub>1..\*</sub>
      * Range: [Subject](Subject.md)
+ * [timings](timings.md)  <sub>0..1</sub>
+     * Range: [Timing](Timing.md)
 
 ### Inherited from Thing:
 

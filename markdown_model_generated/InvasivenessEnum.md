@@ -1,10 +1,10 @@
 
-# Enum: PriorCancerEnum
+# Enum: InvasivenessEnum
 
 
 
 
-URI: [https://w3id.org/pcdc/model/PriorCancerEnum](https://w3id.org/pcdc/model/PriorCancerEnum)
+URI: [https://w3id.org/pcdc/model/InvasivenessEnum](https://w3id.org/pcdc/model/InvasivenessEnum)
 
 
 ## Other properties
@@ -16,8 +16,6 @@ URI: [https://w3id.org/pcdc/model/PriorCancerEnum](https://w3id.org/pcdc/model/P
 
 | Text | Description | Meaning | Other Information |
 | :--- | :---: | :---: | ---: |
-| Yes | The affirmative response to a question. | ncit:C49488 |  |
-| No | The non-affirmative response to a question. | ncit:C49487 |  |
 | Unknown | Reported as unknown by the data contributor. | ncit:C17998 |  |
 | Not Reported | Not provided or available. | ncit:C43234 |  |
 

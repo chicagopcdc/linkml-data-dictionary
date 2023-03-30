@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/FamilyMedicalHistory](https://w3id.org/pcdc/model/FamilyMedicalHistory)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..*-++[FamilyMedicalHistory&#124;prior_cancer:PriorCancerEnum%20%3F;relation:RelationEnum%20%3F;prior_cancer_type:string%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[FamilyMedicalHistory])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..*-++[FamilyMedicalHistory&#124;prior_cancer:PriorCancerEnum%20%3F;relation:RelationEnum%20%3F;prior_cancer_type:string%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[FamilyMedicalHistory])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..*-++[FamilyMedicalHistory&#124;prior_cancer:NoNotreportedUnknownYesEnum%20%3F;relation:RelationEnum%20%3F;prior_cancer_type:string%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[FamilyMedicalHistory])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..*-++[FamilyMedicalHistory&#124;prior_cancer:NoNotreportedUnknownYesEnum%20%3F;relation:RelationEnum%20%3F;prior_cancer_type:string%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[FamilyMedicalHistory])
 
 ## Parents
 
@@ -20,7 +20,7 @@ URI: [https://w3id.org/pcdc/model/FamilyMedicalHistory](https://w3id.org/pcdc/mo
 
  * [prior_cancer](prior_cancer.md)  <sub>0..1</sub>
      * Description: Does the subject have a relative who has a medical history that includes cancer?
-     * Range: [PriorCancerEnum](PriorCancerEnum.md)
+     * Range: [NoNotreportedUnknownYesEnum](NoNotreportedUnknownYesEnum.md)
  * [relation](relation.md)  <sub>0..1</sub>
      * Description: What kind of relation is this relative who has had a relevant medical condition?
      * Range: [RelationEnum](RelationEnum.md)

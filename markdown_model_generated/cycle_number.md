@@ -19,4 +19,5 @@ None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
 
 ## Used by
 
+ * [Medication](Medication.md)
  * [Timing](Timing.md)
