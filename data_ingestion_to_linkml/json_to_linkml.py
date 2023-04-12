@@ -7,7 +7,7 @@ disallowed_vals_in_name = ["%", "?"]
 
 
 def load_from_json(
-    json_data: str = "data_ingestion_to_linkml/test_json_data/master.json",
+    json_data: str = "data_ingestion_to_linkml/test_json_data/Aggregated.json",
 ) -> None:
     """
     Load data from a json file that contains all data dicitonary data and
@@ -31,12 +31,14 @@ def load_from_json(
     Everything else is named the same as its key in the json
     (under protocol, demographics, testing, etc.)
     """
-    subject = data["domains"]["protocol"]["subject_characteristics"]
-    timing = {
-        **data["domains"]["protocol"]["disease_phase_timing"],
-        **data["domains"]["protocol"]["course_timing"],
-    }
-    person = data["domains"]["demographics"]["demographics"]
+    subject = data["domains"]["Protocol"]["Subject Characteristics"]
+    # timing = {
+    #     **data["domains"]["Protocol"]["disease_phase_timing"],
+    #     **data["domains"]["Protocol"]["course_timing"],
+    # }
+    # need to rework timinng for Aggregated.json, temporarily:
+    timing = data["domains"]["Protocol"]["Time Period"]
+    person = data["domains"]["Demographics"]["Demographics"]
 
     data_class_mapping = {
         "Person": person,
@@ -45,10 +47,9 @@ def load_from_json(
     }
 
     manually_named = [
-        "subject_charcteristics",
-        "disease_phase_timing",
-        "course_timing",
-        "demographics",
+        "Subject Characteristics",
+        "Time Period",
+        "Demographics",
     ]
 
     for key in data["domains"]:
@@ -69,7 +70,7 @@ def load_from_json(
                 "required": True,
             }
 
-    write_filename = f"data_ingestion_to_linkml/output_linkml_yaml/data_dictionary_spreadsheet_{data['meta']['spreadsheet_id']}.yaml"
+    write_filename = f"data_ingestion_to_linkml/output_linkml_yaml/data_dictionary_spreadsheet_{data['meta']['sheet_id']}_{data['meta']['timestamp']}.yaml"
     with open(write_filename, "w") as f:
         data = yaml.dump(python_linkml_struct, f, sort_keys=False)
 
@@ -215,9 +216,9 @@ def create_slot(base_struct: Dict, slot_name: str, slot_data: Dict) -> Dict:
         )
         new_slot_dict["range"] = new_enum_name
     else:
-        if slot_data["data_type"].lower() != "string":
-            new_slot_dict["range"] = slot_data["data_type"].lower()
-    new_slot_dict["description"] = slot_data["variable_description"]
+        if slot_data["type"].lower() != "string":
+            new_slot_dict["range"] = slot_data["type"].lower()
+    new_slot_dict["description"] = slot_data["description"]
     return new_slot_dict
 
 
@@ -265,8 +266,8 @@ def create_enum(
         )
         if not match_exists:
             for key in permissible_values.keys():
-                desc = permissible_values[key]["value_description"]
-                meaning = permissible_values[key]["value_code"][0]
+                desc = permissible_values[key]["description"]
+                meaning = permissible_values[key]["codes"]
                 if desc == "" and meaning == "":
                     continue
                 elif meaning == "":
