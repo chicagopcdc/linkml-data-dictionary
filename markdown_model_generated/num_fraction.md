@@ -2,14 +2,14 @@
 # Slot: num_fraction
 
 
-Number of Fractions
+The number of divided radiation doses received per day.
 
 URI: [https://w3id.org/pcdc/model/num_fraction](https://w3id.org/pcdc/model/num_fraction)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
+None &#8594;  <sub>0..1</sub> [Decimal](types/Decimal.md)
 
 ## Parents
 

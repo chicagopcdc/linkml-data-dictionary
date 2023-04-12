@@ -2,7 +2,7 @@
 # Slot: necrosis
 
 
-Refers to the death of living tissues.
+The quantitative value for the percent of necrosis.
 
 URI: [https://w3id.org/pcdc/model/necrosis](https://w3id.org/pcdc/model/necrosis)
 
@@ -19,5 +19,4 @@ None &#8594;  <sub>0..1</sub> [NecrosisEnum](NecrosisEnum.md)
 
 ## Used by
 
- * [LesionCharacteristics](LesionCharacteristics.md)
  * [SubjectResponse](SubjectResponse.md)

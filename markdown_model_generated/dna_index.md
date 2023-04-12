@@ -2,7 +2,7 @@
 # Slot: dna_index
 
 
-
+The categorical result of the DNA index for this subject
 
 URI: [https://w3id.org/pcdc/model/dna_index](https://w3id.org/pcdc/model/dna_index)
 

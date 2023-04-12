@@ -9,7 +9,7 @@ URI: [https://w3id.org/pcdc/model/lkss](https://w3id.org/pcdc/model/lkss)
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [LkssEnum](LkssEnum.md)
+None &#8594;  <sub>0..1</sub> [AliveDeadNotreportedUnknownEnum](AliveDeadNotreportedUnknownEnum.md)
 
 ## Parents
 

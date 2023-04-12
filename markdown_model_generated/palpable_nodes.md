@@ -2,7 +2,7 @@
 # Slot: palpable_nodes
 
 
-Palpable Lymph Nodes
+The lymph nodes are felt on palpation.
 
 URI: [https://w3id.org/pcdc/model/palpable_nodes](https://w3id.org/pcdc/model/palpable_nodes)
 

@@ -9,7 +9,7 @@ URI: [https://w3id.org/pcdc/model/anc_threshold_at_response](https://w3id.org/pc
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
+None &#8594;  <sub>0..1</sub> [NoNotreportedUnknownYesEnum](NoNotreportedUnknownYesEnum.md)
 
 ## Parents
 

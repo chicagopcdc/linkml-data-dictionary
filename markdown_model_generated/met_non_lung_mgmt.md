@@ -2,7 +2,7 @@
 # Slot: met_non_lung_mgmt
 
 
-Non-lung Metastatic Site Surgical Management
+Surgical treatment of metastatic disease not involving the lungs.
 
 URI: [https://w3id.org/pcdc/model/met_non_lung_mgmt](https://w3id.org/pcdc/model/met_non_lung_mgmt)
 

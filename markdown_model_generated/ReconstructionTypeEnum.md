@@ -26,7 +26,7 @@ URI: [https://w3id.org/pcdc/model/ReconstructionTypeEnum](https://w3id.org/pcdc/
 | Vascularized Autograft Endoprosthetic Composite | The combination of a graft from the intended recipient that has attached arteries and veins and a prosthetic device intended for implant. | ncit:C175025 |  |
 | Arthrodesis | Surgical fixation or immobilization of a joint, performed to allow bones to fuse or join together. | ncit:C52007 |  |
 | No Reconstruction | There was no surgical reconstruction performed. | ncit:C175026 |  |
-| Other | Different than the one(s) previously specified or mentioned. | ncit:C17649 |  |
 | Unknown | Reported as unknown by the data contributor. | ncit:C17998 |  |
 | Not Reported | Not provided or available. | ncit:C43234 |  |
+| Allograft and Vascularized Autograft | The combination of a bone graft from a donor of the same species and a graft from the intended recipient that has attached arteries and veins. | ncit:C175024 |  |
 

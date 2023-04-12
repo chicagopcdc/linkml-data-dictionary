@@ -45,4 +45,6 @@ URI: [https://w3id.org/pcdc/model/BendamustineBleomycinBrentuximabvedotinBusulfa
 | Vinblastine | A natural alkaloid isolated from the plant Vinca rosea Linn. Vinblastine binds to tubulin and inhibits microtubule formation, resulting in disruption of mitotic spindle assembly and arrest of tumor cells in the M phase of the cell cycle. This agent may also interfere with amino acid, cyclic AMP, and glutathione metabolism; calmodulin-dependent Ca++ -transport ATPase activity; cellular respiration; and nucleic acid and lipid biosynthesis. (NCI04) | ncit:C930 |  |
 | Vincristine | A natural alkaloid isolated from the plant Vinca rosea Linn. Vincristine binds irreversibly to microtubules and spindle proteins in S phase of the cell cycle and interferes with the formation of the mitotic spindle, thereby arresting tumor cells in metaphase. This agent also depolymerizes microtubules and may also interfere with amino acid, cyclic AMP, and glutathione metabolism; calmodulin-dependent Ca++ -transport ATPase activity; cellular respiration; and nucleic acid and lipid biosynthesis. (NCI04) | ncit:C933 |  |
 | Other | Different than the one(s) previously specified or mentioned. | ncit:C17649 |  |
+| Unknown | Reported as unknown by the data contributor. | ncit:C17998 |  |
+| Not Reported | Not provided or available. | ncit:C43234 |  |
 

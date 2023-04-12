@@ -2,7 +2,7 @@
 # Slot: time_point
 
 
-PRO Measures Assessment Time Point
+The point in time that acts as a fixed reference point to an event.
 
 URI: [https://w3id.org/pcdc/model/time_point](https://w3id.org/pcdc/model/time_point)
 

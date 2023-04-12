@@ -2,7 +2,7 @@
 # Slot: mki
 
 
-Mitosis Karyorrhexis Index as revised by the International Neuroblastoma Pathology Classification (INPC)
+MKI (Revised INPC)
 
 URI: [https://w3id.org/pcdc/model/mki](https://w3id.org/pcdc/model/mki)
 
@@ -19,4 +19,4 @@ None &#8594;  <sub>0..1</sub> [MkiEnum](MkiEnum.md)
 
 ## Used by
 
- * [DiseaseCharacteristics](DiseaseCharacteristics.md)
+ * [Histology](Histology.md)

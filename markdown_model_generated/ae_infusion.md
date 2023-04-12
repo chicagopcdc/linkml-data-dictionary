@@ -2,7 +2,7 @@
 # Slot: ae_infusion
 
 
-Infusion Related Adverse Event
+An adverse event that can be related to an infusion.
 
 URI: [https://w3id.org/pcdc/model/ae_infusion](https://w3id.org/pcdc/model/ae_infusion)
 

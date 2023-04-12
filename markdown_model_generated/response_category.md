@@ -2,7 +2,7 @@
 # Slot: response_category
 
 
-Response Assessment Category
+The category used to assess the response to therapy.
 
 URI: [https://w3id.org/pcdc/model/response_category](https://w3id.org/pcdc/model/response_category)
 

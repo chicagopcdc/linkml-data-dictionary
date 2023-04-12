@@ -2,7 +2,7 @@
 # Slot: age_at_genetic_analysis
 
 
-The age, in days, of the subject at the time of this analysis.
+The age (in days) of the subject at the time of this analysis.
 
 URI: [https://w3id.org/pcdc/model/age_at_genetic_analysis](https://w3id.org/pcdc/model/age_at_genetic_analysis)
 

@@ -19,4 +19,5 @@ None &#8594;  <sub>0..1</sub> [MeasurementUnitEnum](MeasurementUnitEnum.md)
 
 ## Used by
 
+ * [FunctionTest](FunctionTest.md)
  * [VitalsAndAnthropometrics](VitalsAndAnthropometrics.md)

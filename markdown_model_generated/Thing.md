@@ -7,14 +7,13 @@
 URI: [https://w3id.org/pcdc/model/Thing](https://w3id.org/pcdc/model/Thing)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VitalsAndAnthropometrics],[TransfusionMedicineProcedure],[Timing],[Thing&#124;submitter_id:string;type:string]^-[VitalsAndAnthropometrics],[Thing]^-[TransfusionMedicineProcedure],[Thing]^-[Timing],[Thing]^-[SurvivalCharacteristics],[Thing]^-[SubjectResponse],[Thing]^-[SubjectCharacteristics],[Thing]^-[Subject],[Thing]^-[StemCellTransplant],[Thing]^-[Staging],[Thing]^-[SecondaryMalignantNeoplasm],[Thing]^-[RadiationTherapy],[Thing]^-[ProtocolTreatmentModifications],[Thing]^-[Person],[Thing]^-[PatientReportedOutcomesMetadata],[Thing]^-[OffProtocolTherapyOrStudy],[Thing]^-[MinimalResidualDisease],[Thing]^-[Medication],[Thing]^-[MedicalHistory],[Thing]^-[LesionCharacteristics],[Thing]^-[LateEffects],[Thing]^-[LaboratoryTest],[Thing]^-[Immunohistochemistry],[Thing]^-[Imaging],[Thing]^-[Histology],[Thing]^-[GeneticAnalysis],[Thing]^-[FunctionTest],[Thing]^-[FamilyMedicalHistory],[Thing]^-[DiseaseCharacteristics],[Thing]^-[Cytology],[Thing]^-[CellularImmunotherapy],[Thing]^-[BiopsyAndSurgicalProcedures],[Thing]^-[AdverseEvents],[SurvivalCharacteristics],[SubjectResponse],[SubjectCharacteristics],[Subject],[StemCellTransplant],[Staging],[SecondaryMalignantNeoplasm],[RadiationTherapy],[ProtocolTreatmentModifications],[Person],[PatientReportedOutcomesMetadata],[OffProtocolTherapyOrStudy],[MinimalResidualDisease],[Medication],[MedicalHistory],[LesionCharacteristics],[LateEffects],[LaboratoryTest],[Immunohistochemistry],[Imaging],[Histology],[GeneticAnalysis],[FunctionTest],[FamilyMedicalHistory],[DiseaseCharacteristics],[Cytology],[CellularImmunotherapy],[BiopsyAndSurgicalProcedures],[AdverseEvents])](https://yuml.me/diagram/nofunky;dir:TB/class/[VitalsAndAnthropometrics],[TransfusionMedicineProcedure],[Timing],[Thing&#124;submitter_id:string;type:string]^-[VitalsAndAnthropometrics],[Thing]^-[TransfusionMedicineProcedure],[Thing]^-[Timing],[Thing]^-[SurvivalCharacteristics],[Thing]^-[SubjectResponse],[Thing]^-[SubjectCharacteristics],[Thing]^-[Subject],[Thing]^-[StemCellTransplant],[Thing]^-[Staging],[Thing]^-[SecondaryMalignantNeoplasm],[Thing]^-[RadiationTherapy],[Thing]^-[ProtocolTreatmentModifications],[Thing]^-[Person],[Thing]^-[PatientReportedOutcomesMetadata],[Thing]^-[OffProtocolTherapyOrStudy],[Thing]^-[MinimalResidualDisease],[Thing]^-[Medication],[Thing]^-[MedicalHistory],[Thing]^-[LesionCharacteristics],[Thing]^-[LateEffects],[Thing]^-[LaboratoryTest],[Thing]^-[Immunohistochemistry],[Thing]^-[Imaging],[Thing]^-[Histology],[Thing]^-[GeneticAnalysis],[Thing]^-[FunctionTest],[Thing]^-[FamilyMedicalHistory],[Thing]^-[DiseaseCharacteristics],[Thing]^-[Cytology],[Thing]^-[CellularImmunotherapy],[Thing]^-[BiopsyAndSurgicalProcedures],[Thing]^-[AdverseEvents],[SurvivalCharacteristics],[SubjectResponse],[SubjectCharacteristics],[Subject],[StemCellTransplant],[Staging],[SecondaryMalignantNeoplasm],[RadiationTherapy],[ProtocolTreatmentModifications],[Person],[PatientReportedOutcomesMetadata],[OffProtocolTherapyOrStudy],[MinimalResidualDisease],[Medication],[MedicalHistory],[LesionCharacteristics],[LateEffects],[LaboratoryTest],[Immunohistochemistry],[Imaging],[Histology],[GeneticAnalysis],[FunctionTest],[FamilyMedicalHistory],[DiseaseCharacteristics],[Cytology],[CellularImmunotherapy],[BiopsyAndSurgicalProcedures],[AdverseEvents])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[VitalsAndAnthropometrics],[TumorAssessment],[TransfusionMedicineProcedures],[TimePeriod],[Thing&#124;submitter_id:string;type:string]^-[VitalsAndAnthropometrics],[Thing]^-[TumorAssessment],[Thing]^-[TransfusionMedicineProcedures],[Thing]^-[TimePeriod],[Thing]^-[SurvivalCharacteristics],[Thing]^-[SubsequentMalignantNeoplasm],[Thing]^-[SubjectResponse],[Thing]^-[Subject],[Thing]^-[StemCellTransplant],[Thing]^-[Staging],[Thing]^-[RadiationTherapy],[Thing]^-[ProtocolTreatmentModifications],[Thing]^-[Person],[Thing]^-[PatientReportedOutcomesMetadata],[Thing]^-[OffProtocolTherapyOrStudy],[Thing]^-[MinimalResidualDisease],[Thing]^-[Medication],[Thing]^-[MedicalHistory],[Thing]^-[LateEffects],[Thing]^-[LaboratoryTest],[Thing]^-[Immunohistochemistry],[Thing]^-[Imaging],[Thing]^-[Histology],[Thing]^-[GeneticAnalysis],[Thing]^-[FunctionTest],[Thing]^-[FamilyMedicalHistory],[Thing]^-[DiseaseCharacteristics],[Thing]^-[CellularImmunotherapy],[Thing]^-[BiopsyAndSurgicalProcedures],[Thing]^-[AdverseEvents],[SurvivalCharacteristics],[SubsequentMalignantNeoplasm],[SubjectResponse],[Subject],[StemCellTransplant],[Staging],[RadiationTherapy],[ProtocolTreatmentModifications],[Person],[PatientReportedOutcomesMetadata],[OffProtocolTherapyOrStudy],[MinimalResidualDisease],[Medication],[MedicalHistory],[LateEffects],[LaboratoryTest],[Immunohistochemistry],[Imaging],[Histology],[GeneticAnalysis],[FunctionTest],[FamilyMedicalHistory],[DiseaseCharacteristics],[CellularImmunotherapy],[BiopsyAndSurgicalProcedures],[AdverseEvents])](https://yuml.me/diagram/nofunky;dir:TB/class/[VitalsAndAnthropometrics],[TumorAssessment],[TransfusionMedicineProcedures],[TimePeriod],[Thing&#124;submitter_id:string;type:string]^-[VitalsAndAnthropometrics],[Thing]^-[TumorAssessment],[Thing]^-[TransfusionMedicineProcedures],[Thing]^-[TimePeriod],[Thing]^-[SurvivalCharacteristics],[Thing]^-[SubsequentMalignantNeoplasm],[Thing]^-[SubjectResponse],[Thing]^-[Subject],[Thing]^-[StemCellTransplant],[Thing]^-[Staging],[Thing]^-[RadiationTherapy],[Thing]^-[ProtocolTreatmentModifications],[Thing]^-[Person],[Thing]^-[PatientReportedOutcomesMetadata],[Thing]^-[OffProtocolTherapyOrStudy],[Thing]^-[MinimalResidualDisease],[Thing]^-[Medication],[Thing]^-[MedicalHistory],[Thing]^-[LateEffects],[Thing]^-[LaboratoryTest],[Thing]^-[Immunohistochemistry],[Thing]^-[Imaging],[Thing]^-[Histology],[Thing]^-[GeneticAnalysis],[Thing]^-[FunctionTest],[Thing]^-[FamilyMedicalHistory],[Thing]^-[DiseaseCharacteristics],[Thing]^-[CellularImmunotherapy],[Thing]^-[BiopsyAndSurgicalProcedures],[Thing]^-[AdverseEvents],[SurvivalCharacteristics],[SubsequentMalignantNeoplasm],[SubjectResponse],[Subject],[StemCellTransplant],[Staging],[RadiationTherapy],[ProtocolTreatmentModifications],[Person],[PatientReportedOutcomesMetadata],[OffProtocolTherapyOrStudy],[MinimalResidualDisease],[Medication],[MedicalHistory],[LateEffects],[LaboratoryTest],[Immunohistochemistry],[Imaging],[Histology],[GeneticAnalysis],[FunctionTest],[FamilyMedicalHistory],[DiseaseCharacteristics],[CellularImmunotherapy],[BiopsyAndSurgicalProcedures],[AdverseEvents])
 
 ## Children
 
  * [AdverseEvents](AdverseEvents.md)
  * [BiopsyAndSurgicalProcedures](BiopsyAndSurgicalProcedures.md)
  * [CellularImmunotherapy](CellularImmunotherapy.md)
- * [Cytology](Cytology.md)
  * [DiseaseCharacteristics](DiseaseCharacteristics.md)
  * [FamilyMedicalHistory](FamilyMedicalHistory.md)
  * [FunctionTest](FunctionTest.md)
@@ -24,7 +23,6 @@ URI: [https://w3id.org/pcdc/model/Thing](https://w3id.org/pcdc/model/Thing)
  * [Immunohistochemistry](Immunohistochemistry.md)
  * [LaboratoryTest](LaboratoryTest.md)
  * [LateEffects](LateEffects.md)
- * [LesionCharacteristics](LesionCharacteristics.md)
  * [MedicalHistory](MedicalHistory.md)
  * [Medication](Medication.md)
  * [MinimalResidualDisease](MinimalResidualDisease.md)
@@ -33,15 +31,15 @@ URI: [https://w3id.org/pcdc/model/Thing](https://w3id.org/pcdc/model/Thing)
  * [Person](Person.md)
  * [ProtocolTreatmentModifications](ProtocolTreatmentModifications.md)
  * [RadiationTherapy](RadiationTherapy.md)
- * [SecondaryMalignantNeoplasm](SecondaryMalignantNeoplasm.md)
  * [Staging](Staging.md)
  * [StemCellTransplant](StemCellTransplant.md)
  * [Subject](Subject.md)
- * [SubjectCharacteristics](SubjectCharacteristics.md)
  * [SubjectResponse](SubjectResponse.md)
+ * [SubsequentMalignantNeoplasm](SubsequentMalignantNeoplasm.md)
  * [SurvivalCharacteristics](SurvivalCharacteristics.md)
- * [Timing](Timing.md)
- * [TransfusionMedicineProcedure](TransfusionMedicineProcedure.md)
+ * [TimePeriod](TimePeriod.md)
+ * [TransfusionMedicineProcedures](TransfusionMedicineProcedures.md)
+ * [TumorAssessment](TumorAssessment.md)
  * [VitalsAndAnthropometrics](VitalsAndAnthropometrics.md)
 
 ## Referenced by Class

@@ -1,5 +1,5 @@
 
-# Class: ProtocolTreatmentModifications
+# Class: Protocol Treatment Modifications
 
 
 
@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/ProtocolTreatmentModifications](https://w3id.org/pcdc/model/ProtocolTreatmentModifications)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Timing],[Thing],[Timing]<timings%200..1-++[ProtocolTreatmentModifications&#124;age_at_mod:integer%20%3F;disease_phase:DiseasePhaseEnum%20%3F;disease_phase_number:integer%20%3F;course:CourseEnum%20%3F;course_number:integer%20%3F;mod_type:ModTypeEnum%20%3F;mod_rationale:ModRationaleEnum%20%3F;mod_reason:ModReasonEnum%20%3F;toxicity_detail:ToxicityDetailEnum%20%3F;toxicity_immune:NoNotreportedUnknownYesEnum%20%3F;toxicity_infusion:NoNotreportedUnknownYesEnum%20%3F;original_agent:BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabEnum%20%3F;sub_agent:BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[ProtocolTreatmentModifications])](https://yuml.me/diagram/nofunky;dir:TB/class/[Timing],[Thing],[Timing]<timings%200..1-++[ProtocolTreatmentModifications&#124;age_at_mod:integer%20%3F;disease_phase:DiseasePhaseEnum%20%3F;disease_phase_number:integer%20%3F;course:CourseEnum%20%3F;course_number:integer%20%3F;mod_type:ModTypeEnum%20%3F;mod_rationale:ModRationaleEnum%20%3F;mod_reason:ModReasonEnum%20%3F;toxicity_detail:ToxicityDetailEnum%20%3F;toxicity_immune:NoNotreportedUnknownYesEnum%20%3F;toxicity_infusion:NoNotreportedUnknownYesEnum%20%3F;original_agent:BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabEnum%20%3F;sub_agent:BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[ProtocolTreatmentModifications])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[ProtocolTreatmentModifications&#124;age_at_modification:integer%20%3F;modification:ModificationEnum%20%3F;modification_other:string%20%3F;modification_basis:ModificationBasisEnum%20%3F;reason:ReasonEnum%20%3F;reason_other:string%20%3F;toxicity_detail:ToxicityDetailEnum%20%3F;toxicity_detail_other:string%20%3F;toxicity_immune:NoNotreportedUnknownYesEnum%20%3F;toxicity_infusion:NoNotreportedUnknownYesEnum%20%3F;original_agent:BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabEnum%20%3F;original_agent_other:string%20%3F;sub_agent:BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabEnum%20%3F;sub_agent_other:string%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[ProtocolTreatmentModifications],[Thing]^-[ProtocolTreatmentModifications])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[ProtocolTreatmentModifications&#124;age_at_modification:integer%20%3F;modification:ModificationEnum%20%3F;modification_other:string%20%3F;modification_basis:ModificationBasisEnum%20%3F;reason:ReasonEnum%20%3F;reason_other:string%20%3F;toxicity_detail:ToxicityDetailEnum%20%3F;toxicity_detail_other:string%20%3F;toxicity_immune:NoNotreportedUnknownYesEnum%20%3F;toxicity_infusion:NoNotreportedUnknownYesEnum%20%3F;original_agent:BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabEnum%20%3F;original_agent_other:string%20%3F;sub_agent:BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabEnum%20%3F;sub_agent_other:string%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[ProtocolTreatmentModifications],[Thing]^-[ProtocolTreatmentModifications])
 
 ## Parents
 
@@ -18,47 +18,51 @@ URI: [https://w3id.org/pcdc/model/ProtocolTreatmentModifications](https://w3id.o
 
 ### Own
 
- * [age_at_mod](age_at_mod.md)  <sub>0..1</sub>
-     * Description: Age in Days of Protocol Treatment Modification
+ * [age_at_modification](age_at_modification.md)  <sub>0..1</sub>
+     * Description: The age (in days) of subject since the protocol treatment modification.
      * Range: [Integer](types/Integer.md)
- * [timings](timings.md)  <sub>0..1</sub>
-     * Range: [Timing](Timing.md)
- * [disease_phase](disease_phase.md)  <sub>0..1</sub>
-     * Description: The phase of the cancer treatment process during which relevant observations were recorded. This variable is used across domains to frame the timing of these longitudinal observations and reduce the number of redundant variables needed to report similar concepts (see "Disease Phase Timing and Course Table" in the documentation for additional guidance).
-     * Range: [DiseasePhaseEnum](DiseasePhaseEnum.md)
- * [disease_phase_number](disease_phase_number.md)  <sub>0..1</sub>
-     * Description: This variable indicates the ordinal numbering of the Disease Phase variable within its various subgroups (e.g., Relapse 1, Relapse 2, Relapse 3, etc.). The observations across domains can therefore be organized longitudinally without the need for specific dates.
-     * Range: [Integer](types/Integer.md)
- * [course](course.md)  <sub>0..1</sub>
-     * Description: The protocol treatment "course" during which relevant observations were recorded. This variable is used across domains to frame the timing of these longitudinal observations and reduce the number of redundant variables needed to report similar concepts (see "Disease Phase Timing and Course Table" in the documentation for additional guidance).
-     * Range: [CourseEnum](CourseEnum.md)
- * [course_number](course_number.md)  <sub>0..1</sub>
-     * Description: This variable indicates the ordinal numbering of the Course variable within its various subgroups (e.g., Induction 1, Induction 2, Induction 3, etc.). The observations across domains can therefore be organized longitudinally without the need for specific dates.
-     * Range: [Integer](types/Integer.md)
- * [mod_type](mod_type.md)  <sub>0..1</sub>
-     * Description: Modification Type
-     * Range: [ModTypeEnum](ModTypeEnum.md)
- * [mod_rationale](mod_rationale.md)  <sub>0..1</sub>
-     * Description: Treatment Modification Rationale
-     * Range: [ModRationaleEnum](ModRationaleEnum.md)
- * [mod_reason](mod_reason.md)  <sub>0..1</sub>
-     * Description: Treatment Modification Reason
-     * Range: [ModReasonEnum](ModReasonEnum.md)
+ * [time_periods](time_periods.md)  <sub>0..1</sub>
+     * Range: [TimePeriod](TimePeriod.md)
+ * [modification](modification.md)  <sub>0..1</sub>
+     * Description: The type of modification used.
+     * Range: [ModificationEnum](ModificationEnum.md)
+ * [modification_other](modification_other.md)  <sub>0..1</sub>
+     * Description: Specify the "Other" MODIFICATION
+     * Range: [String](types/String.md)
+ * [modification_basis](modification_basis.md)  <sub>0..1</sub>
+     * Description: The rationale for why an entity or event is changed.	
+     * Range: [ModificationBasisEnum](ModificationBasisEnum.md)
+ * [reason](reason.md)  <sub>0..1</sub>
+     * Description: The reasoning behind a treatment modification.	
+     * Range: [ReasonEnum](ReasonEnum.md)
+ * [reason_other](reason_other.md)  <sub>0..1</sub>
+     * Description: Specify the "Other" REASON
+     * Range: [String](types/String.md)
  * [toxicity_detail](toxicity_detail.md)  <sub>0..1</sub>
-     * Description: Toxicity Detail
+     * Description: Information about the conditions surrounding the toxicity.	
      * Range: [ToxicityDetailEnum](ToxicityDetailEnum.md)
+ * [toxicity_detail_other](toxicity_detail_other.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
  * [toxicity_immune](toxicity_immune.md)  <sub>0..1</sub>
-     * Description: Immune Related Toxicity
+     * Description: Toxicity that impairs or damages the immune system.	
      * Range: [NoNotreportedUnknownYesEnum](NoNotreportedUnknownYesEnum.md)
  * [toxicity_infusion](toxicity_infusion.md)  <sub>0..1</sub>
-     * Description: Infusion Related Toxicity
+     * Description: Toxicity related to an infusion.	
      * Range: [NoNotreportedUnknownYesEnum](NoNotreportedUnknownYesEnum.md)
  * [original_agent](original_agent.md)  <sub>0..1</sub>
-     * Description: Original Agent
+     * Description: The first agent planned for a therapy.	
      * Range: [BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabEnum](BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabEnum.md)
+ * [original_agent_other](original_agent_other.md)  <sub>0..1</sub>
+     * Description: Specify the "Other" ORIGINAL_AGENT
+     * Range: [String](types/String.md)
  * [sub_agent](sub_agent.md)  <sub>0..1</sub>
-     * Description: Substitution Agent
+     * Description: A medication was substituted with another.	
      * Range: [BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabEnum](BendamustineBleomycinBrentuximabvedotinBusulfanCarboplatinCarmustineCisplatinCyclophosphamideCytarabEnum.md)
+ * [sub_agent_other](sub_agent_other.md)  <sub>0..1</sub>
+     * Description: Specify the "Other" SUB_AGENT
+     * Range: [String](types/String.md)
+ * [subjects](subjects.md)  <sub>1..\*</sub>
+     * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:
 

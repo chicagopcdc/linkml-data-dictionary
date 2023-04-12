@@ -2,7 +2,7 @@
 # Slot: condition
 
 
-Relevant condition that may or may not (see CONDITION_STATUS) be in part of the subject's medical history.
+Relevant condition from the subject's medical history.
 
 URI: [https://w3id.org/pcdc/model/condition](https://w3id.org/pcdc/model/condition)
 

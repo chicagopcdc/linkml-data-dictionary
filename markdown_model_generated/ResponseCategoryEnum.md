@@ -20,7 +20,8 @@ URI: [https://w3id.org/pcdc/model/ResponseCategoryEnum](https://w3id.org/pcdc/mo
 | Bone Marrow Response | The response of the bone marrow to the treatment. | ncit:C173307 |  |
 | CNS Response | The response of the central nervous system to treatment. | ncit:C168952 |  |
 | Myeloid Sarcoma Response | The response of the myeloid sarcoma to the treatment. | ncit:C168965 |  |
-| Other | Different than the one(s) previously specified or mentioned. | ncit:C17649 |  |
 | Unknown | Reported as unknown by the data contributor. | ncit:C17998 |  |
 | Not Reported | Not provided or available. | ncit:C43234 |  |
+| Non-Target Lesions | A qualitative or quantitative measurement of the response of a non-target lesion(s) to the therapy. | ncit:C94535 |  |
+| Target Lesions | A qualitative or quantitative measurement of the response of a target lesion(s) to the therapy. | ncit:C94534 |  |
 

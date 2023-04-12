@@ -2,7 +2,7 @@
 # Slot: age_at_procedure
 
 
-Age in Days at Procedure
+The age (in days) of the subject at the time of this procedure.
 
 URI: [https://w3id.org/pcdc/model/age_at_procedure](https://w3id.org/pcdc/model/age_at_procedure)
 

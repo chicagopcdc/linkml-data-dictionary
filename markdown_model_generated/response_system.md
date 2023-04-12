@@ -2,7 +2,7 @@
 # Slot: response_system
 
 
-Response Criteria
+A standard from which a judgment concerning tumor response to therapy can be established.
 
 URI: [https://w3id.org/pcdc/model/response_system](https://w3id.org/pcdc/model/response_system)
 

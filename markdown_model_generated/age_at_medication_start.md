@@ -2,7 +2,7 @@
 # Slot: age_at_medication_start
 
 
-Age in Days at Start of Total Dose Calculation
+The age (in days) of the subject at the start of this medication treatment.
 
 URI: [https://w3id.org/pcdc/model/age_at_medication_start](https://w3id.org/pcdc/model/age_at_medication_start)
 

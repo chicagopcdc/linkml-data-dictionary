@@ -9,7 +9,7 @@ URI: [https://w3id.org/pcdc/model/hla_match](https://w3id.org/pcdc/model/hla_mat
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [HlaMatchEnum](HlaMatchEnum.md)
+None &#8594;  <sub>0..1</sub> [NoNotreportedUnknownYesEnum](NoNotreportedUnknownYesEnum.md)
 
 ## Parents
 

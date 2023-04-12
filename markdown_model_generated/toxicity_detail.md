@@ -2,7 +2,7 @@
 # Slot: toxicity_detail
 
 
-Toxicity Detail
+Information about the conditions surrounding the toxicity.
 
 URI: [https://w3id.org/pcdc/model/toxicity_detail](https://w3id.org/pcdc/model/toxicity_detail)
 

@@ -2,7 +2,7 @@
 # Slot: age_at_ae
 
 
-Age in Days at Onset Adverse Event
+The age (in days) of the subject at the onset of this adverse event
 
 URI: [https://w3id.org/pcdc/model/age_at_ae](https://w3id.org/pcdc/model/age_at_ae)
 

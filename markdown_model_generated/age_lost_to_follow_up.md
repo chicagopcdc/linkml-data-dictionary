@@ -2,7 +2,7 @@
 # Slot: age_lost_to_follow_up
 
 
-The age (in days) when the subject was lost to follow-up
+The age (in days) when the subject was lost to follow-up.
 
 URI: [https://w3id.org/pcdc/model/age_lost_to_follow_up](https://w3id.org/pcdc/model/age_lost_to_follow_up)
 

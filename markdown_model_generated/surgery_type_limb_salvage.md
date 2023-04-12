@@ -2,7 +2,7 @@
 # Slot: surgery_type_limb_salvage
 
 
-Limb Salvage Surgery Type
+A procedure to avoid amputation of an arm or leg.
 
 URI: [https://w3id.org/pcdc/model/surgery_type_limb_salvage](https://w3id.org/pcdc/model/surgery_type_limb_salvage)
 

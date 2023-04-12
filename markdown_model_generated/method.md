@@ -2,7 +2,7 @@
 # Slot: method
 
 
-The testing method/technique used to generate the observed results.
+A systematic course of action that is performed in order to complete a laboratory test.
 
 URI: [https://w3id.org/pcdc/model/method](https://w3id.org/pcdc/model/method)
 
@@ -20,3 +20,7 @@ None &#8594;  <sub>0..1</sub> [MethodEnum](MethodEnum.md)
 ## Used by
 
  * [GeneticAnalysis](GeneticAnalysis.md)
+ * [Histology](Histology.md)
+ * [Imaging](Imaging.md)
+ * [LaboratoryTest](LaboratoryTest.md)
+ * [MinimalResidualDisease](MinimalResidualDisease.md)

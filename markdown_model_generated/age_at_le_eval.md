@@ -2,7 +2,7 @@
 # Slot: age_at_le_eval
 
 
-Age of subject (in days) when the late effect evaluation was performed.
+The age (in days) of subject when the late effect evaluation was performed.
 
 URI: [https://w3id.org/pcdc/model/age_at_le_eval](https://w3id.org/pcdc/model/age_at_le_eval)
 

@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/Person](https://w3id.org/pcdc/model/Person)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject]++-%20persons%201..1>[Person&#124;sex:SexEnum%20%3F;race:RaceEnum%20%3F;race_other:string%20%3F;ethnicity:EthnicityEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[Person],[Subject])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject]++-%20persons%201..1>[Person&#124;sex:SexEnum%20%3F;race:RaceEnum%20%3F;race_other:string%20%3F;ethnicity:EthnicityEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[Person],[Subject])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject]++-%20persons%201..1>[Person&#124;sex:SexEnum%20%3F;race:RaceEnum%20%3F;race_other:string%20%3F;ethnicity:EthnicityEnum%20%3F;country:string%20%3F;race_identification_source:RaceIdentificationSourceEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[Person],[Subject])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject]++-%20persons%201..1>[Person&#124;sex:SexEnum%20%3F;race:RaceEnum%20%3F;race_other:string%20%3F;ethnicity:EthnicityEnum%20%3F;country:string%20%3F;race_identification_source:RaceIdentificationSourceEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[Person],[Subject])
 
 ## Parents
 
@@ -34,6 +34,12 @@ URI: [https://w3id.org/pcdc/model/Person](https://w3id.org/pcdc/model/Person)
  * [ethnicity](ethnicity.md)  <sub>0..1</sub>
      * Description: The social and cultural characteristics, backgrounds, or experiences shared by a group of people. These include language, religion, beliefs, values, and behaviors that are often handed down from one generation to the next. Some conditions or diseases, such as cancer, may be more common in certain ethnic groups than in others. (Source: NCI Dictionary of Cancer Terms)
      * Range: [EthnicityEnum](EthnicityEnum.md)
+ * [country](country.md)  <sub>0..1</sub>
+     * Description: The country where the subject was enrolled in their study.
+     * Range: [String](types/String.md)
+ * [race_identification_source](race_identification_source.md)  <sub>0..1</sub>
+     * Description: Who supplied the value in RACE?
+     * Range: [RaceIdentificationSourceEnum](RaceIdentificationSourceEnum.md)
 
 ### Inherited from Thing:
 

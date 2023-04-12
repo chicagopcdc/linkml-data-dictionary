@@ -1,5 +1,5 @@
 
-# Class: GeneticAnalysis
+# Class: Genetic Analysis
 
 
 
@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/GeneticAnalysis](https://w3id.org/pcdc/model/GeneticAnalysis)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Timing],[Thing],[Timing]<timings%200..1-++[GeneticAnalysis&#124;age_at_genetic_analysis:integer%20%3F;disease_phase:DiseasePhaseEnum%20%3F;disease_phase_number:integer%20%3F;course:CourseEnum%20%3F;course_number:integer%20%3F;lesion_classification:LesionClassificationEnum%20%3F;method:MethodEnum%20%3F;specimen:SpecimenEnum%20%3F;genomic_source_class:GenomicSourceClassEnum%20%3F;common_name:CommonNameEnum%20%3F;status:StatusEnum%20%3F;gene:string%20%3F;chromosome:string%20%3F;mutation_type:MutationTypeEnum%20%3F;mutation_type_other:string%20%3F;expression_consequence:ExpressionConsequenceEnum%20%3F;chromosomal_consequence:ChromosomalConsequenceEnum%20%3F;genomic_region:GenomicRegionEnum%20%3F;allelic_state:AllelicStateEnum%20%3F;inheritance_pattern:InheritancePatternEnum%20%3F;parental_status:ParentalStatusEnum%20%3F;hgvs_coding:string%20%3F;hgvs_protein:string%20%3F;iscn:string%20%3F;clingen_id:string%20%3F;copy_number_variation:CopyNumberVariationEnum%20%3F;copy_number:integer%20%3F;amplification:NoNotreportedUnknownYesEnum%20%3F;allelic_frequency:integer%20%3F;gene2:string%20%3F;mosaicism:NoNotreportedUnknownYesEnum%20%3F;mosaicism_percent:integer%20%3F;alt_status:AltStatusEnum%20%3F;total_chromosomes:integer%20%3F;independent_aberations:integer%20%3F;cells_in_metaphase:integer%20%3F;karyotype_status:KaryotypeStatusEnum%20%3F;dna_index:DnaIndexEnum%20%3F;dna_index_numeric:integer%20%3F;cytodifferentiation:CytodifferentiationEnum%20%3F;mitotic_rate:MitoticRateEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[GeneticAnalysis])](https://yuml.me/diagram/nofunky;dir:TB/class/[Timing],[Thing],[Timing]<timings%200..1-++[GeneticAnalysis&#124;age_at_genetic_analysis:integer%20%3F;disease_phase:DiseasePhaseEnum%20%3F;disease_phase_number:integer%20%3F;course:CourseEnum%20%3F;course_number:integer%20%3F;lesion_classification:LesionClassificationEnum%20%3F;method:MethodEnum%20%3F;specimen:SpecimenEnum%20%3F;genomic_source_class:GenomicSourceClassEnum%20%3F;common_name:CommonNameEnum%20%3F;status:StatusEnum%20%3F;gene:string%20%3F;chromosome:string%20%3F;mutation_type:MutationTypeEnum%20%3F;mutation_type_other:string%20%3F;expression_consequence:ExpressionConsequenceEnum%20%3F;chromosomal_consequence:ChromosomalConsequenceEnum%20%3F;genomic_region:GenomicRegionEnum%20%3F;allelic_state:AllelicStateEnum%20%3F;inheritance_pattern:InheritancePatternEnum%20%3F;parental_status:ParentalStatusEnum%20%3F;hgvs_coding:string%20%3F;hgvs_protein:string%20%3F;iscn:string%20%3F;clingen_id:string%20%3F;copy_number_variation:CopyNumberVariationEnum%20%3F;copy_number:integer%20%3F;amplification:NoNotreportedUnknownYesEnum%20%3F;allelic_frequency:integer%20%3F;gene2:string%20%3F;mosaicism:NoNotreportedUnknownYesEnum%20%3F;mosaicism_percent:integer%20%3F;alt_status:AltStatusEnum%20%3F;total_chromosomes:integer%20%3F;independent_aberations:integer%20%3F;cells_in_metaphase:integer%20%3F;karyotype_status:KaryotypeStatusEnum%20%3F;dna_index:DnaIndexEnum%20%3F;dna_index_numeric:integer%20%3F;cytodifferentiation:CytodifferentiationEnum%20%3F;mitotic_rate:MitoticRateEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[GeneticAnalysis])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[GeneticAnalysis&#124;age_at_genetic_analysis:integer%20%3F;method:MethodEnum%20%3F;specimen:SpecimenEnum%20%3F;common_name:CommonNameEnum%20%3F;karyotype_status:KaryotypeStatusEnum%20%3F;status:StatusEnum%20%3F;iscn:string%20%3F;total_chromosomes:decimal%20%3F;chromosome:string%20%3F;gene:string%20%3F;gene2:string%20%3F;variation_type:VariationTypeEnum%20%3F;variation_type_other:string%20%3F;copy_number_variation:CopyNumberVariationEnum%20%3F;copy_number:decimal%20%3F;hgvs_coding:string%20%3F;hgvs_protein:string%20%3F;dna_index_numeric:decimal%20%3F;method_other:string%20%3F;independent_aberations:decimal%20%3F;cells_in_metaphase:decimal%20%3F;common_name_other:string%20%3F;mutant_allele_fraction:decimal%20%3F;genomic_source_class:GenomicSourceClassEnum%20%3F;expression_consequence:ExpressionConsequenceEnum%20%3F;chromosomal_consequence:ChromosomalConsequenceEnum%20%3F;allelic_state:AllelicStateEnum%20%3F;allelic_frequency:decimal%20%3F;external_ref_id:string%20%3F;external_ref_id_system:ExternalRefIdSystemEnum%20%3F;mosaicism_percent:decimal%20%3F;variation_effect:VariationEffectEnum%20%3F;inheritance_pattern:InheritancePatternEnum%20%3F;parental_status:ParentalStatusEnum%20%3F;hgvs_coding_transcript:string%20%3F;hgvs_protein_transcript:string%20%3F;reported_significance:ReportedSignificanceEnum%20%3F;associated_condition:AssociatedConditionEnum%20%3F;associated_condition_other:string%20%3F;review_source:ReviewSourceEnum%20%3F;tumor_classification:TumorClassificationEnum%20%3F;course_timepoint:CourseTimepointEnum%20%3F;specimen_other:string%20%3F;biological_analyte:BiologicalAnalyteEnum%20%3F;biological_analyte_other:string%20%3F;source_pct:SourcePctEnum%20%3F;source_pct_numeric:decimal%20%3F;tkd_involvement:NoNotreportedUnknownYesEnum%20%3F;maf:MafEnum%20%3F;maf_numeric:decimal%20%3F;clonal_status:ClonalStatusEnum%20%3F;dna_index:DnaIndexEnum%20%3F;cytodifferentiation:CytodifferentiationEnum%20%3F;mitotic_rate:MitoticRateEnum%20%3F;mutated_allele_frequency:integer%20%3F;cascade_testing:NoNotreportedUnknownYesEnum%20%3F;alt_status:AltStatusEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[GeneticAnalysis],[Thing]^-[GeneticAnalysis])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[GeneticAnalysis&#124;age_at_genetic_analysis:integer%20%3F;method:MethodEnum%20%3F;specimen:SpecimenEnum%20%3F;common_name:CommonNameEnum%20%3F;karyotype_status:KaryotypeStatusEnum%20%3F;status:StatusEnum%20%3F;iscn:string%20%3F;total_chromosomes:decimal%20%3F;chromosome:string%20%3F;gene:string%20%3F;gene2:string%20%3F;variation_type:VariationTypeEnum%20%3F;variation_type_other:string%20%3F;copy_number_variation:CopyNumberVariationEnum%20%3F;copy_number:decimal%20%3F;hgvs_coding:string%20%3F;hgvs_protein:string%20%3F;dna_index_numeric:decimal%20%3F;method_other:string%20%3F;independent_aberations:decimal%20%3F;cells_in_metaphase:decimal%20%3F;common_name_other:string%20%3F;mutant_allele_fraction:decimal%20%3F;genomic_source_class:GenomicSourceClassEnum%20%3F;expression_consequence:ExpressionConsequenceEnum%20%3F;chromosomal_consequence:ChromosomalConsequenceEnum%20%3F;allelic_state:AllelicStateEnum%20%3F;allelic_frequency:decimal%20%3F;external_ref_id:string%20%3F;external_ref_id_system:ExternalRefIdSystemEnum%20%3F;mosaicism_percent:decimal%20%3F;variation_effect:VariationEffectEnum%20%3F;inheritance_pattern:InheritancePatternEnum%20%3F;parental_status:ParentalStatusEnum%20%3F;hgvs_coding_transcript:string%20%3F;hgvs_protein_transcript:string%20%3F;reported_significance:ReportedSignificanceEnum%20%3F;associated_condition:AssociatedConditionEnum%20%3F;associated_condition_other:string%20%3F;review_source:ReviewSourceEnum%20%3F;tumor_classification:TumorClassificationEnum%20%3F;course_timepoint:CourseTimepointEnum%20%3F;specimen_other:string%20%3F;biological_analyte:BiologicalAnalyteEnum%20%3F;biological_analyte_other:string%20%3F;source_pct:SourcePctEnum%20%3F;source_pct_numeric:decimal%20%3F;tkd_involvement:NoNotreportedUnknownYesEnum%20%3F;maf:MafEnum%20%3F;maf_numeric:decimal%20%3F;clonal_status:ClonalStatusEnum%20%3F;dna_index:DnaIndexEnum%20%3F;cytodifferentiation:CytodifferentiationEnum%20%3F;mitotic_rate:MitoticRateEnum%20%3F;mutated_allele_frequency:integer%20%3F;cascade_testing:NoNotreportedUnknownYesEnum%20%3F;alt_status:AltStatusEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[GeneticAnalysis],[Thing]^-[GeneticAnalysis])
 
 ## Parents
 
@@ -19,124 +19,171 @@ URI: [https://w3id.org/pcdc/model/GeneticAnalysis](https://w3id.org/pcdc/model/G
 ### Own
 
  * [age_at_genetic_analysis](age_at_genetic_analysis.md)  <sub>0..1</sub>
-     * Description: The age, in days, of the subject at the time of this analysis.
+     * Description: The age (in days) of the subject at the time of this analysis.
      * Range: [Integer](types/Integer.md)
- * [timings](timings.md)  <sub>0..1</sub>
-     * Range: [Timing](Timing.md)
- * [disease_phase](disease_phase.md)  <sub>0..1</sub>
-     * Description: The phase of the cancer treatment process during which relevant observations were recorded. This variable is used across domains to frame the timing of these longitudinal observations and reduce the number of redundant variables needed to report similar concepts (see "Disease Phase Timing and Course Table" in the documentation for additional guidance).
-     * Range: [DiseasePhaseEnum](DiseasePhaseEnum.md)
- * [disease_phase_number](disease_phase_number.md)  <sub>0..1</sub>
-     * Description: This variable indicates the ordinal numbering of the Disease Phase variable within its various subgroups (e.g., Relapse 1, Relapse 2, Relapse 3, etc.). The observations across domains can therefore be organized longitudinally without the need for specific dates.
-     * Range: [Integer](types/Integer.md)
- * [course](course.md)  <sub>0..1</sub>
-     * Description: The protocol treatment "course" during which relevant observations were recorded. This variable is used across domains to frame the timing of these longitudinal observations and reduce the number of redundant variables needed to report similar concepts (see "Disease Phase Timing and Course Table" in the documentation for additional guidance).
-     * Range: [CourseEnum](CourseEnum.md)
- * [course_number](course_number.md)  <sub>0..1</sub>
-     * Description: This variable indicates the ordinal numbering of the Course variable within its various subgroups (e.g., Induction 1, Induction 2, Induction 3, etc.). The observations across domains can therefore be organized longitudinally without the need for specific dates.
-     * Range: [Integer](types/Integer.md)
- * [lesion_classification](lesion_classification.md)  <sub>0..1</sub>
-     * Description: The classification of a lesion of interest.
-     * Range: [LesionClassificationEnum](LesionClassificationEnum.md)
  * [method](method.md)  <sub>0..1</sub>
-     * Description: The testing method/technique used to generate the observed results.
+     * Description: A systematic course of action that is performed in order to complete a laboratory test.
      * Range: [MethodEnum](MethodEnum.md)
  * [specimen](specimen.md)  <sub>0..1</sub>
-     * Description: The biological specimen of the subject used for the laboratory test. 
+     * Description: The type of specimen analyzed.
      * Range: [SpecimenEnum](SpecimenEnum.md)
- * [genomic_source_class](genomic_source_class.md)  <sub>0..1</sub>
-     * Description: The genomic class of the specimen being analyzed, for example, germline for inherited genome and somatic for cancer genome.
-     * Range: [GenomicSourceClassEnum](GenomicSourceClassEnum.md)
  * [common_name](common_name.md)  <sub>0..1</sub>
      * Description: The non-standardized name of the mutation represented by this observation.
      * Range: [CommonNameEnum](CommonNameEnum.md)
+ * [karyotype_status](karyotype_status.md)  <sub>0..1</sub>
+     * Description: The status of the subject's karyotype.
+     * Range: [KaryotypeStatusEnum](KaryotypeStatusEnum.md)
  * [status](status.md)  <sub>0..1</sub>
      * Description: Is this mutation/abnormality present in this subject?
      * Range: [StatusEnum](StatusEnum.md)
- * [gene](gene.md)  <sub>0..1</sub>
-     * Description: A gene targeted for mutation analysis, identified in HUGO Gene Nomenclature Committee (HGNC) notation.
-     * Range: [String](types/String.md)
- * [chromosome](chromosome.md)  <sub>0..1</sub>
-     * Description: One of the bodies in the cell nucleus that is the bearer of genes, has the form of a delicate chromatin filament during interphase, contracts to form a compact cylinder segmented into two arms by the centromere during metaphase and anaphase stages of cell division, and is capable of reproducing its physical and chemical structure through successive cell divisions.
-     * Range: [String](types/String.md)
- * [mutation_type](mutation_type.md)  <sub>0..1</sub>
-     * Description: The type of mutation detected by this genetic analysis.
-     * Range: [MutationTypeEnum](MutationTypeEnum.md)
- * [mutation_type_other](mutation_type_other.md)  <sub>0..1</sub>
-     * Description: Specify the "Other" MUTATION_TYPE
-     * Range: [String](types/String.md)
- * [expression_consequence](expression_consequence.md)  <sub>0..1</sub>
-     * Range: [ExpressionConsequenceEnum](ExpressionConsequenceEnum.md)
- * [chromosomal_consequence](chromosomal_consequence.md)  <sub>0..1</sub>
-     * Range: [ChromosomalConsequenceEnum](ChromosomalConsequenceEnum.md)
- * [genomic_region](genomic_region.md)  <sub>0..1</sub>
-     * Range: [GenomicRegionEnum](GenomicRegionEnum.md)
- * [allelic_state](allelic_state.md)  <sub>0..1</sub>
-     * Description: The genetic condition of a zygote, especially with respect to its being a homozygote or a heterozygote.
-     * Range: [AllelicStateEnum](AllelicStateEnum.md)
- * [inheritance_pattern](inheritance_pattern.md)  <sub>0..1</sub>
-     * Range: [InheritancePatternEnum](InheritancePatternEnum.md)
- * [parental_status](parental_status.md)  <sub>0..1</sub>
-     * Range: [ParentalStatusEnum](ParentalStatusEnum.md)
- * [hgvs_coding](hgvs_coding.md)  <sub>0..1</sub>
-     * Description: If this mutation is described at the sequence/chromosome level, this is its representation in HGVS nomenclature (cHGVS).
-     * Range: [String](types/String.md)
- * [hgvs_protein](hgvs_protein.md)  <sub>0..1</sub>
-     * Description: If this mutation is described at the translational product level, this is its representation in HGVS nomenclature (pHGVS)
-     * Range: [String](types/String.md)
  * [iscn](iscn.md)  <sub>0..1</sub>
      * Description: If this mutation is described by the structure of the resulting chromosomes, this is its representation in ISCN nomenclature.
      * Range: [String](types/String.md)
- * [clingen_id](clingen_id.md)  <sub>0..1</sub>
-     * Description: This ID will allow users to find the most current clinical significance classification for this instance of variation
+ * [total_chromosomes](total_chromosomes.md)  <sub>0..1</sub>
+     * Description: The number of chromosomes detected on the karyotype through which this abnormality was detected.
+     * Range: [Decimal](types/Decimal.md)
+ * [chromosome](chromosome.md)  <sub>0..1</sub>
+     * Description: A structure found in cells that is comprised of a strand of linearized double-stranded DNA plus proteins that package the DNA in a condensed coil form and regulate chromosomal function.
+     * Range: [String](types/String.md)
+ * [gene](gene.md)  <sub>0..1</sub>
+     * Description: A gene targeted for mutation analysis, identified in HUGO Gene Nomenclature Committee (HGNC) notation.
+     * Range: [String](types/String.md)
+ * [gene2](gene2.md)  <sub>0..1</sub>
+     * Description: This should be used for mutations that span two gene locations (fusion, translocation, inversion, etc.). The gene name should be identified in HUGO Gene Nomenclature Committee (HGNC) notation.
+     * Range: [String](types/String.md)
+ * [variation_type](variation_type.md)  <sub>0..1</sub>
+     * Description: The type of variation detected by this genetic analysis.
+     * Range: [VariationTypeEnum](VariationTypeEnum.md)
+ * [variation_type_other](variation_type_other.md)  <sub>0..1</sub>
+     * Description: Specify the "Other" MUTATION_TYPE
      * Range: [String](types/String.md)
  * [copy_number_variation](copy_number_variation.md)  <sub>0..1</sub>
      * Description: If there was a change in the number of gene copies, this variable specifies the type of change.
      * Range: [CopyNumberVariationEnum](CopyNumberVariationEnum.md)
  * [copy_number](copy_number.md)  <sub>0..1</sub>
      * Description: The number of gene copies resulting from this mutation.
-     * Range: [Integer](types/Integer.md)
- * [amplification](amplification.md)  <sub>0..1</sub>
-     * Description: Was the copy number gain high enough to be reported as a gene amplification?
-     * Range: [NoNotreportedUnknownYesEnum](NoNotreportedUnknownYesEnum.md)
- * [allelic_frequency](allelic_frequency.md)  <sub>0..1</sub>
-     * Description: The incidence of this mutation in a population (%).
-     * Range: [Integer](types/Integer.md)
- * [gene2](gene2.md)  <sub>0..1</sub>
-     * Description: This should be used for mutations that span two gene locations (fusion, translocation, inversion, etc.). The gene name should be identified in HUGO Gene Nomenclature Committee (HGNC) notation.
+     * Range: [Decimal](types/Decimal.md)
+ * [hgvs_coding](hgvs_coding.md)  <sub>0..1</sub>
+     * Description: If this mutation is described at the sequence/chromosome level, this is its representation in HGVS nomenclature (cHGVS).
      * Range: [String](types/String.md)
- * [mosaicism](mosaicism.md)  <sub>0..1</sub>
-     * Description: Does this subject have two or more genetically different sets of cells in their body?
-     * Range: [NoNotreportedUnknownYesEnum](NoNotreportedUnknownYesEnum.md)
- * [mosaicism_percent](mosaicism_percent.md)  <sub>0..1</sub>
-     * Description: The numeric level of mosaicism in this subject.
-     * Range: [Integer](types/Integer.md)
- * [alt_status](alt_status.md)  <sub>0..1</sub>
-     * Description: Activitation of the Alternative Lengthening of Telomeres (ALT) pathway.
-     * Range: [AltStatusEnum](AltStatusEnum.md)
- * [total_chromosomes](total_chromosomes.md)  <sub>0..1</sub>
-     * Description: The number of chromosomes detected on the karyotype through which this abnormality was detected.
-     * Range: [Integer](types/Integer.md)
- * [independent_aberations](independent_aberations.md)  <sub>0..1</sub>
-     * Description: The total number of aberrations / mutations / abnormalities detected on the karyotype through which this abnormality was detected.
-     * Range: [Integer](types/Integer.md)
- * [cells_in_metaphase](cells_in_metaphase.md)  <sub>0..1</sub>
-     * Description: The number of cells in the sample that were arrested in the metaphase stage of the cell cycle and used for the karyotype through which this abnormality was detected.
-     * Range: [Integer](types/Integer.md)
- * [karyotype_status](karyotype_status.md)  <sub>0..1</sub>
-     * Description: Karyotype Status
-     * Range: [KaryotypeStatusEnum](KaryotypeStatusEnum.md)
- * [dna_index](dna_index.md)  <sub>0..1</sub>
-     * Range: [DnaIndexEnum](DnaIndexEnum.md)
+ * [hgvs_protein](hgvs_protein.md)  <sub>0..1</sub>
+     * Description: If this mutation is described at the translational product level, this is its representation in HGVS nomenclature (pHGVS)
+     * Range: [String](types/String.md)
  * [dna_index_numeric](dna_index_numeric.md)  <sub>0..1</sub>
      * Description: The ratio of the DNA content or chromosome number in a tumor sample compared to that in a normal sample.
-     * Range: [Integer](types/Integer.md)
+     * Range: [Decimal](types/Decimal.md)
+ * [time_periods](time_periods.md)  <sub>0..1</sub>
+     * Range: [TimePeriod](TimePeriod.md)
+ * [method_other](method_other.md)  <sub>0..1</sub>
+     * Description: Specify the "Other" LAB_METHOD
+     * Range: [String](types/String.md)
+ * [independent_aberations](independent_aberations.md)  <sub>0..1</sub>
+     * Description: The total number of aberrations / mutations / abnormalities detected on the karyotype through which this abnormality was detected.
+     * Range: [Decimal](types/Decimal.md)
+ * [cells_in_metaphase](cells_in_metaphase.md)  <sub>0..1</sub>
+     * Description: The number of cells in the sample that were arrested in the metaphase stage of the cell cycle and used for the karyotype through which this abnormality was detected.
+     * Range: [Decimal](types/Decimal.md)
+ * [common_name_other](common_name_other.md)  <sub>0..1</sub>
+     * Description: Specify the "Other" COMMON_NAME
+     * Range: [String](types/String.md)
+ * [mutant_allele_fraction](mutant_allele_fraction.md)  <sub>0..1</sub>
+     * Description: A measure of the percentage of mutant alleles within the totality of alleles in any given sample
+     * Range: [Decimal](types/Decimal.md)
+ * [genomic_source_class](genomic_source_class.md)  <sub>0..1</sub>
+     * Description: The genomic class of the specimen being analyzed, for example, germline for inherited genome and somatic for cancer genome.
+     * Range: [GenomicSourceClassEnum](GenomicSourceClassEnum.md)
+ * [expression_consequence](expression_consequence.md)  <sub>0..1</sub>
+     * Range: [ExpressionConsequenceEnum](ExpressionConsequenceEnum.md)
+ * [chromosomal_consequence](chromosomal_consequence.md)  <sub>0..1</sub>
+     * Description: Chromosomal abnormalities can have many different effects, depending on the specific abnormality. For example, an extra copy of chromosome 21 causes Down syndrome (trisomy 21). Chromosomal abnormalities can also cause miscarriage, disease, or problems in growth or development.
+     * Range: [ChromosomalConsequenceEnum](ChromosomalConsequenceEnum.md)
+ * [allelic_state](allelic_state.md)  <sub>0..1</sub>
+     * Description: The level of occurrence of a single DNA Marker within a set of chromosomes. Heterozygous indicates the DNA Marker is only present in one of the two genes contained in homologous chromosomes. Homozygous indicates the DNA Marker is present in both genes contained in homologous chromosomes. Hemizygous indicates the DNA Marker exists in the only single copy of a gene in a non-homologous chromosome (The male X and Y chromosome are non-homologous). Hemiplasmic indicates that the DNA Marker is present in some but not all of the copies of mitochondrial DNA. Homoplasmic indicates that the DNA Maker is present in all of the copies of mitochondrial DNA. (Source: LOINC)
+     * Range: [AllelicStateEnum](AllelicStateEnum.md)
+ * [allelic_frequency](allelic_frequency.md)  <sub>0..1</sub>
+     * Description: The incidence of this mutation in the tumor (%).
+     * Range: [Decimal](types/Decimal.md)
+ * [external_ref_id](external_ref_id.md)  <sub>0..1</sub>
+     * Description: An ID to an external knowledge base that holds additional information about this genetic variant.
+     * Range: [String](types/String.md)
+ * [external_ref_id_system](external_ref_id_system.md)  <sub>0..1</sub>
+     * Description: The name of the external knowledge base from which the EXTERNAL_REF_ID is drawn.
+     * Range: [ExternalRefIdSystemEnum](ExternalRefIdSystemEnum.md)
+ * [mosaicism_percent](mosaicism_percent.md)  <sub>0..1</sub>
+     * Description: The numeric level of mosaicism in this subject.
+     * Range: [Decimal](types/Decimal.md)
+ * [variation_effect](variation_effect.md)  <sub>0..1</sub>
+     * Range: [VariationEffectEnum](VariationEffectEnum.md)
+ * [inheritance_pattern](inheritance_pattern.md)  <sub>0..1</sub>
+     * Range: [InheritancePatternEnum](InheritancePatternEnum.md)
+ * [parental_status](parental_status.md)  <sub>0..1</sub>
+     * Range: [ParentalStatusEnum](ParentalStatusEnum.md)
+ * [hgvs_coding_transcript](hgvs_coding_transcript.md)  <sub>0..1</sub>
+     * Description: This is the transcript used in the HGVS expression for this mutation.
+     * Range: [String](types/String.md)
+ * [hgvs_protein_transcript](hgvs_protein_transcript.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [reported_significance](reported_significance.md)  <sub>0..1</sub>
+     * Description: The reported ACMG clinical significance of this genetic variation
+     * Range: [ReportedSignificanceEnum](ReportedSignificanceEnum.md)
+ * [associated_condition](associated_condition.md)  <sub>0..1</sub>
+     * Description: A condition associated with the reported genetic mutation 
+     * Range: [AssociatedConditionEnum](AssociatedConditionEnum.md)
+ * [associated_condition_other](associated_condition_other.md)  <sub>0..1</sub>
+     * Description: Specify the "Other" ASSOCIATED_CONDITION
+     * Range: [String](types/String.md)
+ * [review_source](review_source.md)  <sub>0..1</sub>
+     * Description: The type of assessment that was used to review.
+     * Range: [ReviewSourceEnum](ReviewSourceEnum.md)
+ * [tumor_classification](tumor_classification.md)  <sub>0..1</sub>
+     * Description: The classification of a tumor based primarily on histopathological characteristics.
+     * Range: [TumorClassificationEnum](TumorClassificationEnum.md)
+ * [course_timepoint](course_timepoint.md)  <sub>0..1</sub>
+     * Description: This variable gives more precise granularity to when an observation occured during the period of the indicated "Course" TIME_PERIOD
+     * Range: [CourseTimepointEnum](CourseTimepointEnum.md)
+ * [specimen_other](specimen_other.md)  <sub>0..1</sub>
+     * Description: Specify the "Other" SPECIMEN
+     * Range: [String](types/String.md)
+ * [biological_analyte](biological_analyte.md)  <sub>0..1</sub>
+     * Description: A biological substance of interest that needs detection.
+     * Range: [BiologicalAnalyteEnum](BiologicalAnalyteEnum.md)
+ * [biological_analyte_other](biological_analyte_other.md)  <sub>0..1</sub>
+     * Description: Specify the "Other" BIOLOGICAL_ANALYTE
+     * Range: [String](types/String.md)
+ * [source_pct](source_pct.md)  <sub>0..1</sub>
+     * Description: Percent of tumor cells in the sample (categorical)
+     * Range: [SourcePctEnum](SourcePctEnum.md)
+ * [source_pct_numeric](source_pct_numeric.md)  <sub>0..1</sub>
+     * Description: Percent of tumor cells in the sample (numeric)
+     * Range: [Decimal](types/Decimal.md)
+ * [tkd_involvement](tkd_involvement.md)  <sub>0..1</sub>
+     * Range: [NoNotreportedUnknownYesEnum](NoNotreportedUnknownYesEnum.md)
+ * [maf](maf.md)  <sub>0..1</sub>
+     * Range: [MafEnum](MafEnum.md)
+ * [maf_numeric](maf_numeric.md)  <sub>0..1</sub>
+     * Description: A measure of the percentage of mutant alleles within the totality of alleles in any given sample
+     * Range: [Decimal](types/Decimal.md)
+ * [clonal_status](clonal_status.md)  <sub>0..1</sub>
+     * Range: [ClonalStatusEnum](ClonalStatusEnum.md)
+ * [dna_index](dna_index.md)  <sub>0..1</sub>
+     * Description: The categorical result of the DNA index for this subject
+     * Range: [DnaIndexEnum](DnaIndexEnum.md)
  * [cytodifferentiation](cytodifferentiation.md)  <sub>0..1</sub>
      * Description: Cytodifferentiation Score
      * Range: [CytodifferentiationEnum](CytodifferentiationEnum.md)
  * [mitotic_rate](mitotic_rate.md)  <sub>0..1</sub>
      * Description: Mitoses Count
      * Range: [MitoticRateEnum](MitoticRateEnum.md)
+ * [mutated_allele_frequency](mutated_allele_frequency.md)  <sub>0..1</sub>
+     * Description: The incidence of this mutation in the tumor (%).
+     * Range: [Integer](types/Integer.md)
+ * [cascade_testing](cascade_testing.md)  <sub>0..1</sub>
+     * Range: [NoNotreportedUnknownYesEnum](NoNotreportedUnknownYesEnum.md)
+ * [alt_status](alt_status.md)  <sub>0..1</sub>
+     * Description: Activitation of the Alternative Lengthening of Telomeres (ALT) pathway.
+     * Range: [AltStatusEnum](AltStatusEnum.md)
+ * [subjects](subjects.md)  <sub>1..\*</sub>
+     * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:
 

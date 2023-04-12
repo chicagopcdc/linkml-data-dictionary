@@ -2,7 +2,7 @@
 # Slot: karyotype_status
 
 
-Karyotype Status
+The status of the subject's karyotype.
 
 URI: [https://w3id.org/pcdc/model/karyotype_status](https://w3id.org/pcdc/model/karyotype_status)
 

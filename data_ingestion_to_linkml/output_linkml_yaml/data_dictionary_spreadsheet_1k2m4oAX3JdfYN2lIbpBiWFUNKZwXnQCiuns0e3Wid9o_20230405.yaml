@@ -6,9 +6,11 @@ version: 0.0.1
 prefixes:
   linkml: https://w3id.org/linkml/
   ncit: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
+  nict: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
   pcdc: https://w3id.org/pcdc/model
   HGNC: 'https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:'
   SO: 'http://http://www.sequenceontology.org/browser/current_release/term/SO:'
+  icdo: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
 default_curi_maps:
 - semweb_context
 default_range: string
@@ -55,12 +57,10 @@ classes:
       persons:
         range: Person
         required: true
-  Timing:
+  Time Period:
     is_a: Thing
     description: ''
     slots:
-    - submitter_id
-    - parent_submitter_id
     - time_period_type
     - disease_phase
     - course
@@ -73,8 +73,8 @@ classes:
     - age_at_txassign
     - age_precision
     - exam_type
+    - time_periods
     - subjects
-    - timings
     slot_usage: {}
     attributes: {}
   Off Protocol Therapy Or Study:
@@ -82,11 +82,12 @@ classes:
     description: ''
     slots:
     - age_off
-    - time_period_submitter_id
+    - time_periods
     - off_type
     - reason_off
     - reason_off_other
     - another_study
+    - subjects
     slot_usage: {}
     attributes: {}
   Medical History:
@@ -102,6 +103,7 @@ classes:
     - assisted_conception
     - developmental_delay
     - developmental_delay_type
+    - subjects
     slot_usage: {}
     attributes: {}
   Survival Characteristics:
@@ -109,7 +111,7 @@ classes:
     description: ''
     slots:
     - age_at_lkss
-    - time_period_submitter_id
+    - time_periods
     - lkss
     - lkss_with_disease
     - age_lost_to_follow_up
@@ -121,6 +123,7 @@ classes:
     - cause_of_death_detail_other
     - cause_of_death_ranking
     - course_timepoint
+    - subjects
     slot_usage: {}
     attributes: {}
   Family Medical History:
@@ -135,6 +138,7 @@ classes:
     - prior_cancer_type
     - prior_cancer_laterality
     - lkss_of_relative
+    - subjects
     slot_usage: {}
     attributes: {}
   Vitals And Anthropometrics:
@@ -142,11 +146,12 @@ classes:
     description: ''
     slots:
     - age_at_measurement
-    - time_period_submitter_id
+    - time_periods
     - measurement_type
     - measurement_text
     - measurement_numeric
     - measurement_unit
+    - subjects
     slot_usage: {}
     attributes: {}
   Laboratory Test:
@@ -154,7 +159,7 @@ classes:
     description: ''
     slots:
     - age_at_lab
-    - time_period_submitter_id
+    - time_periods
     - category
     - test
     - specimen
@@ -176,6 +181,7 @@ classes:
     - malignant_cells
     - course_timepoint
     - test_other
+    - subjects
     slot_usage: {}
     attributes: {}
   Genetic Analysis:
@@ -200,7 +206,7 @@ classes:
     - hgvs_coding
     - hgvs_protein
     - dna_index_numeric
-    - time_period_submitter_id
+    - time_periods
     - method_other
     - independent_aberations
     - cells_in_metaphase
@@ -240,6 +246,7 @@ classes:
     - mutated_allele_frequency
     - cascade_testing
     - alt_status
+    - subjects
     slot_usage: {}
     attributes: {}
   Function Test:
@@ -247,12 +254,13 @@ classes:
     description: ''
     slots:
     - age_at_function_test
-    - time_period_submitter_id
+    - time_periods
     - test
     - measurement_type
     - measurement_text
     - measurement_numeric
     - measurement_unit
+    - subjects
     slot_usage: {}
     attributes: {}
   Immunohistochemistry:
@@ -260,7 +268,7 @@ classes:
     description: ''
     slots:
     - age_at_ihc
-    - time_period_submitter_id
+    - time_periods
     - review_source
     - test
     - result
@@ -268,6 +276,7 @@ classes:
     - result_numeric
     - specimen
     - result_unit
+    - subjects
     slot_usage: {}
     attributes: {}
   Imaging:
@@ -275,7 +284,7 @@ classes:
     description: ''
     slots:
     - age_at_imaging
-    - time_period_submitter_id
+    - time_periods
     - method
     - result
     - deauville_score
@@ -286,6 +295,7 @@ classes:
     - finding_site_other
     - bone_marrow
     - csf_result
+    - subjects
     slot_usage: {}
     attributes: {}
   Histology:
@@ -293,7 +303,7 @@ classes:
     description: ''
     slots:
     - age_at_hist_assessment
-    - time_period_submitter_id
+    - time_periods
     - morph_code
     - morph_code_system
     - morph_code_system_version
@@ -326,13 +336,14 @@ classes:
     - mki
     - histology_other
     - tumor_site
+    - subjects
     slot_usage: {}
     attributes: {}
   Disease Characteristics:
     is_a: Thing
     description: ''
     slots:
-    - time_period_submitter_id
+    - time_periods
     - disease_site
     - detection_method_other
     - cns_disease_status
@@ -381,6 +392,7 @@ classes:
     - retinal_detachment
     - advanced_disease_signs
     - advanced_disease_signs_other
+    - subjects
     slot_usage: {}
     attributes: {}
   Tumor Assessment:
@@ -388,7 +400,7 @@ classes:
     description: ''
     slots:
     - age_at_assessment
-    - time_period_submitter_id
+    - time_periods
     - detection_method
     - review_source
     - mri_sequence
@@ -462,6 +474,7 @@ classes:
     - anaplasia_status
     - anaplasia_type
     - anaplasia_pct_numeric
+    - subjects
     slot_usage: {}
     attributes: {}
   Staging:
@@ -469,7 +482,7 @@ classes:
     description: ''
     slots:
     - age_at_staging
-    - time_period_submitter_id
+    - time_periods
     - stage_system
     - stage
     - stage_other
@@ -485,6 +498,7 @@ classes:
     - group
     - tnm_finding
     - irs_group
+    - subjects
     slot_usage: {}
     attributes: {}
   Radiation Therapy:
@@ -496,7 +510,7 @@ classes:
     - protocol_radiation_therapy
     - non_protocol_timing
     - site
-    - time_period_submitter_id
+    - time_periods
     - site_other
     - total_dose
     - total_dose_unit
@@ -525,6 +539,7 @@ classes:
     - plaque_size
     - apex_dose
     - rt_completed
+    - subjects
     slot_usage: {}
     attributes: {}
   Stem Cell Transplant:
@@ -532,7 +547,7 @@ classes:
     description: ''
     slots:
     - age_at_sct
-    - time_period_submitter_id
+    - time_periods
     - protocol_sct
     - non_protocol_timing
     - sct_type
@@ -557,6 +572,7 @@ classes:
     - sct_cycles
     - stem_cell_source_other
     - sct_success
+    - subjects
     slot_usage: {}
     attributes: {}
   Medication:
@@ -565,7 +581,7 @@ classes:
     slots:
     - age_at_medication_start
     - age_at_medication_end
-    - time_period_submitter_id
+    - time_periods
     - route
     - medication
     - administration_status
@@ -582,7 +598,6 @@ classes:
     - concomitant_reason_other
     - route_detail
     - normalization_basis
-    - timings
     - cycle_number
     - cycles_planned
     - session_number
@@ -590,6 +605,7 @@ classes:
     - administration_site
     - total_dose_given
     - delivery_status
+    - subjects
     slot_usage: {}
     attributes: {}
   Transfusion Medicine Procedures:
@@ -597,13 +613,14 @@ classes:
     description: ''
     slots:
     - age_at_tmp_start
-    - time_period_submitter_id
+    - time_periods
     - type
     - product
     - age_at_tmp
     - product_processing
     - product_processing_other
     - number_units
+    - subjects
     slot_usage: {}
     attributes: {}
   Cellular Immunotherapy:
@@ -611,9 +628,10 @@ classes:
     description: ''
     slots:
     - age_at_cimt_start
-    - time_period_submitter_id
+    - time_periods
     - type
     - type_other
+    - subjects
     slot_usage: {}
     attributes: {}
   Biopsy And Surgical Procedures:
@@ -621,7 +639,7 @@ classes:
     description: ''
     slots:
     - age_at_procedure
-    - time_period_submitter_id
+    - time_periods
     - protocol_procedure
     - non_protocol_timing
     - procedure
@@ -670,6 +688,7 @@ classes:
     - laser_duration_numeric
     - cryotherapy_freezes
     - freeze_thaw_cycle_number
+    - subjects
     slot_usage: {}
     attributes: {}
   Protocol Treatment Modifications:
@@ -677,7 +696,7 @@ classes:
     description: ''
     slots:
     - age_at_modification
-    - time_period_submitter_id
+    - time_periods
     - modification
     - modification_other
     - modification_basis
@@ -691,6 +710,7 @@ classes:
     - original_agent_other
     - sub_agent
     - sub_agent_other
+    - subjects
     slot_usage: {}
     attributes: {}
   Minimal Residual Disease:
@@ -704,10 +724,11 @@ classes:
     - result_unit
     - sensitivity
     - sample_source
-    - time_period_submitter_id
+    - time_periods
     - method_other
     - molecular_markers
     - molecular_markers_other
+    - subjects
     slot_usage: {}
     attributes: {}
   Subject Response:
@@ -715,7 +736,7 @@ classes:
     description: ''
     slots:
     - age_at_response
-    - time_period_submitter_id
+    - time_periods
     - response_category
     - response
     - bm_pct_blasts_at_response
@@ -751,6 +772,7 @@ classes:
     - anaplasia_status
     - anaplasia_type
     - anaplasia_pct_numeric
+    - subjects
     slot_usage: {}
     attributes: {}
   Adverse Events:
@@ -775,7 +797,7 @@ classes:
     - ae_pathogen_other
     - infection_classification
     - age_at_ae_resolved
-    - time_period_submitter_id
+    - time_periods
     - adverse_event
     - adverse_event_other
     - icu
@@ -801,6 +823,7 @@ classes:
     - tumor_site
     - ae_hospitalization_reason_other
     - ae_hospitalization
+    - subjects
     slot_usage: {}
     attributes: {}
   Subsequent Malignant Neoplasm:
@@ -815,7 +838,7 @@ classes:
     - top_code
     - top_code_system
     - top_code_system_version
-    - time_period_submitter_id
+    - time_periods
     - smn_status
     - morph_code_txt
     - top_code_txt
@@ -825,6 +848,7 @@ classes:
     - smn
     - smn_other
     - smn_type_other
+    - subjects
     slot_usage: {}
     attributes: {}
   Patient Reported Outcomes Metadata:
@@ -841,6 +865,7 @@ classes:
     - eligible_age_lower
     - eligible_age_upper
     - time_point
+    - subjects
     slot_usage: {}
     attributes: {}
   Late Effects:
@@ -855,6 +880,7 @@ classes:
     - grade
     - grade_system
     - grade_system_version
+    - subjects
     slot_usage: {}
     attributes: {}
 slots:
@@ -868,8 +894,8 @@ slots:
     multivalued: true
     range: Subject
     required: true
-  timings:
-    range: Timing
+  time_periods:
+    range: Time Period
     required: false
   sex:
     range: SexEnum
@@ -957,11 +983,6 @@ slots:
     range: RandomizedStatusEnum
     description: The allocation of individuals to groups by chance, especially in
       order to control the variables in an experiment.
-  parent_submitter_id:
-    description: The SUBMITTER_ID of the time period in whose context a subsequent
-      time period takes place. For example, multiple treatment courses occuring the
-      "Initial Diagnosis" period would each reference the SUBMITTER_ID of the "Initial
-      Diagnosis" period as their PARENT_SUBMITTER_ID.
   time_period_type:
     range: TimePeriodTypeEnum
     description: The type of time period being reported.
@@ -1015,9 +1036,6 @@ slots:
     range: integer
     description: The age (in days) when the subject went off of the protocol therapy
       or study.
-  time_period_submitter_id:
-    description: 'This is the SUBMITTER_ID of the time period (defined in the "Time
-      Period" table) during which this observation takes place. '
   off_type:
     range: OffTypeEnum
     description: The code used to designate that the subject went off therapy or off
@@ -2157,6 +2175,9 @@ slots:
   normalization_basis:
     range: NormalizationBasisEnum
     description: An indication of what method was used to normalize the data.
+  cycle_number:
+    range: integer
+    description: The number of the individual chemotherapeutic cycle.
   cycles_planned:
     range: integer
     description: ''
@@ -3651,7 +3672,7 @@ enums:
         description: Occuring or performed after the death of the patient.
       Progression:
         description: The worsening of a disease over time.
-        meaning: ncit:C17747|ncit:C35571
+        meaning: ncit:C17747
       Tumor Surveillance:
         description: Period of time from diagnosis of cancer predisposition syndrome
           to development of first cancer
@@ -3828,7 +3849,7 @@ enums:
         meaning: ncit:C91752
       Subject Non-Compliance:
         description: The subject or their guardian has refused further treatment.
-        meaning: ncit:C91752|ncit:C168934
+        meaning: ncit:C91752
       Failure to Attain Remission:
         description: Remission status was not attained.
         meaning: ncit:C178072
@@ -3897,7 +3918,7 @@ enums:
         meaning: ncit:C142099
       Other:
         description: Different than the one(s) previously specified or mentioned.
-        meaning: ncit:C17649|ncit:C50477
+        meaning: ncit:C17649
       Acute Lymphoblastic Leukemia Susceptibility - PAX5:
         description: An inherited condition caused by mutation(s) in the PAX5 gene,
           encoding paired box protein Pax-5. The condition is characterized by an
@@ -3964,7 +3985,7 @@ enums:
           cancer, particularly before the age of fifty, high risk of developing a
           second primary breast cancer, and high risk of developing both breast and
           ovarian cancer.
-        meaning: ncit:C2903|ncit:C8493
+        meaning: ncit:C2903
       Bohring-Opitz Syndrome:
         description: An autosomal dominant condition caused by mutation(s) in the
           ASXL1 gene, encoding putative polycomb group protein ASXL1. It is characterized
@@ -4649,7 +4670,7 @@ enums:
           structure. The active, hypophosphorylated form of the protein binds transcription
           factor E2F1. Defects in this gene are a cause of childhood cancer retinoblastoma
           (RB), bladder cancer, and osteogenic sarcoma.
-        meaning: HGNC:9884|NCBI:5925|ENSEMBL:ENSG00000139687|MIM:614041
+        meaning: HGNC:9884
       Secondary Malignancy, NOS:
         description: A malignant neoplasm that arises from a pre-existing lower grade
           lesion, or as a result of a primary lesion that has spread to secondary
@@ -5311,7 +5332,7 @@ enums:
           It is derived by multiplying the WBC count by the percent of neutrophils
           in the differential WBC count. The normal range for ANC is 1.5 to 8.0 (1,500
           to 8,000/mm3).
-        meaning: ncit:C51949|ncit:C51950
+        meaning: ncit:C51949
       TSH:
         description: A quantitative measurement of the amount of thyrotropin present
           in a sample.
@@ -5699,11 +5720,11 @@ enums:
       MLL Rearrangement (Translocation):
         description: A cytogenetic abnormality that refers to any translocation involving
           the MLL (KMT2A) gene.
-        meaning: ncit:C167144|ncit:C122623
+        meaning: ncit:C167144
       t(4;11)(q21;q23) / MLL-MLLT2(AF4):
         description: A chromosomal abnormality consisting of the translocation of
           4q21 with 11q23.
-        meaning: ncit:C36365|ncit:C36365
+        meaning: ncit:C36365
       t(8;14)(q24;q32) or other variant of B-ALL:
         description: A chromosomal translocation that fuses 8q24 with 14q32. This
           juxtaposes the MYC gene with the promoter regions of the immunoglobulin
@@ -5815,7 +5836,7 @@ enums:
       Monosomy 7:
         description: A chromosomal abnormality consisting of the absence of one of
           the copies of chromosome 7 in somatic cells.
-        meaning: ncit:C36411|ncit:c36411
+        meaning: ncit:C36411
       N-RAS Mutation:
         description: A change in the structure of the NRAS gene.
         meaning: ncit:C41381
@@ -5978,10 +5999,10 @@ enums:
         meaning: ncit:C17649
       Unknown:
         description: Reported as unknown by the data contributor.
-        meaning: ncit:C17998|ncit:17998
+        meaning: ncit:C17998
       Not Reported:
         description: Not provided or available.
-        meaning: ncit:C43234|ncit:43234
+        meaning: ncit:C43234
       Chromosome 11 Loss:
         description: A cytogenic abnormality that refers to loss of all or part of
           chromosome 11.
@@ -6449,11 +6470,11 @@ enums:
       Present:
         description: A finding of abnormality following an examination or observation
           confirming something, such as the presence of a disease, condition, or microorganism.
-        meaning: ncit:C38758|ncit:C25626
+        meaning: ncit:C38758
       Absent:
         description: A finding of normality following an examination or investigation
           looking for the presence of a microorganism, disease, or condition.
-        meaning: ncit:C38757|ncit:C48190
+        meaning: ncit:C38757
       Not Done:
         description: Indicates a task, process or examination that has either not
           been initiated or not been completed.
@@ -6474,12 +6495,12 @@ enums:
         description: 'The point at which one or more contiguous nucleotides were excised.
           (Source: The Sequence Ontology) Should be used when the type of deletion
           is not specified.'
-        meaning: ncit:C19296|SO:0000159|SO:1000035
+        meaning: ncit:C19296
       Translocation:
         description: 'A region of nucleotide sequence that has translocated to a new
           position. The observed adjacency of two previously separated regions. (Source:
           The Sequence Ontology)'
-        meaning: ncit:C3420|SO:0000199
+        meaning: ncit:C3420
       Translocation, Balanced:
         description: Interchanges of genetic material among different chromosomes
           following the breaking off of pieces of chromosomes such that the total
@@ -6494,14 +6515,14 @@ enums:
       Inversion:
         description: 'A continuous nucleotide sequence is inverted in the same position.
           (Source: The Sequence Ontology)'
-        meaning: ncit:C45589|SO:1000036|SO:1000030
+        meaning: ncit:C45589
       Rearrangement:
         description: Any genetic rearrangement that is not otherwise specified.
-        meaning: ncit:C36541|SO:0001872
+        meaning: ncit:C36541
       SNV, NOS:
         description: 'SNVs are single nucleotide positions in genomic DNA at which
           different sequence alternatives exist. (Source: The Sequence Ontology)'
-        meaning: ncit:C164674|SO:0001483
+        meaning: ncit:C164674
       Mutation, NOS:
         description: Any genetic mutation that is not otherwise specified.
         meaning: ncit:C45576
@@ -8277,7 +8298,7 @@ enums:
         description: The tissues that surround the organs that are present within
           the abdominal cavity. The abdominal wall tissue is composed of layers of
           fat, parietal peritoneum, fascia, and muscles.
-        meaning: ncit:C28256|ncit:C77608
+        meaning: ncit:C28256
       Acetabulum:
         description: Two cup shaped areas, one each on the lateral side of the lower
           pelvis that house the head of the femur to form the ball and socket joint
@@ -8293,7 +8314,7 @@ enums:
         description: The lower opening of the digestive tract, lying in the cleft
           between the buttocks, through which fecal matter is extruded. | The skin
           around the anus
-        meaning: ncit:C43362|ncit:C99148
+        meaning: ncit:C43362
       Ankle:
         description: A gliding joint between the distal ends of the tibia and fibula
           and the proximal end of the talus.
@@ -8364,7 +8385,7 @@ enums:
           | The tissue occupying the spaces of bone. It consiRMS of blood vessel sinuses
           and a network of hematopoietic cells which give rise to the red cells, white
           cells, and megakaryocytes.
-        meaning: ncit:C12366|ncit:C12431
+        meaning: ncit:C12366
       Bone Shoulder Girdle:
         description: The bony arch formed by the collarbones and shoulder blades.
         meaning: ncit:C33547
@@ -8378,7 +8399,7 @@ enums:
           of neurons that is the center for intelligence and reasoning. It is protected
           by the bony cranium. | The two innermost layers of tissue that cover the
           brain and spinal cord, the arachnoid mater and the pia mater.
-        meaning: ncit:C12439|ncit:C32979
+        meaning: ncit:C12439
       Breast:
         description: One of two hemispheric projections of variable size situated
           in the subcutaneous layer over the pectoralis major muscle on either side
@@ -8413,7 +8434,7 @@ enums:
         description: Any one of the seven vertebrae that start with C1, connecting
           the skull to the spine, and ends with C7, which joins the cervical with
           the thoracic spine.
-        meaning: ncit:C12415|ncit:C12693
+        meaning: ncit:C12415
       Cervix:
         description: The lower part of the uterus occupying the region between the
           isthmus of the uterus and the vagina. It is divided into supravaginal and
@@ -8436,7 +8457,7 @@ enums:
       Clavicle:
         description: One of a pair of bones linking the scapula and the sternum. The
           clavicle is part of the pectoral girdle.
-        meaning: ncit:C24203|ncit:C12695
+        meaning: ncit:C24203
       Coccyx:
         description: A small bone located at the bottom of the spine. The coccyx is
           a result of 3-5 fused rudimentary vertebrae.
@@ -8459,7 +8480,7 @@ enums:
           It is part of the lymphatic system and is found throughout the body. It
           is composed predominantly of lymphocytes and its main function is immune
           protection.
-        meaning: ncit:C160424|ncit:C12745
+        meaning: ncit:C160424
       Dorsal Spine:
         description: A spinal curve that originates at the middle of the second thoracic
           vertebra and terminates at the middle of the last thoracic vertebra.
@@ -8604,7 +8625,7 @@ enums:
         meaning: ncit:C12727
       Hilar Nodes:
         description: A lymph node located in the hilar region of the spleen.
-        meaning: ncit:C33600|ncit:C134731
+        meaning: ncit:C33600
       Hip:
         description: The lateral prominence of the pelvis from the waist to the thigh.
         meaning: ncit:C64193
@@ -8612,7 +8633,7 @@ enums:
         description: The lateral prominence of the pelvis from the waist to the thigh.
           | The lower region of the anterior abdominal wall located laterally to the
           pubic region.
-        meaning: ncit:C64193|ncit:C12726
+        meaning: ncit:C64193
       Humerus:
         description: The upper arm bone between the shoulder and elbow.
         meaning: ncit:C12731
@@ -8656,7 +8677,7 @@ enums:
           metabolic products and minerals from the blood, thus maintaining homeostasis.
           On the superior pole of each kidney there is an adrenal gland. Each kidney
           and adrenal gland is surrounded by fat.
-        meaning: ncit:C77608|ncit:C12415|ncit:C14215
+        meaning: ncit:C77608
       Knee:
         description: A joint connecting the lower part of the femur with the upper
           part of the tibia. The lower part of the femur and the upper part of the
@@ -8700,20 +8721,20 @@ enums:
           transports bile from the hepatocytes in the liver to the small intestine.
           It is comprised of the intrahepatic bile ducts, hepatic ducts, common bile
           duct, cystic duct, and the gallbladder.
-        meaning: ncit:C12392|ncit:C12678
+        meaning: ncit:C12392
       Lower Extremity:
         description: The limb that is composed of the hip, thigh, leg and foot.
         meaning: ncit:C12742
       Lower Limb:
         description: The limb that is composed of the hip, thigh, leg and foot.
-        meaning: ncit:C12742|ncit:C12743
+        meaning: ncit:C12742
       Lower Spine:
         description: Those vertebrae between the ribs and the pelvis, L1-L5 in man.
         meaning: ncit:C69314
       Lumbar Vertebra:
         description: One of the five bones situated between the thoracic vertebrae
           and the sacrum in the lower part of the spine.
-        meaning: ncit:C45874|ncit:C12744
+        meaning: ncit:C45874
       Lung:
         description: One of a pair of viscera occupying the pulmonary cavities of
           the thorax, the organs of respiration in which aeration of the blood takes
@@ -8745,7 +8766,7 @@ enums:
           of the great vessels, the trachea and bronchi, esophagus, thymus, lymph
           nodes, thoracic duct, phrenic and vagus nerves, and other structures and
           tissues.
-        meaning: ncit:C12748|ncit:C6634
+        meaning: ncit:C12748
       Meninges:
         description: Any one of three membranes that surround the brain and spinal
           cord.
@@ -8783,7 +8804,7 @@ enums:
           is lined with ciliated mucosa, extending from the nares to the pharynx.
           | Any one of the air-filled spaces within the ethmoid, frontal, maxillary,
           or sphenoid bones, which communicate with the nasal cavity.
-        meaning: ncit:C12424|ncit:C12763
+        meaning: ncit:C12424
       Nasal Septum:
         description: The thin wall between the two nasal cavities.
         meaning: ncit:C33160
@@ -8924,7 +8945,7 @@ enums:
       Retroperitoneum:
         description: The back of the abdomen where the kidneys lie and the great blood
           vessels run.
-        meaning: ncit:C12298|ncit:C28256
+        meaning: ncit:C12298
       Rib:
         description: Any one of the paired bones, 12 on either side, extending from
           the thoracic vertebrae toward the median line on the ventral aspect of the
@@ -8956,10 +8977,10 @@ enums:
       Scapula:
         description: The flat triangle-shaped bone that connects the humerus with
           the clavicle in the back of the shoulder.
-        meaning: ncit:C12744|ncit:C12783
+        meaning: ncit:C12744
       Shoulder:
         description: The region of the body between the neck and the upper arm.
-        meaning: ncit:C12783|ncit:C25203
+        meaning: ncit:C12783
       Shoulder Girdle:
         description: The bony arch formed by the collarbones and shoulder blades.
         meaning: ncit:C33547
@@ -9012,7 +9033,7 @@ enums:
       Sternum:
         description: The long, flat bone connecting with the cartilages of the first
           seven ribs and the clavicle.
-        meaning: ncit:C62484|ncit:C12793
+        meaning: ncit:C62484
       Stomach:
         description: An organ located under the diaphragm, between the liver and the
           spleen as well as between the esophagus and the small intestine. The stomach
@@ -9293,7 +9314,7 @@ enums:
       Absent:
         description: Indicates a task, process or examination that has been performed
           and completed.
-        meaning: ncit:C48190|ncit:C111784
+        meaning: ncit:C48190
       Not Evaluated:
         description: Not all target lesions were assessed. Or not all non-target lesions
           were assessed.
@@ -9671,7 +9692,7 @@ enums:
       Ann Arbor:
         description: A lymphoma anatomic stage defined according to the Ann Arbor
           classification criteria.
-        meaning: ncit:C141138|ncit:C54179
+        meaning: ncit:C141138
       Children's Oncology Group Liver Tumor Staging System:
         description: A staging system developed by Children's Oncology Group (COG)
           that categorizes liver tumors based on the size and extent of the tumor.
@@ -10248,10 +10269,10 @@ enums:
         meaning: ncit:C66897
       Unknown:
         description: Reported as unknown by the data contributor.
-        meaning: ncit:C17998|ncit:C43234
+        meaning: ncit:C17998
       Not Reported:
         description: Not provided or available.
-        meaning: ncit:C43234|ncit:C17998
+        meaning: ncit:C43234
       Electron:
         description: Radiation therapy using electron beam.
         meaning: ncit:C15650
@@ -10512,7 +10533,7 @@ enums:
           topoisomerase levels are greatest. In addition, amsacrine may induce transcription
           of tumor promoter p53 protein and block p53 ubiquitination and proteasomal
           degradation, resulting in p53-dependent tumor cell apoptosis.
-        meaning: ncit:C240|rxcui:739
+        meaning: ncit:C240
       Arsenic Trioxide:
         description: A small-molecule arsenic compound with antineoplastic activity.
           The mechanism of action of arsenic trioxide is not completely understood.
@@ -10521,7 +10542,7 @@ enums:
           apoptosis in acute promyelocytic leukemia (APL) cells and in many other
           tumor cell types; promotes cell differentiation and suppresses cell proliferation
           in many different tumor cell types; and is pro-angiogenic. (NCI04)
-        meaning: ncit:C1005|rxcui:18330
+        meaning: ncit:C1005
       Bortezomib:
         description: A dipeptide boronic acid analogue with antineoplastic activity.
           Bortezomib reversibly inhibits the 26S proteasome, a large protease complex
@@ -10532,7 +10553,7 @@ enums:
           is constitutively activated in some cancers, thereby interfering with NF-kappaB-mediated
           cell survival, tumor growth, and angiogenesis. In vivo, bortezomib delays
           tumor growth and enhances the cytotoxic effects of radiation and chemotherapy.
-        meaning: ncit:C1851|rxcui:358258
+        meaning: ncit:C1851
       Busulfan:
         description: A synthetic derivative of dimethane-sulfonate with antineoplastic
           and cytotoxic properties. Although its mechanism of action is not fully
@@ -10540,34 +10561,34 @@ enums:
           systemic absorption of busulfan, carbonium ions are formed, resulting in
           DNA alkylation and DNA breaks and inhibition of DNA replication and RNA
           transcription. (NCI04)
-        meaning: ncit:C321|rxcui:1828
+        meaning: ncit:C321
       Cladribine:
         description: A purine nucleoside antimetabolite analogue. Cladribine triphosphate,
           a phosphorylated metabolite of cladribine, incorporates into DNA, resulting
           in single-strand breaks in DNA, depletion of nicotinamide adenine dinucleotide
           (NAD) and adenosine triphosphate (ATP), and apoptosis.
-        meaning: ncit:C1336|rxcui:44157
+        meaning: ncit:C1336
       Clofarabine:
         description: A second generation purine nucleoside analog with antineoplastic
           activity.
-        meaning: ncit:C26638|rxcui:44151
+        meaning: ncit:C26638
       Cyclophosphamide:
         description: A synthetic alkylating agent chemically related to the nitrogen
           mustards with antineoplastic and immunosuppressive activities. In the liver,
           cyclophosphamide is converted to the active metabolites aldophosphamide
           and phosphoramide mustard, which bind to DNA, thereby inhibiting DNA replication
           and initiating cell death.
-        meaning: ncit:C405|rxcui:3002
+        meaning: ncit:C405
       Cytarabine:
         description: An antimetabolite analogue of cytidine with a modified sugar
           moiety (arabinose instead of ribose).
-        meaning: ncit:C408|rxcui:3041
+        meaning: ncit:C408
       Daunorubicin:
         description: An anthracycline antineoplastic antibiotic with therapeutic effects
           similar to those of doxorubicin. Daunorubicin exhibits cytotoxic activity
           through topoisomerase-mediated interaction with DNA, thereby inhibiting
           DNA replication and repair and RNA and protein synthesis.
-        meaning: ncit:C62091|rxcui:3109
+        meaning: ncit:C62091
       Daunorubicin (Liposomal):
         description: A liposome-encapsulated form of the citrate salt of the anthracycline
           antineoplastic antibiotic daunorubicin. Daunorubicin intercalates into DNA
@@ -10575,7 +10596,7 @@ enums:
           and repair and RNA and protein synthesis. Liposomal delivery of doxorubicin
           citrate improves drug penetration into tumors and decreases drug clearance,
           thereby increasing the duration of therapeutic drug effects.
-        meaning: ncit:C2213|rxcui:214468
+        meaning: ncit:C2213
       Daunorubicin and Cytarabine (Liposomal):
         description: A liposomal formulation containing a fixed combination of the
           antineoplastic agents cytarabine and daunorubicin in a 5:1 molar ratio.
@@ -10588,7 +10609,7 @@ enums:
           II inhibitor, prevents DNA replication and inhibits protein synthesis. This
           agent also generates oxygen free radicals, resulting in the cytotoxic lipid
           peroxidation of cell membrane lipids.
-        meaning: ncit:C67504|rxcui:2017575
+        meaning: ncit:C67504
       Dexrazoxane:
         description: A bisdioxopiperazine with iron-chelating, chemoprotective, cardioprotective,
           and antineoplastic activities. After hydrolysis to an active form that is
@@ -10611,7 +10632,7 @@ enums:
           of cell membrane lipids; the formation of oxygen free radicals also contributes
           to the toxicity of the anthracycline antibiotics, namely the cardiac and
           cutaneous vascular effects.
-        meaning: ncit:C456|rxcui:3639
+        meaning: ncit:C456
       Etoposide:
         description: A semisynthetic derivative of podophyllotoxin, a substance extracted
           from the mandrake root Podophyllum peltatum. Possessing potent antineoplastic
@@ -10620,7 +10641,7 @@ enums:
           or double-strand DNA breaks, the inhibition of DNA replication and transcription,
           and apoptotic cell death. Etoposide acts primarily in the G2 and S phases
           of the cell cycle. (NCI04)
-        meaning: ncit:C491|rxcui:4179
+        meaning: ncit:C491
       Fludarabine:
         description: A fluorinated nucleotide antimetabolite analog of the antiviral
           agent vidarabine (ara-A) with antineoplastic activity.
@@ -10633,7 +10654,7 @@ enums:
           of leukemic blasts), thereby delivering the attached calicheamicin to CD33-expressing
           tumor cells. Calicheamicin binds to the minor groove of DNA, causing double
           strand DNA breaks and resulting in inhibition of DNA synthesis. (NCI04)
-        meaning: ncit:C1806|rxcui:1294580
+        meaning: ncit:C1806
       Gilteritinib:
         description: An orally bioavailable inhibitor of the receptor tyrosine kinases
           (RTKs) FMS-related tyrosine kinase 3 (FLT3, STK1, or FLK2), AXL (UFO or
@@ -10644,7 +10665,7 @@ enums:
           in cancer cell types that overexpress these RTKs. FLT3, AXL and ALK, overexpressed
           or mutated in a variety of cancer cell types, play a key role in tumor cell
           growth and survival.
-        meaning: ncit:C116722|rxcui:2105806
+        meaning: ncit:C116722
       Hydrocortisone Sodium Succinate:
         description: The sodium salt of hydrocortisone succinate with glucocorticoid
           property. Hydrocortisone sodium succinate is chemically similar to the endogenous
@@ -10656,18 +10677,18 @@ enums:
           A2, thereby blocking the release of arachidonic acid from membrane phospholipids
           and preventing the synthesis of prostaglandins and leukotrienes, both potent
           mediators of inflammation.
-        meaning: ncit:C1819|rxcui:235483
+        meaning: ncit:C1819
       Idarubicin:
         description: A semisynthetic 4-demethoxy analogue of the antineoplastic anthracycline
           antibiotic daunorubicin.
-        meaning: ncit:C562|rxcui:5650
+        meaning: ncit:C562
       Melphalan:
         description: A phenylalanine derivative of nitrogen mustard with antineoplastic
           activity. Melphalan alkylates DNA at the N7 position of guanine and induces
           DNA inter-strand cross-linkages, resulting in the inhibition of DNA and
           RNA synthesis and cytotoxicity against both dividing and non-dividing tumor
           cells.
-        meaning: ncit:C633|rxcui:6718
+        meaning: ncit:C633
       Methotrexate:
         description: An antimetabolite and antifolate agent with antineoplastic and
           immunosuppressant activities. Methotrexate binds to and inhibits the enzyme
@@ -10675,7 +10696,7 @@ enums:
           thymidylate synthesis and, subsequently, inhibition of DNA and RNA syntheses.
           Methotrexate also exhibits potent immunosuppressant activity although the
           mechanism(s) of actions is unclear.
-        meaning: ncit:C642|rxcui:6851
+        meaning: ncit:C642
       Midostaurin:
         description: A synthetic indolocarbazole multikinase inhibitor with potential
           antiangiogenic and antineoplastic activities. Midostaurin inhibits protein
@@ -10684,7 +10705,7 @@ enums:
           tyrosine kinase 3 (FLT3) tyrosine kinases, which may result in disruption
           of the cell cycle, inhibition of proliferation, apoptosis, and inhibition
           of angiogenesis in susceptible tumors.
-        meaning: ncit:C1872|rxcui:1919083
+        meaning: ncit:C1872
       Quizartinib:
         description: An orally available small molecule with potential antineoplastic
           activity. Quizartinib selectively inhibits class III receptor tyrosine kinases,
@@ -10702,7 +10723,7 @@ enums:
           signaling pathway that controls cell division and proliferation; in addition,
           sorafenib inhibits the VEGFR-2/PDGFR-beta signaling cascade, thereby blocking
           tumor angiogenesis.
-        meaning: ncit:C61948|rxcui:495881
+        meaning: ncit:C61948
       Thiotepa:
         description: A polyfunctional, organophosphorus alkylating agent and a stable
           derivative of N,N',N''-triethylenephosphoramide (TEPA), with antineoplastic
@@ -10712,7 +10733,7 @@ enums:
           induces crosslinking of alkylated guanine bases in double-stranded DNA,
           interferes with both DNA replication and cell division, and results in both
           the induction of apoptosis and the inhibition of cell growth.
-        meaning: ncit:C875|rxcui:10473
+        meaning: ncit:C875
       Tretinoin:
         description: A naturally-occurring acid of retinol. Tretinoin binds to and
           activates retinoic acid receptors (RARs), thereby inducing changes in gene
@@ -10720,7 +10741,7 @@ enums:
           and inhibition of tumorigenesis. This agent also inhibits telomerase, resulting
           in telomere shortening and eventual apoptosis of some tumor cell types.
           The oral form of tretinoin has teratogenic and embryotoxic properties.
-        meaning: ncit:C900|rxcui:110753
+        meaning: ncit:C900
       Other:
         description: Different than the one(s) previously specified or mentioned.
         meaning: ncit:C17649
@@ -11696,10 +11717,10 @@ enums:
     permissible_values:
       Single Lymph Node:
         description: One lymph node affected.
-        meaning: ncit:C185519|ncit:C185518
+        meaning: ncit:C185519
       Multiple Lymph Nodes:
         description: More than one lymph node affected.
-        meaning: ncit:C185518|ncit:C185519
+        meaning: ncit:C185518
       Unknown:
         description: Reported as unknown by the data contributor.
         meaning: ncit:C17998
@@ -11713,13 +11734,13 @@ enums:
         meaning: ncit:C185527
       Second Look Surgery to Attempt Total Resection:
         description: A biopsy to check for possible recurrence of disease.
-        meaning: ncit:C185528|ncit:C185534
+        meaning: ncit:C185528
       Biopsy of Distant Site for Staging:
         description: The first procedure to diagnose a condition.
         meaning: ncit:C185527
       Diagnostic Biopsy for Possible Recurrence:
         description: A second attempt to perform a total resection.
-        meaning: ncit:C185534|ncit:C185528
+        meaning: ncit:C185534
       Other:
         description: Different than the one(s) previously specified or mentioned.
         meaning: ncit:C17649
@@ -11940,7 +11961,7 @@ enums:
         meaning: ncit:C164157
       Scheduling Issues:
         description: "A problem scheduling an event.\t"
-        meaning: ncit:C1685642|ncit:C185642
+        meaning: ncit:C1685642
       Drug Not Available:
         description: "A particular drug is unavailable.\t"
         meaning: ncit:C185643
@@ -13074,7 +13095,7 @@ enums:
         meaning: ncit:C162614
       Unknown:
         description: Reported as unknown by the data contributor.
-        meaning: ncit:C162615|ncit:C17998
+        meaning: ncit:C162615
       Not Reported:
         description: Not provided or available.
         meaning: ncit:C43234
@@ -13897,7 +13918,7 @@ enums:
         description: The process where thick (myosin) and thin (actin) filaments slide
           against each other to produce a shortening or tensing of the muscle cell
           or fiber.
-        meaning: ncit:C75585|ncit:C30085
+        meaning: ncit:C75585
       Scarring:
         description: A permanent mark left on the skin in the process of wound healing.
         meaning: ncit:C34483

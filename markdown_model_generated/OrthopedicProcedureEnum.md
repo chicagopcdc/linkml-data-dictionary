@@ -24,4 +24,6 @@ URI: [https://w3id.org/pcdc/model/OrthopedicProcedureEnum](https://w3id.org/pcdc
 | Core Decompression | A surgical procedure in which areas of dead bone are drilled to increase blood flow, slow or stop tissue destruction and decrease pressure. | ncit:C157826 |  |
 | Osteotomy | Surgical cutting or removal of bone. | ncit:C51903 |  |
 | Other | Different than the one(s) previously specified or mentioned. | ncit:C17649 |  |
+| Unknown | Reported as unknown by the data contributor. | ncit:C17998 |  |
+| Not Reported | Not provided or available. | ncit:C43234 |  |
 

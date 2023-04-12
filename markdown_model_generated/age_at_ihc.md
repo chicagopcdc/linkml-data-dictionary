@@ -2,7 +2,7 @@
 # Slot: age_at_ihc
 
 
-Age in Days at Immunohistochemistry Test
+The age (in days) of the subject at the immunohistochemical test.
 
 URI: [https://w3id.org/pcdc/model/age_at_ihc](https://w3id.org/pcdc/model/age_at_ihc)
 

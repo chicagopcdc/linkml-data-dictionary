@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/Immunohistochemistry](https://w3id.org/pcdc/model/Immunohistochemistry)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Timing],[Thing],[Timing]<timings%200..1-++[Immunohistochemistry&#124;age_at_ihc:integer%20%3F;disease_phase:DiseasePhaseEnum%20%3F;disease_phase_number:integer%20%3F;course:CourseEnum%20%3F;course_number:integer%20%3F;ihc_test:IhcTestEnum%20%3F;ihc_spec_type:IhcSpecTypeEnum%20%3F;ihc_result:string%20%3F;ihc_result_numeric:integer%20%3F;ihc_result_unit:IhcResultUnitEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[Immunohistochemistry])](https://yuml.me/diagram/nofunky;dir:TB/class/[Timing],[Thing],[Timing]<timings%200..1-++[Immunohistochemistry&#124;age_at_ihc:integer%20%3F;disease_phase:DiseasePhaseEnum%20%3F;disease_phase_number:integer%20%3F;course:CourseEnum%20%3F;course_number:integer%20%3F;ihc_test:IhcTestEnum%20%3F;ihc_spec_type:IhcSpecTypeEnum%20%3F;ihc_result:string%20%3F;ihc_result_numeric:integer%20%3F;ihc_result_unit:IhcResultUnitEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[Immunohistochemistry])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[Immunohistochemistry&#124;age_at_ihc:integer%20%3F;review_source:ReviewSourceEnum%20%3F;test:TestEnum%20%3F;result:NegativeNotreportedPositiveUnknownEnum%20%3F;result_text:string%20%3F;result_numeric:decimal%20%3F;specimen:SpecimenEnum%20%3F;result_unit:ResultUnitEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[Immunohistochemistry],[Thing]^-[Immunohistochemistry])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[Immunohistochemistry&#124;age_at_ihc:integer%20%3F;review_source:ReviewSourceEnum%20%3F;test:TestEnum%20%3F;result:NegativeNotreportedPositiveUnknownEnum%20%3F;result_text:string%20%3F;result_numeric:decimal%20%3F;specimen:SpecimenEnum%20%3F;result_unit:ResultUnitEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[Immunohistochemistry],[Thing]^-[Immunohistochemistry])
 
 ## Parents
 
@@ -19,37 +19,33 @@ URI: [https://w3id.org/pcdc/model/Immunohistochemistry](https://w3id.org/pcdc/mo
 ### Own
 
  * [age_at_ihc](age_at_ihc.md)  <sub>0..1</sub>
-     * Description: Age in Days at Immunohistochemistry Test
+     * Description: The age (in days) of the subject at the immunohistochemical test.
      * Range: [Integer](types/Integer.md)
- * [timings](timings.md)  <sub>0..1</sub>
-     * Range: [Timing](Timing.md)
- * [disease_phase](disease_phase.md)  <sub>0..1</sub>
-     * Description: The phase of the cancer treatment process during which relevant observations were recorded. This variable is used across domains to frame the timing of these longitudinal observations and reduce the number of redundant variables needed to report similar concepts (see "Disease Phase Timing and Course Table" in the documentation for additional guidance).
-     * Range: [DiseasePhaseEnum](DiseasePhaseEnum.md)
- * [disease_phase_number](disease_phase_number.md)  <sub>0..1</sub>
-     * Description: This variable indicates the ordinal numbering of the Disease Phase variable within its various subgroups (e.g., Relapse 1, Relapse 2, Relapse 3, etc.). The observations across domains can therefore be organized longitudinally without the need for specific dates.
-     * Range: [Integer](types/Integer.md)
- * [course](course.md)  <sub>0..1</sub>
-     * Description: The protocol treatment "course" during which relevant observations were recorded. This variable is used across domains to frame the timing of these longitudinal observations and reduce the number of redundant variables needed to report similar concepts (see "Disease Phase Timing and Course Table" in the documentation for additional guidance).
-     * Range: [CourseEnum](CourseEnum.md)
- * [course_number](course_number.md)  <sub>0..1</sub>
-     * Description: This variable indicates the ordinal numbering of the Course variable within its various subgroups (e.g., Induction 1, Induction 2, Induction 3, etc.). The observations across domains can therefore be organized longitudinally without the need for specific dates.
-     * Range: [Integer](types/Integer.md)
- * [ihc_test](ihc_test.md)  <sub>0..1</sub>
-     * Description: A laboratory method that uses antibodies to check for certain antigens (markers) in a sample of tissue. The antibodies are usually linked to an enzyme or a fluorescent dye. After the antibodies bind to the antigen in the tissue sample, the enzyme or dye is activated, and the antigen can then be seen under a microscope. Immunohistochemistry is used to help diagnose diseases, such as cancer. It may also be used to help tell the difference between different types of cancer (Source: NCI Dictionary of Cancer Terms)
-     * Range: [IhcTestEnum](IhcTestEnum.md)
- * [ihc_spec_type](ihc_spec_type.md)  <sub>0..1</sub>
-     * Description: The type of a material sample taken from a biological entity for immunohistochemistry testing.
-     * Range: [IhcSpecTypeEnum](IhcSpecTypeEnum.md)
- * [ihc_result](ihc_result.md)  <sub>0..1</sub>
-     * Description: The result from the immunohistochemical test.
+ * [time_periods](time_periods.md)  <sub>0..1</sub>
+     * Range: [TimePeriod](TimePeriod.md)
+ * [review_source](review_source.md)  <sub>0..1</sub>
+     * Description: The type of assessment that was used to review.
+     * Range: [ReviewSourceEnum](ReviewSourceEnum.md)
+ * [test](test.md)  <sub>0..1</sub>
+     * Description: A medical procedure that involves testing a sample of blood, urine, or other substance from the body. Laboratory tests can help determine a diagnosis, plan treatment, check to see if treatment is working, or monitor the disease over time Source: NCI Dictionary of Cancer Terms)
+     * Range: [TestEnum](TestEnum.md)
+ * [result](result.md)  <sub>0..1</sub>
+     * Description: The text result of the laboratory test.
+     * Range: [NegativeNotreportedPositiveUnknownEnum](NegativeNotreportedPositiveUnknownEnum.md)
+ * [result_text](result_text.md)  <sub>0..1</sub>
+     * Description: The string/text result of the laboratory test.
      * Range: [String](types/String.md)
- * [ihc_result_numeric](ihc_result_numeric.md)  <sub>0..1</sub>
-     * Description: The numerical identifier of an immunohistochemistry specimen assessment result.
-     * Range: [Integer](types/Integer.md)
- * [ihc_result_unit](ihc_result_unit.md)  <sub>0..1</sub>
-     * Description: The unit of an immunohistochemistry test result.
-     * Range: [IhcResultUnitEnum](IhcResultUnitEnum.md)
+ * [result_numeric](result_numeric.md)  <sub>0..1</sub>
+     * Description: The numeric result of the laboratory test.
+     * Range: [Decimal](types/Decimal.md)
+ * [specimen](specimen.md)  <sub>0..1</sub>
+     * Description: The type of specimen analyzed.
+     * Range: [SpecimenEnum](SpecimenEnum.md)
+ * [result_unit](result_unit.md)  <sub>0..1</sub>
+     * Description: The units used for the numeric result of the laboratory test.
+     * Range: [ResultUnitEnum](ResultUnitEnum.md)
+ * [subjects](subjects.md)  <sub>1..\*</sub>
+     * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:
 

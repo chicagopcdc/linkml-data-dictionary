@@ -9,7 +9,7 @@ URI: [https://w3id.org/pcdc/model/platelet_count_at_response](https://w3id.org/p
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
+None &#8594;  <sub>0..1</sub> [Decimal](types/Decimal.md)
 
 ## Parents
 

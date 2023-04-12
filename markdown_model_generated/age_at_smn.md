@@ -2,7 +2,7 @@
 # Slot: age_at_smn
 
 
-Age in Days at Secondary Malignant Neoplasm
+The age (in days) of subject at the diagnosis of the subsequent malignant neoplasm.
 
 URI: [https://w3id.org/pcdc/model/age_at_smn](https://w3id.org/pcdc/model/age_at_smn)
 
@@ -19,4 +19,4 @@ None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
 
 ## Used by
 
- * [SecondaryMalignantNeoplasm](SecondaryMalignantNeoplasm.md)
+ * [SubsequentMalignantNeoplasm](SubsequentMalignantNeoplasm.md)

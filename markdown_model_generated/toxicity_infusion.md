@@ -2,7 +2,7 @@
 # Slot: toxicity_infusion
 
 
-Infusion Related Toxicity
+Toxicity related to an infusion.
 
 URI: [https://w3id.org/pcdc/model/toxicity_infusion](https://w3id.org/pcdc/model/toxicity_infusion)
 

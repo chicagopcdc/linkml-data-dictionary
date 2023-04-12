@@ -2,7 +2,7 @@
 # Slot: ae_pathogen
 
 
-Pathogen Causing Infection
+The pathogen identified as the agent causing the adverse event.
 
 URI: [https://w3id.org/pcdc/model/ae_pathogen](https://w3id.org/pcdc/model/ae_pathogen)
 

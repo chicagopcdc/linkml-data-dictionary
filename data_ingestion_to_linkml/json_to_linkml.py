@@ -32,23 +32,15 @@ def load_from_json(
     (under protocol, demographics, testing, etc.)
     """
     subject = data["domains"]["Protocol"]["Subject Characteristics"]
-    # timing = {
-    #     **data["domains"]["Protocol"]["disease_phase_timing"],
-    #     **data["domains"]["Protocol"]["course_timing"],
-    # }
-    # need to rework timinng for Aggregated.json, temporarily:
-    timing = data["domains"]["Protocol"]["Time Period"]
     person = data["domains"]["Demographics"]["Demographics"]
 
     data_class_mapping = {
         "Person": person,
         "Subject": subject,
-        "Timing": timing,
     }
 
     manually_named = [
         "Subject Characteristics",
-        "Time Period",
         "Demographics",
     ]
 
@@ -84,7 +76,8 @@ def get_base_linkml_struct() -> Dict:
         base_struct (dict): templated dictionary with all of the unchanging information
     """
     # TODO: figure out a versioning scheme so everything isn't 0.0.1
-    # TODO: figure out proper prefixing behavior (HGNC and SO show up diff from ncit in Python)
+    # TODO: check that nict is in fact a typo and should point to the same endpoint
+    # TODO: get endpoint for icdo
     base_struct = {
         "id": "https://w3id.org/pcdc/model",
         "title": "LinkML Data Dictionary Model",
@@ -94,9 +87,11 @@ def get_base_linkml_struct() -> Dict:
         "prefixes": {
             "linkml": "https://w3id.org/linkml/",
             "ncit": "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=",
+            "nict": "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=",
             "pcdc": "https://w3id.org/pcdc/model",
             "HGNC": "https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:",
             "SO": "http://http://www.sequenceontology.org/browser/current_release/term/SO:",
+            "icdo": "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=",
         },
         "default_curi_maps": [
             "semweb_context",
@@ -121,7 +116,7 @@ def get_base_linkml_struct() -> Dict:
                 "range": "Subject",
                 "required": True,
             },
-            "timings": {"range": "Timing", "required": False},
+            "time_periods": {"range": "Time Period", "required": False},
         },
         "enums": {},
     }
@@ -148,21 +143,14 @@ def create_class(base_struct: Dict, classname: str, data: Dict) -> Dict:
         "slot_usage": {},
         "attributes": {},
     }
-    timing_slot_mapping = [
-        "disease_phase",
-        "disease_phase_number",
-        "course",
-        "course_number",
-        "age_at_disease_phase",
-        "year_at_disease_phase",
-        "age_at_course_start",
-        "age_at_course_end",
-        "age_at_tx_assign",
-        "age_at_course_anc_500",
-        "cycle_number",
-        "age_at_cycle_start",
-        "age_at_cycle_end",
-    ]
+
+    # all classes take a slot for subjects except for this group
+    non_subject_classes = ["Thing", "Person", "Subject"]
+
+    # these keys in json should not be turned into slots, they are represented
+    # through other objects and self referencing
+    unused_slots = ["protocol", "submitter_id", "parent_submitter_id"]
+
     for key in data.keys():
         slot_name = key.lower()
         valid_slot_name = True
@@ -173,23 +161,23 @@ def create_class(base_struct: Dict, classname: str, data: Dict) -> Dict:
                 valid_slot_name = False
         if (
             slot_name not in base_struct["slots"].keys()
-            and slot_name != "protocol"
-            and (slot_name not in timing_slot_mapping or classname == "Timing")
+            and slot_name not in unused_slots
+            and slot_name != "time_period_submitter_id"
             and valid_slot_name
         ):
             new_slot = create_slot(base_struct, slot_name, data[key])
             base_struct["slots"][slot_name] = new_slot
-        elif slot_name in timing_slot_mapping and classname != "Timing":
-            if "timings" not in base_struct["classes"][classname]["slots"]:
-                base_struct["classes"][classname]["slots"].append("timings")
-        if slot_name != "protocol" and valid_slot_name:
+        elif slot_name == "time_period_submitter_id":
+            slot_name = "time_periods"
+        if slot_name not in unused_slots and valid_slot_name:
             base_struct["classes"][classname]["slots"].append(slot_name)
 
     # Need to manually add subjects slot for fmh and timing
-    if classname == "FamilyMedicalHistory" or classname == "Timing":
+    if classname == "Time Period":
+        base_struct["classes"][classname]["slots"].append("time_periods")
+
+    if classname not in non_subject_classes:
         base_struct["classes"][classname]["slots"].append("subjects")
-        if classname == "Timing":
-            base_struct["classes"][classname]["slots"].append("timings")
 
     return base_struct
 
@@ -267,7 +255,10 @@ def create_enum(
         if not match_exists:
             for key in permissible_values.keys():
                 desc = permissible_values[key]["description"]
-                meaning = permissible_values[key]["codes"]
+                # TODO need to figure out how LINKML handles multiple codes
+                # in the meaning section, doesnt seem to want to handle a group when converting to python
+                # for now just taking the first one
+                meaning = permissible_values[key]["codes"].split("|")[0]
                 if desc == "" and meaning == "":
                     continue
                 elif meaning == "":

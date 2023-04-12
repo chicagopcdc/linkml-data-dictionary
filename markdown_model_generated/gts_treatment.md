@@ -2,7 +2,7 @@
 # Slot: gts_treatment
 
 
-Growing Teratoma Syndrome Treatment
+Growing Teratoma Syndrome treatment type
 
 URI: [https://w3id.org/pcdc/model/gts_treatment](https://w3id.org/pcdc/model/gts_treatment)
 

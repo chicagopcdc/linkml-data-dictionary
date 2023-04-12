@@ -2,7 +2,7 @@
 # Slot: age_at_tmp_start
 
 
-Age in Days at Start of Transfusion Medicine Procedure
+The age (in days) of the subject at the start of the transfuction medicine procedure
 
 URI: [https://w3id.org/pcdc/model/age_at_tmp_start](https://w3id.org/pcdc/model/age_at_tmp_start)
 
@@ -19,4 +19,4 @@ None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
 
 ## Used by
 
- * [TransfusionMedicineProcedure](TransfusionMedicineProcedure.md)
+ * [TransfusionMedicineProcedures](TransfusionMedicineProcedures.md)

@@ -2,7 +2,7 @@
 # Slot: bm_morphology
 
 
-The morphology of bone marrow blasts
+The morphology of bone marrow blasts.
 
 URI: [https://w3id.org/pcdc/model/bm_morphology](https://w3id.org/pcdc/model/bm_morphology)
 

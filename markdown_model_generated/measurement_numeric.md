@@ -9,7 +9,7 @@ URI: [https://w3id.org/pcdc/model/measurement_numeric](https://w3id.org/pcdc/mod
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
+None &#8594;  <sub>0..1</sub> [Decimal](types/Decimal.md)
 
 ## Parents
 
@@ -19,4 +19,6 @@ None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
 
 ## Used by
 
+ * [FunctionTest](FunctionTest.md)
+ * [SubjectResponse](SubjectResponse.md)
  * [VitalsAndAnthropometrics](VitalsAndAnthropometrics.md)

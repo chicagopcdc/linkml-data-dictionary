@@ -19,4 +19,4 @@ None &#8594;  <sub>0..1</sub> [EExtensionSiteEnum](EExtensionSiteEnum.md)
 
 ## Used by
 
- * [LesionCharacteristics](LesionCharacteristics.md)
+ * [TumorAssessment](TumorAssessment.md)

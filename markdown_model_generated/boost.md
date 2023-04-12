@@ -2,7 +2,7 @@
 # Slot: boost
 
 
-Boost Given
+One or more extra radiation treatments targeted at the tumor bed, given after the regular sessions of radiation are complete.
 
 URI: [https://w3id.org/pcdc/model/boost](https://w3id.org/pcdc/model/boost)
 

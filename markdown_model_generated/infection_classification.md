@@ -2,7 +2,7 @@
 # Slot: infection_classification
 
 
-Infection Site Classification
+The type of evidence regarding the infection type.
 
 URI: [https://w3id.org/pcdc/model/infection_classification](https://w3id.org/pcdc/model/infection_classification)
 

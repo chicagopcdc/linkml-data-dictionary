@@ -2,7 +2,7 @@
 # Slot: tumor_classification
 
 
-Tumor Classification
+The classification of a tumor based primarily on histopathological characteristics.
 
 URI: [https://w3id.org/pcdc/model/tumor_classification](https://w3id.org/pcdc/model/tumor_classification)
 
@@ -19,5 +19,4 @@ None &#8594;  <sub>0..1</sub> [TumorClassificationEnum](TumorClassificationEnum.
 
 ## Used by
 
- * [BiopsyAndSurgicalProcedures](BiopsyAndSurgicalProcedures.md)
- * [RadiationTherapy](RadiationTherapy.md)
+ * [GeneticAnalysis](GeneticAnalysis.md)

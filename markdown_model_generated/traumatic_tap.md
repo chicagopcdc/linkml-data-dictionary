@@ -2,7 +2,7 @@
 # Slot: traumatic_tap
 
 
-Was the lumbar puncture artifically contaminated by peripheral blood?
+Contamination of a cerebrospinal fluid sample by red blood cells greater than 10/mm3.
 
 URI: [https://w3id.org/pcdc/model/traumatic_tap](https://w3id.org/pcdc/model/traumatic_tap)
 

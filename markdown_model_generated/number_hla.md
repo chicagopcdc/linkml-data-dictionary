@@ -9,7 +9,7 @@ URI: [https://w3id.org/pcdc/model/number_hla](https://w3id.org/pcdc/model/number
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
+None &#8594;  <sub>0..1</sub> [Decimal](types/Decimal.md)
 
 ## Parents
 

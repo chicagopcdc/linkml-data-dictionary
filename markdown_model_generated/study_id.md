@@ -21,4 +21,3 @@ None &#8594;  <sub>0..1</sub> [StudyIdEnum](StudyIdEnum.md)
 
  * [PatientReportedOutcomesMetadata](PatientReportedOutcomesMetadata.md)
  * [Subject](Subject.md)
- * [SubjectCharacteristics](SubjectCharacteristics.md)

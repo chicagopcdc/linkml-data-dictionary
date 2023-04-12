@@ -2,7 +2,7 @@
 # Slot: myeloid_sarcoma_site
 
 
-
+The site of the extramedullary myeloid sarcoma.
 
 URI: [https://w3id.org/pcdc/model/myeloid_sarcoma_site](https://w3id.org/pcdc/model/myeloid_sarcoma_site)
 

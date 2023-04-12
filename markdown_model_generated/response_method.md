@@ -2,7 +2,7 @@
 # Slot: response_method
 
 
-Response Assessment Method
+The method used to assess the response to therapy.
 
 URI: [https://w3id.org/pcdc/model/response_method](https://w3id.org/pcdc/model/response_method)
 

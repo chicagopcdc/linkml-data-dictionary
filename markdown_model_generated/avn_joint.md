@@ -2,7 +2,7 @@
 # Slot: avn_joint
 
 
-Avascular Necrosis Joint Involvement
+Death of bone tissue in a joint due to temporary or permanent interruption of blood flow.
 
 URI: [https://w3id.org/pcdc/model/avn_joint](https://w3id.org/pcdc/model/avn_joint)
 

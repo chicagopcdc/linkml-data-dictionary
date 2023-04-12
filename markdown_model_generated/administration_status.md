@@ -2,7 +2,7 @@
 # Slot: administration_status
 
 
-Medication Administration Status
+The status of the medication administration.
 
 URI: [https://w3id.org/pcdc/model/administration_status](https://w3id.org/pcdc/model/administration_status)
 

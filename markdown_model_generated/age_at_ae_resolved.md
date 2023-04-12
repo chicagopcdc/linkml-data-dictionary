@@ -2,7 +2,7 @@
 # Slot: age_at_ae_resolved
 
 
-Age in Days at Resolved Adverse Event
+The age (in days) of the subject when this adverse event was resolved
 
 URI: [https://w3id.org/pcdc/model/age_at_ae_resolved](https://w3id.org/pcdc/model/age_at_ae_resolved)
 

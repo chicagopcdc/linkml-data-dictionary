@@ -2,7 +2,7 @@
 # Slot: reconstruction_type
 
 
-Surgical Reconstruction Type
+The type of reconstruction performed on the subject.
 
 URI: [https://w3id.org/pcdc/model/reconstruction_type](https://w3id.org/pcdc/model/reconstruction_type)
 
