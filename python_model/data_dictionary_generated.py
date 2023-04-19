@@ -1,5 +1,5 @@
 # Auto generated from data_dictionary_spreadsheet_1k2m4oAX3JdfYN2lIbpBiWFUNKZwXnQCiuns0e3Wid9o_20230405.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-04-12T14:28:34
+# Generation date: 2023-04-19T12:29:42
 # Schema: data-dictionary
 #
 # id: https://w3id.org/pcdc/model
@@ -33,11 +33,10 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 HGNC = CurieNamespace('HGNC', 'https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:')
-SO = CurieNamespace('SO', 'http://http://www.sequenceontology.org/browser/current_release/term/SO:')
-ICDO = CurieNamespace('icdo', 'https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=')
+SO = CurieNamespace('SO', 'http://www.sequenceontology.org/browser/current_release/term/SO:')
+ICDO = CurieNamespace('icdo', 'https://www.who.int/standards/classifications/other-classifications/international-classification-of-diseases-for-oncology/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 NCIT = CurieNamespace('ncit', 'https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=')
-NICT = CurieNamespace('nict', 'https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=')
 PCDC = CurieNamespace('pcdc', 'https://w3id.org/pcdc/model')
 DEFAULT_ = CurieNamespace('', 'https://w3id.org/pcdc/model/')
 
@@ -7567,9 +7566,9 @@ class HistologyEnum(EnumDefinitionImpl):
                                  description="Different than the one(s) previously specified or mentioned.",
                                  meaning=NCIT.C17649)
     Glomangiomatosis = PermissibleValue(text="Glomangiomatosis",
-                                                       meaning=NCIT["8711/1"])
+                                                       meaning=ICDO["8711/1"])
     Myoepithelioma = PermissibleValue(text="Myoepithelioma",
-                                                   meaning=NCIT["8982/0"])
+                                                   meaning=ICDO["8982/0"])
 
     _defn = EnumDefinition(
         name="HistologyEnum",
@@ -7683,232 +7682,232 @@ class HistologyEnum(EnumDefinitionImpl):
                                  meaning=NCIT.C3518) )
         setattr(cls, "Atypical Lipomatous Tumour ",
                 PermissibleValue(text="Atypical Lipomatous Tumour ",
-                                 meaning=NCIT["8850/1"]) )
+                                 meaning=ICDO["8850/1"]) )
         setattr(cls, "Well differentiated Liposarcoma ",
                 PermissibleValue(text="Well differentiated Liposarcoma ",
-                                 meaning=NCIT["8850/3"]) )
+                                 meaning=ICDO["8850/3"]) )
         setattr(cls, "Dedifferentiated Liposarcoma ",
                 PermissibleValue(text="Dedifferentiated Liposarcoma ",
-                                 meaning=NCIT["8858/3"]) )
+                                 meaning=ICDO["8858/3"]) )
         setattr(cls, "Myxoid Liposarcoma ",
                 PermissibleValue(text="Myxoid Liposarcoma ",
-                                 meaning=NCIT["8852/3"]) )
+                                 meaning=ICDO["8852/3"]) )
         setattr(cls, "Pleomorphic Liposarcoma ",
                 PermissibleValue(text="Pleomorphic Liposarcoma ",
-                                 meaning=NCIT["8854/3"]) )
+                                 meaning=ICDO["8854/3"]) )
         setattr(cls, "Liposrcoma, NOS ",
                 PermissibleValue(text="Liposrcoma, NOS ",
-                                 meaning=NCIT["8850/3"]) )
+                                 meaning=ICDO["8850/3"]) )
         setattr(cls, "Palmar/plantar Fibromatosis ",
                 PermissibleValue(text="Palmar/plantar Fibromatosis ",
-                                 meaning=NCIT["8813/1"]) )
+                                 meaning=ICDO["8813/1"]) )
         setattr(cls, "Desmoid-type Fibromatosis ",
                 PermissibleValue(text="Desmoid-type Fibromatosis ",
-                                 meaning=NCIT["8821/1"]) )
+                                 meaning=ICDO["8821/1"]) )
         setattr(cls, "Lipofibromatosis ",
                 PermissibleValue(text="Lipofibromatosis ",
-                                 meaning=NCIT["8851/1"]) )
+                                 meaning=ICDO["8851/1"]) )
         setattr(cls, "Giant cell Fibroblastoma ",
                 PermissibleValue(text="Giant cell Fibroblastoma ",
-                                 meaning=NCIT["8834/1"]) )
+                                 meaning=ICDO["8834/1"]) )
         setattr(cls, "Dermatofibrosarcoma Protuberans ",
                 PermissibleValue(text="Dermatofibrosarcoma Protuberans ",
-                                 meaning=NCIT["8832/1"]) )
+                                 meaning=ICDO["8832/1"]) )
         setattr(cls, "Fibrosarcomatous Dermatofibrosarcoma Protuberans ",
                 PermissibleValue(text="Fibrosarcomatous Dermatofibrosarcoma Protuberans ",
-                                 meaning=NCIT["8832/3"]) )
+                                 meaning=ICDO["8832/3"]) )
         setattr(cls, "Pigmented Dermatofibrosarcoma Protuberans ",
                 PermissibleValue(text="Pigmented Dermatofibrosarcoma Protuberans ",
-                                 meaning=NCIT["8833/1"]) )
+                                 meaning=ICDO["8833/1"]) )
         setattr(cls, "Solitary Fibrous tumour ",
                 PermissibleValue(text="Solitary Fibrous tumour ",
-                                 meaning=NCIT["8815/1"]) )
+                                 meaning=ICDO["8815/1"]) )
         setattr(cls, "Solitary Fibrous tumour, malignant ",
                 PermissibleValue(text="Solitary Fibrous tumour, malignant ",
-                                 meaning=NCIT["8815/3"]) )
+                                 meaning=ICDO["8815/3"]) )
         setattr(cls, "Inflammatory myofibroblastic tumour ",
                 PermissibleValue(text="Inflammatory myofibroblastic tumour ",
-                                 meaning=NCIT["8825/1"]) )
+                                 meaning=ICDO["8825/1"]) )
         setattr(cls, "Low-grade myofibroblastic sarcoma ",
                 PermissibleValue(text="Low-grade myofibroblastic sarcoma ",
-                                 meaning=NCIT["8825/3"]) )
+                                 meaning=ICDO["8825/3"]) )
         setattr(cls, "Myxoinflammatory fibroblastic sarcoma/Atypical myxoinflammatory fibroblastic tumour ",
                 PermissibleValue(text="Myxoinflammatory fibroblastic sarcoma/Atypical myxoinflammatory fibroblastic tumour ",
-                                 meaning=NCIT["8811/1"]) )
+                                 meaning=ICDO["8811/1"]) )
         setattr(cls, "Infantile Fibrosarcoma ",
                 PermissibleValue(text="Infantile Fibrosarcoma ",
-                                 meaning=NCIT["8814/3"]) )
+                                 meaning=ICDO["8814/3"]) )
         setattr(cls, "Adult Fibrosarcoma ",
                 PermissibleValue(text="Adult Fibrosarcoma ",
-                                 meaning=NCIT["8810/3"]) )
+                                 meaning=ICDO["8810/3"]) )
         setattr(cls, "Myxofibrosarcoma ",
                 PermissibleValue(text="Myxofibrosarcoma ",
-                                 meaning=NCIT["8811/3"]) )
+                                 meaning=ICDO["8811/3"]) )
         setattr(cls, "Low-Grade Fibromyxoid Sarcoma ",
                 PermissibleValue(text="Low-Grade Fibromyxoid Sarcoma ",
-                                 meaning=NCIT["8840/3"]) )
+                                 meaning=ICDO["8840/3"]) )
         setattr(cls, "Sclerosing Epithelioid Fibrosarcoma ",
                 PermissibleValue(text="Sclerosing Epithelioid Fibrosarcoma ",
-                                 meaning=NCIT["8840/3"]) )
+                                 meaning=ICDO["8840/3"]) )
         setattr(cls, "Tenosynovial Giant Cell Tumour Localized Type ",
                 PermissibleValue(text="Tenosynovial Giant Cell Tumour Localized Type ",
-                                 meaning=NCIT["9252/0"]) )
+                                 meaning=ICDO["9252/0"]) )
         setattr(cls, "Tenosynovial Giant Cell Tumour Diffuse Type ",
                 PermissibleValue(text="Tenosynovial Giant Cell Tumour Diffuse Type ",
-                                 meaning=NCIT["9252/1"]) )
+                                 meaning=ICDO["9252/1"]) )
         setattr(cls, "Tenosynovial Giant Cell Tumour Malignant ",
                 PermissibleValue(text="Tenosynovial Giant Cell Tumour Malignant ",
-                                 meaning=NCIT["9252/3"]) )
+                                 meaning=ICDO["9252/3"]) )
         setattr(cls, "Plexiform fibrohistiocytic tumour ",
                 PermissibleValue(text="Plexiform fibrohistiocytic tumour ",
-                                 meaning=NCIT["8835/1"]) )
+                                 meaning=ICDO["8835/1"]) )
         setattr(cls, "Giant Cell Tumour of Soft Tissues",
                 PermissibleValue(text="Giant Cell Tumour of Soft Tissues",
-                                 meaning=NCIT["9251/1"]) )
+                                 meaning=ICDO["9251/1"]) )
         setattr(cls, "Leiomyosarcoma (Excluding Skin) ",
                 PermissibleValue(text="Leiomyosarcoma (Excluding Skin) ",
-                                 meaning=NCIT["8890/3"]) )
+                                 meaning=ICDO["8890/3"]) )
         setattr(cls, "Glomus Tumour (and Variants) ",
                 PermissibleValue(text="Glomus Tumour (and Variants) ",
-                                 meaning=NCIT["8711/0"]) )
+                                 meaning=ICDO["8711/0"]) )
         setattr(cls, "Malignant Glomus Tumour",
                 PermissibleValue(text="Malignant Glomus Tumour",
-                                 meaning=NCIT["8711/3"]) )
+                                 meaning=ICDO["8711/3"]) )
         setattr(cls, "Kaposiform Haemangioendothelioma",
                 PermissibleValue(text="Kaposiform Haemangioendothelioma",
-                                 meaning=NCIT["9130/1"]) )
+                                 meaning=ICDO["9130/1"]) )
         setattr(cls, "Retiform Haemangioendothelioma ",
                 PermissibleValue(text="Retiform Haemangioendothelioma ",
-                                 meaning=NCIT["9136/1"]) )
+                                 meaning=ICDO["9136/1"]) )
         setattr(cls, "Papillary Intralymphatic Angioendothelioma",
                 PermissibleValue(text="Papillary Intralymphatic Angioendothelioma",
-                                 meaning=NCIT["9135/1"]) )
+                                 meaning=ICDO["9135/1"]) )
         setattr(cls, "Composite Haemangioendothelioma ",
                 PermissibleValue(text="Composite Haemangioendothelioma ",
-                                 meaning=NCIT["9136/1"]) )
+                                 meaning=ICDO["9136/1"]) )
         setattr(cls, "Pseudomyogenic (Epithelioid Sarcoma-Like) Haemangioendothelioma",
                 PermissibleValue(text="Pseudomyogenic (Epithelioid Sarcoma-Like) Haemangioendothelioma",
-                                 meaning=NCIT["9136/1"]) )
+                                 meaning=ICDO["9136/1"]) )
         setattr(cls, "Kaposi Sarcoma ",
                 PermissibleValue(text="Kaposi Sarcoma ",
-                                 meaning=NCIT["9140/3"]) )
+                                 meaning=ICDO["9140/3"]) )
         setattr(cls, "Epithelioid Haemangioendothelioma",
                 PermissibleValue(text="Epithelioid Haemangioendothelioma",
-                                 meaning=NCIT["9133/3"]) )
+                                 meaning=ICDO["9133/3"]) )
         setattr(cls, "Angiosarcoma of Soft Tissue",
                 PermissibleValue(text="Angiosarcoma of Soft Tissue",
-                                 meaning=NCIT["9120/3"]) )
+                                 meaning=ICDO["9120/3"]) )
         setattr(cls, "Soft Tissue Chondroma",
                 PermissibleValue(text="Soft Tissue Chondroma",
-                                 meaning=NCIT["9220/0"]) )
+                                 meaning=ICDO["9220/0"]) )
         setattr(cls, "Extraskeletal Mesenchymal Chondrosarcoma",
                 PermissibleValue(text="Extraskeletal Mesenchymal Chondrosarcoma",
-                                 meaning=NCIT["9240/3"]) )
+                                 meaning=ICDO["9240/3"]) )
         setattr(cls, "Extraskeletal Osteosarcoma",
                 PermissibleValue(text="Extraskeletal Osteosarcoma",
-                                 meaning=NCIT["9180/3"]) )
+                                 meaning=ICDO["9180/3"]) )
         setattr(cls, "Gastrointestinal Stromal Tumour, Uncertain Malignant Potential",
                 PermissibleValue(text="Gastrointestinal Stromal Tumour, Uncertain Malignant Potential",
-                                 meaning=NCIT["8936/1"]) )
+                                 meaning=ICDO["8936/1"]) )
         setattr(cls, "Gastrointestinal Stromal Tumour, Malignant ",
                 PermissibleValue(text="Gastrointestinal Stromal Tumour, Malignant ",
-                                 meaning=NCIT["8936/3"]) )
+                                 meaning=ICDO["8936/3"]) )
         setattr(cls, "Malignant peripheral nerve sheath tumor ",
                 PermissibleValue(text="Malignant peripheral nerve sheath tumor ",
-                                 meaning=NCIT["9540/3"]) )
+                                 meaning=ICDO["9540/3"]) )
         setattr(cls, "Epithelioid Malignant peripheral nerve sheath tumor ",
                 PermissibleValue(text="Epithelioid Malignant peripheral nerve sheath tumor ",
-                                 meaning=NCIT["9542/3"]) )
+                                 meaning=ICDO["9542/3"]) )
         setattr(cls, "Malignant Triton Tumour ",
                 PermissibleValue(text="Malignant Triton Tumour ",
-                                 meaning=NCIT["9561/3"]) )
+                                 meaning=ICDO["9561/3"]) )
         setattr(cls, "Malignant granular cell Tumour ",
                 PermissibleValue(text="Malignant granular cell Tumour ",
-                                 meaning=NCIT["9580/3"]) )
+                                 meaning=ICDO["9580/3"]) )
         setattr(cls, "Ectomesenchymoma ",
                 PermissibleValue(text="Ectomesenchymoma ",
-                                 meaning=NCIT["8921/3"]) )
+                                 meaning=ICDO["8921/3"]) )
         setattr(cls, "Haemosiderotic fibrolipomatous Tumour ",
                 PermissibleValue(text="Haemosiderotic fibrolipomatous Tumour ",
-                                 meaning=NCIT["8811/1"]) )
+                                 meaning=ICDO["8811/1"]) )
         setattr(cls, "Atypical fibromyxanthoma",
                 PermissibleValue(text="Atypical fibromyxanthoma",
-                                 meaning=NCIT["8830/1"]) )
+                                 meaning=ICDO["8830/1"]) )
         setattr(cls, "Angiomatoid fibrous histiocytoma ",
                 PermissibleValue(text="Angiomatoid fibrous histiocytoma ",
-                                 meaning=NCIT["8836/1"]) )
+                                 meaning=ICDO["8836/1"]) )
         setattr(cls, "Ossifying fibromyxoid Tumour ",
                 PermissibleValue(text="Ossifying fibromyxoid Tumour ",
-                                 meaning=NCIT["8842/0"]) )
+                                 meaning=ICDO["8842/0"]) )
         setattr(cls, "Ossifying fibromyxoid Tumour, Malignant",
                 PermissibleValue(text="Ossifying fibromyxoid Tumour, Malignant",
-                                 meaning=NCIT["8842/3"]) )
+                                 meaning=ICDO["8842/3"]) )
         setattr(cls, "Mixed Tumour NOS ",
                 PermissibleValue(text="Mixed Tumour NOS ",
-                                 meaning=NCIT["8940/0"]) )
+                                 meaning=ICDO["8940/0"]) )
         setattr(cls, "Mixed Tumour NOS, Malignant",
                 PermissibleValue(text="Mixed Tumour NOS, Malignant",
-                                 meaning=NCIT["8940/3"]) )
+                                 meaning=ICDO["8940/3"]) )
         setattr(cls, "Myoepithelioma cacrinoma",
                 PermissibleValue(text="Myoepithelioma cacrinoma",
-                                 meaning=NCIT["8982/3"]) )
+                                 meaning=ICDO["8982/3"]) )
         setattr(cls, "Phosphaturic mesenchymal Tumour, Benign",
                 PermissibleValue(text="Phosphaturic mesenchymal Tumour, Benign",
-                                 meaning=NCIT["8990/0"]) )
+                                 meaning=ICDO["8990/0"]) )
         setattr(cls, "Phosphaturic mesenchymal Tumour, Malignant",
                 PermissibleValue(text="Phosphaturic mesenchymal Tumour, Malignant",
-                                 meaning=NCIT["8990/3"]) )
+                                 meaning=ICDO["8990/3"]) )
         setattr(cls, "Synovial sarcoma NOS",
                 PermissibleValue(text="Synovial sarcoma NOS",
-                                 meaning=NCIT["9040/3"]) )
+                                 meaning=ICDO["9040/3"]) )
         setattr(cls, "Synovial sarcoma, spindle cell",
                 PermissibleValue(text="Synovial sarcoma, spindle cell",
-                                 meaning=NCIT["9041/3"]) )
+                                 meaning=ICDO["9041/3"]) )
         setattr(cls, "Synovial sarcoma, biphasic",
                 PermissibleValue(text="Synovial sarcoma, biphasic",
-                                 meaning=NCIT["9043/3"]) )
+                                 meaning=ICDO["9043/3"]) )
         setattr(cls, "Epithelioid sarcoma",
                 PermissibleValue(text="Epithelioid sarcoma",
-                                 meaning=NCIT["8804/3"]) )
+                                 meaning=ICDO["8804/3"]) )
         setattr(cls, "Alveolar soft-part sarcoma",
                 PermissibleValue(text="Alveolar soft-part sarcoma",
-                                 meaning=NCIT["9581/3"]) )
+                                 meaning=ICDO["9581/3"]) )
         setattr(cls, "Clear cell sarcoma of soft tissue",
                 PermissibleValue(text="Clear cell sarcoma of soft tissue",
-                                 meaning=NCIT["9044/3"]) )
+                                 meaning=ICDO["9044/3"]) )
         setattr(cls, "Extraskeletal myxoid chondrosarcoma",
                 PermissibleValue(text="Extraskeletal myxoid chondrosarcoma",
-                                 meaning=NCIT["9231/3"]) )
+                                 meaning=ICDO["9231/3"]) )
         setattr(cls, "Desmoplastic small round cell tumour",
                 PermissibleValue(text="Desmoplastic small round cell tumour",
-                                 meaning=NCIT["8806/3"]) )
+                                 meaning=ICDO["8806/3"]) )
         setattr(cls, "Extra-renal rhabdoid tumor",
                 PermissibleValue(text="Extra-renal rhabdoid tumor",
-                                 meaning=NCIT["8963/3"]) )
+                                 meaning=ICDO["8963/3"]) )
         setattr(cls, "PEComa NOS, benign",
                 PermissibleValue(text="PEComa NOS, benign",
-                                 meaning=NCIT["8714/0"]) )
+                                 meaning=ICDO["8714/0"]) )
         setattr(cls, "PEComa NOS, malignant",
                 PermissibleValue(text="PEComa NOS, malignant",
-                                 meaning=NCIT["8714/3"]) )
+                                 meaning=ICDO["8714/3"]) )
         setattr(cls, "Intimal sarcoma",
                 PermissibleValue(text="Intimal sarcoma",
-                                 meaning=NCIT["9137/3"]) )
+                                 meaning=ICDO["9137/3"]) )
         setattr(cls, "Undifferentiated spindle cell sarcoma",
                 PermissibleValue(text="Undifferentiated spindle cell sarcoma",
-                                 meaning=NCIT["8801/3"]) )
+                                 meaning=ICDO["8801/3"]) )
         setattr(cls, "Undifferentiated pleomorphic sarcoma",
                 PermissibleValue(text="Undifferentiated pleomorphic sarcoma",
-                                 meaning=NCIT["8802/3"]) )
+                                 meaning=ICDO["8802/3"]) )
         setattr(cls, "Undifferentiated round cell sarcoma",
                 PermissibleValue(text="Undifferentiated round cell sarcoma",
-                                 meaning=NCIT["8803/3"]) )
+                                 meaning=ICDO["8803/3"]) )
         setattr(cls, "Undifferentiated epithelioid sarcoma",
                 PermissibleValue(text="Undifferentiated epithelioid sarcoma",
-                                 meaning=NCIT["8804/3"]) )
+                                 meaning=ICDO["8804/3"]) )
         setattr(cls, "Undifferentiated sarcoma NOS",
                 PermissibleValue(text="Undifferentiated sarcoma NOS",
-                                 meaning=NCIT["8805/3"]) )
+                                 meaning=ICDO["8805/3"]) )
         setattr(cls, "Conventional Osteosarcoma",
                 PermissibleValue(text="Conventional Osteosarcoma",
                                  description="A high grade malignant bone-forming mesenchymal neoplasm producing osteoid. The tumor arises from the medullary portion of the bone. It affects the long bones and most commonly, the distal femur, proximal tibia, and proximal humerus. Pain with or without a palpable mass is the most common clinical presentation. It usually has an aggressive growth and may metastasize through the hematogenous route. The lung is the most frequent site of metastasis.",

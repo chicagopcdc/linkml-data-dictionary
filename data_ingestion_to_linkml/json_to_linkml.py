@@ -76,8 +76,7 @@ def get_base_linkml_struct() -> Dict:
         base_struct (dict): templated dictionary with all of the unchanging information
     """
     # TODO: figure out a versioning scheme so everything isn't 0.0.1
-    # TODO: check that nict is in fact a typo and should point to the same endpoint
-    # TODO: get endpoint for icdo
+    # TODO: locate ICDO endpoint that will allow for code lookup when it exists (currently just points to WHO page)
     base_struct = {
         "id": "https://w3id.org/pcdc/model",
         "title": "LinkML Data Dictionary Model",
@@ -87,11 +86,10 @@ def get_base_linkml_struct() -> Dict:
         "prefixes": {
             "linkml": "https://w3id.org/linkml/",
             "ncit": "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=",
-            "nict": "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=",
             "pcdc": "https://w3id.org/pcdc/model",
             "HGNC": "https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:",
-            "SO": "http://http://www.sequenceontology.org/browser/current_release/term/SO:",
-            "icdo": "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=",
+            "SO": "http://www.sequenceontology.org/browser/current_release/term/SO:",
+            "icdo": "https://www.who.int/standards/classifications/other-classifications/international-classification-of-diseases-for-oncology/",
         },
         "default_curi_maps": [
             "semweb_context",
@@ -253,31 +251,52 @@ def create_enum(
             base_struct, permissible_values, enum_name
         )
         if not match_exists:
-            for key in permissible_values.keys():
-                desc = permissible_values[key]["description"]
-                # TODO need to figure out how LINKML handles multiple codes
-                # in the meaning section, doesnt seem to want to handle a group when converting to python
-                # for now just taking the first one
-                meaning = permissible_values[key]["codes"].split("|")[0]
-                if desc == "" and meaning == "":
-                    continue
-                elif meaning == "":
-                    enum_dict["permissible_values"][str(key)] = {
-                        "description": desc
-                    }
-                elif desc == "":
-                    enum_dict["permissible_values"][str(key)] = {
-                        "meaning": meaning,
-                    }
-                else:
-                    enum_dict["permissible_values"][str(key)] = {
-                        "description": desc,
-                        "meaning": meaning,
-                    }
+            enum_dict = parse_description_and_meaning(
+                enum_dict, permissible_values
+            )
             base_struct["enums"][enum_name] = enum_dict
             return enum_name
         else:
             return new_name
+
+
+def parse_description_and_meaning(enum_dict, permissible_values):
+    for key in permissible_values.keys():
+        desc = permissible_values[key]["description"]
+        # TODO need to figure out how LINKML handles multiple codes
+        # in the meaning section, doesnt seem to want to handle a group when converting to python
+        # for now take the first ncit code if present, otherwise take the first code
+        meaning = permissible_values[key]["codes"].split("|")
+        if len(meaning) == 0:
+            meaning = ""
+        elif len(meaning) == 1:
+            meaning = meaning[0]
+        else:  # multiple codes, pick first ncit otherwise
+            selected_code = meaning[0]
+            for opt in meaning:
+                if opt[0:4] == "ncit":
+                    selected_code = opt
+                    break
+            meaning = selected_code
+
+        # need to handle case of typo in ncit/nict
+        if len(meaning) > 4:
+            if meaning[0:4] == "nict":
+                meaning = "ncit" + meaning[4:]
+        if desc == "" and meaning == "":
+            continue
+        elif meaning == "":
+            enum_dict["permissible_values"][str(key)] = {"description": desc}
+        elif desc == "":
+            enum_dict["permissible_values"][str(key)] = {
+                "meaning": meaning,
+            }
+        else:
+            enum_dict["permissible_values"][str(key)] = {
+                "description": desc,
+                "meaning": meaning,
+            }
+    return enum_dict
 
 
 def compare_enum_vals(

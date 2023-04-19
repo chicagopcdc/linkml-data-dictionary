@@ -6,11 +6,10 @@ version: 0.0.1
 prefixes:
   linkml: https://w3id.org/linkml/
   ncit: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
-  nict: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
   pcdc: https://w3id.org/pcdc/model
   HGNC: 'https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:'
-  SO: 'http://http://www.sequenceontology.org/browser/current_release/term/SO:'
-  icdo: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=
+  SO: 'http://www.sequenceontology.org/browser/current_release/term/SO:'
+  icdo: https://www.who.int/standards/classifications/other-classifications/international-classification-of-diseases-for-oncology/
 default_curi_maps:
 - semweb_context
 default_range: string
@@ -4257,7 +4256,7 @@ enums:
           It includes the following neoplastic processes: multiple endocrine neoplasia
           type 2A, multiple endocrine neoplasia type 2B, and hereditary thyroid gland
           medullary carcinoma.'
-        meaning: nict:C123329
+        meaning: ncit:C123329
       Multiple Endocrine Neoplasia Type 4:
         description: An autosomal dominant tumor syndrome caused by germline CDKN1B
           mutations that result in a phenotype similar to that of multiple endocrine
