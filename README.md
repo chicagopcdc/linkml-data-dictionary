@@ -41,3 +41,9 @@ To view the markdown, make sure you have mkdocs installed (if not `pip install m
 `mkdocs serve` 
 
 Then you can navigate to localhost:8000 to view the generated documentation. 
+
+## Generating SQL DDL
+From the LinkML YAML file, you can generate the SQL commands to create tables with the given classes and relationships, to do so run:
+`linkml-data-dictionary % gen-sqlddl data_ingestion_to_linkml/output_linkml_yaml/data_dictionary_spreadsheet_<SPREADSHEET_KEY>.yaml > sql_ddl_generated/create_schema.sql`
+
+This will save the sql commands to a `.sql` file in the sql_ddl_generated folder called `create_schema.sql`
