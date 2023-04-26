@@ -2,14 +2,14 @@
 # Slot: smn_status
 
 
-Secondary Malignancy Present
+Was the indicated subsequent malignant neoplasm found in the patient?
 
 URI: [https://w3id.org/pcdc/model/smn_status](https://w3id.org/pcdc/model/smn_status)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [NoNotreportedUnknownYesEnum](NoNotreportedUnknownYesEnum.md)
+None &#8594;  <sub>0..1</sub> [AbsentNotreportedPresentUnknownEnum](AbsentNotreportedPresentUnknownEnum.md)
 
 ## Parents
 
@@ -19,4 +19,4 @@ None &#8594;  <sub>0..1</sub> [NoNotreportedUnknownYesEnum](NoNotreportedUnknown
 
 ## Used by
 
- * [SecondaryMalignantNeoplasm](SecondaryMalignantNeoplasm.md)
+ * [SubsequentMalignantNeoplasm](SubsequentMalignantNeoplasm.md)

@@ -2,7 +2,7 @@
 # Slot: diam_type
 
 
-Dimension 2 Direction
+The orientation of the diameters provided
 
 URI: [https://w3id.org/pcdc/model/diam_type](https://w3id.org/pcdc/model/diam_type)
 
@@ -19,4 +19,4 @@ None &#8594;  <sub>0..1</sub> [DiamTypeEnum](DiamTypeEnum.md)
 
 ## Used by
 
- * [LesionCharacteristics](LesionCharacteristics.md)
+ * [TumorAssessment](TumorAssessment.md)

@@ -2,7 +2,7 @@
 # Slot: detection_method
 
 
-The method used to detect the extent of the disease involvement.
+Disease Involvement Detection Method
 
 URI: [https://w3id.org/pcdc/model/detection_method](https://w3id.org/pcdc/model/detection_method)
 
@@ -20,4 +20,4 @@ None &#8594;  <sub>0..1</sub> [DetectionMethodEnum](DetectionMethodEnum.md)
 ## Used by
 
  * [DiseaseCharacteristics](DiseaseCharacteristics.md)
- * [LesionCharacteristics](LesionCharacteristics.md)
+ * [TumorAssessment](TumorAssessment.md)

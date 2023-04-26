@@ -2,7 +2,7 @@
 # Slot: sub_agent
 
 
-Substitution Agent
+A medication was substituted with another.
 
 URI: [https://w3id.org/pcdc/model/sub_agent](https://w3id.org/pcdc/model/sub_agent)
 

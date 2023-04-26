@@ -2,7 +2,7 @@
 # Slot: age_at_medication_end
 
 
-Age in Days at End of Total Dose Calculation
+The age (in days) of the subject at the end of this medication treatment.
 
 URI: [https://w3id.org/pcdc/model/age_at_medication_end](https://w3id.org/pcdc/model/age_at_medication_end)
 

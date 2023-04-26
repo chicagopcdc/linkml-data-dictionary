@@ -2,7 +2,7 @@
 # Slot: age_at_enrollment
 
 
-Age of subject (in days) when the subject enrolled in the study.
+The age (in days) when the subject enrolled in the study.
 
 URI: [https://w3id.org/pcdc/model/age_at_enrollment](https://w3id.org/pcdc/model/age_at_enrollment)
 
@@ -20,4 +20,3 @@ None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
 ## Used by
 
  * [Subject](Subject.md)
- * [SubjectCharacteristics](SubjectCharacteristics.md)

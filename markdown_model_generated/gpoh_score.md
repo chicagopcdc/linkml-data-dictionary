@@ -2,7 +2,7 @@
 # Slot: gpoh_score
 
 
-
+A measure of an individual's overall performance status or ability to perform their activities of daily living.
 
 URI: [https://w3id.org/pcdc/model/gpoh_score](https://w3id.org/pcdc/model/gpoh_score)
 

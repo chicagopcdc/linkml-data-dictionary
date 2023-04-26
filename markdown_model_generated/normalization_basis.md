@@ -2,7 +2,7 @@
 # Slot: normalization_basis
 
 
-Normalization Basis
+An indication of what method was used to normalize the data.
 
 URI: [https://w3id.org/pcdc/model/normalization_basis](https://w3id.org/pcdc/model/normalization_basis)
 

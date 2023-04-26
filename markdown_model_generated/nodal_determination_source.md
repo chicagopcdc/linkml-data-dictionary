@@ -2,7 +2,7 @@
 # Slot: nodal_determination_source
 
 
-
+The source of the determination of regional lymph node involvement.
 
 URI: [https://w3id.org/pcdc/model/nodal_determination_source](https://w3id.org/pcdc/model/nodal_determination_source)
 
@@ -19,4 +19,4 @@ None &#8594;  <sub>0..1</sub> [NodalDeterminationSourceEnum](NodalDeterminationS
 
 ## Used by
 
- * [LesionCharacteristics](LesionCharacteristics.md)
+ * [TumorAssessment](TumorAssessment.md)

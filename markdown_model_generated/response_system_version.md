@@ -2,7 +2,7 @@
 # Slot: response_system_version
 
 
-Response Criteria Version
+The version of the response system.
 
 URI: [https://w3id.org/pcdc/model/response_system_version](https://w3id.org/pcdc/model/response_system_version)
 

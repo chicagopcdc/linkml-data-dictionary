@@ -2,7 +2,7 @@
 # Slot: age_at_txassign
 
 
-The age (in days) of the subject at the time that this treartment was assigned.
+Age in Days at Treatment Assignment
 
 URI: [https://w3id.org/pcdc/model/age_at_txassign](https://w3id.org/pcdc/model/age_at_txassign)
 
@@ -19,4 +19,4 @@ None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
 
 ## Used by
 
- * [Timing](Timing.md)
+ * [TimePeriod](TimePeriod.md)

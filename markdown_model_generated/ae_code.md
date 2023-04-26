@@ -2,7 +2,7 @@
 # Slot: ae_code
 
 
-Adverse Event Coded
+The code of the adverse event.
 
 URI: [https://w3id.org/pcdc/model/ae_code](https://w3id.org/pcdc/model/ae_code)
 

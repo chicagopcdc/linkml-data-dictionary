@@ -2,7 +2,7 @@
 # Slot: number_nodes
 
 
-Involved Lymph Nodes Single or Multiple
+A question whether an individual has a single or multiple lymph nodes involved.
 
 URI: [https://w3id.org/pcdc/model/number_nodes](https://w3id.org/pcdc/model/number_nodes)
 

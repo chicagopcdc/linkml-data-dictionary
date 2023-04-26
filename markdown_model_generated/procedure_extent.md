@@ -2,7 +2,7 @@
 # Slot: procedure_extent
 
 
-Procedure Extent
+The degree to which the lesion has been cut out, or resected.
 
 URI: [https://w3id.org/pcdc/model/procedure_extent](https://w3id.org/pcdc/model/procedure_extent)
 

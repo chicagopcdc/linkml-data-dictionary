@@ -2,7 +2,7 @@
 # Slot: age_at_staging
 
 
-Age in Days of Staging Assessment
+The age (in days) of the subject at the time of this staging assessment.
 
 URI: [https://w3id.org/pcdc/model/age_at_staging](https://w3id.org/pcdc/model/age_at_staging)
 

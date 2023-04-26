@@ -2,14 +2,14 @@
 # Slot: necrosis_pct
 
 
-Tumor Necrosis (%)
+A numeric measurement of the percent of cells undergoing necrosis compared to the number of total cells present in a sample.
 
 URI: [https://w3id.org/pcdc/model/necrosis_pct](https://w3id.org/pcdc/model/necrosis_pct)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
+None &#8594;  <sub>0..1</sub> [Decimal](types/Decimal.md)
 
 ## Parents
 
@@ -19,5 +19,4 @@ None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
 
 ## Used by
 
- * [LesionCharacteristics](LesionCharacteristics.md)
  * [SubjectResponse](SubjectResponse.md)

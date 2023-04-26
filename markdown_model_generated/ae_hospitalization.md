@@ -2,7 +2,7 @@
 # Slot: ae_hospitalization
 
 
-Adverse Event Associated with Hospitalization
+An indication or description that an adverse event is associated with or prolongs hospitalization.
 
 URI: [https://w3id.org/pcdc/model/ae_hospitalization](https://w3id.org/pcdc/model/ae_hospitalization)
 

@@ -2,7 +2,7 @@
 # Slot: nodal_site
 
 
-
+The anatomic site of a tumor node.
 
 URI: [https://w3id.org/pcdc/model/nodal_site](https://w3id.org/pcdc/model/nodal_site)
 
@@ -19,4 +19,4 @@ None &#8594;  <sub>0..1</sub> [NodalSiteEnum](NodalSiteEnum.md)
 
 ## Used by
 
- * [LesionCharacteristics](LesionCharacteristics.md)
+ * [TumorAssessment](TumorAssessment.md)

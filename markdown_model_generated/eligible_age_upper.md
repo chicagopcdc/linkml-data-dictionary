@@ -2,7 +2,7 @@
 # Slot: eligible_age_upper
 
 
-Upper Age Range of Child Rater
+The upper age range of the child for an evaluation tool.
 
 URI: [https://w3id.org/pcdc/model/eligible_age_upper](https://w3id.org/pcdc/model/eligible_age_upper)
 

@@ -2,7 +2,7 @@
 # Slot: eligible_age_lower
 
 
-Lower Age Range of Child Rater
+The low age range of the child for an evaluation tool.
 
 URI: [https://w3id.org/pcdc/model/eligible_age_lower](https://w3id.org/pcdc/model/eligible_age_lower)
 

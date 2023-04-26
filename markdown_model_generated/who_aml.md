@@ -2,7 +2,7 @@
 # Slot: who_aml
 
 
-WHO AML Classification of Tumors
+A classification of acute myeloid leukemia tumors by the World Health Organization (WHO).
 
 URI: [https://w3id.org/pcdc/model/who_aml](https://w3id.org/pcdc/model/who_aml)
 

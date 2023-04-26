@@ -2,7 +2,7 @@
 # Slot: ae_immune
 
 
-Immune Related Adverse Event
+An adverse event affecting the immune system.
 
 URI: [https://w3id.org/pcdc/model/ae_immune](https://w3id.org/pcdc/model/ae_immune)
 

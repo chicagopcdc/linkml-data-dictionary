@@ -9,7 +9,7 @@ URI: [https://w3id.org/pcdc/model/longest_diam_dim1](https://w3id.org/pcdc/model
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
+None &#8594;  <sub>0..1</sub> [Decimal](types/Decimal.md)
 
 ## Parents
 
@@ -19,4 +19,4 @@ None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
 
 ## Used by
 
- * [LesionCharacteristics](LesionCharacteristics.md)
+ * [TumorAssessment](TumorAssessment.md)

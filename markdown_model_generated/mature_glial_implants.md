@@ -2,7 +2,7 @@
 # Slot: mature_glial_implants
 
 
-Mature Glial Implants Present
+A nodule of mature glial tissue that develops in the peritoneum. It is usually accompanied by mature or immature ovarian teratoma.
 
 URI: [https://w3id.org/pcdc/model/mature_glial_implants](https://w3id.org/pcdc/model/mature_glial_implants)
 

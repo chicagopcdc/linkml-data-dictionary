@@ -2,7 +2,7 @@
 # Slot: age_at_sct
 
 
-Age in Days at Stem Cell Transplant
+The age (in days) of subject at the time of stem cell transplantation.
 
 URI: [https://w3id.org/pcdc/model/age_at_sct](https://w3id.org/pcdc/model/age_at_sct)
 

@@ -2,7 +2,7 @@
 # Slot: orthopedic_procedure
 
 
-Avascular Necrosis Orthopedic Procedures
+Orthopedic procedures to repair avascular necrosis.
 
 URI: [https://w3id.org/pcdc/model/orthopedic_procedure](https://w3id.org/pcdc/model/orthopedic_procedure)
 

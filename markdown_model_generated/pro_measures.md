@@ -2,7 +2,7 @@
 # Slot: pro_measures
 
 
-PRO Measures
+Survey measures that are completed by the patient which help assess patient status with regards to pain, mobility, quality of life, ability to perform daily tasks or notable events in a clinical study.
 
 URI: [https://w3id.org/pcdc/model/pro_measures](https://w3id.org/pcdc/model/pro_measures)
 

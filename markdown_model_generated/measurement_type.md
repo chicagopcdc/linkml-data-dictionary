@@ -19,4 +19,6 @@ None &#8594;  <sub>0..1</sub> [MeasurementTypeEnum](MeasurementTypeEnum.md)
 
 ## Used by
 
+ * [FunctionTest](FunctionTest.md)
+ * [SubjectResponse](SubjectResponse.md)
  * [VitalsAndAnthropometrics](VitalsAndAnthropometrics.md)

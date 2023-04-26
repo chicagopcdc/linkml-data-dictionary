@@ -16,6 +16,9 @@ URI: [https://w3id.org/pcdc/model/NonProtocolReasonEnum](https://w3id.org/pcdc/m
 
 | Text | Description | Meaning | Other Information |
 | :--- | :---: | :---: | ---: |
-| Treatment for Adverse Event |  | ncit:C88082 |  |
-| Other | Different than the one(s) previously specified or mentioned. | ncit:C17649 |  |
+| Prevention of Adverse Event | Practices or interventions to prevent an adverse event. | ncit:C185654 |  |
+| Stem Cell Mobilization | Therapy to cause release of stem cells from the bone marrow into the peripheral blood circulation for the purpose of collection. | ncit:C62604 |  |
+| Treatment for Adverse Event | Treatment administered to patients experiencing adverse events. | ncit:C88082 |  |
+| Unknown | Reported as unknown by the data contributor. | ncit:C17998 |  |
+| Not Reported | Not provided or available. | ncit:C43234 |  |
 

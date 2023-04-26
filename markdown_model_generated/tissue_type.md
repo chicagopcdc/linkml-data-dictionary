@@ -9,7 +9,7 @@ URI: [https://w3id.org/pcdc/model/tissue_type](https://w3id.org/pcdc/model/tissu
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [BoneNotreportedSofttissueUnknownEnum](BoneNotreportedSofttissueUnknownEnum.md)
+None &#8594;  <sub>0..1</sub> [TissueTypeEnum](TissueTypeEnum.md)
 
 ## Parents
 
@@ -19,4 +19,6 @@ None &#8594;  <sub>0..1</sub> [BoneNotreportedSofttissueUnknownEnum](BoneNotrepo
 
 ## Used by
 
- * [LesionCharacteristics](LesionCharacteristics.md)
+ * [BiopsyAndSurgicalProcedures](BiopsyAndSurgicalProcedures.md)
+ * [RadiationTherapy](RadiationTherapy.md)
+ * [TumorAssessment](TumorAssessment.md)

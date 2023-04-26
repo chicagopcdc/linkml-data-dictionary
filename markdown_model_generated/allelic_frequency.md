@@ -2,14 +2,14 @@
 # Slot: allelic_frequency
 
 
-The incidence of this mutation in a population (%).
+The incidence of this mutation in the tumor (%).
 
 URI: [https://w3id.org/pcdc/model/allelic_frequency](https://w3id.org/pcdc/model/allelic_frequency)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
+None &#8594;  <sub>0..1</sub> [Decimal](types/Decimal.md)
 
 ## Parents
 

@@ -7,7 +7,7 @@ disallowed_vals_in_name = ["%", "?"]
 
 
 def load_from_json(
-    json_data: str = "data_ingestion_to_linkml/test_json_data/master.json",
+    json_data: str = "data_ingestion_to_linkml/test_json_data/Aggregated.json",
 ) -> None:
     """
     Load data from a json file that contains all data dicitonary data and
@@ -31,24 +31,17 @@ def load_from_json(
     Everything else is named the same as its key in the json
     (under protocol, demographics, testing, etc.)
     """
-    subject = data["domains"]["protocol"]["subject_characteristics"]
-    timing = {
-        **data["domains"]["protocol"]["disease_phase_timing"],
-        **data["domains"]["protocol"]["course_timing"],
-    }
-    person = data["domains"]["demographics"]["demographics"]
+    subject = data["domains"]["Protocol"]["Subject Characteristics"]
+    person = data["domains"]["Demographics"]["Demographics"]
 
     data_class_mapping = {
         "Person": person,
         "Subject": subject,
-        "Timing": timing,
     }
 
     manually_named = [
-        "subject_charcteristics",
-        "disease_phase_timing",
-        "course_timing",
-        "demographics",
+        "Subject Characteristics",
+        "Demographics",
     ]
 
     for key in data["domains"]:
@@ -69,7 +62,7 @@ def load_from_json(
                 "required": True,
             }
 
-    write_filename = f"data_ingestion_to_linkml/output_linkml_yaml/data_dictionary_spreadsheet_{data['meta']['spreadsheet_id']}.yaml"
+    write_filename = f"data_ingestion_to_linkml/output_linkml_yaml/data_dictionary_spreadsheet_{data['meta']['sheet_id']}_{data['meta']['timestamp']}.yaml"
     with open(write_filename, "w") as f:
         data = yaml.dump(python_linkml_struct, f, sort_keys=False)
 
@@ -83,7 +76,7 @@ def get_base_linkml_struct() -> Dict:
         base_struct (dict): templated dictionary with all of the unchanging information
     """
     # TODO: figure out a versioning scheme so everything isn't 0.0.1
-    # TODO: figure out proper prefixing behavior (HGNC and SO show up diff from ncit in Python)
+    # TODO: locate ICDO endpoint that will allow for code lookup when it exists (currently just points to WHO page)
     base_struct = {
         "id": "https://w3id.org/pcdc/model",
         "title": "LinkML Data Dictionary Model",
@@ -95,7 +88,8 @@ def get_base_linkml_struct() -> Dict:
             "ncit": "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=",
             "pcdc": "https://w3id.org/pcdc/model",
             "HGNC": "https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:",
-            "SO": "http://http://www.sequenceontology.org/browser/current_release/term/SO:",
+            "SO": "http://www.sequenceontology.org/browser/current_release/term/SO:",
+            "icdo": "https://www.who.int/standards/classifications/other-classifications/international-classification-of-diseases-for-oncology/",
         },
         "default_curi_maps": [
             "semweb_context",
@@ -120,7 +114,7 @@ def get_base_linkml_struct() -> Dict:
                 "range": "Subject",
                 "required": True,
             },
-            "timings": {"range": "Timing", "required": False},
+            "time_periods": {"range": "Time Period", "required": False},
         },
         "enums": {},
     }
@@ -147,21 +141,14 @@ def create_class(base_struct: Dict, classname: str, data: Dict) -> Dict:
         "slot_usage": {},
         "attributes": {},
     }
-    timing_slot_mapping = [
-        "disease_phase",
-        "disease_phase_number",
-        "course",
-        "course_number",
-        "age_at_disease_phase",
-        "year_at_disease_phase",
-        "age_at_course_start",
-        "age_at_course_end",
-        "age_at_tx_assign",
-        "age_at_course_anc_500",
-        "cycle_number",
-        "age_at_cycle_start",
-        "age_at_cycle_end",
-    ]
+
+    # all classes take a slot for subjects except for this group
+    non_subject_classes = ["Thing", "Person", "Subject"]
+
+    # these keys in json should not be turned into slots, they are represented
+    # through other objects and self referencing
+    unused_slots = ["protocol", "submitter_id", "parent_submitter_id"]
+
     for key in data.keys():
         slot_name = key.lower()
         valid_slot_name = True
@@ -172,23 +159,23 @@ def create_class(base_struct: Dict, classname: str, data: Dict) -> Dict:
                 valid_slot_name = False
         if (
             slot_name not in base_struct["slots"].keys()
-            and slot_name != "protocol"
-            and (slot_name not in timing_slot_mapping or classname == "Timing")
+            and slot_name not in unused_slots
+            and slot_name != "time_period_submitter_id"
             and valid_slot_name
         ):
             new_slot = create_slot(base_struct, slot_name, data[key])
             base_struct["slots"][slot_name] = new_slot
-        elif slot_name in timing_slot_mapping and classname != "Timing":
-            if "timings" not in base_struct["classes"][classname]["slots"]:
-                base_struct["classes"][classname]["slots"].append("timings")
-        if slot_name != "protocol" and valid_slot_name:
+        elif slot_name == "time_period_submitter_id":
+            slot_name = "time_periods"
+        if slot_name not in unused_slots and valid_slot_name:
             base_struct["classes"][classname]["slots"].append(slot_name)
 
     # Need to manually add subjects slot for fmh and timing
-    if classname == "FamilyMedicalHistory" or classname == "Timing":
+    if classname == "Time Period":
+        base_struct["classes"][classname]["slots"].append("time_periods")
+
+    if classname not in non_subject_classes:
         base_struct["classes"][classname]["slots"].append("subjects")
-        if classname == "Timing":
-            base_struct["classes"][classname]["slots"].append("timings")
 
     return base_struct
 
@@ -215,9 +202,9 @@ def create_slot(base_struct: Dict, slot_name: str, slot_data: Dict) -> Dict:
         )
         new_slot_dict["range"] = new_enum_name
     else:
-        if slot_data["data_type"].lower() != "string":
-            new_slot_dict["range"] = slot_data["data_type"].lower()
-    new_slot_dict["description"] = slot_data["variable_description"]
+        if slot_data["type"].lower() != "string":
+            new_slot_dict["range"] = slot_data["type"].lower()
+    new_slot_dict["description"] = slot_data["description"]
     return new_slot_dict
 
 
@@ -264,28 +251,52 @@ def create_enum(
             base_struct, permissible_values, enum_name
         )
         if not match_exists:
-            for key in permissible_values.keys():
-                desc = permissible_values[key]["value_description"]
-                meaning = permissible_values[key]["value_code"][0]
-                if desc == "" and meaning == "":
-                    continue
-                elif meaning == "":
-                    enum_dict["permissible_values"][str(key)] = {
-                        "description": desc
-                    }
-                elif desc == "":
-                    enum_dict["permissible_values"][str(key)] = {
-                        "meaning": meaning,
-                    }
-                else:
-                    enum_dict["permissible_values"][str(key)] = {
-                        "description": desc,
-                        "meaning": meaning,
-                    }
+            enum_dict = parse_description_and_meaning(
+                enum_dict, permissible_values
+            )
             base_struct["enums"][enum_name] = enum_dict
             return enum_name
         else:
             return new_name
+
+
+def parse_description_and_meaning(enum_dict, permissible_values):
+    for key in permissible_values.keys():
+        desc = permissible_values[key]["description"]
+        # TODO need to figure out how LINKML handles multiple codes
+        # in the meaning section, doesnt seem to want to handle a group when converting to python
+        # for now take the first ncit code if present, otherwise take the first code
+        meaning = permissible_values[key]["codes"].split("|")
+        if len(meaning) == 0:
+            meaning = ""
+        elif len(meaning) == 1:
+            meaning = meaning[0]
+        else:  # multiple codes, pick first ncit otherwise
+            selected_code = meaning[0]
+            for opt in meaning:
+                if opt[0:4] == "ncit":
+                    selected_code = opt
+                    break
+            meaning = selected_code
+
+        # need to handle case of typo in ncit/nict
+        if len(meaning) > 4:
+            if meaning[0:4] == "nict":
+                meaning = "ncit" + meaning[4:]
+        if desc == "" and meaning == "":
+            continue
+        elif meaning == "":
+            enum_dict["permissible_values"][str(key)] = {"description": desc}
+        elif desc == "":
+            enum_dict["permissible_values"][str(key)] = {
+                "meaning": meaning,
+            }
+        else:
+            enum_dict["permissible_values"][str(key)] = {
+                "description": desc,
+                "meaning": meaning,
+            }
+    return enum_dict
 
 
 def compare_enum_vals(

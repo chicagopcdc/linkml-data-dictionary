@@ -2,7 +2,7 @@
 # Slot: procedure_purpose
 
 
-Procedure Purpose
+The reason a procedure is performed.
 
 URI: [https://w3id.org/pcdc/model/procedure_purpose](https://w3id.org/pcdc/model/procedure_purpose)
 

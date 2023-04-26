@@ -2,7 +2,7 @@
 # Slot: raters
 
 
-Raters Allowed to Report
+Raters are allowed to report the patient reported outcomes.
 
 URI: [https://w3id.org/pcdc/model/raters](https://w3id.org/pcdc/model/raters)
 

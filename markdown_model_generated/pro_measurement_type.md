@@ -2,7 +2,7 @@
 # Slot: pro_measurement_type
 
 
-PRO Measurement Type
+The type of patient reported outcome measurement.
 
 URI: [https://w3id.org/pcdc/model/pro_measurement_type](https://w3id.org/pcdc/model/pro_measurement_type)
 

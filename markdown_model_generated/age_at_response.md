@@ -2,7 +2,7 @@
 # Slot: age_at_response
 
 
-Age in Days of Response Assessment
+The age (in days) of subject when the response assessment was made.
 
 URI: [https://w3id.org/pcdc/model/age_at_response](https://w3id.org/pcdc/model/age_at_response)
 

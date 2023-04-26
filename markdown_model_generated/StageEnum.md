@@ -16,6 +16,12 @@ URI: [https://w3id.org/pcdc/model/StageEnum](https://w3id.org/pcdc/model/StageEn
 
 | Text | Description | Meaning | Other Information |
 | :--- | :---: | :---: | ---: |
+| Modified Chang Staging, M0 | A distant metastasis TNM finding indicating that there is no evidence of distant metastasis. | ncit:C48699 |  |
+| Modified Chang Staging, M0 / M1 | Patients who don't have Cytology evaluation at staging but have no evidence of disease radiologically |  |  |
+| Modified Chang Staging, M1 | A clinical and/or pathologic distant metastasis TNM finding indicating the spread of cancer to distant anatomic sites. | ncit:C48700 |  |
+| Modified Chang Staging, M+ | Encompasses M1-M4 of Modified Chang Staging for instances where further details are not available |  |  |
+| Unknown | Reported as unknown by the data contributor. | ncit:C17998 |  |
+| Not Reported | Not provided or available. | ncit:C43234 |  |
 | INSS, Stage 1 | Localized tumor with complete gross excision, with or without microscopic residual disease; representative ipsilateral lymph nodes negative for tumor microscopically (i.e., nodes attached to and removed with the primary tumor may be positive). |  |  |
 | INSS, Stage 2A | Localized tumor with incomplete gross excision; representative ipsilateral nonadherent lymph nodes negative for tumor microscopically. |  |  |
 | INSS, Stage 2B | Localized tumor with or without complete gross excision, with ipsilateral nonadherent lymph nodes positive for tumor. Enlarged contralateral lymph nodes must be negative microscopically. |  |  |
@@ -51,6 +57,20 @@ URI: [https://w3id.org/pcdc/model/StageEnum](https://w3id.org/pcdc/model/StageEn
 | INRGSS, Stage L2 | Locoregional tumor with one or more IDRFs |  |  |
 | INRGSS, Stage M | Distant metastatic disease (except Ms) |  |  |
 | INRGSS, Stage Ms | INRG Stage L1 or L2 tumor with metastatic disease confined to skin and/or liver and/or bone marrow |  |  |
-| Unknown | Reported as unknown by the data contributor. | ncit:C17998 |  |
-| Not Reported | Not provided or available. | ncit:C43234 |  |
+| NOS, Stage 1 | Stage 1 but the staging system is not specified by the source data |  |  |
+| NOS, Stage 2 | Stage 2 but the staging system is not specified by the source data |  |  |
+| NOS, Stage 3 | Stage 3 but the staging system is not specified by the source data |  |  |
+| NOS, Stage 4 | Stage 4 but the staging system is not specified by the source data |  |  |
+| NOS, L1 | Stage L1 but the staging system is not specified by the source data |  |  |
+| NOS, L2 | Stage L2 but the staging system is not specified by the source data |  |  |
+| NOS, M | Stage M but the staging system is not specified by the source data |  |  |
+| NOS, MS | Stage MS but the staging system is not specified by the source data |  |  |
+| Other | Different than the one(s) previously specified or mentioned. | ncit:C17649 |  |
+| INSS, Stage 2a | Localized tumor with incomplete gross excision; representative ipsilateral nonadherent lymph nodes negative for tumor microscopically. |  |  |
+| INSS, Stage 2b | Localized tumor with or without complete gross excision, with ipsilateral nonadherent lymph nodes positive for tumor. Enlarged contralateral lymph nodes must be negative microscopically. |  |  |
+| INSS, Stage 4s | Localized primary tumor, as defined for stage 1, 2A, or 2B, with dissemination limited to skin, liver, and/or bone marrow (by definition limited to infants younger than 12 months). Marrow involvement should be minimal (i.e., <10% of total nucleated cells identified as malignant by bone biopsy or by bone marrow aspirate). More extensive bone marrow involvement would be considered stage 4 disease. The results of the MIBG scan, if performed, should be negative for disease in the bone marrow. |  |  |
+| Evans, Stage I | The tumor is completely resected. |  |  |
+| Evans, Stage II | Microscopic residual tumor remains after resection. |  |  |
+| Evans, Stage III | There are no distant metastases and at least one of the following is true: (1) the tumor is either unresectable or the tumor is resected with gross residual tumor; (2) there are positive extrahepatic lymph nodes. |  |  |
+| Evans, Stage IV | There is distant metastasis, regardless of the extent of liver involvement. |  |  |
 

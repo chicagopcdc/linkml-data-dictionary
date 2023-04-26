@@ -2,14 +2,14 @@
 # Slot: boost_dose
 
 
-Boost Dose
+The dose amount of the radiation boost.
 
 URI: [https://w3id.org/pcdc/model/boost_dose](https://w3id.org/pcdc/model/boost_dose)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
+None &#8594;  <sub>0..1</sub> [Decimal](types/Decimal.md)
 
 ## Parents
 

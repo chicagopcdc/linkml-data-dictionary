@@ -22,4 +22,5 @@ URI: [https://w3id.org/pcdc/model/RelationEnum](https://w3id.org/pcdc/model/Rela
 | Sister | A female who shares with her sibling the genetic makeup inherited from one or both of their shared biological parents. | ncit:C96586 |  |
 | Son | A male progeny with genetic makeup inherited from the parent. | ncit:C150888 |  |
 | Daughter | A female progeny with genetic makeup inherited from the parent. | ncit:C150887 |  |
+| Other | Different than the one(s) previously specified or mentioned. | ncit:C17649 |  |
 

@@ -2,7 +2,7 @@
 # Slot: specimen
 
 
-The biological specimen of the subject used for the laboratory test.
+The type of specimen analyzed.
 
 URI: [https://w3id.org/pcdc/model/specimen](https://w3id.org/pcdc/model/specimen)
 
@@ -20,4 +20,5 @@ None &#8594;  <sub>0..1</sub> [SpecimenEnum](SpecimenEnum.md)
 ## Used by
 
  * [GeneticAnalysis](GeneticAnalysis.md)
+ * [Immunohistochemistry](Immunohistochemistry.md)
  * [LaboratoryTest](LaboratoryTest.md)

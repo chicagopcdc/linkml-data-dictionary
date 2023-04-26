@@ -2,7 +2,7 @@
 # Slot: depth
 
 
-The extent downward or inward; the perpendicular measurement from the surface downward to determine deepness.
+The depth of the tumor.
 
 URI: [https://w3id.org/pcdc/model/depth](https://w3id.org/pcdc/model/depth)
 
@@ -19,4 +19,4 @@ None &#8594;  <sub>0..1</sub> [DepthEnum](DepthEnum.md)
 
 ## Used by
 
- * [LesionCharacteristics](LesionCharacteristics.md)
+ * [TumorAssessment](TumorAssessment.md)

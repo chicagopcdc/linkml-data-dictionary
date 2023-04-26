@@ -19,4 +19,5 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Used by
 
+ * [GeneticAnalysis](GeneticAnalysis.md)
  * [LaboratoryTest](LaboratoryTest.md)

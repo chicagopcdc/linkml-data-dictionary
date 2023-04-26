@@ -2,7 +2,7 @@
 # Slot: avn_method
 
 
-Avascular Necrosis Method of Evaluation
+The method used to determine the diagnosis of the avascular necrosis.
 
 URI: [https://w3id.org/pcdc/model/avn_method](https://w3id.org/pcdc/model/avn_method)
 

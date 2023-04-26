@@ -2,7 +2,7 @@
 # Slot: consortium
 
 
-The disease consortium to which the data contributor belongs.
+The consortium under which this data is being contributed to the Pediatric Cancer Data Commons.
 
 URI: [https://w3id.org/pcdc/model/consortium](https://w3id.org/pcdc/model/consortium)
 
@@ -20,4 +20,3 @@ None &#8594;  <sub>0..1</sub> [ConsortiumEnum](ConsortiumEnum.md)
 ## Used by
 
  * [Subject](Subject.md)
- * [SubjectCharacteristics](SubjectCharacteristics.md)

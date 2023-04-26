@@ -2,7 +2,7 @@
 # Slot: toxicity_immune
 
 
-Immune Related Toxicity
+Toxicity that impairs or damages the immune system.
 
 URI: [https://w3id.org/pcdc/model/toxicity_immune](https://w3id.org/pcdc/model/toxicity_immune)
 

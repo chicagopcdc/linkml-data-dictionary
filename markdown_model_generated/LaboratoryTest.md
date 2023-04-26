@@ -1,5 +1,5 @@
 
-# Class: LaboratoryTest
+# Class: Laboratory Test
 
 
 
@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/LaboratoryTest](https://w3id.org/pcdc/model/LaboratoryTest)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Timing],[Thing],[Timing]<timings%200..1-++[LaboratoryTest&#124;age_at_lab:integer%20%3F;disease_phase:DiseasePhaseEnum%20%3F;disease_phase_number:integer%20%3F;course:CourseEnum%20%3F;course_number:integer%20%3F;lab_category:LabCategoryEnum%20%3F;lab_test:LabTestEnum%20%3F;lab_test_other:string%20%3F;specimen:SpecimenEnum%20%3F;specimen_other:string%20%3F;lab_result:string%20%3F;lab_result_categorical:LabResultCategoricalEnum%20%3F;lab_result_numeric:integer%20%3F;lab_result_unit:LabResultUnitEnum%20%3F;lab_method:LabMethodEnum%20%3F;lab_seq_method:LabSeqMethodEnum%20%3F;threshold_high:integer%20%3F;threshold_low:integer%20%3F;pmid_ref:integer%20%3F;bm_morphology:BmMorphologyEnum%20%3F;traumatic_tap:NoNotreportedUnknownYesEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[LaboratoryTest])](https://yuml.me/diagram/nofunky;dir:TB/class/[Timing],[Thing],[Timing]<timings%200..1-++[LaboratoryTest&#124;age_at_lab:integer%20%3F;disease_phase:DiseasePhaseEnum%20%3F;disease_phase_number:integer%20%3F;course:CourseEnum%20%3F;course_number:integer%20%3F;lab_category:LabCategoryEnum%20%3F;lab_test:LabTestEnum%20%3F;lab_test_other:string%20%3F;specimen:SpecimenEnum%20%3F;specimen_other:string%20%3F;lab_result:string%20%3F;lab_result_categorical:LabResultCategoricalEnum%20%3F;lab_result_numeric:integer%20%3F;lab_result_unit:LabResultUnitEnum%20%3F;lab_method:LabMethodEnum%20%3F;lab_seq_method:LabSeqMethodEnum%20%3F;threshold_high:integer%20%3F;threshold_low:integer%20%3F;pmid_ref:integer%20%3F;bm_morphology:BmMorphologyEnum%20%3F;traumatic_tap:NoNotreportedUnknownYesEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[LaboratoryTest])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[LaboratoryTest&#124;age_at_lab:integer%20%3F;category:CategoryEnum%20%3F;test:TestEnum%20%3F;specimen:SpecimenEnum%20%3F;specimen_other:string%20%3F;method:MethodEnum%20%3F;method_other:string%20%3F;result_text:string%20%3F;result_numeric:decimal%20%3F;result_unit:ResultUnitEnum%20%3F;traumatic_tap:NoNotreportedUnknownYesEnum%20%3F;bm_morphology:BmMorphologyEnum%20%3F;result:NegativeNotreportedPositiveUnknownEnum%20%3F;threshold_level:ThresholdLevelEnum%20%3F;threshold_high:decimal%20%3F;thredhold_low:decimal%20%3F;seq_method:SeqMethodEnum%20%3F;threshold_low:decimal%20%3F;pmid_ref:decimal%20%3F;malignant_cells:AbsentNotreportedPresentUnknownEnum%20%3F;course_timepoint:CourseTimepointEnum%20%3F;test_other:string%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[LaboratoryTest],[Thing]^-[LaboratoryTest])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[LaboratoryTest&#124;age_at_lab:integer%20%3F;category:CategoryEnum%20%3F;test:TestEnum%20%3F;specimen:SpecimenEnum%20%3F;specimen_other:string%20%3F;method:MethodEnum%20%3F;method_other:string%20%3F;result_text:string%20%3F;result_numeric:decimal%20%3F;result_unit:ResultUnitEnum%20%3F;traumatic_tap:NoNotreportedUnknownYesEnum%20%3F;bm_morphology:BmMorphologyEnum%20%3F;result:NegativeNotreportedPositiveUnknownEnum%20%3F;threshold_level:ThresholdLevelEnum%20%3F;threshold_high:decimal%20%3F;thredhold_low:decimal%20%3F;seq_method:SeqMethodEnum%20%3F;threshold_low:decimal%20%3F;pmid_ref:decimal%20%3F;malignant_cells:AbsentNotreportedPresentUnknownEnum%20%3F;course_timepoint:CourseTimepointEnum%20%3F;test_other:string%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[LaboratoryTest],[Thing]^-[LaboratoryTest])
 
 ## Parents
 
@@ -21,67 +21,73 @@ URI: [https://w3id.org/pcdc/model/LaboratoryTest](https://w3id.org/pcdc/model/La
  * [age_at_lab](age_at_lab.md)  <sub>0..1</sub>
      * Description: The age (in days) of the subject at the time of the laboratory test.
      * Range: [Integer](types/Integer.md)
- * [timings](timings.md)  <sub>0..1</sub>
-     * Range: [Timing](Timing.md)
- * [disease_phase](disease_phase.md)  <sub>0..1</sub>
-     * Description: The phase of the cancer treatment process during which relevant observations were recorded. This variable is used across domains to frame the timing of these longitudinal observations and reduce the number of redundant variables needed to report similar concepts (see "Disease Phase Timing and Course Table" in the documentation for additional guidance).
-     * Range: [DiseasePhaseEnum](DiseasePhaseEnum.md)
- * [disease_phase_number](disease_phase_number.md)  <sub>0..1</sub>
-     * Description: This variable indicates the ordinal numbering of the Disease Phase variable within its various subgroups (e.g., Relapse 1, Relapse 2, Relapse 3, etc.). The observations across domains can therefore be organized longitudinally without the need for specific dates.
-     * Range: [Integer](types/Integer.md)
- * [course](course.md)  <sub>0..1</sub>
-     * Description: The protocol treatment "course" during which relevant observations were recorded. This variable is used across domains to frame the timing of these longitudinal observations and reduce the number of redundant variables needed to report similar concepts (see "Disease Phase Timing and Course Table" in the documentation for additional guidance).
-     * Range: [CourseEnum](CourseEnum.md)
- * [course_number](course_number.md)  <sub>0..1</sub>
-     * Description: This variable indicates the ordinal numbering of the Course variable within its various subgroups (e.g., Induction 1, Induction 2, Induction 3, etc.). The observations across domains can therefore be organized longitudinally without the need for specific dates.
-     * Range: [Integer](types/Integer.md)
- * [lab_category](lab_category.md)  <sub>0..1</sub>
+ * [time_periods](time_periods.md)  <sub>0..1</sub>
+     * Range: [TimePeriod](TimePeriod.md)
+ * [category](category.md)  <sub>0..1</sub>
      * Description: The category of laboratory test performed on the subject.
-     * Range: [LabCategoryEnum](LabCategoryEnum.md)
- * [lab_test](lab_test.md)  <sub>0..1</sub>
+     * Range: [CategoryEnum](CategoryEnum.md)
+ * [test](test.md)  <sub>0..1</sub>
      * Description: A medical procedure that involves testing a sample of blood, urine, or other substance from the body. Laboratory tests can help determine a diagnosis, plan treatment, check to see if treatment is working, or monitor the disease over time Source: NCI Dictionary of Cancer Terms)
-     * Range: [LabTestEnum](LabTestEnum.md)
- * [lab_test_other](lab_test_other.md)  <sub>0..1</sub>
-     * Description: Specify the "Other" LAB_TEST
-     * Range: [String](types/String.md)
+     * Range: [TestEnum](TestEnum.md)
  * [specimen](specimen.md)  <sub>0..1</sub>
-     * Description: The biological specimen of the subject used for the laboratory test. 
+     * Description: The type of specimen analyzed.
      * Range: [SpecimenEnum](SpecimenEnum.md)
  * [specimen_other](specimen_other.md)  <sub>0..1</sub>
      * Description: Specify the "Other" SPECIMEN
      * Range: [String](types/String.md)
- * [lab_result](lab_result.md)  <sub>0..1</sub>
+ * [method](method.md)  <sub>0..1</sub>
+     * Description: A systematic course of action that is performed in order to complete a laboratory test.
+     * Range: [MethodEnum](MethodEnum.md)
+ * [method_other](method_other.md)  <sub>0..1</sub>
+     * Description: Specify the "Other" LAB_METHOD
+     * Range: [String](types/String.md)
+ * [result_text](result_text.md)  <sub>0..1</sub>
      * Description: The string/text result of the laboratory test.
      * Range: [String](types/String.md)
- * [lab_result_categorical](lab_result_categorical.md)  <sub>0..1</sub>
-     * Range: [LabResultCategoricalEnum](LabResultCategoricalEnum.md)
- * [lab_result_numeric](lab_result_numeric.md)  <sub>0..1</sub>
+ * [result_numeric](result_numeric.md)  <sub>0..1</sub>
      * Description: The numeric result of the laboratory test.
-     * Range: [Integer](types/Integer.md)
- * [lab_result_unit](lab_result_unit.md)  <sub>0..1</sub>
-     * Description: The units used for the numeric result of the laboratory test,
-     * Range: [LabResultUnitEnum](LabResultUnitEnum.md)
- * [lab_method](lab_method.md)  <sub>0..1</sub>
-     * Description: A systematic course of action that is performed in order to complete a laboratory test.
-     * Range: [LabMethodEnum](LabMethodEnum.md)
- * [lab_seq_method](lab_seq_method.md)  <sub>0..1</sub>
-     * Description: The number of molecules of a particular type on or in a cell or part of a cell. Usually applied to specific genes or to plasmids within a bacterium.
-     * Range: [LabSeqMethodEnum](LabSeqMethodEnum.md)
+     * Range: [Decimal](types/Decimal.md)
+ * [result_unit](result_unit.md)  <sub>0..1</sub>
+     * Description: The units used for the numeric result of the laboratory test.
+     * Range: [ResultUnitEnum](ResultUnitEnum.md)
+ * [traumatic_tap](traumatic_tap.md)  <sub>0..1</sub>
+     * Description: Contamination of a cerebrospinal fluid sample by red blood cells greater than 10/mm3.
+     * Range: [NoNotreportedUnknownYesEnum](NoNotreportedUnknownYesEnum.md)
+ * [bm_morphology](bm_morphology.md)  <sub>0..1</sub>
+     * Description: The morphology of bone marrow blasts.
+     * Range: [BmMorphologyEnum](BmMorphologyEnum.md)
+ * [result](result.md)  <sub>0..1</sub>
+     * Description: The text result of the laboratory test.
+     * Range: [NegativeNotreportedPositiveUnknownEnum](NegativeNotreportedPositiveUnknownEnum.md)
+ * [threshold_level](threshold_level.md)  <sub>0..1</sub>
+     * Description: The point at which a psychological or physiological effect begins to be produced.
+     * Range: [ThresholdLevelEnum](ThresholdLevelEnum.md)
  * [threshold_high](threshold_high.md)  <sub>0..1</sub>
      * Description: The maximum level that must be exceeded for a certain reaction to occur or be manifested.
-     * Range: [Integer](types/Integer.md)
+     * Range: [Decimal](types/Decimal.md)
+ * [thredhold_low](thredhold_low.md)  <sub>0..1</sub>
+     * Description: The minimum level that must be attained for a certain reaction to occur or be manifested.
+     * Range: [Decimal](types/Decimal.md)
+ * [seq_method](seq_method.md)  <sub>0..1</sub>
+     * Description: Quantitative Sequencing Method
+     * Range: [SeqMethodEnum](SeqMethodEnum.md)
  * [threshold_low](threshold_low.md)  <sub>0..1</sub>
      * Description: The minimum level that must be attained for a certain reaction to occur or be manifested.
-     * Range: [Integer](types/Integer.md)
+     * Range: [Decimal](types/Decimal.md)
  * [pmid_ref](pmid_ref.md)  <sub>0..1</sub>
      * Description: A globally unique identifier for a biomedical article, as assigned by PubMed.
-     * Range: [Integer](types/Integer.md)
- * [bm_morphology](bm_morphology.md)  <sub>0..1</sub>
-     * Description: The morphology of bone marrow blasts 
-     * Range: [BmMorphologyEnum](BmMorphologyEnum.md)
- * [traumatic_tap](traumatic_tap.md)  <sub>0..1</sub>
-     * Description: Was the lumbar puncture artifically contaminated by peripheral blood?
-     * Range: [NoNotreportedUnknownYesEnum](NoNotreportedUnknownYesEnum.md)
+     * Range: [Decimal](types/Decimal.md)
+ * [malignant_cells](malignant_cells.md)  <sub>0..1</sub>
+     * Description: A term used to describe cancer. Malignant cells grow in an uncontrolled way and can invade nearby tissues and spread to other parts of the body through the blood and lymph system (Source: NCI Dictionary of Cancer Terms)
+     * Range: [AbsentNotreportedPresentUnknownEnum](AbsentNotreportedPresentUnknownEnum.md)
+ * [course_timepoint](course_timepoint.md)  <sub>0..1</sub>
+     * Description: This variable gives more precise granularity to when an observation occured during the period of the indicated "Course" TIME_PERIOD
+     * Range: [CourseTimepointEnum](CourseTimepointEnum.md)
+ * [test_other](test_other.md)  <sub>0..1</sub>
+     * Description: Specify the "Other" LAB_TEST
+     * Range: [String](types/String.md)
+ * [subjects](subjects.md)  <sub>1..\*</sub>
+     * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:
 

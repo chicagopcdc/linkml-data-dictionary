@@ -2,7 +2,7 @@
 # Slot: reason_off
 
 
-What was the reason that the subject went off of a study or off of a certain protocol therapy?
+The reason a subject went off the therapy or study.
 
 URI: [https://w3id.org/pcdc/model/reason_off](https://w3id.org/pcdc/model/reason_off)
 

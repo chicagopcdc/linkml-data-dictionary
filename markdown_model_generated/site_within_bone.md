@@ -19,4 +19,4 @@ None &#8594;  <sub>0..1</sub> [SiteWithinBoneEnum](SiteWithinBoneEnum.md)
 
 ## Used by
 
- * [LesionCharacteristics](LesionCharacteristics.md)
+ * [TumorAssessment](TumorAssessment.md)

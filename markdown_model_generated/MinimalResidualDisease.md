@@ -1,5 +1,5 @@
 
-# Class: MinimalResidualDisease
+# Class: Minimal Residual Disease
 
 
 
@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/MinimalResidualDisease](https://w3id.org/pcdc/model/MinimalResidualDisease)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Timing],[Thing],[Timing]<timings%200..1-++[MinimalResidualDisease&#124;age_at_mrd_assessment:integer%20%3F;disease_phase:DiseasePhaseEnum%20%3F;disease_phase_number:integer%20%3F;course:CourseEnum%20%3F;course_number:integer%20%3F;mrd_method:MrdMethodEnum%20%3F;flow_cytometry_type:FlowCytometryTypeEnum%20%3F;mrd_result:string%20%3F;mrd_result_numeric:integer%20%3F;mrd_result_unit:NotreportedUnknownEnum%20%3F;mrd_sensitivty:integer%20%3F;mrd_sample_source:MrdSampleSourceEnum%20%3F;mrd_molecular_markers:MrdMolecularMarkersEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[MinimalResidualDisease])](https://yuml.me/diagram/nofunky;dir:TB/class/[Timing],[Thing],[Timing]<timings%200..1-++[MinimalResidualDisease&#124;age_at_mrd_assessment:integer%20%3F;disease_phase:DiseasePhaseEnum%20%3F;disease_phase_number:integer%20%3F;course:CourseEnum%20%3F;course_number:integer%20%3F;mrd_method:MrdMethodEnum%20%3F;flow_cytometry_type:FlowCytometryTypeEnum%20%3F;mrd_result:string%20%3F;mrd_result_numeric:integer%20%3F;mrd_result_unit:NotreportedUnknownEnum%20%3F;mrd_sensitivty:integer%20%3F;mrd_sample_source:MrdSampleSourceEnum%20%3F;mrd_molecular_markers:MrdMolecularMarkersEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[MinimalResidualDisease])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[MinimalResidualDisease&#124;age_at_mrd_assessment:integer%20%3F;method:MethodEnum%20%3F;result_text:string%20%3F;result_numeric:decimal%20%3F;result_unit:ResultUnitEnum%20%3F;sensitivity:decimal%20%3F;sample_source:SampleSourceEnum%20%3F;method_other:string%20%3F;molecular_markers:MolecularMarkersEnum%20%3F;molecular_markers_other:string%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[MinimalResidualDisease],[Thing]^-[MinimalResidualDisease])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[MinimalResidualDisease&#124;age_at_mrd_assessment:integer%20%3F;method:MethodEnum%20%3F;result_text:string%20%3F;result_numeric:decimal%20%3F;result_unit:ResultUnitEnum%20%3F;sensitivity:decimal%20%3F;sample_source:SampleSourceEnum%20%3F;method_other:string%20%3F;molecular_markers:MolecularMarkersEnum%20%3F;molecular_markers_other:string%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[MinimalResidualDisease],[Thing]^-[MinimalResidualDisease])
 
 ## Parents
 
@@ -21,43 +21,37 @@ URI: [https://w3id.org/pcdc/model/MinimalResidualDisease](https://w3id.org/pcdc/
  * [age_at_mrd_assessment](age_at_mrd_assessment.md)  <sub>0..1</sub>
      * Description: Age in Days at Minimal Residual Disease Assessment
      * Range: [Integer](types/Integer.md)
- * [timings](timings.md)  <sub>0..1</sub>
-     * Range: [Timing](Timing.md)
- * [disease_phase](disease_phase.md)  <sub>0..1</sub>
-     * Description: The phase of the cancer treatment process during which relevant observations were recorded. This variable is used across domains to frame the timing of these longitudinal observations and reduce the number of redundant variables needed to report similar concepts (see "Disease Phase Timing and Course Table" in the documentation for additional guidance).
-     * Range: [DiseasePhaseEnum](DiseasePhaseEnum.md)
- * [disease_phase_number](disease_phase_number.md)  <sub>0..1</sub>
-     * Description: This variable indicates the ordinal numbering of the Disease Phase variable within its various subgroups (e.g., Relapse 1, Relapse 2, Relapse 3, etc.). The observations across domains can therefore be organized longitudinally without the need for specific dates.
-     * Range: [Integer](types/Integer.md)
- * [course](course.md)  <sub>0..1</sub>
-     * Description: The protocol treatment "course" during which relevant observations were recorded. This variable is used across domains to frame the timing of these longitudinal observations and reduce the number of redundant variables needed to report similar concepts (see "Disease Phase Timing and Course Table" in the documentation for additional guidance).
-     * Range: [CourseEnum](CourseEnum.md)
- * [course_number](course_number.md)  <sub>0..1</sub>
-     * Description: This variable indicates the ordinal numbering of the Course variable within its various subgroups (e.g., Induction 1, Induction 2, Induction 3, etc.). The observations across domains can therefore be organized longitudinally without the need for specific dates.
-     * Range: [Integer](types/Integer.md)
- * [mrd_method](mrd_method.md)  <sub>0..1</sub>
-     * Description: A term used to describe a very small number of cancer cells that remain in the body during or after treatment. Minimal residual disease can be found only by highly sensitive laboratory methods that are able to find one cancer cell among one million normal cells. Checking to see if there is minimal residual disease may help plan treatment, find out how well treatment is working or if cancer has come back, or make a prognosis. Minimal residual disease testing is used mostly for blood cancers such as lymphoma and leukemia. Also called MRD. (Source: NCI Dictionary of Cancer Terms)
-     * Range: [MrdMethodEnum](MrdMethodEnum.md)
- * [flow_cytometry_type](flow_cytometry_type.md)  <sub>0..1</sub>
-     * Range: [FlowCytometryTypeEnum](FlowCytometryTypeEnum.md)
- * [mrd_result](mrd_result.md)  <sub>0..1</sub>
-     * Description: Minimal Residual Disease Result
+ * [method](method.md)  <sub>0..1</sub>
+     * Description: A systematic course of action that is performed in order to complete a laboratory test.
+     * Range: [MethodEnum](MethodEnum.md)
+ * [result_text](result_text.md)  <sub>0..1</sub>
+     * Description: The string/text result of the laboratory test.
      * Range: [String](types/String.md)
- * [mrd_result_numeric](mrd_result_numeric.md)  <sub>0..1</sub>
-     * Description: Numeric Minimal Residual Disease Result
-     * Range: [Integer](types/Integer.md)
- * [mrd_result_unit](mrd_result_unit.md)  <sub>0..1</sub>
-     * Description: Numeric Minimal Residual Disease Result Unit
-     * Range: [NotreportedUnknownEnum](NotreportedUnknownEnum.md)
- * [mrd_sensitivty](mrd_sensitivty.md)  <sub>0..1</sub>
-     * Description: Minimal Residual Disease Method Sensitivity
-     * Range: [Integer](types/Integer.md)
- * [mrd_sample_source](mrd_sample_source.md)  <sub>0..1</sub>
+ * [result_numeric](result_numeric.md)  <sub>0..1</sub>
+     * Description: The numeric result of the laboratory test.
+     * Range: [Decimal](types/Decimal.md)
+ * [result_unit](result_unit.md)  <sub>0..1</sub>
+     * Description: The units used for the numeric result of the laboratory test.
+     * Range: [ResultUnitEnum](ResultUnitEnum.md)
+ * [sensitivity](sensitivity.md)  <sub>0..1</sub>
+     * Description: Sensitivity of modality used to determine minimal residual disease.
+     * Range: [Decimal](types/Decimal.md)
+ * [sample_source](sample_source.md)  <sub>0..1</sub>
      * Description: Minimal Residual Disease Sample Source
-     * Range: [MrdSampleSourceEnum](MrdSampleSourceEnum.md)
- * [mrd_molecular_markers](mrd_molecular_markers.md)  <sub>0..1</sub>
+     * Range: [SampleSourceEnum](SampleSourceEnum.md)
+ * [time_periods](time_periods.md)  <sub>0..1</sub>
+     * Range: [TimePeriod](TimePeriod.md)
+ * [method_other](method_other.md)  <sub>0..1</sub>
+     * Description: Specify the "Other" LAB_METHOD
+     * Range: [String](types/String.md)
+ * [molecular_markers](molecular_markers.md)  <sub>0..1</sub>
      * Description: Minimal residual disease molecular markers
-     * Range: [MrdMolecularMarkersEnum](MrdMolecularMarkersEnum.md)
+     * Range: [MolecularMarkersEnum](MolecularMarkersEnum.md)
+ * [molecular_markers_other](molecular_markers_other.md)  <sub>0..1</sub>
+     * Description: Specify the "Other" MRD_MOLECULAR_MARKERS
+     * Range: [String](types/String.md)
+ * [subjects](subjects.md)  <sub>1..\*</sub>
+     * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:
 

@@ -19,4 +19,4 @@ None &#8594;  <sub>0..1</sub> [AbsentNotreportedPresentUnknownEnum](AbsentNotrep
 
 ## Used by
 
- * [Cytology](Cytology.md)
+ * [LaboratoryTest](LaboratoryTest.md)

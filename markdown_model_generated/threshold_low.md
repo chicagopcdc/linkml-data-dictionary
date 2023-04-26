@@ -9,7 +9,7 @@ URI: [https://w3id.org/pcdc/model/threshold_low](https://w3id.org/pcdc/model/thr
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
+None &#8594;  <sub>0..1</sub> [Decimal](types/Decimal.md)
 
 ## Parents
 

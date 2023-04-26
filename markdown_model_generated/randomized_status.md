@@ -20,4 +20,3 @@ None &#8594;  <sub>0..1</sub> [RandomizedStatusEnum](RandomizedStatusEnum.md)
 ## Used by
 
  * [Subject](Subject.md)
- * [SubjectCharacteristics](SubjectCharacteristics.md)

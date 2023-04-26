@@ -2,7 +2,7 @@
 # Slot: age_at_rt_start
 
 
-Age in Days at Start of Radiation Therapy
+The age (in days) of the subject at the start of this radiation treatment.
 
 URI: [https://w3id.org/pcdc/model/age_at_rt_start](https://w3id.org/pcdc/model/age_at_rt_start)
 

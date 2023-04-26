@@ -2,7 +2,7 @@
 # Slot: performance_score_system
 
 
-
+The performance scale used.
 
 URI: [https://w3id.org/pcdc/model/performance_score_system](https://w3id.org/pcdc/model/performance_score_system)
 

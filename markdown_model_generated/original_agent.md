@@ -2,7 +2,7 @@
 # Slot: original_agent
 
 
-Original Agent
+The first agent planned for a therapy.
 
 URI: [https://w3id.org/pcdc/model/original_agent](https://w3id.org/pcdc/model/original_agent)
 

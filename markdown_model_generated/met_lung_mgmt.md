@@ -2,7 +2,7 @@
 # Slot: met_lung_mgmt
 
 
-Metastatic Lung Disease Surgical Management
+Surgical treatment of disease metastatic to the lungs.
 
 URI: [https://w3id.org/pcdc/model/met_lung_mgmt](https://w3id.org/pcdc/model/met_lung_mgmt)
 

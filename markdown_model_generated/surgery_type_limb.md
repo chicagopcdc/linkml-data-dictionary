@@ -2,7 +2,7 @@
 # Slot: surgery_type_limb
 
 
-Limb Surgery Type
+The type of surgical procedures performed on the limb of the subject.
 
 URI: [https://w3id.org/pcdc/model/surgery_type_limb](https://w3id.org/pcdc/model/surgery_type_limb)
 

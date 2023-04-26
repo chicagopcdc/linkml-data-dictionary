@@ -9,7 +9,7 @@ URI: [https://w3id.org/pcdc/model/ae_pathogen_confirmation](https://w3id.org/pcd
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [AePathogenConfirmationEnum](AePathogenConfirmationEnum.md)
+None &#8594;  <sub>0..1</sub> [ConfirmedNotreportedSuspectedUnknownEnum](ConfirmedNotreportedSuspectedUnknownEnum.md)
 
 ## Parents
 

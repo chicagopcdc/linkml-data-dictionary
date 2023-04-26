@@ -2,7 +2,7 @@
 # Slot: transposition_organ
 
 
-Surgical Transposition of Organs
+A procedure to move organs out of the range of the damaging effects of radiation.
 
 URI: [https://w3id.org/pcdc/model/transposition_organ](https://w3id.org/pcdc/model/transposition_organ)
 

@@ -2,7 +2,7 @@
 # Slot: data_source
 
 
-Is this data coming from a cancer registry or via a clinical study?
+The nature of the investigation or the investigational use for which clinical study is being done.
 
 URI: [https://w3id.org/pcdc/model/data_source](https://w3id.org/pcdc/model/data_source)
 
@@ -20,4 +20,3 @@ None &#8594;  <sub>0..1</sub> [DataSourceEnum](DataSourceEnum.md)
 ## Used by
 
  * [Subject](Subject.md)
- * [SubjectCharacteristics](SubjectCharacteristics.md)

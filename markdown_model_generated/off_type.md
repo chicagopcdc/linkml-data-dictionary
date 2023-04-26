@@ -2,7 +2,7 @@
 # Slot: off_type
 
 
-Did the subject go off of a study or off of a certain protocol therapy?
+The code used to designate that the subject went off therapy or off the study.
 
 URI: [https://w3id.org/pcdc/model/off_type](https://w3id.org/pcdc/model/off_type)
 

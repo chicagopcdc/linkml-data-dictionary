@@ -2,7 +2,7 @@
 # Slot: chromosome
 
 
-One of the bodies in the cell nucleus that is the bearer of genes, has the form of a delicate chromatin filament during interphase, contracts to form a compact cylinder segmented into two arms by the centromere during metaphase and anaphase stages of cell division, and is capable of reproducing its physical and chemical structure through successive cell divisions.
+A structure found in cells that is comprised of a strand of linearized double-stranded DNA plus proteins that package the DNA in a condensed coil form and regulate chromosomal function.
 
 URI: [https://w3id.org/pcdc/model/chromosome](https://w3id.org/pcdc/model/chromosome)
 

@@ -2,7 +2,7 @@
 # Slot: interim_response
 
 
-Interim Response
+An evaluation prior to the completion of therapy that the individual is responding to therapy.
 
 URI: [https://w3id.org/pcdc/model/interim_response](https://w3id.org/pcdc/model/interim_response)
 
