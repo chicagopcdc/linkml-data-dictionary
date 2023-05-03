@@ -48,6 +48,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Off Protocol Therapy Or Study" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_off Description: The age (in days) when the subject went off of the protocol therapy or study.
@@ -58,6 +59,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Medical History" Description: ""
 --     * Slot: id Description: 
 --     * Slot: condition Description: Relevant condition from the subject's medical history.
@@ -71,6 +73,7 @@
 --     * Slot: developmental_delay_type Description: What was the type of developmental delay?
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
+--     * Slot: subjects_id Description: 
 -- # Class: "Survival Characteristics" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_lkss Description: The age (in days) when the last known survival status of the subject was captured.
@@ -88,6 +91,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Family Medical History" Description: ""
 --     * Slot: id Description: 
 --     * Slot: relation Description: What kind of relation is this relative who has had a relevant medical condition?
@@ -100,6 +104,7 @@
 --     * Slot: lkss_of_relative Description: The last known survival status of the relative of the subject with the prior cancer.
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
+--     * Slot: subjects_id Description: 
 -- # Class: "Vitals And Anthropometrics" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_measurement Description: The age (in days) of the subject when the vitals measurement was taken.
@@ -110,6 +115,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Laboratory Test" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_lab Description: The age (in days) of the subject at the time of the laboratory test.
@@ -137,6 +143,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Genetic Analysis" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_genetic_analysis Description: The age (in days) of the subject at the time of this analysis.
@@ -199,6 +206,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Function Test" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_function_test Description: The age (in days) of the subject at the time of the function test.
@@ -210,6 +218,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Immunohistochemistry" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_ihc Description: The age (in days) of the subject at the immunohistochemical test.
@@ -223,6 +232,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Imaging" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_imaging Description: The age (in days) of the subject at the time of imaging.
@@ -239,6 +249,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Histology" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_hist_assessment Description: The age (in days) of the subject at the time of this histological assessment.
@@ -277,6 +288,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Disease Characteristics" Description: ""
 --     * Slot: id Description: 
 --     * Slot: disease_site Description: Disease Involvement Site
@@ -330,6 +342,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Tumor Assessment" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_assessment Description: The age (in days) of the subject at the time of this tumor assessment.
@@ -409,6 +422,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Staging" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_staging Description: The age (in days) of the subject at the time of this staging assessment.
@@ -430,6 +444,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Radiation Therapy" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_rt_start Description: The age (in days) of the subject at the start of this radiation treatment.
@@ -468,6 +483,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Stem Cell Transplant" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_sct Description: The age (in days) of subject at the time of stem cell transplantation.
@@ -498,6 +514,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Medication" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_medication_start Description: The age (in days) of the subject at the start of this medication treatment.
@@ -528,6 +545,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Transfusion Medicine Procedures" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_tmp_start Description: The age (in days) of the subject at the start of the transfuction medicine procedure
@@ -539,6 +557,7 @@
 --     * Slot: number_units Description: The number of units transfused into an individual.
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Cellular Immunotherapy" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_cimt_start Description: The age (in days) of subject at the time of cellular immunotherapy.
@@ -546,6 +565,7 @@
 --     * Slot: type_other Description: Specify the "Other" CIMT_TYPE
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Biopsy And Surgical Procedures" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_procedure Description: The age (in days) of the subject at the time of this procedure.
@@ -600,6 +620,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Protocol Treatment Modifications" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_modification Description: The age (in days) of subject since the protocol treatment modification.
@@ -619,6 +640,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Minimal Residual Disease" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_mrd_assessment Description: Age in Days at Minimal Residual Disease Assessment
@@ -634,6 +656,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Subject Response" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_response Description: The age (in days) of subject when the response assessment was made.
@@ -675,6 +698,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Adverse Events" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_ae Description: The age (in days) of the subject at the onset of this adverse event
@@ -723,6 +747,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Subsequent Malignant Neoplasm" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_smn Description: The age (in days) of subject at the diagnosis of the subsequent malignant neoplasm.
@@ -745,6 +770,7 @@
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
 --     * Slot: time_periods_id Description: 
+--     * Slot: subjects_id Description: 
 -- # Class: "Patient Reported Outcomes Metadata" Description: ""
 --     * Slot: id Description: 
 --     * Slot: study_id Description: A sequence of characters used to identify, name, or characterize the study.
@@ -759,6 +785,7 @@
 --     * Slot: time_point Description: The point in time that acts as a fixed reference point to an event.
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
+--     * Slot: subjects_id Description: 
 -- # Class: "Late Effects" Description: ""
 --     * Slot: id Description: 
 --     * Slot: age_at_le_eval Description: The age (in days) of subject when the late effect evaluation was performed.
@@ -771,101 +798,15 @@
 --     * Slot: grade_system_version Description: The version of the adverse event grading system.
 --     * Slot: submitter_id Description: PCDC internal event ID
 --     * Slot: type Description: Default system-assigned property for each node
--- # Class: "Time Period_subjects" Description: ""
---     * Slot: Time Period_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Off Protocol Therapy Or Study_subjects" Description: ""
---     * Slot: Off Protocol Therapy Or Study_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Medical History_subjects" Description: ""
---     * Slot: Medical History_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Survival Characteristics_subjects" Description: ""
---     * Slot: Survival Characteristics_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Family Medical History_subjects" Description: ""
---     * Slot: Family Medical History_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Vitals And Anthropometrics_subjects" Description: ""
---     * Slot: Vitals And Anthropometrics_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Laboratory Test_subjects" Description: ""
---     * Slot: Laboratory Test_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Genetic Analysis_subjects" Description: ""
---     * Slot: Genetic Analysis_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Function Test_subjects" Description: ""
---     * Slot: Function Test_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Immunohistochemistry_subjects" Description: ""
---     * Slot: Immunohistochemistry_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Imaging_subjects" Description: ""
---     * Slot: Imaging_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Histology_subjects" Description: ""
---     * Slot: Histology_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Disease Characteristics_subjects" Description: ""
---     * Slot: Disease Characteristics_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Tumor Assessment_subjects" Description: ""
---     * Slot: Tumor Assessment_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Staging_subjects" Description: ""
---     * Slot: Staging_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Radiation Therapy_subjects" Description: ""
---     * Slot: Radiation Therapy_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Stem Cell Transplant_subjects" Description: ""
---     * Slot: Stem Cell Transplant_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Medication_subjects" Description: ""
---     * Slot: Medication_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Transfusion Medicine Procedures_subjects" Description: ""
---     * Slot: Transfusion Medicine Procedures_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Cellular Immunotherapy_subjects" Description: ""
---     * Slot: Cellular Immunotherapy_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Biopsy And Surgical Procedures_subjects" Description: ""
---     * Slot: Biopsy And Surgical Procedures_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Protocol Treatment Modifications_subjects" Description: ""
---     * Slot: Protocol Treatment Modifications_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Minimal Residual Disease_subjects" Description: ""
---     * Slot: Minimal Residual Disease_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Subject Response_subjects" Description: ""
---     * Slot: Subject Response_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Adverse Events_subjects" Description: ""
---     * Slot: Adverse Events_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Subsequent Malignant Neoplasm_subjects" Description: ""
---     * Slot: Subsequent Malignant Neoplasm_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Patient Reported Outcomes Metadata_subjects" Description: ""
---     * Slot: Patient Reported Outcomes Metadata_id Description: Autocreated FK slot
---     * Slot: subjects_id Description: 
--- # Class: "Late Effects_subjects" Description: ""
---     * Slot: Late Effects_id Description: Autocreated FK slot
 --     * Slot: subjects_id Description: 
 
--- Needed to create a schema called pcdc first 
-CREATE SCHEMA pcdc;
-
-CREATE TABLE pcdc.Thing (
+CREATE TABLE "Thing" (
 	id INTEGER, 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
 	PRIMARY KEY (id)
 );
-CREATE TABLE pcdc.Person (
+CREATE TABLE "Person" (
 	id INTEGER, 
 	sex VARCHAR(16), 
 	race VARCHAR(41), 
@@ -877,87 +818,7 @@ CREATE TABLE pcdc.Person (
 	type TEXT NOT NULL, 
 	PRIMARY KEY (id)
 );
-CREATE TABLE pcdc."Time Period" (
-	id INTEGER, 
-	time_period_type VARCHAR(13), 
-	disease_phase VARCHAR(19), 
-	course VARCHAR(33), 
-	time_period_number INTEGER, 
-	year_at_start INTEGER, 
-	age_at_start INTEGER, 
-	age_at_end INTEGER, 
-	course_other TEXT, 
-	age_at_course_anc_500 INTEGER, 
-	age_at_txassign INTEGER, 
-	age_precision VARCHAR(12), 
-	exam_type VARCHAR(40), 
-	submitter_id TEXT NOT NULL, 
-	type TEXT NOT NULL, 
-	time_periods_id TEXT, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES pcdc"Time Period" (id)
-);
-
-CREATE TABLE pcdc."Medical History" (
-	id INTEGER, 
-	condition VARCHAR(60), 
-	condition_other TEXT, 
-	age_at_condition INTEGER, 
-	condition_type VARCHAR(18), 
-	diagnosis_basis VARCHAR(12), 
-	condition_status VARCHAR(12), 
-	assisted_conception VARCHAR(32), 
-	developmental_delay VARCHAR(12), 
-	developmental_delay_type TEXT, 
-	submitter_id TEXT NOT NULL, 
-	type TEXT NOT NULL, 
-	PRIMARY KEY (id)
-);
-CREATE TABLE pcdc."Family Medical History" (
-	id INTEGER, 
-	relation VARCHAR(8), 
-	relation_other TEXT, 
-	shared_predisposition VARCHAR(12), 
-	relative_honest_broker_id TEXT, 
-	prior_cancer VARCHAR(12), 
-	prior_cancer_type TEXT, 
-	prior_cancer_laterality VARCHAR(12), 
-	lkss_of_relative VARCHAR(12), 
-	submitter_id TEXT NOT NULL, 
-	type TEXT NOT NULL, 
-	PRIMARY KEY (id)
-);
-CREATE TABLE pcdc."Patient Reported Outcomes Metadata" (
-	id INTEGER, 
-	study_id VARCHAR(19), 
-	pro_measures VARCHAR(38), 
-	pro_measures_other TEXT, 
-	pro_measurement_type VARCHAR(14), 
-	pro_measurement_type_other TEXT, 
-	raters VARCHAR(27), 
-	raters_other TEXT, 
-	eligible_age_lower INTEGER, 
-	eligible_age_upper INTEGER, 
-	time_point VARCHAR(20), 
-	submitter_id TEXT NOT NULL, 
-	type TEXT NOT NULL, 
-	PRIMARY KEY (id)
-);
-CREATE TABLE pcdc."Late Effects" (
-	id INTEGER, 
-	age_at_le_eval INTEGER, 
-	late_effect VARCHAR(30), 
-	code TEXT, 
-	code_system VARCHAR, 
-	code_system_version TEXT, 
-	grade VARCHAR(14), 
-	grade_system VARCHAR(60), 
-	grade_system_version TEXT, 
-	submitter_id TEXT NOT NULL, 
-	type TEXT NOT NULL, 
-	PRIMARY KEY (id)
-);
-CREATE TABLE pcdc."Subject" (
+CREATE TABLE "Subject" (
 	id INTEGER, 
 	honest_broker_subject_id TEXT, 
 	consortium VARCHAR(12), 
@@ -975,11 +836,100 @@ CREATE TABLE pcdc."Subject" (
 	randomized_status VARCHAR(14), 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	persons_id INTEGER NOT NULL, 
+	persons_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(persons_id) REFERENCES pcdc.person (id)
+	FOREIGN KEY(persons_id) REFERENCES "Person" (id)
 );
-CREATE TABLE pcdc."Off Protocol Therapy Or Study" (
+CREATE TABLE "Time Period" (
+	id INTEGER, 
+	time_period_type VARCHAR(13), 
+	disease_phase VARCHAR(19), 
+	course VARCHAR(33), 
+	time_period_number INTEGER, 
+	year_at_start INTEGER, 
+	age_at_start INTEGER, 
+	age_at_end INTEGER, 
+	course_other TEXT, 
+	age_at_course_anc_500 INTEGER, 
+	age_at_txassign INTEGER, 
+	age_precision VARCHAR(12), 
+	exam_type VARCHAR(40), 
+	submitter_id TEXT NOT NULL, 
+	type TEXT NOT NULL, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
+);
+CREATE TABLE "Medical History" (
+	id INTEGER, 
+	condition VARCHAR(60), 
+	condition_other TEXT, 
+	age_at_condition INTEGER, 
+	condition_type VARCHAR(18), 
+	diagnosis_basis VARCHAR(12), 
+	condition_status VARCHAR(12), 
+	assisted_conception VARCHAR(32), 
+	developmental_delay VARCHAR(12), 
+	developmental_delay_type TEXT, 
+	submitter_id TEXT NOT NULL, 
+	type TEXT NOT NULL, 
+	subjects_id TEXT NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
+);
+CREATE TABLE "Family Medical History" (
+	id INTEGER, 
+	relation VARCHAR(8), 
+	relation_other TEXT, 
+	shared_predisposition VARCHAR(12), 
+	relative_honest_broker_id TEXT, 
+	prior_cancer VARCHAR(12), 
+	prior_cancer_type TEXT, 
+	prior_cancer_laterality VARCHAR(12), 
+	lkss_of_relative VARCHAR(12), 
+	submitter_id TEXT NOT NULL, 
+	type TEXT NOT NULL, 
+	subjects_id TEXT NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
+);
+CREATE TABLE "Patient Reported Outcomes Metadata" (
+	id INTEGER, 
+	study_id VARCHAR(19), 
+	pro_measures VARCHAR(38), 
+	pro_measures_other TEXT, 
+	pro_measurement_type VARCHAR(14), 
+	pro_measurement_type_other TEXT, 
+	raters VARCHAR(27), 
+	raters_other TEXT, 
+	eligible_age_lower INTEGER, 
+	eligible_age_upper INTEGER, 
+	time_point VARCHAR(20), 
+	submitter_id TEXT NOT NULL, 
+	type TEXT NOT NULL, 
+	subjects_id TEXT NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
+);
+CREATE TABLE "Late Effects" (
+	id INTEGER, 
+	age_at_le_eval INTEGER, 
+	late_effect VARCHAR(30), 
+	code TEXT, 
+	code_system VARCHAR, 
+	code_system_version TEXT, 
+	grade VARCHAR(14), 
+	grade_system VARCHAR(60), 
+	grade_system_version TEXT, 
+	submitter_id TEXT NOT NULL, 
+	type TEXT NOT NULL, 
+	subjects_id TEXT NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
+);
+CREATE TABLE "Off Protocol Therapy Or Study" (
 	id INTEGER, 
 	age_off INTEGER, 
 	off_type VARCHAR(16), 
@@ -989,10 +939,12 @@ CREATE TABLE pcdc."Off Protocol Therapy Or Study" (
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
 	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Survival Characteristics" (
+CREATE TABLE "Survival Characteristics" (
 	id INTEGER, 
 	age_at_lkss INTEGER, 
 	lkss VARCHAR(12), 
@@ -1008,11 +960,13 @@ CREATE TABLE pcdc."Survival Characteristics" (
 	course_timepoint VARCHAR(12), 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Vitals And Anthropometrics" (
+CREATE TABLE "Vitals And Anthropometrics" (
 	id INTEGER, 
 	age_at_measurement INTEGER, 
 	measurement_type VARCHAR(24), 
@@ -1021,11 +975,13 @@ CREATE TABLE pcdc."Vitals And Anthropometrics" (
 	measurement_unit VARCHAR(12), 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Laboratory Test" (
+CREATE TABLE "Laboratory Test" (
 	id INTEGER, 
 	age_at_lab INTEGER, 
 	category VARCHAR(28), 
@@ -1051,11 +1007,13 @@ CREATE TABLE pcdc."Laboratory Test" (
 	test_other TEXT, 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Genetic Analysis" (
+CREATE TABLE "Genetic Analysis" (
 	id INTEGER, 
 	age_at_genetic_analysis INTEGER, 
 	method VARCHAR(19), 
@@ -1116,11 +1074,13 @@ CREATE TABLE pcdc."Genetic Analysis" (
 	alt_status VARCHAR(12), 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Function Test" (
+CREATE TABLE "Function Test" (
 	id INTEGER, 
 	age_at_function_test INTEGER, 
 	test VARCHAR(25), 
@@ -1130,11 +1090,13 @@ CREATE TABLE pcdc."Function Test" (
 	measurement_unit VARCHAR(12), 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Immunohistochemistry" (
+CREATE TABLE "Immunohistochemistry" (
 	id INTEGER, 
 	age_at_ihc INTEGER, 
 	review_source VARCHAR(13), 
@@ -1146,11 +1108,13 @@ CREATE TABLE pcdc."Immunohistochemistry" (
 	result_unit VARCHAR(12), 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Imaging" (
+CREATE TABLE "Imaging" (
 	id INTEGER, 
 	age_at_imaging INTEGER, 
 	method VARCHAR(19), 
@@ -1165,11 +1129,13 @@ CREATE TABLE pcdc."Imaging" (
 	csf_result VARCHAR(12), 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Histology" (
+CREATE TABLE "Histology" (
 	id INTEGER, 
 	age_at_hist_assessment INTEGER, 
 	morph_code TEXT, 
@@ -1206,11 +1172,13 @@ CREATE TABLE pcdc."Histology" (
 	tumor_site VARCHAR(12), 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Disease Characteristics" (
+CREATE TABLE "Disease Characteristics" (
 	id INTEGER, 
 	disease_site VARCHAR(22), 
 	detection_method_other TEXT, 
@@ -1262,11 +1230,13 @@ CREATE TABLE pcdc."Disease Characteristics" (
 	advanced_disease_signs_other TEXT, 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Tumor Assessment" (
+CREATE TABLE "Tumor Assessment" (
 	id INTEGER, 
 	age_at_assessment INTEGER, 
 	detection_method VARCHAR(27), 
@@ -1344,11 +1314,13 @@ CREATE TABLE pcdc."Tumor Assessment" (
 	anaplasia_pct_numeric INTEGER, 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Staging" (
+CREATE TABLE "Staging" (
 	id INTEGER, 
 	age_at_staging INTEGER, 
 	stage_system VARCHAR(76), 
@@ -1368,11 +1340,13 @@ CREATE TABLE pcdc."Staging" (
 	irs_group VARCHAR(12), 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Radiation Therapy" (
+CREATE TABLE "Radiation Therapy" (
 	id INTEGER, 
 	age_at_rt_start INTEGER, 
 	age_at_rt_end INTEGER, 
@@ -1409,11 +1383,13 @@ CREATE TABLE pcdc."Radiation Therapy" (
 	rt_completed VARCHAR(12), 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Stem Cell Transplant" (
+CREATE TABLE "Stem Cell Transplant" (
 	id INTEGER, 
 	age_at_sct INTEGER, 
 	protocol_sct VARCHAR(12), 
@@ -1442,11 +1418,13 @@ CREATE TABLE pcdc."Stem Cell Transplant" (
 	sct_success VARCHAR(12), 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Medication" (
+CREATE TABLE "Medication" (
 	id INTEGER, 
 	age_at_medication_start INTEGER, 
 	age_at_medication_end INTEGER, 
@@ -1475,11 +1453,13 @@ CREATE TABLE pcdc."Medication" (
 	delivery_status VARCHAR(12), 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Transfusion Medicine Procedures" (
+CREATE TABLE "Transfusion Medicine Procedures" (
 	id INTEGER, 
 	age_at_tmp_start INTEGER, 
 	type TEXT NOT NULL, 
@@ -1489,21 +1469,25 @@ CREATE TABLE pcdc."Transfusion Medicine Procedures" (
 	product_processing_other TEXT, 
 	number_units INTEGER, 
 	submitter_id TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Cellular Immunotherapy" (
+CREATE TABLE "Cellular Immunotherapy" (
 	id INTEGER, 
 	age_at_cimt_start INTEGER, 
 	type TEXT NOT NULL, 
 	type_other TEXT, 
 	submitter_id TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Biopsy And Surgical Procedures" (
+CREATE TABLE "Biopsy And Surgical Procedures" (
 	id INTEGER, 
 	age_at_procedure INTEGER, 
 	protocol_procedure VARCHAR(12), 
@@ -1556,11 +1540,13 @@ CREATE TABLE pcdc."Biopsy And Surgical Procedures" (
 	freeze_thaw_cycle_number INTEGER, 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Protocol Treatment Modifications" (
+CREATE TABLE "Protocol Treatment Modifications" (
 	id INTEGER, 
 	age_at_modification INTEGER, 
 	modification VARCHAR(18), 
@@ -1578,11 +1564,13 @@ CREATE TABLE pcdc."Protocol Treatment Modifications" (
 	sub_agent_other TEXT, 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Minimal Residual Disease" (
+CREATE TABLE "Minimal Residual Disease" (
 	id INTEGER, 
 	age_at_mrd_assessment INTEGER, 
 	method VARCHAR(19), 
@@ -1596,11 +1584,13 @@ CREATE TABLE pcdc."Minimal Residual Disease" (
 	molecular_markers_other TEXT, 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Subject Response" (
+CREATE TABLE "Subject Response" (
 	id INTEGER, 
 	age_at_response INTEGER, 
 	response_category VARCHAR(24), 
@@ -1640,11 +1630,13 @@ CREATE TABLE pcdc."Subject Response" (
 	anaplasia_pct_numeric INTEGER, 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Adverse Events" (
+CREATE TABLE "Adverse Events" (
 	id INTEGER, 
 	age_at_ae INTEGER, 
 	ae_code TEXT, 
@@ -1691,11 +1683,13 @@ CREATE TABLE pcdc."Adverse Events" (
 	ae_hospitalization VARCHAR(12), 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
+	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );
-CREATE TABLE pcdc."Subsequent Malignant Neoplasm" (
+CREATE TABLE "Subsequent Malignant Neoplasm" (
 	id INTEGER, 
 	age_at_smn INTEGER, 
 	treatment_related VARCHAR(12), 
@@ -1716,203 +1710,9 @@ CREATE TABLE pcdc."Subsequent Malignant Neoplasm" (
 	smn_type_other TEXT, 
 	submitter_id TEXT NOT NULL, 
 	type TEXT NOT NULL, 
-	time_periods_id INTEGER, 
+	time_periods_id TEXT, 
+	subjects_id TEXT NOT NULL, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id)
-);
-CREATE TABLE pcdc."Time Period_subjects" (
-	"Time Period_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Time Period_id", subjects_id), 
-	FOREIGN KEY("Time Period_id") REFERENCES "Time Period" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Off Protocol Therapy Or Study_subjects" (
-	"Off Protocol Therapy Or Study_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Off Protocol Therapy Or Study_id", subjects_id), 
-	FOREIGN KEY("Off Protocol Therapy Or Study_id") REFERENCES "Off Protocol Therapy Or Study" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Medical History_subjects" (
-	"Medical History_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Medical History_id", subjects_id), 
-	FOREIGN KEY("Medical History_id") REFERENCES "Medical History" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Survival Characteristics_subjects" (
-	"Survival Characteristics_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Survival Characteristics_id", subjects_id), 
-	FOREIGN KEY("Survival Characteristics_id") REFERENCES "Survival Characteristics" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Family Medical History_subjects" (
-	"Family Medical History_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Family Medical History_id", subjects_id), 
-	FOREIGN KEY("Family Medical History_id") REFERENCES "Family Medical History" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Vitals And Anthropometrics_subjects" (
-	"Vitals And Anthropometrics_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Vitals And Anthropometrics_id", subjects_id), 
-	FOREIGN KEY("Vitals And Anthropometrics_id") REFERENCES "Vitals And Anthropometrics" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Laboratory Test_subjects" (
-	"Laboratory Test_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Laboratory Test_id", subjects_id), 
-	FOREIGN KEY("Laboratory Test_id") REFERENCES "Laboratory Test" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Genetic Analysis_subjects" (
-	"Genetic Analysis_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Genetic Analysis_id", subjects_id), 
-	FOREIGN KEY("Genetic Analysis_id") REFERENCES "Genetic Analysis" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Function Test_subjects" (
-	"Function Test_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Function Test_id", subjects_id), 
-	FOREIGN KEY("Function Test_id") REFERENCES "Function Test" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Immunohistochemistry_subjects" (
-	"Immunohistochemistry_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Immunohistochemistry_id", subjects_id), 
-	FOREIGN KEY("Immunohistochemistry_id") REFERENCES "Immunohistochemistry" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Imaging_subjects" (
-	"Imaging_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Imaging_id", subjects_id), 
-	FOREIGN KEY("Imaging_id") REFERENCES "Imaging" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Histology_subjects" (
-	"Histology_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Histology_id", subjects_id), 
-	FOREIGN KEY("Histology_id") REFERENCES "Histology" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Disease Characteristics_subjects" (
-	"Disease Characteristics_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Disease Characteristics_id", subjects_id), 
-	FOREIGN KEY("Disease Characteristics_id") REFERENCES "Disease Characteristics" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Tumor Assessment_subjects" (
-	"Tumor Assessment_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Tumor Assessment_id", subjects_id), 
-	FOREIGN KEY("Tumor Assessment_id") REFERENCES "Tumor Assessment" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Staging_subjects" (
-	"Staging_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Staging_id", subjects_id), 
-	FOREIGN KEY("Staging_id") REFERENCES "Staging" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Radiation Therapy_subjects" (
-	"Radiation Therapy_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Radiation Therapy_id", subjects_id), 
-	FOREIGN KEY("Radiation Therapy_id") REFERENCES "Radiation Therapy" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Stem Cell Transplant_subjects" (
-	"Stem Cell Transplant_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Stem Cell Transplant_id", subjects_id), 
-	FOREIGN KEY("Stem Cell Transplant_id") REFERENCES "Stem Cell Transplant" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Medication_subjects" (
-	"Medication_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Medication_id", subjects_id), 
-	FOREIGN KEY("Medication_id") REFERENCES "Medication" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Transfusion Medicine Procedures_subjects" (
-	"Transfusion Medicine Procedures_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Transfusion Medicine Procedures_id", subjects_id), 
-	FOREIGN KEY("Transfusion Medicine Procedures_id") REFERENCES "Transfusion Medicine Procedures" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Cellular Immunotherapy_subjects" (
-	"Cellular Immunotherapy_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Cellular Immunotherapy_id", subjects_id), 
-	FOREIGN KEY("Cellular Immunotherapy_id") REFERENCES "Cellular Immunotherapy" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Biopsy And Surgical Procedures_subjects" (
-	"Biopsy And Surgical Procedures_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Biopsy And Surgical Procedures_id", subjects_id), 
-	FOREIGN KEY("Biopsy And Surgical Procedures_id") REFERENCES "Biopsy And Surgical Procedures" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Protocol Treatment Modifications_subjects" (
-	"Protocol Treatment Modifications_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Protocol Treatment Modifications_id", subjects_id), 
-	FOREIGN KEY("Protocol Treatment Modifications_id") REFERENCES "Protocol Treatment Modifications" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Minimal Residual Disease_subjects" (
-	"Minimal Residual Disease_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Minimal Residual Disease_id", subjects_id), 
-	FOREIGN KEY("Minimal Residual Disease_id") REFERENCES "Minimal Residual Disease" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Subject Response_subjects" (
-	"Subject Response_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Subject Response_id", subjects_id), 
-	FOREIGN KEY("Subject Response_id") REFERENCES "Subject Response" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Adverse Events_subjects" (
-	"Adverse Events_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Adverse Events_id", subjects_id), 
-	FOREIGN KEY("Adverse Events_id") REFERENCES "Adverse Events" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Subsequent Malignant Neoplasm_subjects" (
-	"Subsequent Malignant Neoplasm_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Subsequent Malignant Neoplasm_id", subjects_id), 
-	FOREIGN KEY("Subsequent Malignant Neoplasm_id") REFERENCES "Subsequent Malignant Neoplasm" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Patient Reported Outcomes Metadata_subjects" (
-	"Patient Reported Outcomes Metadata_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Patient Reported Outcomes Metadata_id", subjects_id), 
-	FOREIGN KEY("Patient Reported Outcomes Metadata_id") REFERENCES "Patient Reported Outcomes Metadata" (id), 
-	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE pcdc."Late Effects_subjects" (
-	"Late Effects_id" INTEGER, 
-	subjects_id INTEGER NOT NULL, 
-	PRIMARY KEY ("Late Effects_id", subjects_id), 
-	FOREIGN KEY("Late Effects_id") REFERENCES "Late Effects" (id), 
+	FOREIGN KEY(time_periods_id) REFERENCES "Time Period" (id), 
 	FOREIGN KEY(subjects_id) REFERENCES "Subject" (id)
 );

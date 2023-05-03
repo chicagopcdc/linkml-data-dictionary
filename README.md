@@ -44,6 +44,9 @@ Then you can navigate to localhost:8000 to view the generated documentation.
 
 ## Generating SQL DDL
 From the LinkML YAML file, you can generate the SQL commands to create tables with the given classes and relationships, to do so run:
-`linkml-data-dictionary % gen-sqlddl data_ingestion_to_linkml/output_linkml_yaml/data_dictionary_spreadsheet_<SPREADSHEET_KEY>.yaml > sql_ddl_generated/create_schema.sql`
+`gen-sqlddl data_ingestion_to_linkml/output_linkml_yaml/data_dictionary_spreadsheet_<SPREADSHEET_KEY>.yaml > sql_ddl_generated/create_schema.sql`
 
 This will save the sql commands to a `.sql` file in the sql_ddl_generated folder called `create_schema.sql`
+
+## Using SQL generated to create tables
+At the moment there are a few issues in the generated SQL that make it fail, namely  [this issue](https://github.com/linkml/linkml/issues/1407) however with a few manual fixes, the script in `sql_ddl_generated/working_schema.sql` should create all of the tables successfully. I tested by running postgres14.1 in a docker container and running all of the scripts sequentially from the working_schema file.

@@ -890,6 +890,7 @@ slots:
     description: Default system-assigned property for each node
     required: true
   subjects:
+    multivalued: false
     range: Subject
     required: true
   time_periods:
