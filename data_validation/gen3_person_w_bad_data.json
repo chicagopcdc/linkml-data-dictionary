@@ -1,0 +1,91 @@
+[
+    {
+        "type": "person",
+        "sex": "Male    person_1",
+        "*submitter_id": "pcdc-20230523",
+        "project_id": 20230523,
+        "*projects.code": "Not Hispanic or Latino",
+        "ethnicity": "White"
+    },
+    {
+        "type": "person",
+        "sex": "Male",
+        "*submitter_id": "person_2",
+        "project_id": "pcdc-20230523",
+        "*projects.code": 20230523,
+        "ethnicity": "Not Hispanic or Latino",
+        "race": "White"
+    },
+    {
+        "type": "person",
+        "sex": "Female",
+        "*submitter_id": "person_3",
+        "project_id": "pcdc-20230523",
+        "*projects.code": 20230523,
+        "ethnicity": "Not Hispanic or Latino",
+        "race": "Black or African American"
+    },
+    {
+        "type": "person",
+        "sex": "Male",
+        "*submitter_id": "person_4",
+        "project_id": "pcdc-20230523",
+        "*projects.code": 20230523,
+        "ethnicity": "Not Hispanic or Latino",
+        "race": "White"
+    },
+    {
+        "type": "person",
+        "sex": "Male",
+        "*submitter_id": "person_5",
+        "project_id": "pcdc-20230523",
+        "*projects.code": 20230523,
+        "ethnicity": "Not Hispanic or Latino",
+        "race": "American Indian or Alaska Native"
+    },
+    {
+        "type": "person",
+        "sex": "Female",
+        "*submitter_id": "person_6",
+        "project_id": "pcdc-20230523",
+        "*projects.code": 20230523,
+        "ethnicity": "Not Hispanic or Latino",
+        "race": "White"
+    },
+    {
+        "type": "person",
+        "sex": "Male",
+        "*submitter_id": "person_7",
+        "project_id": "pcdc-20230523",
+        "*projects.code": 20230523,
+        "ethnicity": "Not Hispanic or Latino",
+        "race": "White"
+    },
+    {
+        "type": "person",
+        "sex": "Male",
+        "*submitter_id": "person_8",
+        "project_id": "pcdc-20230523",
+        "*projects.code": 20230523,
+        "ethnicity": "Not Hispanic or Latino",
+        "race": "White"
+    },
+    {
+        "type": "person",
+        "sex": "Male",
+        "*submitter_id": "person_9",
+        "project_id": "pcdc-20230523",
+        "*projects.code": 20230523,
+        "ethnicity": "Something Invalid",
+        "race": "White"
+    },
+    {
+        "type": "person",
+        "sex": "Male",
+        "*submitter_id": "person_10",
+        "project_id": "pcdc-20230523",
+        "*projects.code": 20230523,
+        "ethnicity": "Not Hispanic or Latino",
+        "race": "SomethingInvalid"
+    }
+]
