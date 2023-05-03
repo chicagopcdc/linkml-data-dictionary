@@ -110,7 +110,7 @@ def get_base_linkml_struct() -> Dict:
                 "required": True,
             },
             "subjects": {
-                "multivalued": True,
+                "multivalued": False,
                 "range": "Subject",
                 "required": True,
             },
