@@ -5353,15 +5353,15 @@ class LateEffects(Thing):
 
 # Enumerations
 class SexEnum(EnumDefinitionImpl):
-    Male = PermissibleValue(
-        text="Male",
-        description="A person who belongs to the sex that normally produces sperm. The term is used to indicate biological sex distinctions, cultural gender role distinctions, or both.",
-        meaning=NCIT.C20197,
-    )
     Female = PermissibleValue(
         text="Female",
         description="A person who belongs to the sex that normally produces ova. The term is used to indicate biological sex distinctions, or cultural gender role distinctions, or both.",
         meaning=NCIT.C16576,
+    )
+    Male = PermissibleValue(
+        text="Male",
+        description="A person who belongs to the sex that normally produces sperm. The term is used to indicate biological sex distinctions, cultural gender role distinctions, or both.",
+        meaning=NCIT.C20197,
     )
     Unknown = PermissibleValue(
         text="Unknown",
