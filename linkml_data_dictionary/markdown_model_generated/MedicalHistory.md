@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/MedicalHistory](https://w3id.org/pcdc/model/MedicalHistory)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..*-++[MedicalHistory&#124;condition:ConditionEnum%20%3F;condition_other:string%20%3F;age_at_condition:integer%20%3F;condition_type:ConditionTypeEnum%20%3F;diagnosis_basis:DiagnosisBasisEnum%20%3F;condition_status:NoNotreportedUnknownYesEnum%20%3F;assisted_conception:AssistedConceptionEnum%20%3F;developmental_delay:NoNotreportedUnknownYesEnum%20%3F;developmental_delay_type:string%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[MedicalHistory])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..*-++[MedicalHistory&#124;condition:ConditionEnum%20%3F;condition_other:string%20%3F;age_at_condition:integer%20%3F;condition_type:ConditionTypeEnum%20%3F;diagnosis_basis:DiagnosisBasisEnum%20%3F;condition_status:NoNotreportedUnknownYesEnum%20%3F;assisted_conception:AssistedConceptionEnum%20%3F;developmental_delay:NoNotreportedUnknownYesEnum%20%3F;developmental_delay_type:string%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[MedicalHistory])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..1-++[MedicalHistory&#124;condition:ConditionEnum%20%3F;condition_other:string%20%3F;age_at_condition:integer%20%3F;condition_type:ConditionTypeEnum%20%3F;diagnosis_basis:DiagnosisBasisEnum%20%3F;condition_status:NoNotreportedUnknownYesEnum%20%3F;assisted_conception:AssistedConceptionEnum%20%3F;developmental_delay:NoNotreportedUnknownYesEnum%20%3F;developmental_delay_type:string%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[MedicalHistory])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..1-++[MedicalHistory&#124;condition:ConditionEnum%20%3F;condition_other:string%20%3F;age_at_condition:integer%20%3F;condition_type:ConditionTypeEnum%20%3F;diagnosis_basis:DiagnosisBasisEnum%20%3F;condition_status:NoNotreportedUnknownYesEnum%20%3F;assisted_conception:AssistedConceptionEnum%20%3F;developmental_delay:NoNotreportedUnknownYesEnum%20%3F;developmental_delay_type:string%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[MedicalHistory])
 
 ## Parents
 
@@ -44,7 +44,7 @@ URI: [https://w3id.org/pcdc/model/MedicalHistory](https://w3id.org/pcdc/model/Me
  * [developmental_delay_type](developmental_delay_type.md)  <sub>0..1</sub>
      * Description: What was the type of developmental delay?
      * Range: [String](types/String.md)
- * [subjects](subjects.md)  <sub>1..\*</sub>
+ * [subjects](subjects.md)  <sub>1..1</sub>
      * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:

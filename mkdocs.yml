@@ -1,7 +1,7 @@
 site_name: "PCDC Aggregated Data Dictionary"
 markdown_extensions:
   - attr_list
-docs_dir: markdown_model_generated
+docs_dir: linkml_data_dictionary/markdown_model_generated
 site_dir: docs
 nav:
   - Index: index.md

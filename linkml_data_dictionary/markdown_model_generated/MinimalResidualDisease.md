@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/MinimalResidualDisease](https://w3id.org/pcdc/model/MinimalResidualDisease)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[MinimalResidualDisease&#124;age_at_mrd_assessment:integer%20%3F;method:MethodEnum%20%3F;result_text:string%20%3F;result_numeric:decimal%20%3F;result_unit:ResultUnitEnum%20%3F;sensitivity:decimal%20%3F;sample_source:SampleSourceEnum%20%3F;method_other:string%20%3F;molecular_markers:MolecularMarkersEnum%20%3F;molecular_markers_other:string%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[MinimalResidualDisease],[Thing]^-[MinimalResidualDisease])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[MinimalResidualDisease&#124;age_at_mrd_assessment:integer%20%3F;method:MethodEnum%20%3F;result_text:string%20%3F;result_numeric:decimal%20%3F;result_unit:ResultUnitEnum%20%3F;sensitivity:decimal%20%3F;sample_source:SampleSourceEnum%20%3F;method_other:string%20%3F;molecular_markers:MolecularMarkersEnum%20%3F;molecular_markers_other:string%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[MinimalResidualDisease],[Thing]^-[MinimalResidualDisease])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..1-++[MinimalResidualDisease&#124;age_at_mrd_assessment:integer%20%3F;method:MethodEnum%20%3F;result_text:string%20%3F;result_numeric:decimal%20%3F;result_unit:ResultUnitEnum%20%3F;sensitivity:decimal%20%3F;sample_source:SampleSourceEnum%20%3F;method_other:string%20%3F;molecular_markers:MolecularMarkersEnum%20%3F;molecular_markers_other:string%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[MinimalResidualDisease],[Thing]^-[MinimalResidualDisease])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..1-++[MinimalResidualDisease&#124;age_at_mrd_assessment:integer%20%3F;method:MethodEnum%20%3F;result_text:string%20%3F;result_numeric:decimal%20%3F;result_unit:ResultUnitEnum%20%3F;sensitivity:decimal%20%3F;sample_source:SampleSourceEnum%20%3F;method_other:string%20%3F;molecular_markers:MolecularMarkersEnum%20%3F;molecular_markers_other:string%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[MinimalResidualDisease],[Thing]^-[MinimalResidualDisease])
 
 ## Parents
 
@@ -50,7 +50,7 @@ URI: [https://w3id.org/pcdc/model/MinimalResidualDisease](https://w3id.org/pcdc/
  * [molecular_markers_other](molecular_markers_other.md)  <sub>0..1</sub>
      * Description: Specify the "Other" MRD_MOLECULAR_MARKERS
      * Range: [String](types/String.md)
- * [subjects](subjects.md)  <sub>1..\*</sub>
+ * [subjects](subjects.md)  <sub>1..1</sub>
      * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:

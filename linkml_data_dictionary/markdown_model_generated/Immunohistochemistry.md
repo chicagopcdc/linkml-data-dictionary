@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/Immunohistochemistry](https://w3id.org/pcdc/model/Immunohistochemistry)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[Immunohistochemistry&#124;age_at_ihc:integer%20%3F;review_source:ReviewSourceEnum%20%3F;test:TestEnum%20%3F;result:NegativeNotreportedPositiveUnknownEnum%20%3F;result_text:string%20%3F;result_numeric:decimal%20%3F;specimen:SpecimenEnum%20%3F;result_unit:ResultUnitEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[Immunohistochemistry],[Thing]^-[Immunohistochemistry])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[Immunohistochemistry&#124;age_at_ihc:integer%20%3F;review_source:ReviewSourceEnum%20%3F;test:TestEnum%20%3F;result:NegativeNotreportedPositiveUnknownEnum%20%3F;result_text:string%20%3F;result_numeric:decimal%20%3F;specimen:SpecimenEnum%20%3F;result_unit:ResultUnitEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[Immunohistochemistry],[Thing]^-[Immunohistochemistry])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..1-++[Immunohistochemistry&#124;age_at_ihc:integer%20%3F;review_source:ReviewSourceEnum%20%3F;test:TestEnum%20%3F;result:NegativeNotreportedPositiveUnknownEnum%20%3F;result_text:string%20%3F;result_numeric:decimal%20%3F;specimen:SpecimenEnum%20%3F;result_unit:ResultUnitEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[Immunohistochemistry],[Thing]^-[Immunohistochemistry])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..1-++[Immunohistochemistry&#124;age_at_ihc:integer%20%3F;review_source:ReviewSourceEnum%20%3F;test:TestEnum%20%3F;result:NegativeNotreportedPositiveUnknownEnum%20%3F;result_text:string%20%3F;result_numeric:decimal%20%3F;specimen:SpecimenEnum%20%3F;result_unit:ResultUnitEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[Immunohistochemistry],[Thing]^-[Immunohistochemistry])
 
 ## Parents
 
@@ -44,7 +44,7 @@ URI: [https://w3id.org/pcdc/model/Immunohistochemistry](https://w3id.org/pcdc/mo
  * [result_unit](result_unit.md)  <sub>0..1</sub>
      * Description: The units used for the numeric result of the laboratory test.
      * Range: [ResultUnitEnum](ResultUnitEnum.md)
- * [subjects](subjects.md)  <sub>1..\*</sub>
+ * [subjects](subjects.md)  <sub>1..1</sub>
      * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:

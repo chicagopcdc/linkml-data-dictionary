@@ -9,7 +9,7 @@ URI: [https://w3id.org/pcdc/model/subjects](https://w3id.org/pcdc/model/subjects
 
 ## Domain and Range
 
-None &#8594;  <sub>1..\*</sub> [Subject](Subject.md)
+None &#8594;  <sub>1..1</sub> [Subject](Subject.md)
 
 ## Parents
 

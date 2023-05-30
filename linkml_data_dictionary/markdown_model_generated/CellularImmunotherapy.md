@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/CellularImmunotherapy](https://w3id.org/pcdc/model/CellularImmunotherapy)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[CellularImmunotherapy&#124;age_at_cimt_start:integer%20%3F;type_other:string%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[CellularImmunotherapy],[Thing]^-[CellularImmunotherapy])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[CellularImmunotherapy&#124;age_at_cimt_start:integer%20%3F;type_other:string%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[CellularImmunotherapy],[Thing]^-[CellularImmunotherapy])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..1-++[CellularImmunotherapy&#124;age_at_cimt_start:integer%20%3F;type_other:string%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[CellularImmunotherapy],[Thing]^-[CellularImmunotherapy])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..1-++[CellularImmunotherapy&#124;age_at_cimt_start:integer%20%3F;type_other:string%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[CellularImmunotherapy],[Thing]^-[CellularImmunotherapy])
 
 ## Parents
 
@@ -29,7 +29,7 @@ URI: [https://w3id.org/pcdc/model/CellularImmunotherapy](https://w3id.org/pcdc/m
  * [type_other](type_other.md)  <sub>0..1</sub>
      * Description: Specify the "Other" CIMT_TYPE
      * Range: [String](types/String.md)
- * [subjects](subjects.md)  <sub>1..\*</sub>
+ * [subjects](subjects.md)  <sub>1..1</sub>
      * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:

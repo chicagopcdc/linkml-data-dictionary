@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/LateEffects](https://w3id.org/pcdc/model/LateEffects)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..*-++[LateEffects&#124;age_at_le_eval:integer%20%3F;late_effect:LateEffectEnum%20%3F;code:string%20%3F;code_system:CodeSystemEnum%20%3F;code_system_version:string%20%3F;grade:GradeEnum%20%3F;grade_system:GradeSystemEnum%20%3F;grade_system_version:string%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[LateEffects])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..*-++[LateEffects&#124;age_at_le_eval:integer%20%3F;late_effect:LateEffectEnum%20%3F;code:string%20%3F;code_system:CodeSystemEnum%20%3F;code_system_version:string%20%3F;grade:GradeEnum%20%3F;grade_system:GradeSystemEnum%20%3F;grade_system_version:string%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[LateEffects])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..1-++[LateEffects&#124;age_at_le_eval:integer%20%3F;late_effect:LateEffectEnum%20%3F;code:string%20%3F;code_system:CodeSystemEnum%20%3F;code_system_version:string%20%3F;grade:GradeEnum%20%3F;grade_system:GradeSystemEnum%20%3F;grade_system_version:string%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[LateEffects])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..1-++[LateEffects&#124;age_at_le_eval:integer%20%3F;late_effect:LateEffectEnum%20%3F;code:string%20%3F;code_system:CodeSystemEnum%20%3F;code_system_version:string%20%3F;grade:GradeEnum%20%3F;grade_system:GradeSystemEnum%20%3F;grade_system_version:string%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[LateEffects])
 
 ## Parents
 
@@ -41,7 +41,7 @@ URI: [https://w3id.org/pcdc/model/LateEffects](https://w3id.org/pcdc/model/LateE
  * [grade_system_version](grade_system_version.md)  <sub>0..1</sub>
      * Description: The version of the adverse event grading system.
      * Range: [String](types/String.md)
- * [subjects](subjects.md)  <sub>1..\*</sub>
+ * [subjects](subjects.md)  <sub>1..1</sub>
      * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:

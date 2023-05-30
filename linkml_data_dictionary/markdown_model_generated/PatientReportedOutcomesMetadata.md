@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/PatientReportedOutcomesMetadata](https://w3id.org/pcdc/model/PatientReportedOutcomesMetadata)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..*-++[PatientReportedOutcomesMetadata&#124;study_id:StudyIdEnum%20%3F;pro_measures:ProMeasuresEnum%20%3F;pro_measures_other:string%20%3F;pro_measurement_type:ProMeasurementTypeEnum%20%3F;pro_measurement_type_other:string%20%3F;raters:RatersEnum%20%3F;raters_other:string%20%3F;eligible_age_lower:integer%20%3F;eligible_age_upper:integer%20%3F;time_point:TimePointEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[PatientReportedOutcomesMetadata])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..*-++[PatientReportedOutcomesMetadata&#124;study_id:StudyIdEnum%20%3F;pro_measures:ProMeasuresEnum%20%3F;pro_measures_other:string%20%3F;pro_measurement_type:ProMeasurementTypeEnum%20%3F;pro_measurement_type_other:string%20%3F;raters:RatersEnum%20%3F;raters_other:string%20%3F;eligible_age_lower:integer%20%3F;eligible_age_upper:integer%20%3F;time_point:TimePointEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[PatientReportedOutcomesMetadata])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..1-++[PatientReportedOutcomesMetadata&#124;study_id:StudyIdEnum%20%3F;pro_measures:ProMeasuresEnum%20%3F;pro_measures_other:string%20%3F;pro_measurement_type:ProMeasurementTypeEnum%20%3F;pro_measurement_type_other:string%20%3F;raters:RatersEnum%20%3F;raters_other:string%20%3F;eligible_age_lower:integer%20%3F;eligible_age_upper:integer%20%3F;time_point:TimePointEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[PatientReportedOutcomesMetadata])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..1-++[PatientReportedOutcomesMetadata&#124;study_id:StudyIdEnum%20%3F;pro_measures:ProMeasuresEnum%20%3F;pro_measures_other:string%20%3F;pro_measurement_type:ProMeasurementTypeEnum%20%3F;pro_measurement_type_other:string%20%3F;raters:RatersEnum%20%3F;raters_other:string%20%3F;eligible_age_lower:integer%20%3F;eligible_age_upper:integer%20%3F;time_point:TimePointEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[PatientReportedOutcomesMetadata])
 
 ## Parents
 
@@ -48,7 +48,7 @@ URI: [https://w3id.org/pcdc/model/PatientReportedOutcomesMetadata](https://w3id.
  * [time_point](time_point.md)  <sub>0..1</sub>
      * Description: The point in time that acts as a fixed reference point to an event.
      * Range: [TimePointEnum](TimePointEnum.md)
- * [subjects](subjects.md)  <sub>1..\*</sub>
+ * [subjects](subjects.md)  <sub>1..1</sub>
      * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:

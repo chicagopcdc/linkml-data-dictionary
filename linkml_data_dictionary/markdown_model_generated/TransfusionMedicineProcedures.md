@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/TransfusionMedicineProcedures](https://w3id.org/pcdc/model/TransfusionMedicineProcedures)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Subject]<subjects%201..*-++[TransfusionMedicineProcedures&#124;age_at_tmp_start:integer%20%3F;product:ProductEnum%20%3F;age_at_tmp:integer%20%3F;product_processing:ProductProcessingEnum%20%3F;product_processing_other:string%20%3F;number_units:decimal%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[TransfusionMedicineProcedures],[Thing]^-[TransfusionMedicineProcedures],[TimePeriod],[Thing],[Subject])](https://yuml.me/diagram/nofunky;dir:TB/class/[Subject]<subjects%201..*-++[TransfusionMedicineProcedures&#124;age_at_tmp_start:integer%20%3F;product:ProductEnum%20%3F;age_at_tmp:integer%20%3F;product_processing:ProductProcessingEnum%20%3F;product_processing_other:string%20%3F;number_units:decimal%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[TransfusionMedicineProcedures],[Thing]^-[TransfusionMedicineProcedures],[TimePeriod],[Thing],[Subject])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Subject]<subjects%201..1-++[TransfusionMedicineProcedures&#124;age_at_tmp_start:integer%20%3F;product:ProductEnum%20%3F;age_at_tmp:integer%20%3F;product_processing:ProductProcessingEnum%20%3F;product_processing_other:string%20%3F;number_units:decimal%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[TransfusionMedicineProcedures],[Thing]^-[TransfusionMedicineProcedures],[TimePeriod],[Thing],[Subject])](https://yuml.me/diagram/nofunky;dir:TB/class/[Subject]<subjects%201..1-++[TransfusionMedicineProcedures&#124;age_at_tmp_start:integer%20%3F;product:ProductEnum%20%3F;age_at_tmp:integer%20%3F;product_processing:ProductProcessingEnum%20%3F;product_processing_other:string%20%3F;number_units:decimal%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[TransfusionMedicineProcedures],[Thing]^-[TransfusionMedicineProcedures],[TimePeriod],[Thing],[Subject])
 
 ## Parents
 
@@ -41,7 +41,7 @@ URI: [https://w3id.org/pcdc/model/TransfusionMedicineProcedures](https://w3id.or
  * [number_units](number_units.md)  <sub>0..1</sub>
      * Description: The number of units transfused into an individual.
      * Range: [Decimal](types/Decimal.md)
- * [subjects](subjects.md)  <sub>1..\*</sub>
+ * [subjects](subjects.md)  <sub>1..1</sub>
      * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:

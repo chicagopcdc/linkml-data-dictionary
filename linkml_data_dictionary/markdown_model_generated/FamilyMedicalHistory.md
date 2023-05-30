@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/FamilyMedicalHistory](https://w3id.org/pcdc/model/FamilyMedicalHistory)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..*-++[FamilyMedicalHistory&#124;relation:RelationEnum%20%3F;relation_other:string%20%3F;shared_predisposition:NoNotreportedUnknownYesEnum%20%3F;relative_honest_broker_id:string%20%3F;prior_cancer:NoNotreportedUnknownYesEnum%20%3F;prior_cancer_type:string%20%3F;prior_cancer_laterality:PriorCancerLateralityEnum%20%3F;lkss_of_relative:AliveDeadNotreportedUnknownEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[FamilyMedicalHistory])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..*-++[FamilyMedicalHistory&#124;relation:RelationEnum%20%3F;relation_other:string%20%3F;shared_predisposition:NoNotreportedUnknownYesEnum%20%3F;relative_honest_broker_id:string%20%3F;prior_cancer:NoNotreportedUnknownYesEnum%20%3F;prior_cancer_type:string%20%3F;prior_cancer_laterality:PriorCancerLateralityEnum%20%3F;lkss_of_relative:AliveDeadNotreportedUnknownEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[FamilyMedicalHistory])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..1-++[FamilyMedicalHistory&#124;relation:RelationEnum%20%3F;relation_other:string%20%3F;shared_predisposition:NoNotreportedUnknownYesEnum%20%3F;relative_honest_broker_id:string%20%3F;prior_cancer:NoNotreportedUnknownYesEnum%20%3F;prior_cancer_type:string%20%3F;prior_cancer_laterality:PriorCancerLateralityEnum%20%3F;lkss_of_relative:AliveDeadNotreportedUnknownEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[FamilyMedicalHistory])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Subject],[Subject]<subjects%201..1-++[FamilyMedicalHistory&#124;relation:RelationEnum%20%3F;relation_other:string%20%3F;shared_predisposition:NoNotreportedUnknownYesEnum%20%3F;relative_honest_broker_id:string%20%3F;prior_cancer:NoNotreportedUnknownYesEnum%20%3F;prior_cancer_type:string%20%3F;prior_cancer_laterality:PriorCancerLateralityEnum%20%3F;lkss_of_relative:AliveDeadNotreportedUnknownEnum%20%3F;submitter_id(i):string;type(i):string],[Thing]^-[FamilyMedicalHistory])
 
 ## Parents
 
@@ -40,7 +40,7 @@ URI: [https://w3id.org/pcdc/model/FamilyMedicalHistory](https://w3id.org/pcdc/mo
  * [lkss_of_relative](lkss_of_relative.md)  <sub>0..1</sub>
      * Description: The last known survival status of the relative of the subject with the prior cancer.
      * Range: [AliveDeadNotreportedUnknownEnum](AliveDeadNotreportedUnknownEnum.md)
- * [subjects](subjects.md)  <sub>1..\*</sub>
+ * [subjects](subjects.md)  <sub>1..1</sub>
      * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:

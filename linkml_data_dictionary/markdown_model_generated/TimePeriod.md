@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/TimePeriod](https://w3id.org/pcdc/model/TimePeriod)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Subject]<subjects%201..*-++[TimePeriod&#124;time_period_type:TimePeriodTypeEnum%20%3F;disease_phase:DiseasePhaseEnum%20%3F;course:CourseEnum%20%3F;time_period_number:integer%20%3F;year_at_start:integer%20%3F;age_at_start:integer%20%3F;age_at_end:integer%20%3F;course_other:string%20%3F;age_at_course_anc_500:integer%20%3F;age_at_txassign:integer%20%3F;age_precision:AgePrecisionEnum%20%3F;exam_type:ExamTypeEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[TimePeriod],[Thing]^-[TimePeriod],[Thing],[Subject])](https://yuml.me/diagram/nofunky;dir:TB/class/[Subject]<subjects%201..*-++[TimePeriod&#124;time_period_type:TimePeriodTypeEnum%20%3F;disease_phase:DiseasePhaseEnum%20%3F;course:CourseEnum%20%3F;time_period_number:integer%20%3F;year_at_start:integer%20%3F;age_at_start:integer%20%3F;age_at_end:integer%20%3F;course_other:string%20%3F;age_at_course_anc_500:integer%20%3F;age_at_txassign:integer%20%3F;age_precision:AgePrecisionEnum%20%3F;exam_type:ExamTypeEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[TimePeriod],[Thing]^-[TimePeriod],[Thing],[Subject])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Subject]<subjects%201..1-++[TimePeriod&#124;time_period_type:TimePeriodTypeEnum%20%3F;disease_phase:DiseasePhaseEnum%20%3F;course:CourseEnum%20%3F;time_period_number:integer%20%3F;year_at_start:integer%20%3F;age_at_start:integer%20%3F;age_at_end:integer%20%3F;course_other:string%20%3F;age_at_course_anc_500:integer%20%3F;age_at_txassign:integer%20%3F;age_precision:AgePrecisionEnum%20%3F;exam_type:ExamTypeEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[TimePeriod],[Thing]^-[TimePeriod],[Thing],[Subject])](https://yuml.me/diagram/nofunky;dir:TB/class/[Subject]<subjects%201..1-++[TimePeriod&#124;time_period_type:TimePeriodTypeEnum%20%3F;disease_phase:DiseasePhaseEnum%20%3F;course:CourseEnum%20%3F;time_period_number:integer%20%3F;year_at_start:integer%20%3F;age_at_start:integer%20%3F;age_at_end:integer%20%3F;course_other:string%20%3F;age_at_course_anc_500:integer%20%3F;age_at_txassign:integer%20%3F;age_precision:AgePrecisionEnum%20%3F;exam_type:ExamTypeEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[TimePeriod],[Thing]^-[TimePeriod],[Thing],[Subject])
 
 ## Parents
 
@@ -60,7 +60,7 @@ URI: [https://w3id.org/pcdc/model/TimePeriod](https://w3id.org/pcdc/model/TimePe
      * Range: [ExamTypeEnum](ExamTypeEnum.md)
  * [time_periods](time_periods.md)  <sub>0..1</sub>
      * Range: [TimePeriod](TimePeriod.md)
- * [subjects](subjects.md)  <sub>1..\*</sub>
+ * [subjects](subjects.md)  <sub>1..1</sub>
      * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:

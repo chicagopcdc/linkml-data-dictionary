@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/FunctionTest](https://w3id.org/pcdc/model/FunctionTest)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[FunctionTest&#124;age_at_function_test:integer%20%3F;test:TestEnum%20%3F;measurement_type:MeasurementTypeEnum%20%3F;measurement_text:string%20%3F;measurement_numeric:decimal%20%3F;measurement_unit:MeasurementUnitEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[FunctionTest],[Thing]^-[FunctionTest])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[FunctionTest&#124;age_at_function_test:integer%20%3F;test:TestEnum%20%3F;measurement_type:MeasurementTypeEnum%20%3F;measurement_text:string%20%3F;measurement_numeric:decimal%20%3F;measurement_unit:MeasurementUnitEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[FunctionTest],[Thing]^-[FunctionTest])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..1-++[FunctionTest&#124;age_at_function_test:integer%20%3F;test:TestEnum%20%3F;measurement_type:MeasurementTypeEnum%20%3F;measurement_text:string%20%3F;measurement_numeric:decimal%20%3F;measurement_unit:MeasurementUnitEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[FunctionTest],[Thing]^-[FunctionTest])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..1-++[FunctionTest&#124;age_at_function_test:integer%20%3F;test:TestEnum%20%3F;measurement_type:MeasurementTypeEnum%20%3F;measurement_text:string%20%3F;measurement_numeric:decimal%20%3F;measurement_unit:MeasurementUnitEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[FunctionTest],[Thing]^-[FunctionTest])
 
 ## Parents
 
@@ -38,7 +38,7 @@ URI: [https://w3id.org/pcdc/model/FunctionTest](https://w3id.org/pcdc/model/Func
  * [measurement_unit](measurement_unit.md)  <sub>0..1</sub>
      * Description: The units used for the vital sign or anthropomorphic measurement being recorded (numeric)
      * Range: [MeasurementUnitEnum](MeasurementUnitEnum.md)
- * [subjects](subjects.md)  <sub>1..\*</sub>
+ * [subjects](subjects.md)  <sub>1..1</sub>
      * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:

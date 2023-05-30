@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/Imaging](https://w3id.org/pcdc/model/Imaging)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[Imaging&#124;age_at_imaging:integer%20%3F;method:MethodEnum%20%3F;result:NegativeNotreportedPositiveUnknownEnum%20%3F;deauville_score:DeauvilleScoreEnum%20%3F;qpet_score:decimal%20%3F;finding:FindingEnum%20%3F;finding_other:string%20%3F;finding_site:FindingSiteEnum%20%3F;finding_site_other:string%20%3F;bone_marrow:NoNotreportedUnknownYesEnum%20%3F;csf_result:NegativeNotreportedPositiveUnknownEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[Imaging],[Thing]^-[Imaging])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[Imaging&#124;age_at_imaging:integer%20%3F;method:MethodEnum%20%3F;result:NegativeNotreportedPositiveUnknownEnum%20%3F;deauville_score:DeauvilleScoreEnum%20%3F;qpet_score:decimal%20%3F;finding:FindingEnum%20%3F;finding_other:string%20%3F;finding_site:FindingSiteEnum%20%3F;finding_site_other:string%20%3F;bone_marrow:NoNotreportedUnknownYesEnum%20%3F;csf_result:NegativeNotreportedPositiveUnknownEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[Imaging],[Thing]^-[Imaging])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..1-++[Imaging&#124;age_at_imaging:integer%20%3F;method:MethodEnum%20%3F;result:NegativeNotreportedPositiveUnknownEnum%20%3F;deauville_score:DeauvilleScoreEnum%20%3F;qpet_score:decimal%20%3F;finding:FindingEnum%20%3F;finding_other:string%20%3F;finding_site:FindingSiteEnum%20%3F;finding_site_other:string%20%3F;bone_marrow:NoNotreportedUnknownYesEnum%20%3F;csf_result:NegativeNotreportedPositiveUnknownEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[Imaging],[Thing]^-[Imaging])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..1-++[Imaging&#124;age_at_imaging:integer%20%3F;method:MethodEnum%20%3F;result:NegativeNotreportedPositiveUnknownEnum%20%3F;deauville_score:DeauvilleScoreEnum%20%3F;qpet_score:decimal%20%3F;finding:FindingEnum%20%3F;finding_other:string%20%3F;finding_site:FindingSiteEnum%20%3F;finding_site_other:string%20%3F;bone_marrow:NoNotreportedUnknownYesEnum%20%3F;csf_result:NegativeNotreportedPositiveUnknownEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[Imaging],[Thing]^-[Imaging])
 
 ## Parents
 
@@ -53,7 +53,7 @@ URI: [https://w3id.org/pcdc/model/Imaging](https://w3id.org/pcdc/model/Imaging)
  * [csf_result](csf_result.md)  <sub>0..1</sub>
      * Description: The results of cerebrospinal fluid laboratory tests.
      * Range: [NegativeNotreportedPositiveUnknownEnum](NegativeNotreportedPositiveUnknownEnum.md)
- * [subjects](subjects.md)  <sub>1..\*</sub>
+ * [subjects](subjects.md)  <sub>1..1</sub>
      * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:

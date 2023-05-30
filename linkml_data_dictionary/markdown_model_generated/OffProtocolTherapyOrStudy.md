@@ -7,7 +7,7 @@
 URI: [https://w3id.org/pcdc/model/OffProtocolTherapyOrStudy](https://w3id.org/pcdc/model/OffProtocolTherapyOrStudy)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[OffProtocolTherapyOrStudy&#124;age_off:integer%20%3F;off_type:OffTypeEnum%20%3F;reason_off:ReasonOffEnum%20%3F;reason_off_other:string%20%3F;another_study:NoNotreportedUnknownYesEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[OffProtocolTherapyOrStudy],[Thing]^-[OffProtocolTherapyOrStudy])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..*-++[OffProtocolTherapyOrStudy&#124;age_off:integer%20%3F;off_type:OffTypeEnum%20%3F;reason_off:ReasonOffEnum%20%3F;reason_off_other:string%20%3F;another_study:NoNotreportedUnknownYesEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[OffProtocolTherapyOrStudy],[Thing]^-[OffProtocolTherapyOrStudy])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..1-++[OffProtocolTherapyOrStudy&#124;age_off:integer%20%3F;off_type:OffTypeEnum%20%3F;reason_off:ReasonOffEnum%20%3F;reason_off_other:string%20%3F;another_study:NoNotreportedUnknownYesEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[OffProtocolTherapyOrStudy],[Thing]^-[OffProtocolTherapyOrStudy])](https://yuml.me/diagram/nofunky;dir:TB/class/[TimePeriod],[Thing],[Subject],[Subject]<subjects%201..1-++[OffProtocolTherapyOrStudy&#124;age_off:integer%20%3F;off_type:OffTypeEnum%20%3F;reason_off:ReasonOffEnum%20%3F;reason_off_other:string%20%3F;another_study:NoNotreportedUnknownYesEnum%20%3F;submitter_id(i):string;type(i):string],[TimePeriod]<time_periods%200..1-++[OffProtocolTherapyOrStudy],[Thing]^-[OffProtocolTherapyOrStudy])
 
 ## Parents
 
@@ -35,7 +35,7 @@ URI: [https://w3id.org/pcdc/model/OffProtocolTherapyOrStudy](https://w3id.org/pc
  * [another_study](another_study.md)  <sub>0..1</sub>
      * Description: Did the subject enroll in another study after they went off of the study indicated by OFF_TYPE?
      * Range: [NoNotreportedUnknownYesEnum](NoNotreportedUnknownYesEnum.md)
- * [subjects](subjects.md)  <sub>1..\*</sub>
+ * [subjects](subjects.md)  <sub>1..1</sub>
      * Range: [Subject](Subject.md)
 
 ### Inherited from Thing:

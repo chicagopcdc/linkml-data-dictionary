@@ -7,7 +7,7 @@ disallowed_vals_in_name = ["%", "?"]
 
 
 def load_from_json(
-    json_data: str = "data_ingestion_to_linkml/test_json_data/Aggregated.json",
+    json_data: str = "linkml_data_dictionary/data_ingestion_to_linkml/test_json_data/Aggregated.json",
 ) -> None:
     """
     Load data from a json file that contains all data dicitonary data and
@@ -62,7 +62,7 @@ def load_from_json(
                 "required": True,
             }
 
-    write_filename = f"data_ingestion_to_linkml/output_linkml_yaml/data_dictionary_spreadsheet_{data['meta']['sheet_id']}_{data['meta']['timestamp']}.yaml"
+    write_filename = f"linkml_data_dictionary/data_ingestion_to_linkml/output_linkml_yaml/data_dictionary_spreadsheet_{data['meta']['sheet_id']}_{data['meta']['timestamp']}.yaml"
     with open(write_filename, "w") as f:
         data = yaml.dump(python_linkml_struct, f, sort_keys=False)
 
