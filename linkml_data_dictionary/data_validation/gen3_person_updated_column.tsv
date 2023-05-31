@@ -1,0 +1,9 @@
+type	sex	submitter_id	project_id	projects.code	ethnicity	race
+person	Male	person_1	pcdc-20230523	20230523	Not Hispanic or Latino	White
+person	Male	person_2	pcdc-20230523	20230523	Not Hispanic or Latino	White
+person	Female	person_3	pcdc-20230523	20230523	Not Hispanic or Latino	Black or African American
+person	Male	person_4	pcdc-20230523	20230523	Not Hispanic or Latino	White
+person	Male	person_5	pcdc-20230523	20230523	Not Hispanic or Latino	American Indian or Alaska Native
+person	Female	person_6	pcdc-20230523	20230523	Not Hispanic or Latino	White
+person	Male	person_7	pcdc-20230523	20230523	Not Hispanic or Latino	White
+person	Male	person_8	pcdc-20230523	20230523	Not Hispanic or Latino	White

@@ -60,7 +60,12 @@ key errors
 submitter_id must be supplied
 ```
 
+The most final validation script for TSV format files is `validate_tsv_data.py` which can be tested with the command `python linkml_data_dictionary/data_validation/validation_scripts/validate_tsv_data.py`
+
 ## Future work
-Future things to look into with this exploration are:
+Future things to look into with this exploration are noted in the github issues
 * Generalized python object creation from differing input types (json, tsv, csv, etc)
-* Update dependencies to run as a proper module (pip installable?)
+* Using the LinkML convert to validate data. example command (should be able to take different file types too): 
+```
+linkml-convert -m linkml_data_dictionary/python_model/data_dictionary_generated_fixed_quotes.py -o linkml_data_dictionary/data_validation/convert_test/ linkml_data_dictionary/data_validation/gen3_person_renamed_keys.json 
+```
