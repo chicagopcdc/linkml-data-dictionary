@@ -5,7 +5,7 @@
 # Model documentation and schema directory
 # ----------------------------------------
 SRC_DIR = model
-PKG_DIR = data_dictionary
+PKG_DIR = linkml_data_dictionary
 SCHEMA_DIR = $(SRC_DIR)/schema
 MODEL_DOCS_DIR = $(SRC_DIR)/docs
 SOURCE_FILES := $(shell find $(SCHEMA_DIR) -name '*.yaml')

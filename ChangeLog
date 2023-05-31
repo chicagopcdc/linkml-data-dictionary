@@ -1,0 +1,43 @@
+CHANGES
+=======
+
+* generated json data model, converted test validation data to json, need to test json to python model object instance and see how that works w bad data
+* manual sql script is working, updated subjects to multivalued = false to get rid of association tables
+* tested sql-ddl generation
+* dealt with multiple codes in meaning for enum, added updated iso-3 code
+* python being generated, open question about multiple codes and checking that timing and subjects association is correct
+* updated ingestion script to accept the new aggregated.json data
+* tweaks to mkdocs theming
+* answering final outstanding q
+* cleaned up, linted, documented, tested
+* python from yaml and md from yaml working
+* auto generation to yaml and python working
+* generating all classes, python not generating due too 5 yaml errors
+* added subject and person dependency manually since they aren't available as keys in the data, generated new python and markdown files and updated readme with instructions
+* added code to check enums with duplicated permissible values and README instructions on yaml and python generation
+* removed empty meanings and descriptions
+* removed empty curie for schema
+* removing protocol slot
+* enums
+* automated slot creation, next up is enums
+* base template creating yaml and generates linkml python, changed NamedThing to Thing, took out schema and ex b/c they weren't being used
+* base dict established
+* setting up ingestion from json and conversion to yaml
+* checked ordering of things and updated docs to show how to generate markdown
+* forgot to update python with new uri changes
+* updating curi for classes to point to pcdc model path
+* double checked with required values from the data dictionary
+* Added subsets and updated mkdocs
+* Changes for Check-in Meeting
+* added comment about timing class structure
+* added parent class and timing class, updated relationships
+* changed subject and person naming scheme and updated enums
+* changed enum permissible value formatting
+* changed subject characteristics to subject
+* added family history and subject charactersitics classes and associated slots
+* changes from last weeks meeting
+* made updates based on feedback from PR, build python file successfully
+* generated python class and updated docs
+* creates json schema model
+* templated project set up
+* Initial commit
